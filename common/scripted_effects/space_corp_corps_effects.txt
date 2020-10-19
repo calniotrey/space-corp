@@ -1,0 +1,41 @@
+# this = corp
+set_headquarters = {
+    if = {
+        limit = {
+            exists = overlord
+            overlord = {
+                any_owned_planet = {
+                    suitable_for_headquarters = yes
+                }
+            }
+        }
+        overlord = {
+            random_owned_planet = {
+                limit = {
+                    suitable_for_headquarters = yes
+                }
+                set_planet_flag = space_corp_headquarters
+                set_planet_flag = space_corp_headquarters_from_@prevprev
+                save_event_target_as = headquarters_planet
+            }
+        }
+        set_country_flag = space_corp_headquarters_set
+        event_target:headquarters_planet = {
+            prev = {
+                set_country_flag = space_corp_headquarters_set_on_@prev
+            }
+        }
+    }
+}
+
+# this = corp
+get_headquarters = {
+    overlord = {
+        random_owned_planet = {
+            limit = {
+                has_planet_flag = space_corp_headquarters_from_@prevprev
+            }
+            save_event_target_as = headquarters_planet
+        }
+    }
+}

@@ -1,0 +1,21 @@
+namespace = space_corps_start
+
+country_event = {
+    id = space_corps_start.10
+    is_triggered_only = yes
+    hide_window = yes
+
+    trigger = {
+        is_country_type = default
+        NOT = {
+            has_country_flag = space_corps_initialized
+        }
+    }
+
+    immediate = {
+        set_country_flag = space_corps_initialized
+        randomize_space_corps_spawn_delay = yes
+        # debug
+        set_variable = { which = years_until_next_corp_creation value = 0 }
+    }
+}

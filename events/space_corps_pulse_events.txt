@@ -1,0 +1,131 @@
+namespace = space_corps_pulse
+
+# yearly pulse
+# check if spawn corp is needed
+country_event = {
+    id = space_corps_pulse.10
+    is_triggered_only = yes
+    hide_window = yes
+
+    immediate = {
+        change_variable = { which = years_until_next_corp_creation value = -1 }
+        country_event = {
+            id = space_corps_pulse.11
+            days = 5
+            random = 350
+        }
+    }
+}
+
+# called from space_corps_pulse.11
+# spawn a corp
+country_event = {
+    id = space_corps_pulse.11
+    is_triggered_only = yes
+    hide_window = yes
+
+    immediate = {
+        count_space_corps = yes
+        if = {
+            limit = {
+                should_create_space_corp = yes
+            }
+            create_space_corp = yes
+            change_variable = { which = number_of_corps value = 1 }
+            randomize_space_corps_spawn_delay = yes
+            if = {
+                limit = {
+                    NOT = { has_country_flag = hide_space_corps_creation }
+                }
+                random_list = { # different images TODO
+                    1 = { country_event = { id = space_corps_pulse.12 } }
+                }
+            }
+        }
+    }
+}
+
+# called from space_corps_pulse.11
+# spawn a corp
+country_event = {
+    id = space_corps_pulse.12
+    is_triggered_only = yes
+	picture = GFX_evt_tradestation_interior
+    title = "space_corps_pulse.12.title"
+    desc = "space_corps_pulse.12.desc"
+    option = {
+        name = OK
+    }
+}
+
+# monthly pulse
+# trigger event for corps randomly in the month
+event = {
+    id = space_corps_pulse.20
+    is_triggered_only = yes
+    hide_window = yes
+    immediate = {
+        if = {
+            limit = {
+                NOT = { has_global_flag = space_corps_paused } 
+            }
+            every_country = {
+                limit = {
+                    is_country_type = space_corp
+                }
+                country_event = {
+                    id = space_corps_pulse.21
+                    days = 1
+                    random = 28
+                }
+            }
+        }
+    }
+}
+
+# once per month
+# triggered by space_corps_pulse.20
+country_event = {
+    id = space_corps_pulse.21
+    is_triggered_only = yes
+    hide_window = yes
+    immediate = {
+        if = {
+            limit = {
+                should_build_builder = yes
+            }
+            create_builder_fleet = yes
+        }
+    }
+}
+
+
+
+country_event = {
+    id = my_name_space.1 # change this
+    is_triggered_only = yes
+    hide_window = yes
+
+    trigger = {
+        is_country_type = default
+    }
+    
+    immediate = {
+        # remove existing modifier
+        ...
+        # set stability to 100 by default
+        set_variable = { which = modded_stability value = 100 }
+        # remove 1 per colony
+        every_owned_planet = {
+            limit = {
+                is_colony = yes
+            }
+            # we are here in the planet scope
+            prev = { # switch back to the country scope
+                change_variable = { which = modded_stability value = -1 }
+            }
+        }
+        # add modifier (for example by a big if/else or just ifs (less performant)
+        ...
+    }
+}

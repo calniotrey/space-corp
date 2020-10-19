@@ -1,0 +1,86 @@
+is_space_corp_not_installed = {
+    always = no
+}
+
+# this = overlord
+should_create_space_corp = {
+    check_variable = { which = years_until_next_corp_creation value <= 0 }
+    check_variable = { which = number_of_corps value < 10 }
+    any_owned_planet = {
+        suitable_for_headquarters = yes
+    }
+}
+
+# this = planet
+suitable_for_headquarters = {
+    is_colony = yes
+    num_pops >= 10
+    NOT = { has_planet_flag = space_corp_headquarters }
+}
+
+# this = corp
+space_corp_searches_mining_stations = {
+    always = yes
+}
+
+# this = corp
+space_corp_searches_research_stations = {
+    always = no
+}
+
+# this = corp
+should_build_builder = {
+    check_variable = { which = space_corp_money value >= @builder_cost }
+    count_owned_ship = {
+        limit = { is_ship_size = constructor }
+        count < 5
+    }
+}
+
+# this = system
+is_system_eligible_for_mining_station = {
+    any_system_planet = {
+        is_planet_eligible_for_mining_station = yes
+    }
+}
+
+# this = system
+is_system_eligible_for_research_station = {
+    any_system_planet = {
+        is_planet_eligible_for_research_station = yes
+    }
+}
+
+# this = planet
+is_planet_eligible_for_mining_station = {
+    has_deposit_for = shipclass_mining_station
+    has_mining_station = no
+}
+
+# this = planet
+is_planet_eligible_for_research_station = {
+    has_deposit_for = shipclass_research_station
+    has_research_station = no
+}
+
+# this = fleet/planet/country
+has_close_system_eligible_for_mining_station = {
+    closest_system = {
+        min_steps = 1
+        max_steps = @builder_close_system
+        limit = {
+            is_system_eligible_for_mining_station = yes
+        }
+    }
+}
+
+# this = fleet/planet/country
+has_close_system_eligible_for_research_station = {
+    closest_system = {
+        min_steps = 1
+        max_steps = @builder_close_system
+        limit = {
+            is_system_eligible_for_research_station = yes
+        }
+    }
+}

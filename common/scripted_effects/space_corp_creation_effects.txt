@@ -1,0 +1,65 @@
+# TODO switch on and off "Story7" flag to remove first contact?
+# This = overlord
+create_space_corp = {
+    random_owned_pop = {
+        limit = {
+            OR = {
+                has_citizenship_type = { country = prev type = citizenship_full }
+                has_citizenship_type = { country = prev type = citizenship_full_machine }
+                # has_citizenship_type = { country = prev type = citizenship_organic_trophy }
+            }
+        }
+        save_event_target_as = original_pop
+    }
+    create_country = {
+        type = space_corp
+        name = random
+        species = event_target:original_pop.species
+        name_list = random
+        flag = this
+        auto_delete = no
+        effect = {
+            set_name = random # isn't properly set otherwise
+            set_country_flag = space_corp_from_@prev
+            establish_communications_no_message = prev
+            set_subject_of = { who = prev subject_type = space_corp_vassal }
+            clear_ethos = yes # dunno if needed
+            event_target:original_pop = {
+                switch = {
+                    trigger = pop_has_ethic
+                    ethic_xenophile = { prev = { country_add_ethic = ethic_xenophile } }
+                    ethic_xenophobe = { prev = { country_add_ethic = ethic_xenophobe } }
+                    ethic_authoritarian  = { prev = { country_add_ethic = ethic_authoritarian } }
+                    ethic_egalitarian  = { prev = { country_add_ethic = ethic_egalitarian } }
+                    ethic_militarist = { prev = { country_add_ethic = ethic_militarist } }
+                    ethic_pacifist = { prev = { country_add_ethic = ethic_pacifist } }
+                    ethic_spiritualist = { prev = { country_add_ethic = ethic_spiritualist } }
+                    ethic_materialist = { prev = { country_add_ethic = ethic_materialist } }
+                    ethic_gestalt_consciousness = { prev = { country_add_ethic = ethic_materialist } }
+                }
+            }
+            set_headquarters = yes
+            set_variable = { which = space_corp_money value = 1000 }
+        }
+    }
+    set_country_flag = space_corp_overlord_from_@last_created_country
+    every_country = {
+        limit = {
+            has_communications = prev
+        }
+        establish_communications_no_message = last_created_country
+    }
+    compute_license_and_stations_cost = yes
+}
+
+# this = overlord
+# check_and_create_space_corp = { # TODO if a corp is destroyed, do not spawn one just after ?
+#     if = {
+#         limit = {
+#             should_create_space_corp = yes
+#         }
+#         create_space_corp = yes
+#         change_variable = { which = number_of_corps value = 1 }
+#         randomize_space_corps_spawn_delay = yes
+#     }
+# }

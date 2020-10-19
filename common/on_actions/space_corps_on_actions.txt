@@ -1,0 +1,17 @@
+on_game_start_country = {
+    events = {
+        space_corps_start.10
+    }
+}
+
+on_yearly_pulse_country = {
+    events = {
+        space_corps_pulse.10
+    }
+}
+
+on_monthly_pulse = {
+    events = {
+        space_corps_pulse.20
+    }
+}
