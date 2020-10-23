@@ -1,0 +1,17 @@
+namespace = space_corps_science_ships
+# reset science ships orders
+country_event = {
+	id = space_corps_science_ships.10
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				exists = event_target:science_ship_fleet
+			}
+			event_target:science_ship_fleet = {
+				set_science_ship_orders = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,7 @@
+@builder_cost = 100
+@science_ship_cost = 50
+@mining_station_cost = 100
+@builder_close_system = 5
+@science_ship_close_system = 20
+# 50% of max storage
+@corp_default_resources_amount = 1000000

@@ -1,0 +1,36 @@
+namespace = space_corps_diplomacy
+# custom diplomacy opened
+# This = target country (player)
+# From = source country
+country_event = {
+	id = space_corps_diplomacy.10
+	title = space_corps_diplomacy.10.name
+	desc = space_corps_diplomacy.10.desc
+	show_sound = event_conversation
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		portrait = from
+		room = ethic_spaceship_room
+	}
+	trigger = {
+		from = {
+			is_country_type = space_corp
+		}
+	}
+	immediate = {
+		from = {
+			get_headquarters = yes
+		}
+	}
+	option = {
+		# More infos
+		name = space_corps_diplomacy.10.a
+		response_text = space_corps_diplomacy.10.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		# Quit
+		name = space_corps_diplomacy.10.z
+	}
+}

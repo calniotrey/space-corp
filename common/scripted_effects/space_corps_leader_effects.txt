@@ -1,0 +1,43 @@
+# this = corp
+spawn_scientist = {
+	create_leader = {
+		class = scientist
+	}
+	# TODO add experience/traits?
+}
+
+# this = leader
+transfer_leader_to_overlord = {
+	set_owner = owner.overlord
+	# TODO add traits/experience
+}
+
+# this = fleet (science)
+assign_random_scientist = {
+	if = {
+		limit = {
+			NOT = {
+				owner = {
+					any_owned_leader = {
+						leader_class = scientist
+						is_scientist_idle = yes
+					}
+				}
+			}
+		}
+		owner = {
+			spawn_scientist = yes
+		}
+	}
+	owner = {
+		random_owned_leader = {
+			limit = {
+				leader_class = scientist
+				is_scientist_idle = yes
+			}
+			prevprev = {
+				assign_leader = prev
+			}
+		}
+	}
+}

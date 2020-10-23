@@ -1,0 +1,29 @@
+# this exists to make CWTools complain less
+space_corps_dummy_effect = {
+	set_variable = {
+		which = space_corp_energy_income
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_minerals_income
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_alloys_income
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_energy_taxed_total
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_minerals_taxed_total
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_alloys_taxed_total
+		value = 0
+	}
+	set_global_flag = space_corps_paused
+	set_country_flag = hide_space_corps_creation
+}

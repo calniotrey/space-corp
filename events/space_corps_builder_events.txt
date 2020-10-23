@@ -1,19 +1,17 @@
 namespace = space_corps_builder
-
 # reset builders orders
 country_event = {
-    id = space_corps_builder.10
-    is_triggered_only = yes
-    hide_window = yes
-
-    immediate = {
-        if = {
-            limit = {
-                exists = event_target:builder_fleet
-            }
-            event_target:builder_fleet = {
-                set_builders_orders = yes
-            }
-        }
-    }
+	id = space_corps_builder.10
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				exists = event_target:builder_fleet
+			}
+			event_target:builder_fleet = {
+				set_builders_orders = yes
+			}
+		}
+	}
 }

@@ -1,0 +1,47 @@
+namespace = space_corps_corps
+# add initial resources
+country_event = {
+	id = space_corps_corps.10
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		add_resource = {
+			energy = @corp_default_resources_amount
+			minerals = @corp_default_resources_amount
+			alloys = @corp_default_resources_amount
+		}
+		add_variable_resource = {
+			RESOURCE = physics_research
+			AMOUNT = @corp_default_resources_amount
+		}
+		add_variable_resource = {
+			RESOURCE = society_research
+			AMOUNT = @corp_default_resources_amount
+		}
+		add_variable_resource = {
+			RESOURCE = engineering_research
+			AMOUNT = @corp_default_resources_amount
+		}
+	}
+}
+
+# This = Federation leader
+# From = Joining member
+# on_join_federation
+country_event = {
+	id = space_corps_corps.20
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		from = {
+			is_country_type = space_corp
+		}
+	}
+	immediate = {
+		from = {
+			leave_alliance = {
+				override_requirements = yes
+			}
+		}
+	}
+}

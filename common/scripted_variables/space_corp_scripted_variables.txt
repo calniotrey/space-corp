@@ -1,5 +1,0 @@
-@builder_cost = 100
-
-@mining_station_cost = 200
-
-@builder_close_system = 5

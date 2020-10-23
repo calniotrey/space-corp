@@ -1,0 +1,18 @@
+localisation_commands = {
+	GetName = any
+}
+
+localisation_links = {
+	This = {
+		input_scopes = {
+			any
+		}
+		output_scope = any
+	}
+	From = {
+		input_scopes = {
+			any
+		}
+		output_scope = any
+	}
+}

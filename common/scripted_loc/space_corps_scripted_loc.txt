@@ -1,0 +1,34 @@
+defined_text = {
+	name = GetHeadquartersPlanet
+	text = {
+		localization_key = "[headquarters_planet.GetName]"
+	}
+}
+
+defined_text = {
+	name = GetMoney
+	text = {
+		localization_key = "[This.space_corp_money]"
+	}
+}
+
+defined_text = {
+	name = GetTotalPayedForLicenses
+	text = {
+		localization_key = "[This.total_payed_for_licenses]"
+	}
+}
+
+defined_text = {
+	name = GetTotalTaxed
+	text = {
+		localization_key = "[This.space_corp_total_taxed]"
+	}
+}
+
+defined_text = {
+	name = GetMoneyVariation
+	text = {
+		localization_key = "[This.space_corp_money_variation]"
+	}
+}

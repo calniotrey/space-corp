@@ -1,0 +1,3 @@
+space_corp_country_modifier = {
+	country_resource_max_add = 2000000
+}

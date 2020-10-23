@@ -1,20 +1,22 @@
 Corporations :
 Several corporations per country (max 10?)
 has the ethic from a random (free) pop
+has a headquarter on one of the overlords planets
 start small, not may energy credits
-invest in a construction ship
-pay country to have the right to build a station (policies adjustable?)
+invest in exploration, then construction ships
+pay country to have the right (license) to build a station (policies adjustable)
+give survey data to overlord (and all other corps), gets paid for it
 first only mining stations
 then science stations
-then refinery/advanced stations (consume resources to produce resources)
-pay tribute to overlord (scripted to adjust to policies?)
+then refinery/advanced stations (consume resources to produce resources). Probably doesn't need deposit
+pay tribute to overlord (scripted to adjust to policies)
 has a "happiness" which controls relationship to country
 
 Can have "wars" with each others/corp from other countries?
 
 They may build small habitats? Lag?
 They may colonize. Full scripted planets?
-If enough planets/fleets and low happiness, may split from country to form an autonomous country
+If enough planets/fleets and low happiness, may split from country to form an autonomous country (pseudo rebellion)
 
 May merge with another corp (same ethic?)
 
@@ -23,22 +25,25 @@ Country may pay corp to get techs?
 
 Convoys
 Spawn from one planet, goes to another planet
-Produces resources on arrival, but costs a lot if destroyed (=> simulate trade)
-May have military escort
+Costs resources to build, produces resources on arrival
+=> costs a lot if destroyed
+=> simulate trade
+May have military escort (can't merge probably, so look at speed)
 
 
 Military
-corp can build military ships to patrol, protect convos, explore
+corp can build military ships to patrol, protect convos, explore (follow science ship), escort supply ships
 Maybe build in reaction to pirates (some ethics may build more earlier? policies?)
 
 
 Science ships
 corp can build science ships to go explore (should give overlord intel as well)
-Get payed when surveying planets/systems (anomalies handling?)
+Get payed when surveying planets/systems (anomalies handling? Probably some huge random list. Annoying)
 
 
 Leaders
 can switch from country to corp if not employed
+Can switch back to country periodically
 Gains experience and/or traits
 Can get abducted by pirates?
 
@@ -47,11 +52,12 @@ Pirates
 spawn more if corp rich and not a lot of military (ratio goes down => pirates harm corps => corps build fleets => pirates wait for richess/fleets ratio to go down => ...)
 attack convoys, maybe supply lines
 Maybe raid planets (country too?)
-Sell slave on the market?
+Sell slaves on the market?
 Attack stations
 Have spawn bases (no need to have 1 country per base?)
 Use the loot to build newer ships (strength goes up, so you need to keep them in check)
 Corps may pay pirates to attack other corps?
+When destroying a science ship, abduct the leader and ransom?
 
 
 Supply lines, similar to supply mod
@@ -61,10 +67,6 @@ Supply points, ships
 supply lines sent from corps, you pay on arrival
 they use their resources to protect their convoys (merge fleets?)
 When (military) fleet is underway for too long, they lose health/power until supplied
+Ships supplied when in a system with a friendly outpost? (to reduce supply ships) or only starbase?
 
 
-
-
-TODO :
-custom diplomacy
-spawn builder

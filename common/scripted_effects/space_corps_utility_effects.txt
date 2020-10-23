@@ -1,140 +1,335 @@
 # this = overlord
 count_space_corps = {
-    set_variable = { which = number_of_corps value = 0 }
-    every_subject = {
-        limit = {
-            is_country_type = space_corp
-        }
-        prev = { change_variable = { which = number_of_corps value = 1 } }
-    }
+	set_variable = {
+		which = number_of_corps
+		value = 0
+	}
+	every_subject = {
+		limit = {
+			is_country_type = space_corp
+		}
+		prev = {
+			change_variable = {
+				which = number_of_corps
+				value = 1
+			}
+		}
+	}
 }
 
 # this = overlord
 randomize_space_corps_spawn_delay = {
-    random_list = {
-        1 = { set_variable = { which = years_until_next_corp_creation value = 3 } }
-        1 = { set_variable = { which = years_until_next_corp_creation value = 4 } }
-        1 = { set_variable = { which = years_until_next_corp_creation value = 5 } }
-        1 = { set_variable = { which = years_until_next_corp_creation value = 6 } }
-        1 = { set_variable = { which = years_until_next_corp_creation value = 7 } }
-    }
+	random_list = {
+		1 = {
+			set_variable = {
+				which = years_until_next_corp_creation
+				value = 3
+			}
+		}
+		1 = {
+			set_variable = {
+				which = years_until_next_corp_creation
+				value = 4
+			}
+		}
+		1 = {
+			set_variable = {
+				which = years_until_next_corp_creation
+				value = 5
+			}
+		}
+		1 = {
+			set_variable = {
+				which = years_until_next_corp_creation
+				value = 6
+			}
+		}
+		1 = {
+			set_variable = {
+				which = years_until_next_corp_creation
+				value = 7
+			}
+		}
+	}
 }
 
 # this = overlord
 compute_license_and_stations_cost = {
-    set_variable = { which = space_corps_mining_license_cost value = @mining_station_cost }
-    multiply_variable = { which = space_corps_mining_license_cost value = space_corps_license_cost_multiplier }
-    set_variable = { which = space_corps_mining_station_total_cost value = @mining_station_cost }
-    change_variable = { which = space_corps_mining_station_total_cost value = space_corps_mining_license_cost }
-
-    every_subject = {
-        limit = {
-            is_country_type = space_corp
-        }
-        set_variable = { which = space_corps_mining_license_cost value = prev }
-        set_variable = { which = space_corps_mining_station_total_cost value = prev }
-    }
+	set_variable = {
+		which = space_corps_mining_license_cost
+		value = @mining_station_cost
+	}
+	multiply_variable = {
+		which = space_corps_mining_license_cost
+		value = space_corps_license_cost_multiplier
+	}
+	set_variable = {
+		which = space_corps_mining_station_total_cost
+		value = @mining_station_cost
+	}
+	change_variable = {
+		which = space_corps_mining_station_total_cost
+		value = space_corps_mining_license_cost
+	}
+	every_subject = {
+		limit = {
+			is_country_type = space_corp
+		}
+		set_variable = {
+			which = space_corps_mining_license_cost
+			value = prev
+		}
+		set_variable = {
+			which = space_corps_mining_station_total_cost
+			value = prev
+		}
+	}
 }
 
 # this = country
 # source : SLEX
 add_variable_resource = {
-    set_variable = {
-        which = amount_to_add
-        value = $AMOUNT$
-    }
-    if = {
-        limit = {
-            check_variable = {
-                which = amount_to_add
-                value > 0
-            }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value >= 100000 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ min = 100000 }
-            change_variable = { which = amount_to_add value = -100000 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value >= 10000 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ min = 10000 }
-            change_variable = { which = amount_to_add value = -10000 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value >= 1000 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ min = 1000 }
-            change_variable = { which = amount_to_add value = -1000 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value >= 100 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ min = 100 }
-            change_variable = { which = amount_to_add value = -100 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value >= 10 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ min = 10 }
-            change_variable = { which = amount_to_add value = -10 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value >= 1 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ min = 1 }
-            change_variable = { which = amount_to_add value = -1 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value >= 0.1 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ min = 0.1 }
-            change_variable = { which = amount_to_add value = -0.1 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value >= 0.01 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ min = 0.01 }
-            change_variable = { which = amount_to_add value = -0.01 }
-        }
-    } else = {
-        while = {
-            limit = { check_variable = { which = amount_to_add value <= -100000 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ max = -100000 }
-            change_variable = { which = amount_to_add value = 100000 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value <= -10000 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ max = -10000 }
-            change_variable = { which = amount_to_add value = 10000 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value <= -1000 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ max = -1000 }
-            change_variable = { which = amount_to_add value = 1000 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value <= -100 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ max = -100 }
-            change_variable = { which = amount_to_add value = 100 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value <= -10 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ max = -10 }
-            change_variable = { which = amount_to_add value = 10 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value <= -1 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ max = -1 }
-            change_variable = { which = amount_to_add value = 1 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value <= -0.1 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ max = -0.1 }
-            change_variable = { which = amount_to_add value = 0.1 }
-        }
-        while = {
-            limit = { check_variable = { which = amount_to_add value <= -0.01 } }
-            add_monthly_resource_mult = { resource = $RESOURCE$ max = -0.01 }
-            change_variable = { which = amount_to_add value = 0.01 }
-        }
-    }
-    # To cleanup
-    set_variable = {
-        which = amount_to_add
-        value = 0
-    }
+	set_variable = {
+		which = amount_to_add
+		value = $AMOUNT$
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = amount_to_add
+				value > 0
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value >= 100000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 100000
+			}
+			change_variable = {
+				which = amount_to_add
+				value = -100000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value >= 10000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 10000
+			}
+			change_variable = {
+				which = amount_to_add
+				value = -10000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value >= 1000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 1000
+			}
+			change_variable = {
+				which = amount_to_add
+				value = -1000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value >= 100
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 100
+			}
+			change_variable = {
+				which = amount_to_add
+				value = -100
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value >= 10
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 10
+			}
+			change_variable = {
+				which = amount_to_add
+				value = -10
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value >= 1
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 1
+			}
+			change_variable = {
+				which = amount_to_add
+				value = -1
+			}
+		}
+		# while = {
+		#     limit = { check_variable = { which = amount_to_add value >= 0.1 } }
+		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 min = 0.1 }
+		#     change_variable = { which = amount_to_add value = -0.1 }
+		# }
+		# while = {
+		#     limit = { check_variable = { which = amount_to_add value >= 0.01 } }
+		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 min = 0.01 }
+		#     change_variable = { which = amount_to_add value = -0.01 }
+		# }
+	}
+	else = {
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value <= -100000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -100000
+			}
+			change_variable = {
+				which = amount_to_add
+				value = 100000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value <= -10000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -10000
+			}
+			change_variable = {
+				which = amount_to_add
+				value = 10000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value <= -1000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -1000
+			}
+			change_variable = {
+				which = amount_to_add
+				value = 1000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value <= -100
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -100
+			}
+			change_variable = {
+				which = amount_to_add
+				value = 100
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value <= -10
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -10
+			}
+			change_variable = {
+				which = amount_to_add
+				value = 10
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_to_add
+					value <= -1
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -1
+			}
+			change_variable = {
+				which = amount_to_add
+				value = 1
+			}
+		}
+		# while = {
+		#     limit = { check_variable = { which = amount_to_add value <= -0.1 } }
+		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 max = -0.1 }
+		#     change_variable = { which = amount_to_add value = 0.1 }
+		# }
+		# while = {
+		#     limit = { check_variable = { which = amount_to_add value <= -0.01 } }
+		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 max = -0.01 }
+		#     change_variable = { which = amount_to_add value = 0.01 }
+		# }
+	}
+	# To cleanup
+	set_variable = {
+		which = amount_to_add
+		value = 0
+	}
 }

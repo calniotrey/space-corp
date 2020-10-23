@@ -1,7 +1,0 @@
-spawn builder
-make builder build (use destruction weapons?)
-implement licenses cost
-implement taxes
-custom diplomacy
-remove from federation ...
-Check when overlord becomes vassal

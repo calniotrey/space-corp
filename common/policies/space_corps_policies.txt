@@ -1,159 +1,262 @@
 # TODO add AI_weight from ethics and gov type
 # TODO reduce number of options?
-
 space_corps_taxes_policy = {
-    potential = {
-        has_country_flag = space_corps_initialized
-    }
-
-    option = {
-        name = "space_corps_no_taxes"
-
-        policy_flags = {
-            space_corps_no_taxes
-        }
-
-        AI_weight = {
-            factor = 0.1
-        }
-    }
-
-    option = {
-        name = "space_corps_low_taxes"
-
-        policy_flags = {
-            space_corps_low_taxes
-        }
-
-        AI_weight = {
-            factor = 0.5
-        }
-    }
-
-    option = {
-        name = "space_corps_medium_taxes"
-
-        policy_flags = {
-            space_corps_medium_taxes
-        }
-
-        AI_weight = {
-            factor = 1
-        }
-    }
-
-    option = {
-        name = "space_corps_high_taxes"
-
-        policy_flags = {
-            space_corps_high_taxes
-        }
-
-        AI_weight = {
-            factor = 0.5
-        }
-    }
-
-    option = {
-        name = "space_corps_extreme_taxes"
-
-        policy_flags = {
-            space_corps_extreme_taxes
-        }
-
-        AI_weight = {
-            factor = 0.1
-        }
-    }
+	potential = {
+		has_country_flag = space_corps_initialized
+	}
+	option = {
+		name = "space_corps_no_taxes"
+		policy_flags = {
+			space_corps_no_taxes
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_taxes
+					value = 0
+				}
+			}
+		}
+		AI_weight = {
+			factor = 0.1
+		}
+	}
+	option = {
+		name = "space_corps_low_taxes"
+		policy_flags = {
+			space_corps_low_taxes
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_taxes
+					value = 0.15
+				}
+			}
+		}
+		AI_weight = {
+			factor = 0.5
+		}
+	}
+	option = {
+		name = "space_corps_medium_taxes"
+		policy_flags = {
+			space_corps_medium_taxes
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_taxes
+					value = 0.3
+				}
+			}
+		}
+		AI_weight = {
+			factor = 1
+		}
+	}
+	option = {
+		name = "space_corps_high_taxes"
+		policy_flags = {
+			space_corps_high_taxes
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_taxes
+					value = 0.45
+				}
+			}
+		}
+		AI_weight = {
+			factor = 0.5
+		}
+	}
+	option = {
+		name = "space_corps_extreme_taxes"
+		policy_flags = {
+			space_corps_extreme_taxes
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_taxes
+					value = 0.6
+				}
+			}
+		}
+		AI_weight = {
+			factor = 0.1
+		}
+	}
 }
 
 space_corps_license_cost_policy = {
-    potential = {
-        has_country_flag = space_corps_initialized
-    }
+	potential = {
+		has_country_flag = space_corps_initialized
+	}
+	option = {
+		name = "space_corps_negative_license_cost"
+		policy_flags = {
+			space_corps_negative_license_cost
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_license_cost_multiplier
+					value = -0.1
+				}
+				compute_license_and_stations_cost = yes
+			}
+		}
+		AI_weight = {
+			factor = 0.1
+		}
+	}
+	option = {
+		name = "space_corps_no_license_cost"
+		policy_flags = {
+			space_corps_no_license_cost
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_license_cost_multiplier
+					value = 0
+				}
+				compute_license_and_stations_cost = yes
+			}
+		}
+		AI_weight = {
+			factor = 0.1
+		}
+	}
+	option = {
+		name = "space_corps_low_license_cost"
+		policy_flags = {
+			space_corps_low_license_cost
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_license_cost_multiplier
+					value = 0.1
+				}
+				compute_license_and_stations_cost = yes
+			}
+		}
+		AI_weight = {
+			factor = 0.5
+		}
+	}
+	option = {
+		name = "space_corps_medium_license_cost"
+		policy_flags = {
+			space_corps_medium_license_cost
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_license_cost_multiplier
+					value = 0.2
+				}
+				compute_license_and_stations_cost = yes
+			}
+		}
+		AI_weight = {
+			factor = 1
+		}
+	}
+	option = {
+		name = "space_corps_high_license_cost"
+		policy_flags = {
+			space_corps_high_license_cost
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_license_cost_multiplier
+					value = 0.3
+				}
+				compute_license_and_stations_cost = yes
+			}
+		}
+		AI_weight = {
+			factor = 0.5
+		}
+	}
+}
 
-    option = {
-        name = "space_corps_negative_license_cost"
-
-        policy_flags = {
-            space_corps_negative_license_cost
-        }
-
-        on_enabled = {
-            set_variable = { which = space_corps_license_cost_multiplier value = -0.10 }
-            compute_license_and_stations_cost = yes
-        }
-
-        AI_weight = {
-            factor = 0.1
-        }
-    }
-
-    option = {
-        name = "space_corps_no_license_cost"
-
-        policy_flags = {
-            space_corps_no_license_cost
-        }
-
-        on_enabled = {
-            set_variable = { which = space_corps_license_cost_multiplier value = 0 }
-            compute_license_and_stations_cost = yes
-        }
-
-        AI_weight = {
-            factor = 0.1
-        }
-    }
-
-    option = {
-        name = "space_corps_low_license_cost"
-
-        policy_flags = {
-            space_corps_low_license_cost
-        }
-
-        on_enabled = {
-            set_variable = { which = space_corps_license_cost_multiplier value = 0.10 }
-            compute_license_and_stations_cost = yes
-        }
-
-        AI_weight = {
-            factor = 0.5
-        }
-    }
-
-    option = {
-        name = "space_corps_medium_license_cost"
-
-        policy_flags = {
-            space_corps_medium_license_cost
-        }
-
-        on_enabled = {
-            set_variable = { which = space_corps_license_cost_multiplier value = 0.20 }
-            compute_license_and_stations_cost = yes
-        }
-
-        AI_weight = {
-            factor = 1
-        }
-    }
-
-    option = {
-        name = "space_corps_high_license_cost"
-
-        policy_flags = {
-            space_corps_high_license_cost
-        }
-
-        on_enabled = {
-            set_variable = { which = space_corps_license_cost_multiplier value = 0.30 }
-            compute_license_and_stations_cost = yes
-        }
-
-        AI_weight = {
-            factor = 0.5
-        }
-    }
+space_corps_survey_reward_policy = {
+	potential = {
+		has_country_flag = space_corps_initialized
+	}
+	option = {
+		name = "space_corps_survey_high_reward"
+		policy_flags = {
+			space_corps_survey_high_reward
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_survey_reward
+					value = 3
+				}
+			}
+		}
+		AI_weight = {
+			factor = 0.1
+		}
+	}
+	option = {
+		name = "space_corps_survey_medium_reward"
+		policy_flags = {
+			space_corps_survey_medium_reward
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_survey_reward
+					value = 2
+				}
+			}
+		}
+		AI_weight = {
+			factor = 0.5
+		}
+	}
+	option = {
+		name = "space_corps_survey_low_reward"
+		policy_flags = {
+			space_corps_survey_low_reward
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_survey_reward
+					value = 1
+				}
+			}
+		}
+		AI_weight = {
+			factor = 0.2
+		}
+	}
+	option = {
+		name = "space_corps_survey_no_reward"
+		policy_flags = {
+			space_corps_survey_no_reward
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_variable = {
+					which = space_corps_survey_reward
+					value = 0
+				}
+			}
+		}
+		AI_weight = {
+			factor = 0.1
+		}
+	}
 }

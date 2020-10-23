@@ -1,0 +1,7 @@
+types = {
+	type[on_action] = {
+		## type_key_filter = on_join_federation
+		subtype[on_join_federation] = {
+		}
+	}
+}

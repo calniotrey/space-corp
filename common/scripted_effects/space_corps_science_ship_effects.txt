@@ -1,0 +1,207 @@
+#this = corp
+create_science_ship_fleet = {
+	get_headquarters = yes
+	subtract_variable = {
+		which = space_corp_money
+		value = @science_ship_cost
+	}
+	create_fleet = {
+		name = random
+		effect = {
+			set_owner = prev
+			set_name = random
+			set_location = event_target:headquarters_planet
+			create_ship = {
+				name = random
+				random_existing_design = science
+			}
+			set_science_ship_orders = yes
+			assign_random_scientist = yes
+			set_fleet_stance = evasive
+		}
+	}
+}
+
+# this = science ship fleet
+# has headquarters loaded
+set_science_ship_orders = {
+	if = {
+		limit = {
+			exists = orbit
+			exists = event_target:science_ship_destination
+			orbit = {
+				is_same_value = event_target:science_ship_destination
+			}
+		}
+		orbit = {
+			surveyed = {
+				set_surveyed = yes
+				surveyor = prev.owner
+			}
+		}
+		if = {
+			limit = {
+				orbit = {
+					is_surveyed = {
+						who = prev.owner.overlord
+						status = no
+					}
+				}
+			}
+			# overlord didn't have data on this planet => give him data and make him pay
+			orbit = {
+				surveyed = {
+					set_surveyed = yes
+					surveyor = prev.owner.overlord
+				}
+			}
+			owner = {
+				get_survey_reward = yes
+			}
+		}
+		remove_fleet_flag = science_ship_has_destination
+		solar_system = {
+			remove_star_flag = being_surveyed_for_@prev.owner.overlord
+		}
+	}
+	if = {
+		# find new destination
+		limit = {
+			exists = solar_system			# if not, it means the fleet is currently ftl, so we will wait
+			exists = owner.overlord			# if overlord is disconnected, we wait for reconnection
+			OR = {
+				is_fleet_idle = yes
+				NOT = {
+					has_fleet_flag = science_ship_has_destination
+				}
+			}
+		}
+		if = {
+			limit = {
+				solar_system = {
+					NOT = {
+						has_star_flag = being_surveyed_for_@prev.owner.overlord
+					}
+					any_system_planet = {
+						is_surveyed = {
+							who = prevprev.owner
+							status = no
+						}
+					}
+				}
+			}
+			science_ship_find_local_survey_target = yes
+		}
+		else_if = {
+			limit = {
+				event_target:headquarters_planet = {
+					any_system = {
+						NOT = {
+							has_star_flag = being_surveyed_for_@prevprev.owner.overlord
+						}
+						distance = {
+							source = prev
+							max_jumps = @science_ship_close_system
+							type = hyperlane
+						}
+						any_system_planet = {
+							is_surveyed = {
+								who = prevprevprev.owner
+								status = no
+							}
+						}
+					}
+				}
+			}
+			science_ship_find_closest_survey_target = yes
+		}
+	}
+	if = {
+		limit = {
+			is_fleet_idle = yes
+			has_fleet_flag = science_ship_has_destination
+			exists = event_target:science_ship_destination
+		}
+		clear_fleet_actions = this
+		queue_actions = {
+			move_to = event_target:science_ship_destination
+			orbit_planet = event_target:science_ship_destination
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				should_destroy_science_ship = yes
+			}
+		}
+		delete_fleet = this
+	}
+	else = {
+		save_event_target_as = science_ship_fleet
+		owner = {
+			country_event = {
+				id = space_corps_science_ships.10
+				days = 30
+				random = 30
+			}
+		}
+	}
+}
+
+# this = fleet
+science_ship_find_local_survey_target = {
+	solar_system = {
+		random_system_planet = {
+			limit = {
+				is_surveyed = {
+					who = prevprev.owner
+					status = no
+				}
+			}
+			save_event_target_as = science_ship_destination
+		}
+		set_timed_star_flag = {
+			flag = being_surveyed_for_@prev.owner.overlord
+			days = 1800
+		}
+	}
+	set_fleet_flag = science_ship_has_destination
+}
+
+# this = fleet
+science_ship_find_closest_survey_target = {
+	event_target:headquarters_planet = {
+		closest_system = {
+			limit = {
+				NOT = {
+					has_star_flag = being_surveyed_for_@prevprev.owner.overlord
+				}
+				distance = {
+					source = prev
+					max_jumps = @science_ship_close_system
+					type = hyperlane
+				}
+				any_system_planet = {
+					is_surveyed = {
+						who = prevprevprev.owner
+						status = no
+					}
+				}
+			}
+			random_system_planet = {
+				limit = {
+					is_surveyed = {
+						who = prevprevprev.owner
+						status = no
+					}
+				}
+				save_event_target_as = science_ship_destination
+			}
+			set_timed_star_flag = {
+				flag = being_surveyed_for_@prevprev.owner.overlord
+				days = 1800
+			}
+		}
+	}
+	set_fleet_flag = science_ship_has_destination
+}
