@@ -40,29 +40,16 @@ country_event = {
 			}
 			randomize_space_corps_spawn_delay = yes
 			country_event = {
-				id = space_corps_pulse.15
+				id = space_corps_pulse.12
 			}
 		}
-	}
-}
-
-# called from space_corps_pulse.15
-# spawn a corp
-country_event = {
-	id = space_corps_pulse.12
-	is_triggered_only = yes
-	picture = GFX_evt_tradestation_interior
-	title = "space_corps_pulse.12.title"
-	desc = "space_corps_pulse.12.desc"
-	option = {
-		name = OK
 	}
 }
 
 # called from space_corps_pulse.11
 # spawn a corp
 country_event = {
-	id = space_corps_pulse.15
+	id = space_corps_pulse.12
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
@@ -81,11 +68,24 @@ country_event = {
 				# different images TODO
 				1 = {
 					country_event = {
-						id = space_corps_pulse.12
+						id = space_corps_pulse.18
 					}
 				}
 			}
 		}
+	}
+}
+
+# called from space_corps_pulse.12
+# spawn a corp
+country_event = {
+	id = space_corps_pulse.18
+	is_triggered_only = yes
+	picture = GFX_evt_tradestation_interior
+	title = "space_corps_pulse.18.title"
+	desc = "space_corps_pulse.18.desc"
+	option = {
+		name = OK
 	}
 }
 
