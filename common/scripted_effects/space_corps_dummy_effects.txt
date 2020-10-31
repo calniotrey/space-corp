@@ -24,6 +24,18 @@ space_corps_dummy_effect = {
 		which = space_corp_alloys_taxed_total
 		value = 0
 	}
+	set_variable = {
+		which = space_corp_stored_physics_points
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_stored_society_points
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_stored_engineering_points
+		value = 0
+	}
 	set_global_flag = space_corps_paused
 	set_country_flag = hide_space_corps_creation
 }

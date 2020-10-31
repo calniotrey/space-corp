@@ -10,18 +10,18 @@ country_event = {
 			minerals = @corp_default_resources_amount
 			alloys = @corp_default_resources_amount
 		}
-		add_variable_resource = {
-			RESOURCE = physics_research
-			AMOUNT = @corp_default_resources_amount
-		}
-		add_variable_resource = {
-			RESOURCE = society_research
-			AMOUNT = @corp_default_resources_amount
-		}
-		add_variable_resource = {
-			RESOURCE = engineering_research
-			AMOUNT = @corp_default_resources_amount
-		}
+		# add_variable_resource = {
+		# 	RESOURCE = physics_research
+		# 	AMOUNT = @corp_default_resources_amount
+		# }
+		# add_variable_resource = {
+		# 	RESOURCE = society_research
+		# 	AMOUNT = @corp_default_resources_amount
+		# }
+		# add_variable_resource = {
+		# 	RESOURCE = engineering_research
+		# 	AMOUNT = @corp_default_resources_amount
+		# }
 	}
 }
 
@@ -41,6 +41,313 @@ country_event = {
 		from = {
 			leave_alliance = {
 				override_requirements = yes
+			}
+		}
+	}
+}
+
+# This = Overlord
+# on_tech_increased
+country_event = {
+	id = space_corps_corps.30
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_country_type = default
+	}
+	immediate = {
+		if = {
+			limit = {
+				last_increased_tech = tech_space_science_1
+			}
+			give_tech_to_corps = {
+				TECH = tech_space_science_1
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_space_science_2
+			}
+			give_tech_to_corps = {
+				TECH = tech_space_science_2
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_space_science_3
+			}
+			give_tech_to_corps = {
+				TECH = tech_space_science_3
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_space_science_4
+			}
+			give_tech_to_corps = {
+				TECH = tech_space_science_4
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_space_science_5
+			}
+			give_tech_to_corps = {
+				TECH = tech_space_science_5
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_physics_1
+			}
+			give_tech_to_corps = {
+				TECH = tech_physics_1
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_physics_2
+			}
+			give_tech_to_corps = {
+				TECH = tech_physics_2
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_physics_3
+			}
+			give_tech_to_corps = {
+				TECH = tech_physics_3
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_power_plant_2
+			}
+			give_tech_to_corps = {
+				TECH = tech_power_plant_2
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_power_plant_3
+			}
+			give_tech_to_corps = {
+				TECH = tech_power_plant_3
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_power_plant_4
+			}
+			give_tech_to_corps = {
+				TECH = tech_power_plant_4
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_eco_simulation
+			}
+			give_tech_to_corps = {
+				TECH = tech_eco_simulation
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_gene_crops
+			}
+			give_tech_to_corps = {
+				TECH = tech_gene_crops
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_nano_vitality_crops
+			}
+			give_tech_to_corps = {
+				TECH = tech_nano_vitality_crops
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_nutrient_replication
+			}
+			give_tech_to_corps = {
+				TECH = tech_nutrient_replication
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_society_1
+			}
+			give_tech_to_corps = {
+				TECH = tech_society_1
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_society_2
+			}
+			give_tech_to_corps = {
+				TECH = tech_society_2
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_society_3
+			}
+			give_tech_to_corps = {
+				TECH = tech_society_3
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_colonization_2
+			}
+			give_tech_to_corps = {
+				TECH = tech_colonization_2
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_colonization_3
+			}
+			give_tech_to_corps = {
+				TECH = tech_colonization_3
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_colonization_4
+			}
+			give_tech_to_corps = {
+				TECH = tech_colonization_4
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_colonization_5
+			}
+			give_tech_to_corps = {
+				TECH = tech_colonization_5
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_space_mining_1
+			}
+			give_tech_to_corps = {
+				TECH = tech_space_mining_1
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_space_mining_2
+			}
+			give_tech_to_corps = {
+				TECH = tech_space_mining_2
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_space_mining_3
+			}
+			give_tech_to_corps = {
+				TECH = tech_space_mining_3
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_space_mining_4
+			}
+			give_tech_to_corps = {
+				TECH = tech_space_mining_4
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_space_mining_5
+			}
+			give_tech_to_corps = {
+				TECH = tech_space_mining_5
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_engineering_1
+			}
+			give_tech_to_corps = {
+				TECH = tech_engineering_1
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_engineering_2
+			}
+			give_tech_to_corps = {
+				TECH = tech_engineering_2
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_engineering_3
+			}
+			give_tech_to_corps = {
+				TECH = tech_engineering_3
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_mining_1
+			}
+			give_tech_to_corps = {
+				TECH = tech_mining_1
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_mining_2
+			}
+			give_tech_to_corps = {
+				TECH = tech_mining_2
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_mining_3
+			}
+			give_tech_to_corps = {
+				TECH = tech_mining_3
+			}
+		}
+	}
+}
+
+# This = Corp
+# on_tech_increased
+country_event = {
+	id = space_corps_corps.31
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_country_type = space_corp
+	}
+	immediate = {
+		if = {
+			limit = {
+				exists = overlord
+			}
+			overlord = {
+				copy_techs_from = {
+					target = prev
+					except = {
+						# not dangerous techs
+						tech_synthetic_workers
+						tech_combat_computers_3
+						tech_jump_drive_1
+						tech_psi_jump_drive_1
+					}
+				}
 			}
 		}
 	}

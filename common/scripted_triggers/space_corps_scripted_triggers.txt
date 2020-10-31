@@ -33,7 +33,7 @@ space_corp_searches_mining_stations = {
 
 # this = corp
 space_corp_searches_research_stations = {
-	always = no
+	always = yes
 }
 
 # this = leader

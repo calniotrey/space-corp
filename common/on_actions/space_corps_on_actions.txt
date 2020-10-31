@@ -31,3 +31,12 @@ on_join_federation = {
 		space_corps_corps.20
 	}
 }
+
+# A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
+# This = Country
+on_tech_increased = {
+	events = {
+		space_corps_corps.30		# give overlord techs to corps
+		# space_corps_corps.31
+	}
+}

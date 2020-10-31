@@ -40,6 +40,94 @@ get_headquarters = {
 	}
 }
 
+# this = overlord
+give_tech_overlord_and_corps = {
+	give_technology = {
+		tech = $TECH$
+	}
+	every_subject = {
+		limit = {
+			is_country_type = space_corp
+		}
+		give_technology = {
+			tech = $TECH$
+		}
+	}
+}
+
+# this = overlord
+give_tech_to_corps = {
+	every_subject = {
+		limit = {
+			is_country_type = space_corp
+		}
+		give_technology = {
+			tech = $TECH$
+		}
+	}
+}
+
+# this = corp
+set_tech_costs = {
+	get_galaxy_setup_value = {
+		which = tech_base_cost
+		setting = tech_costs_scale
+	}
+	multiply_variable = {
+		which = tech_base_cost
+		value = @tech_base_cost
+	}
+	if = {
+		limit = {
+			has_ethic = ethic_materialist
+		}
+		multiply_variable = {
+			which = tech_base_cost
+			value = 0.9
+		}
+	}
+	set_variable = {
+		which = tech_cost_t1
+		value = 1
+	}
+	multiply_variable = {
+		which = tech_cost_t1
+		value = tech_base_cost
+	}
+	set_variable = {
+		which = tech_cost_t2
+		value = 2
+	}
+	multiply_variable = {
+		which = tech_cost_t2
+		value = tech_base_cost
+	}
+	set_variable = {
+		which = tech_cost_t3
+		value = 3
+	}
+	multiply_variable = {
+		which = tech_cost_t3
+		value = tech_base_cost
+	}
+	set_variable = {
+		which = tech_cost_t4
+		value = 4
+	}
+	multiply_variable = {
+		which = tech_cost_t4
+		value = tech_base_cost
+	}
+	set_variable = {
+		which = tech_cost_t5
+		value = 5
+	}
+	multiply_variable = {
+		which = tech_cost_t5
+		value = tech_base_cost
+	}
+}
+
 # this = corp
 get_survey_reward = {
 	if = {
@@ -131,9 +219,6 @@ compute_and_tax_space_corp_income = {
 	compute_and_tax_space_corp_income_from_resource = {
 		RESOURCE = alloys
 	}
-	# compute_and_tax_space_corp_income_from_resource = { RESOURCE = stored_physics_points }
-	# compute_and_tax_space_corp_income_from_resource = { RESOURCE = stored_society_points }
-	# compute_and_tax_space_corp_income_from_resource = { RESOURCE = stored_engineering_points }
 	# now transform that as money
 	change_variable = {
 		which = space_corp_money
@@ -460,6 +545,99 @@ compute_and_tax_space_corp_income_from_resource = {
 					value = space_corp_taxes
 				}
 			}
+		}
+	}
+}
+
+# this = corp
+corps_load_research_points = {
+	corps_load_research_points_resource = {
+		RESOURCE = physics
+	}
+	corps_load_research_points_resource = {
+		RESOURCE = society
+	}
+	corps_load_research_points_resource = {
+		RESOURCE = engineering
+	}
+}
+
+# this = corp
+# RESOURCE = one of the 3 research fields
+corps_load_research_points_resource = {
+	while = {
+		limit = {
+			stored_$RESOURCE$_points >= 10000
+		}
+		add_monthly_resource_mult = {
+			resource = $RESOURCE$_research
+			value = 0
+			min = -10000
+			max = -10000
+		}
+		change_variable = {
+			which = space_corp_stored_$RESOURCE$_points
+			value = 10000
+		}
+	}
+	while = {
+		limit = {
+			stored_$RESOURCE$_points >= 1000
+		}
+		add_monthly_resource_mult = {
+			resource = $RESOURCE$_research
+			value = 0
+			min = -1000
+			max = -1000
+		}
+		change_variable = {
+			which = space_corp_stored_$RESOURCE$_points
+			value = 1000
+		}
+	}
+	while = {
+		limit = {
+			stored_$RESOURCE$_points >= 100
+		}
+		add_monthly_resource_mult = {
+			resource = $RESOURCE$_research
+			value = 0
+			min = -100
+			max = -100
+		}
+		change_variable = {
+			which = space_corp_stored_$RESOURCE$_points
+			value = 100
+		}
+	}
+	while = {
+		limit = {
+			stored_$RESOURCE$_points >= 10
+		}
+		add_monthly_resource_mult = {
+			resource = $RESOURCE$_research
+			value = 0
+			min = -10
+			max = -10
+		}
+		change_variable = {
+			which = space_corp_stored_$RESOURCE$_points
+			value = 10
+		}
+	}
+	while = {
+		limit = {
+			stored_$RESOURCE$_points >= 1
+		}
+		add_monthly_resource_mult = {
+			resource = $RESOURCE$_research
+			value = 0
+			min = -1
+			max = -1
+		}
+		change_variable = {
+			which = space_corp_stored_$RESOURCE$_points
+			value = 1
 		}
 	}
 }
