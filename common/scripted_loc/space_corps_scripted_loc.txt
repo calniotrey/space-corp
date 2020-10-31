@@ -1,13 +1,41 @@
 defined_text = {
 	name = GetHeadquartersPlanet
 	text = {
+		trigger = {
+			exists = event_target:headquarters_planet
+		}
 		localization_key = "[headquarters_planet.GetName]"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				exists = event_target:headquarters_planet
+			}
+		}
+		localization_key = "Unknown planet"
 	}
 }
 
 defined_text = {
 	name = GetMoney
 	text = {
+		trigger = {
+			check_variable = {
+				which = space_corp_money
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = space_corp_money
+					value = 0
+				}
+			}
+		}
 		localization_key = "[This.space_corp_money]"
 	}
 }
@@ -15,6 +43,23 @@ defined_text = {
 defined_text = {
 	name = GetTotalPayedForLicenses
 	text = {
+		trigger = {
+			check_variable = {
+				which = total_payed_for_licenses
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = total_payed_for_licenses
+					value = 0
+				}
+			}
+		}
 		localization_key = "[This.total_payed_for_licenses]"
 	}
 }
@@ -22,6 +67,23 @@ defined_text = {
 defined_text = {
 	name = GetTotalTaxed
 	text = {
+		trigger = {
+			check_variable = {
+				which = space_corp_total_taxed
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = space_corp_total_taxed
+					value = 0
+				}
+			}
+		}
 		localization_key = "[This.space_corp_total_taxed]"
 	}
 }
@@ -29,6 +91,23 @@ defined_text = {
 defined_text = {
 	name = GetMoneyVariation
 	text = {
+		trigger = {
+			check_variable = {
+				which = space_corp_money_variation
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = space_corp_money_variation
+					value = 0
+				}
+			}
+		}
 		localization_key = "[This.space_corp_money_variation]"
 	}
 }
