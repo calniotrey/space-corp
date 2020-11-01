@@ -391,10 +391,10 @@ utility_component_template = {
 	icon_frame = 1
 	ship_behavior = "space_corp_convoy"
 	hidden = yes
-	class_restriction = {
+	size_restriction = {
 		corp_civilian_freighter
 		corp_civilian_tanker
-		corp_passenger_line
+		corp_passenger_liner
 	}
 	component_set = "combat_computers"
 	ai_weight = {
