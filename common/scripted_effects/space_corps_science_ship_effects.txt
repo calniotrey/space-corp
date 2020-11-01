@@ -1,6 +1,5 @@
 #this = corp
 create_science_ship_fleet = {
-	get_headquarters = yes
 	subtract_variable = {
 		which = space_corp_money
 		value = @science_ship_cost

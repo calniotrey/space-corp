@@ -132,6 +132,7 @@ country_event = {
 		exists = overlord
 	}
 	immediate = {
+		get_headquarters = yes
 		# build ships
 		if = {
 			limit = {

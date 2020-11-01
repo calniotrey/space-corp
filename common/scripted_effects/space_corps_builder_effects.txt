@@ -1,6 +1,5 @@
 #this = corp
 create_builder_fleet = {
-	get_headquarters = yes
 	subtract_variable = {
 		which = space_corp_money
 		value = @builder_cost

@@ -35,7 +35,7 @@ get_headquarters = {
 			limit = {
 				has_planet_flag = space_corp_headquarters_from_@prevprev
 			}
-			save_event_target_as = headquarters_planet
+			save_event_target_as = $TARGET|headquarters_planet$
 		}
 	}
 }
