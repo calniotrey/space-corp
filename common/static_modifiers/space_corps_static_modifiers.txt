@@ -1,3 +1,4 @@
 space_corp_country_modifier = {
 	country_resource_max_add = 2000000
+	all_technology_research_speed = 0.25	# to counteract the -25% malus from no leader
 }
