@@ -1,0 +1,92 @@
+#this = corp
+create_convoy_fleet = {
+	subtract_variable = {
+		which = space_corp_money
+		value = @convoy_cost
+	}
+	create_fleet = {
+		name = random
+		effect = {
+			set_owner = prev
+			set_location = event_target:headquarters_planet
+			create_ship = {
+				name = random
+				random_existing_design = corp_civilian_freighter
+			}
+			create_ship = {
+				name = random
+				random_existing_design = corp_civilian_tanker
+			}
+			create_ship = {
+				name = random
+				random_existing_design = corp_passenger_liner
+			}
+			# TODO make this spawn different ships
+			set_timed_fleet_flag = {
+				flag = should_not_destroy_convoy
+				days = 1800				# TODO increase?
+			}
+			fleet_event = {
+				id = space_corps_convoy.20				# set name
+			}
+			set_convoy_orders = yes
+		}
+	}
+}
+
+# this = convoy fleet
+# has headquarters loaded
+set_convoy_orders = {
+	if = {
+		limit = {
+			exists = orbit
+			exists = event_target:convoy_destination
+			orbit = {
+				is_same_value = event_target:convoy_destination
+			}
+		}
+		land_convoy = yes		# will destroy fleet
+	}
+	if = {
+		limit = {
+			is_fleet_idle = yes
+			exists = event_target:convoy_destination
+		}
+		clear_fleet_actions = this
+		queue_actions = {
+			move_to = event_target:convoy_destination
+			orbit_planet = event_target:convoy_destination
+		}
+	}
+	if = {
+		limit = {
+			should_destroy_convoy = yes
+		}
+		delete_fleet = this
+	}
+	else = {
+		save_event_target_as = convoy_fleet
+		owner = {
+			country_event = {
+				id = space_corps_convoy.10
+				days = 30
+				random = 30
+			}
+		}
+	}
+}
+
+# this = fleet
+land_convoy = {
+	owner = {
+		change_variable = {
+			which = space_corp_money
+			value = @convoy_cost
+		}
+		change_variable = {
+			which = space_corp_money
+			value = @convoy_reward
+		}
+	}
+	delete_fleet = this
+}

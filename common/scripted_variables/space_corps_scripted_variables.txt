@@ -8,3 +8,7 @@
 @tech_base_cost = 1000
 @tech_delay_base = 180
 @tech_delay_random = 180
+# convoys (TODO)
+@convoy_min = 1000
+@convoy_cost = 500
+@convoy_reward = 100

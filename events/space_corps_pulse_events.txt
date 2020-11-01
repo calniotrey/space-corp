@@ -151,6 +151,12 @@ country_event = {
 		get_random_physics_tech_if_possible = yes
 		get_random_society_tech_if_possible = yes
 		get_random_engineering_tech_if_possible = yes
+		if = {
+			limit = {
+				should_start_convoy = yes
+			}
+			launch_convoy_if_possible = yes
+		}
 	}
 }
 

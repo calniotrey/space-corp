@@ -198,6 +198,29 @@ get_survey_reward = {
 }
 
 # this = corp
+# HQ set
+launch_convoy_if_possible = {
+	random_country = {
+		limit = {
+			is_country_type = space_corp
+			is_suitable_convoy_partner = yes
+		}
+		get_headquarters = {
+			TARGET = convoy_destination
+		}
+		prev = {
+			create_convoy_fleet = yes
+			set_timed_country_flag = {
+				flag = corp_sent_convoy_recently
+				days = 30
+			}
+		}
+		event_target:headquarters_planet = {
+		}
+	}
+}
+
+# this = corp
 compute_passive_income = {
 	# TODO balance passive income
 	event_target:headquarters_planet = {

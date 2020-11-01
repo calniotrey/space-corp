@@ -94,6 +94,72 @@ should_destroy_builder = {
 	}
 }
 
+# this = corp
+should_start_convoy = {
+	NOT = {
+		has_country_flag = corp_sent_convoy_recently
+	}
+	check_variable = {
+		which = space_corp_money
+		value >= @convoy_min
+	}
+	any_country = {
+		is_country_type = space_corp
+		is_suitable_convoy_partner = yes
+	}
+}
+
+# this = fleet
+should_destroy_convoy = {
+	NOT = {
+		has_fleet_flag = should_not_destroy_convoy
+	}
+}
+
+# this = target corp
+# prev = origin corp
+is_suitable_convoy_partner = {
+	NOT = {
+		is_same_value = prev
+	}
+	has_communications = prev
+	exists = overlord
+	NOR = {
+		is_hostile = prev
+		overlord = {
+			is_hostile = prevprev.overlord
+		}
+		overlord = {
+			is_at_war_with = prevprev.overlord
+		}
+		AND = {
+			has_ethic = ethic_spiritualist
+			prev.overlord = {
+				is_robot_empire = yes
+			}
+		}
+		AND = {
+			overlord = {
+				is_robot_empire = yes
+			}
+			prev = {
+				has_ethic = ethic_spiritualist
+			}
+		}
+		AND = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				prev = {
+					has_ethic = ethic_xenophobe
+				}
+			}
+			NOT = {
+				is_same_species = prev
+			}
+		}
+	}
+}
+
 # this = planet
 is_planet_eligible_for_mining_station = {
 	space_corp_has_mining_deposits = yes
