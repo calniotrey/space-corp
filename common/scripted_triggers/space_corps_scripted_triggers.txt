@@ -49,7 +49,7 @@ is_scientist_idle = {
 # this = corp
 should_build_science_ship = {
 	check_variable = {
-		which = space_corp_money
+		which = space_corp_budget_science_ship
 		value >= @science_ship_cost
 	}
 	count_owned_ship = {
@@ -73,7 +73,7 @@ should_destroy_science_ship = {
 # this = corp
 should_build_builder = {
 	check_variable = {
-		which = space_corp_money
+		which = space_corp_budget_builder
 		value >= @builder_cost
 	}
 	count_owned_ship = {
@@ -100,7 +100,7 @@ should_start_convoy = {
 		has_country_flag = corp_sent_convoy_recently
 	}
 	check_variable = {
-		which = space_corp_money
+		which = space_corp_budget_convoy
 		value >= @convoy_min
 	}
 	any_country = {

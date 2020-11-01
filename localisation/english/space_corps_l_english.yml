@@ -45,6 +45,8 @@
  space_corps_diplomacy.10.desc: "Welcome! What can we do for you?"
  space_corps_diplomacy.10.a: "More infos"
  space_corps_diplomacy.10.a.response: "We are located on [This.GetHeadquartersPlanet]. Our balance is [From.GetMoney] credits. We payed a total of [From.GetTotalPayedForLicenses] credits for licenses. We were taxed a total of [From.GetTotalTaxed] credits. Our last month net income was [From.GetMoneyVariation] credits."
+ space_corps_diplomacy.10.b: "Show me your budget"
+ space_corps_diplomacy.10.b.response: "We have a total of [From.GetMoney] credits. Our budget is currently:\n[From.GetBudgetMilitary] credits for military purposes.\n[From.GetBudgetConvoy] credits for convoys.\n[From.GetBudgetSupply] credits for supply lines.\n[From.GetBudgetBuilder] credits for building construction ships.\n[From.GetBudgetScienceShip] credits for building science ships.\n[From.GetBudgetMiningStation] credits for building mining stations.\n[From.GetBudgetResearchStation] credits for building research stations.\n[From.GetBudgetColonization] credits for colonization purposes."
  space_corps_diplomacy.10.z: "Quit"
  ##### Policies #####
  # taxes

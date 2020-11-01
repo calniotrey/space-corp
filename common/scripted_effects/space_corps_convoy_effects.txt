@@ -1,8 +1,8 @@
 #this = corp
 create_convoy_fleet = {
-	subtract_variable = {
-		which = space_corp_money
-		value = @convoy_cost
+	subtract_corp_money = {
+		TYPE = convoy
+		AMOUNT = @convoy_cost
 	}
 	create_fleet = {
 		name = random
@@ -79,13 +79,12 @@ set_convoy_orders = {
 # this = fleet
 land_convoy = {
 	owner = {
-		change_variable = {
-			which = space_corp_money
-			value = @convoy_cost
+		change_corp_money = {
+			TYPE = convoy
+			AMOUNT = @convoy_cost
 		}
-		change_variable = {
-			which = space_corp_money
-			value = @convoy_reward
+		add_resource = {
+			energy = @convoy_reward
 		}
 	}
 	delete_fleet = this

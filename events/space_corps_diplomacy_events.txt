@@ -30,6 +30,12 @@ country_event = {
 		is_dialog_only = yes
 	}
 	option = {
+		# Budget
+		name = space_corps_diplomacy.10.b
+		response_text = space_corps_diplomacy.10.b.response
+		is_dialog_only = yes
+	}
+	option = {
 		# Quit
 		name = space_corps_diplomacy.10.z
 	}

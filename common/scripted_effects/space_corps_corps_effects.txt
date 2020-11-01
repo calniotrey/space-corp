@@ -221,6 +221,163 @@ launch_convoy_if_possible = {
 }
 
 # this = corp
+set_budget_multiplier = {
+	set_variable = {
+		which = space_corp_budget_multiplier_military
+		value = 0.25
+	}
+	set_variable = {
+		which = space_corp_budget_multiplier_convoy
+		value = 0.2
+	}
+	set_variable = {
+		which = space_corp_budget_multiplier_supply
+		value = 0.1
+	}
+	set_variable = {
+		which = space_corp_budget_multiplier_builder
+		value = 0.05
+	}
+	set_variable = {
+		which = space_corp_budget_multiplier_science_ship
+		value = 0.05
+	}
+	set_variable = {
+		which = space_corp_budget_multiplier_mining_station
+		value = 0.15
+	}
+	set_variable = {
+		which = space_corp_budget_multiplier_research_station
+		value = 0.15
+	}
+	set_variable = {
+		which = space_corp_budget_multiplier_colonization
+		value = 0.05
+	}
+	# TODO add ethic effect and normalize
+}
+
+# this = corp
+sum_budget = {
+	set_variable = {
+		which = space_corp_budget_total
+		value = 0
+	}
+	change_variable = {
+		which = space_corp_budget_total
+		value = space_corp_budget_military
+	}
+	change_variable = {
+		which = space_corp_budget_total
+		value = space_corp_budget_convoy
+	}
+	change_variable = {
+		which = space_corp_budget_total
+		value = space_corp_budget_supply
+	}
+	change_variable = {
+		which = space_corp_budget_total
+		value = space_corp_budget_builder
+	}
+	change_variable = {
+		which = space_corp_budget_total
+		value = space_corp_budget_science_ship
+	}
+	change_variable = {
+		which = space_corp_budget_total
+		value = space_corp_budget_mining_station
+	}
+	change_variable = {
+		which = space_corp_budget_total
+		value = space_corp_budget_research_station
+	}
+	change_variable = {
+		which = space_corp_budget_total
+		value = space_corp_budget_colonization
+	}
+}
+
+# this = corp
+compute_budget_change = {
+	sum_budget = yes
+	subtract_variable = {
+		which = space_corp_budget_total
+		value = space_corp_money
+	}
+	# space_corp_budget_total remaining is what we need to split between the budgets
+	set_budget_multiplier = yes	# TODO remove
+	compute_budget_change_aux = {
+		TYPE = military
+	}
+	compute_budget_change_aux = {
+		TYPE = convoy
+	}
+	compute_budget_change_aux = {
+		TYPE = supply
+	}
+	compute_budget_change_aux = {
+		TYPE = builder
+	}
+	compute_budget_change_aux = {
+		TYPE = science_ship
+	}
+	compute_budget_change_aux = {
+		TYPE = mining_station
+	}
+	compute_budget_change_aux = {
+		TYPE = research_station
+	}
+	compute_budget_change_aux = {
+		TYPE = colonization
+	}
+}
+
+# this = corp
+# TYPE = which field
+compute_budget_change_aux = {
+	set_variable = {
+		which = space_corp_budget_increase_$TYPE$
+		value = space_corp_budget_multiplier_$TYPE$
+	}
+	multiply_variable = {
+		which = space_corp_budget_increase_$TYPE$
+		value = space_corp_budget_total
+	}
+	change_variable = {
+		which = space_corp_budget_$TYPE$
+		value = space_corp_budget_increase_$TYPE$
+	}
+}
+
+# this = corp
+# TYPE = field of expense/income
+# AMOUNT = amount added
+change_corp_money = {
+	change_variable = {
+		which = space_corp_money
+		value = $AMOUNT$
+	}
+	change_variable = {
+		which = space_corp_budget_$TYPE$
+		value = $AMOUNT$
+	}
+}
+
+# this = corp
+# TYPE = field of expense/income
+# AMOUNT = amount added
+subtract_corp_money = {
+	subtract_variable = {
+		which = space_corp_money
+		value = $AMOUNT$
+	}
+	subtract_variable = {
+		which = space_corp_budget_$TYPE$
+		value = $AMOUNT$
+	}
+}
+
+# this = corp
 compute_passive_income = {
 	# TODO balance passive income
 	event_target:headquarters_planet = {
@@ -519,6 +676,8 @@ compute_and_tax_space_corp_income = {
 		which = space_corp_money_variation
 		value = space_corp_money
 	}
+	# compute budget for next month
+	compute_budget_change = yes
 	# save money of last month
 	set_variable = {
 		which = space_corp_money_last_month

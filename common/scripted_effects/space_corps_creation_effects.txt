@@ -1,4 +1,3 @@
-# TODO switch on and off "Story7" flag to remove first contact?
 # This = overlord
 create_space_corp = {
 	random_owned_pop = {
@@ -97,7 +96,23 @@ create_space_corp = {
 		}
 		set_variable = {
 			which = space_corp_money
+			value = 10000			# TODO put at 1k
+		}
+		set_variable = {
+			which = space_corp_budget_builder
 			value = 1000
+		}
+		set_variable = {
+			which = space_corp_budget_science_ship
+			value = 2000
+		}
+		set_variable = {
+			which = space_corp_budget_mining_station
+			value = 3000
+		}
+		set_variable = {
+			which = space_corp_budget_research_station
+			value = 2000
 		}
 		set_variable = {
 			which = space_corp_money_last_month

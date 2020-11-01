@@ -36,6 +36,70 @@ space_corps_dummy_effect = {
 		which = space_corp_stored_engineering_points
 		value = 0
 	}
+	set_variable = {
+		which = space_corp_budget_military
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_convoy
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_supply
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_builder
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_science_ship
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_mining_station
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_research_station
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_colonization
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_increase_military
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_increase_convoy
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_increase_supply
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_increase_builder
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_increase_science_ship
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_increase_mining_station
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_increase_research_station
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_budget_increase_colonization
+		value = 0
+	}
 	set_global_flag = space_corps_paused
 	set_country_flag = hide_space_corps_creation
 }

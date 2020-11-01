@@ -111,3 +111,196 @@ defined_text = {
 		localization_key = "[This.space_corp_money_variation]"
 	}
 }
+
+### BUDGET
+defined_text = {
+	name = GetBudgetMilitary
+	text = {
+		trigger = {
+			check_variable = {
+				which = space_corp_budget_military
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = space_corp_budget_military
+					value = 0
+				}
+			}
+		}
+		localization_key = "[This.space_corp_budget_military]"
+	}
+}
+
+defined_text = {
+	name = GetBudgetConvoy
+	text = {
+		trigger = {
+			check_variable = {
+				which = space_corp_budget_convoy
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = space_corp_budget_convoy
+					value = 0
+				}
+			}
+		}
+		localization_key = "[This.space_corp_budget_convoy]"
+	}
+}
+
+defined_text = {
+	name = GetBudgetSupply
+	text = {
+		trigger = {
+			check_variable = {
+				which = space_corp_budget_supply
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = space_corp_budget_supply
+					value = 0
+				}
+			}
+		}
+		localization_key = "[This.space_corp_budget_supply]"
+	}
+}
+
+defined_text = {
+	name = GetBudgetBuilder
+	text = {
+		trigger = {
+			check_variable = {
+				which = space_corp_budget_builder
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = space_corp_budget_builder
+					value = 0
+				}
+			}
+		}
+		localization_key = "[This.space_corp_budget_builder]"
+	}
+}
+
+defined_text = {
+	name = GetBudgetScienceShip
+	text = {
+		trigger = {
+			check_variable = {
+				which = space_corp_budget_science_ship
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = space_corp_budget_science_ship
+					value = 0
+				}
+			}
+		}
+		localization_key = "[This.space_corp_budget_science_ship]"
+	}
+}
+
+defined_text = {
+	name = GetBudgetMiningStation
+	text = {
+		trigger = {
+			check_variable = {
+				which = space_corp_budget_mining_station
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = space_corp_budget_mining_station
+					value = 0
+				}
+			}
+		}
+		localization_key = "[This.space_corp_budget_mining_station]"
+	}
+}
+
+defined_text = {
+	name = GetBudgetResearchStation
+	text = {
+		trigger = {
+			check_variable = {
+				which = space_corp_budget_research_station
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = space_corp_budget_research_station
+					value = 0
+				}
+			}
+		}
+		localization_key = "[This.space_corp_budget_research_station]"
+	}
+}
+
+defined_text = {
+	name = GetBudgetColonization
+	text = {
+		trigger = {
+			check_variable = {
+				which = space_corp_budget_colonization
+				value = 0
+			}
+		}
+		localization_key = "0"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = space_corp_budget_colonization
+					value = 0
+				}
+			}
+		}
+		localization_key = "[This.space_corp_budget_colonization]"
+	}
+}
