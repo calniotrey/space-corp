@@ -146,18 +146,38 @@ country_event = {
 			}
 			create_builder_fleet = yes
 		}
-		# check for tech
-		corps_load_research_points = yes
-		set_tech_costs = yes
-		get_random_physics_tech_if_possible = yes
-		get_random_society_tech_if_possible = yes
-		get_random_engineering_tech_if_possible = yes
 		if = {
 			limit = {
 				should_start_convoy = yes
 			}
 			launch_convoy_if_possible = yes
 		}
+		if = {
+			limit = {
+				should_reinforce_a_fleet = yes
+			}
+			random_owned_fleet = {
+				limit = {
+					is_ship_class = shipclass_military
+					fleet_power < 1000
+				}
+				set_fleet_flag = fleet_needs_new_ships
+			}
+		}
+		else_if = {
+			limit = {
+				should_create_military_fleet = yes
+			}
+			event_target:headquarters_planet = {
+				create_corp_military_fleet = yes
+			}
+		}
+		# check for tech
+		corps_load_research_points = yes
+		set_tech_costs = yes
+		get_random_physics_tech_if_possible = yes
+		get_random_society_tech_if_possible = yes
+		get_random_engineering_tech_if_possible = yes
 	}
 }
 

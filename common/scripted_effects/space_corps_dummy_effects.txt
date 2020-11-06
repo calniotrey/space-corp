@@ -37,6 +37,10 @@ space_corps_dummy_effect = {
 		value = 0
 	}
 	set_variable = {
+		which = fleet_action_id
+		value = 0
+	}
+	set_variable = {
 		which = space_corp_budget_military
 		value = 0
 	}

@@ -1,0 +1,72 @@
+# this = planet
+has_naval_shipyard = {
+	is_colony = yes
+	num_pops >= 20
+}
+
+# this = corp
+should_create_military_fleet = {
+	NOT = {
+		any_owned_fleet = {
+			is_ship_class = shipclass_military
+			check_variable = {
+				which = fleet_action_id
+				value = 9
+			}
+		}
+	}
+}
+
+# this = corp
+should_reinforce_a_fleet = {
+	any_owned_fleet = {
+		is_ship_class = shipclass_military
+		fleet_power < 1000
+	}
+	NOT = {
+		any_owned_fleet = {
+			is_ship_class = shipclass_military
+			check_variable = {
+				which = fleet_action_id
+				value = 9
+			}
+		}
+	}
+}
+
+# this = fleet
+has_local_hostile = {
+	solar_system = {
+		any_fleet_in_system = {
+			owner = {
+				is_hostile = prevprevprev.owner
+			}
+		}
+	}
+}
+
+# this = fleet
+has_close_hostile = {
+	any_system = {
+		has_access_fleet = prev.owner
+		distance = {
+			source = event_target:headquarters_planet
+			max_jumps = @patrol_close_system
+			type = hyperlane
+		}
+		any_fleet_in_system = {
+			owner = {
+				is_hostile = prevprevprev.owner
+			}
+		}
+	}
+}
+
+# this = fleet
+has_allies_needing_escort = {
+	owner = {
+		any_owned_fleet = {
+			has_fleet_flag = fleet_needs_escort
+		}
+	}
+}

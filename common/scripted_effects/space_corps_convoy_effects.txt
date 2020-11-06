@@ -9,6 +9,7 @@ create_convoy_fleet = {
 		effect = {
 			set_owner = prev
 			set_location = event_target:headquarters_planet
+			set_fleet_stance = passive
 			create_ship = {
 				name = random
 				random_existing_design = corp_civilian_freighter
@@ -26,6 +27,7 @@ create_convoy_fleet = {
 				flag = should_not_destroy_convoy
 				days = 1800				# TODO increase?
 			}
+			set_fleet_flag = fleet_needs_escort
 			fleet_event = {
 				id = space_corps_convoy.20				# set name
 			}

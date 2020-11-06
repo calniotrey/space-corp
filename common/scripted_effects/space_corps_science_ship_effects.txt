@@ -10,6 +10,7 @@ create_science_ship_fleet = {
 			set_owner = prev
 			set_name = random
 			set_location = event_target:headquarters_planet
+			set_fleet_stance = passive
 			create_ship = {
 				name = random
 				random_existing_design = science
@@ -95,6 +96,7 @@ set_science_ship_orders = {
 			limit = {
 				event_target:headquarters_planet = {
 					any_system = {
+						has_access_fleet = prevprev.owner
 						NOT = {
 							has_star_flag = being_surveyed_for_@prevprev.owner.overlord
 						}
@@ -172,6 +174,7 @@ science_ship_find_closest_survey_target = {
 	event_target:headquarters_planet = {
 		closest_system = {
 			limit = {
+				has_access_fleet = prevprev.owner
 				NOT = {
 					has_star_flag = being_surveyed_for_@prevprev.owner.overlord
 				}

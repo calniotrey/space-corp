@@ -8,6 +8,10 @@
 @tech_base_cost = 1000
 @tech_delay_base = 180
 @tech_delay_random = 180
+# military
+@corps_corvette_cost = 200
+@corps_destroyer_cost = 400
+@patrol_close_system = 7
 # convoys (TODO)
 @convoy_min = 1000
 @convoy_cost = 500
