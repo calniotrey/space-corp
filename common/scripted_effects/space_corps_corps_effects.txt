@@ -304,6 +304,10 @@ compute_budget_change = {
 		which = space_corp_budget_total
 		value = space_corp_money
 	}
+	multiply_variable = {
+		which = space_corp_budget_total
+		value = -1
+	}
 	# space_corp_budget_total remaining is what we need to split between the budgets
 	set_budget_multiplier = yes	# TODO remove
 	compute_budget_change_aux = {
@@ -383,7 +387,24 @@ compute_passive_income = {
 	event_target:headquarters_planet = {
 		every_owned_pop = {
 			limit = {
-				is_enslaved = no
+				NOR = {
+					has_citizenship_type = {
+						country = owner
+						type = citizenship_slavery
+					}
+					has_citizenship_type = {
+						country = owner
+						type = citizenship_purge_machine
+					}
+					has_citizenship_type = {
+						country = owner
+						type = citizenship_purge
+					}
+					has_citizenship_type = {
+						country = owner
+						type = citizenship_assimilation
+					}
+				}
 			}
 			prevprev = {
 				add_resource = {
@@ -399,9 +420,12 @@ compute_passive_income = {
 		event_target:headquarters_planet = {
 			every_owned_pop = {
 				limit = {
-					is_enslaved = no
 					is_organic_species = yes
 					NOR = {
+						has_citizenship_type = {
+							country = owner
+							type = citizenship_slavery
+						}
 						has_citizenship_type = {
 							country = owner
 							type = citizenship_purge_machine
@@ -409,6 +433,10 @@ compute_passive_income = {
 						has_citizenship_type = {
 							country = owner
 							type = citizenship_purge
+						}
+						has_citizenship_type = {
+							country = owner
+							type = citizenship_assimilation
 						}
 					}
 					NOT = {
@@ -430,7 +458,24 @@ compute_passive_income = {
 		event_target:headquarters_planet = {
 			every_owned_pop = {
 				limit = {
-					is_enslaved = no
+					NOR = {
+						has_citizenship_type = {
+							country = owner
+							type = citizenship_slavery
+						}
+						has_citizenship_type = {
+							country = owner
+							type = citizenship_purge_machine
+						}
+						has_citizenship_type = {
+							country = owner
+							type = citizenship_purge
+						}
+						has_citizenship_type = {
+							country = owner
+							type = citizenship_assimilation
+						}
+					}
 				}
 				if = {
 					limit = {
@@ -459,8 +504,11 @@ compute_passive_income = {
 		event_target:headquarters_planet = {
 			every_owned_pop = {
 				limit = {
-					is_enslaved = no
 					NOR = {
+						has_citizenship_type = {
+							country = owner
+							type = citizenship_slavery
+						}
 						has_citizenship_type = {
 							country = owner
 							type = citizenship_purge_machine
@@ -468,6 +516,10 @@ compute_passive_income = {
 						has_citizenship_type = {
 							country = owner
 							type = citizenship_purge
+						}
+						has_citizenship_type = {
+							country = owner
+							type = citizenship_assimilation
 						}
 					}
 				}
@@ -486,7 +538,10 @@ compute_passive_income = {
 		event_target:headquarters_planet = {
 			every_owned_pop = {
 				limit = {
-					is_enslaved = yes
+					has_citizenship_type = {
+						country = owner
+						type = citizenship_slavery
+					}
 				}
 				prevprev = {
 					add_resource = {
