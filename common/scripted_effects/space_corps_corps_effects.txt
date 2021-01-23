@@ -40,6 +40,13 @@ get_headquarters = {
 	}
 }
 
+# this = corp
+get_overlord = {
+	overlord = {
+		save_event_target_as = space_corps_overlord
+	}
+}
+
 # this = overlord
 give_tech_overlord_and_corps = {
 	give_technology = {
@@ -216,6 +223,7 @@ launch_convoy_if_possible = {
 			}
 		}
 		event_target:headquarters_planet = {
+			# TODO ?
 		}
 	}
 }

@@ -19,6 +19,16 @@ should_create_military_fleet = {
 
 # this = corp
 should_reinforce_a_fleet = {
+	check_variable = {
+		which = space_corp_budget_military
+		value >= @corps_corvette_cost
+	}
+	count_owned_fleet = {
+		count >= 5
+		limit = {
+			is_ship_class = shipclass_military
+		}
+	}
 	any_owned_fleet = {
 		is_ship_class = shipclass_military
 		fleet_power < 1000
@@ -49,6 +59,12 @@ has_local_hostile = {
 has_close_hostile = {
 	any_system = {
 		has_access_fleet = prev.owner
+		prev.owner = {
+			intel_level = {
+				level > medium
+				system = prev
+			}
+		}
 		distance = {
 			source = event_target:headquarters_planet
 			max_jumps = @patrol_close_system

@@ -105,7 +105,7 @@ space_corp = {
 		neutral = no		#if yes, fleets will never attack anything and will never be attacked
 		hostile = no		#if yes, fleets will attack everything on sight ( except neutral fleets )
 		auto_delete = no		#if yes, country will be automatically be deleted when considered dead ( usually when out of colonies and colony ships ). Should be yes in most cases but can be useful to turn off for some countries that are created by events.
-		needs_border_access = no		#decides if a country needs to have explicit border access from another country to enter its borders.
+		needs_border_access = yes		#decides if a country needs to have explicit border access from another country to enter its borders.
 		generate_borders = no		#decides if a country generates borders or not
 		needs_colony = no		#decides if a country needs a colony ( or a colony ship ) to be considered alive.
 		hostile_when_attacked = no		#toggles if country turns hostile against attacker.
@@ -142,6 +142,33 @@ space_corp = {
 			# sr_living_metal = 0
 			# sr_zro = 5
 			# influence = 3
+		}
+	}
+}
+
+supply_leader_pool = {
+	share_communications = no
+	default_ships = no
+	government = no
+	observable = no
+	ai = {
+		enabled = no
+	}
+	faction = {
+		hostile = no
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+	}
+	modules = {
+		standard_event_module = {
+			# Needed for events
+		}
+		exclusive_diplomacy_module = {
+			contact_rule = script_only
+		}
+		standard_leader_module = {
 		}
 	}
 }

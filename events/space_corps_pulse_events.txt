@@ -1,6 +1,7 @@
 namespace = space_corps_pulse
 # yearly pulse
 # check if spawn corp is needed
+# check connection to other corps
 country_event = {
 	id = space_corps_pulse.10
 	is_triggered_only = yes
@@ -20,6 +21,7 @@ country_event = {
 
 # called from space_corps_pulse.11
 # spawn a corp
+# check connection to other corps
 country_event = {
 	id = space_corps_pulse.11
 	is_triggered_only = yes
@@ -41,6 +43,31 @@ country_event = {
 			randomize_space_corps_spawn_delay = yes
 			country_event = {
 				id = space_corps_pulse.12
+			}
+		}
+		every_subject = {
+			limit = {
+				is_country_type = space_corp
+			}
+			get_headquarters = yes
+			# performance intensive?
+			# gives connected path to the **other** corp
+			every_country = {
+				limit = {
+					is_country_type = space_corp
+					NOT = {
+						is_same_value = prev
+					}
+					has_communications = prev
+					NOT = {
+						has_country_flag = space_corp_connected_@prev
+					}
+					# performance intensive?
+					any_owned_fleet = {
+						can_access_system = event_target:headquarters_planet.solar_system
+					}
+				}
+				set_country_flag = space_corp_connected_@prev
 			}
 		}
 	}
@@ -158,6 +185,7 @@ country_event = {
 			}
 			random_owned_fleet = {
 				limit = {
+					# fleet_power > 0
 					is_ship_class = shipclass_military
 					fleet_power < 1000
 				}

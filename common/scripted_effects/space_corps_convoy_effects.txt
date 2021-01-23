@@ -8,7 +8,11 @@ create_convoy_fleet = {
 		name = random
 		effect = {
 			set_owner = prev
-			set_location = event_target:headquarters_planet
+			set_location = {
+				target = event_target:headquarters_planet
+				distance = 10
+				angle = random
+			}
 			set_fleet_stance = passive
 			create_ship = {
 				name = random
@@ -54,10 +58,41 @@ set_convoy_orders = {
 			is_fleet_idle = yes
 			exists = event_target:convoy_destination
 		}
-		clear_fleet_actions = this
-		queue_actions = {
-			move_to = event_target:convoy_destination
-			orbit_planet = event_target:convoy_destination
+		clear_orders = yes
+		# clear_fleet_actions = this
+		# TODO check better
+		if = {
+			limit = {
+				NOT = {
+					has_fleet_flag = escort_caught_up
+					# has_fleet_flag = fleet_needs_escort
+				}
+				exists = solar_system
+				owner = {
+					any_owned_fleet = {
+						prevprev = {
+							has_fleet_flag = is_escorted_by_@prev
+						}
+						exists = solar_system
+						solar_system = {
+							is_same_value = prevprevprev.solar_system
+						}
+					}
+				}
+			}
+			set_fleet_flag = escort_caught_up
+		}
+		if = {
+			limit = {
+				OR = {
+					has_fleet_flag = escort_caught_up
+					# has_fleet_flag = fleet_needs_escort
+				}
+			}
+			queue_actions = {
+				move_to = event_target:convoy_destination
+				orbit_planet = event_target:convoy_destination
+			}
 		}
 	}
 	if = {

@@ -40,3 +40,12 @@ on_tech_increased = {
 		# space_corps_corps.31
 	}
 }
+
+# Executed right after country has established communications with another country
+# This = Country which established the communications
+# From = Country which communications were established with
+on_post_communications_established = {
+	events = {
+		space_corps_corps.40
+	}
+}

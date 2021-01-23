@@ -122,6 +122,9 @@ is_suitable_convoy_partner = {
 	NOT = {
 		is_same_value = prev
 	}
+	prev = {
+		has_country_flag = space_corp_connected_@prev
+	}
 	has_communications = prev
 	exists = overlord
 	NOR = {

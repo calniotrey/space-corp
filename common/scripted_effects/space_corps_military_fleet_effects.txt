@@ -92,115 +92,137 @@ resume_fleet_action = {
 # used when spawned and when idle
 # this = fleet
 set_military_fleet_orders = {
-	remove_fleet_flag = changed_destination
-	set_fleet_flag = changed_fleet_action
-	while = {
-		# do ... while basically
-		limit = {
-			has_fleet_flag = changed_fleet_action
-		}
-		remove_fleet_flag = changed_fleet_action
-		# idle
-		if = {
-			limit = {
-				check_variable = {
-					which = fleet_action_id
-					value = 0
-				}
-			}
-			set_military_orders_0 = yes
-		}
-		# patrolling
-		if = {
-			limit = {
-				check_variable = {
-					which = fleet_action_id
-					value = 1
-				}
-			}
-			set_military_orders_1 = yes
-		}
-		# escorting
-		else_if = {
-			limit = {
-				check_variable = {
-					which = fleet_action_id
-					value = 2
-				}
-			}
-			set_military_orders_2 = yes
-		}
-		# attacking target
-		else_if = {
-			limit = {
-				check_variable = {
-					which = fleet_action_id
-					value = 5
-				}
-			}
-			set_military_orders_5 = yes
-		}
-		# going back to shipyard
-		else_if = {
-			limit = {
-				check_variable = {
-					which = fleet_action_id
-					value = 9
-				}
-			}
-			set_military_orders_9 = yes
-		}
-	}
 	if = {
 		limit = {
-			exists = event_target:military_target
-			OR = {
-				is_fleet_idle = yes
-				has_fleet_flag = changed_destination
+			exists = solar_system
+		}
+		remove_fleet_flag = changed_destination
+		set_fleet_flag = changed_fleet_action
+		while = {
+			# do ... while basically
+			limit = {
+				has_fleet_flag = changed_fleet_action
+			}
+			remove_fleet_flag = changed_fleet_action
+			# idle
+			if = {
+				limit = {
+					check_variable = {
+						which = fleet_action_id
+						value = 0
+					}
+				}
+				set_military_orders_0 = yes
+			}
+			# patrolling
+			if = {
+				limit = {
+					check_variable = {
+						which = fleet_action_id
+						value = 1
+					}
+				}
+				set_military_orders_1 = yes
+			}
+			# escorting
+			# TODO check if replacing the elseif by if works
+			else_if = {
+				limit = {
+					check_variable = {
+						which = fleet_action_id
+						value = 2
+					}
+				}
+				set_military_orders_2 = yes
+			}
+			# attacking target
+			else_if = {
+				limit = {
+					check_variable = {
+						which = fleet_action_id
+						value = 5
+					}
+				}
+				set_military_orders_5 = yes
+			}
+			# going back to shipyard
+			else_if = {
+				limit = {
+					check_variable = {
+						which = fleet_action_id
+						value = 9
+					}
+				}
+				set_military_orders_9 = yes
 			}
 		}
-		clear_fleet_actions = this
 		if = {
 			limit = {
-				check_variable = {
-					which = fleet_action_id
-					value = 2
+				exists = event_target:military_target
+				OR = {
+					is_fleet_idle = yes
+					has_fleet_flag = changed_destination
 				}
 			}
-			auto_follow_fleet = {
-				target = event_target:military_target
-				attack_fleet = no
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = fleet_action_id
-					value = 5
+			remove_auto_move_target = yes
+			clear_fleet_actions = this
+			clear_orders = yes
+			# TODO check better
+			if = {
+				limit = {
+					check_variable = {
+						which = fleet_action_id
+						value = 2
+					}
+				}
+				log = "following fleet 1:"
+				event_target:military_target = {
+					log = "following fleet 1: name = [This.GetName]"
+				}
+				auto_follow_fleet = {
+					target = event_target:military_target
+					attack_fleet = no
 				}
 			}
-			auto_follow_fleet = {
-				target = event_target:military_target
-				attack_fleet = yes
+			else_if = {
+				limit = {
+					check_variable = {
+						which = fleet_action_id
+						value = 5
+					}
+				}
+				log = "following fleet 2:"
+				event_target:military_target = {
+					log = "following fleet 2: name = [This.GetName]"
+				}
+				auto_follow_fleet = {
+					target = event_target:military_target
+					attack_fleet = yes
+				}
+			}
+			else = {
+				# log = "going somewhere"
+				log = "following fleet 3:"
+				event_target:military_target = {
+					log = "following fleet 3: name = [This.GetName]"
+				}
+				queue_actions = {
+					move_to = event_target:military_target
+					orbit_planet = event_target:military_target
+				}
 			}
 		}
-		else = {
-			queue_actions = {
-				move_to = event_target:military_target
-				orbit_planet = event_target:military_target
-			}
-		}
+		# if = {
+		# 	limit = {
+		# 		NOT = {
+		# 			check_variable = {
+		# 				which = fleet_action_id
+		# 				value = 2
+		# 			}
+		# 		}
+		# 	}
+		# }
 	}
-	# if = {
-	# 	limit = {
-	# 		NOT = {
-	# 			check_variable = {
-	# 				which = fleet_action_id
-	# 				value = 2
-	# 			}
-	# 		}
-	# 	}
-	# }
 	save_event_target_as = military_fleet
 	owner = {
 		country_event = {
@@ -250,6 +272,8 @@ set_military_orders_1 = {
 		}
 		escort_closest_allied_fleet = yes
 		set_fleet_flag = changed_destination
+		set_fleet_flag = changed_fleet_action
+		#TODO check if it helps?
 	}
 	# check for ennemies close to HQ
 	else_if = {
@@ -280,12 +304,32 @@ set_military_orders_1 = {
 
 # this = fleet
 set_military_orders_2 = {
+	log = "----------------------------"
+	if = {
+		limit = {
+			exists = event_target:escort_target
+		}
+		log = "escort target exists :"
+		event_target:escort_target = {
+			log = "escort target exists : [This.GetName]"
+		}
+	}
+	if = {
+		limit = {
+			exists = event_target:military_target
+		}
+		log = "military target exists"
+		event_target:military_target = {
+			log = "military target exists : [This.GetName]"
+		}
+	}
 	if = {
 		limit = {
 			exists = solar_system
 			exists = event_target:escort_target
-			event_target:escort_target.solar_system = {
-				is_same_value = prevprev.solar_system
+			exists = event_target:escort_target.solar_system
+			solar_system = {
+				is_same_value = event_target:escort_target.solar_system
 			}
 			has_local_hostile = yes
 		}
@@ -321,6 +365,7 @@ set_military_orders_2 = {
 			value = 1
 		}
 		set_fleet_flag = changed_fleet_action
+		set_fleet_flag = cancelled_escorting
 	}
 }
 
@@ -407,8 +452,50 @@ set_military_orders_9 = {
 
 # this = fleet
 select_patrolling_destination = {
+	# log = "searching patrolling"
+	# if = {
+	# 	limit = {
+	# 		solar_system = {
+	# 			prev.owner = {
+	# 				intel_level = {
+	# 					level > none
+	# 					system = prev
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# 	# log = "has intel"
+	# }
+	# if = {
+	# 	limit = {
+	# 		solar_system = {
+	# 			has_access_fleet = prev.owner
+	# 		}
+	# 	}
+	# 	# log = "has access"
+	# }
+	# if = {
+	# 	limit = {
+	# 		solar_system = {
+	# 			distance = {
+	# 				source = event_target:headquarters_planet
+	# 				max_jumps = @patrol_close_system
+	# 				type = hyperlane
+	# 			}
+	# 		}
+	# 	}
+	# 	# log = "has distance"
+	# }
 	random_system = {
 		limit = {
+			prev = {
+				owner = {
+					intel_level = {
+						level > none
+						system = prevprev
+					}
+				}
+			}
 			has_access_fleet = prev.owner
 			distance = {
 				source = event_target:headquarters_planet
@@ -416,7 +503,9 @@ select_patrolling_destination = {
 				type = hyperlane
 			}
 		}
+		# log = "found patrolling system"
 		random_system_planet = {
+			# log = "found patrolling system planet"
 			save_event_target_as = military_target
 		}
 	}
@@ -444,9 +533,13 @@ escort_closest_allied_fleet = {
 			}
 			remove_fleet_flag = fleet_needs_escort
 			set_fleet_flag = is_escorted
+			set_fleet_flag = is_escorted_by_@prevprev
 			save_event_target_as = escort_target
 		}
 	}
+	# TODO check if better
+	# clear_orders = yes
+	# clear_fleet_actions = this
 	set_variable = {
 		which = fleet_action_id
 		value = 2
@@ -475,6 +568,12 @@ hunt_close_hostile_and_override = {
 	closest_system = {
 		limit = {
 			has_access_fleet = prev.owner
+			prev.owner = {
+				intel_level = {
+					level > medium
+					system = prev
+				}
+			}
 			distance = {
 				source = event_target:headquarters_planet
 				max_jumps = @patrol_close_system

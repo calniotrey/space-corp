@@ -352,3 +352,57 @@ country_event = {
 		}
 	}
 }
+
+# Executed right after country has established communications with another country
+# This = Country which established the communications
+# From = Country which communications were established with
+country_event = {
+	id = space_corps_corps.40
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_subject = {
+			limit = {
+				is_country_type = space_corp
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_communications = from
+					}
+				}
+				establish_communications = from
+			}
+			from = {
+				every_subject = {
+					limit = {
+						is_country_type = space_corp
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_communications = prevprev
+							}
+						}
+						establish_communications = prevprev
+					}
+				}
+			}
+		}
+		from = {
+			every_subject = {
+				limit = {
+					is_country_type = space_corp
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_communications = root
+						}
+					}
+					establish_communications = root
+				}
+			}
+		}
+	}
+}
