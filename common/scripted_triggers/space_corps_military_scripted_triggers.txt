@@ -86,3 +86,8 @@ has_allies_needing_escort = {
 		}
 	}
 }
+
+# this = fleet
+should_recalculate_military_fleets_orders = {
+	has_fleet_flag = recalculate_military_fleets_order
+}

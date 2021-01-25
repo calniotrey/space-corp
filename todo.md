@@ -1,5 +1,4 @@
 TEST recruit scientists
-establish communications
 more custom diplomacy
 Check when overlord becomes vassal (make sure nothing breaks when referencing overlord)
 spawn military ships
