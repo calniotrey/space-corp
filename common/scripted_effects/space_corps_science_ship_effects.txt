@@ -11,6 +11,7 @@ create_science_ship_fleet = {
 			set_name = random
 			set_location = event_target:headquarters_planet
 			set_fleet_stance = passive
+			set_fleet_flag = fleet_needs_escort
 			create_ship = {
 				name = random
 				random_existing_design = science

@@ -88,6 +88,16 @@ has_allies_needing_escort = {
 }
 
 # this = fleet
+has_allied_convoy_needing_escort = {
+	owner = {
+		any_owned_fleet = {
+			has_fleet_flag = fleet_needs_escort
+			has_fleet_flag = space_corps_convoy
+		}
+	}
+}
+
+# this = fleet
 should_recalculate_military_fleets_orders = {
 	has_fleet_flag = recalculate_military_fleets_order
 }

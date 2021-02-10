@@ -234,6 +234,14 @@ set_military_orders_1 = {
 		}
 		set_fleet_flag = recalculate_military_fleets_order
 	}
+	# check for allied convoy needing escort
+	else_if = {
+		limit = {
+			has_allied_convoy_needing_escort = yes
+		}
+		escort_closest_allied_convoy_fleet = yes
+		set_fleet_flag = recalculate_military_fleets_order
+	}
 	# check for allies needing escort
 	else_if = {
 		limit = {
@@ -279,27 +287,13 @@ set_military_orders_2 = {
 	}
 	else_if = {
 		limit = {
-			exists = event_target:escort_target
-			event_target:escort_target = {
-				has_fleet_flag = is_escorted
+			NAND = {
+				exists = event_target:escort_target
+				event_target:escort_target = {
+					has_fleet_flag = is_escorted
+				}
 			}
 		}
-		# if = {
-		# 	limit = {
-		# 		NAND = {
-		# 			exists = event_target:military_target
-		# 			event_target:military_target = {
-		# 				is_same_value = event_target:escort_target
-		# 			}
-		# 		}
-		# 	}
-		# 	event_target:escort_target = {
-		# 		save_event_target_as = military_target
-		# 	}
-		# 	set_fleet_flag = changed_destination
-		# }
-	}
-	else = {
 		# switch back to patrolling
 		set_variable = {
 			which = fleet_action_id
@@ -311,7 +305,81 @@ set_military_orders_2 = {
 
 # this = fleet
 set_military_orders_3 = {
-	#TODO
+	# check if should go back to get new ships
+	if = {
+		limit = {
+			has_fleet_flag = fleet_needs_new_ships
+		}
+		set_variable = {
+			which = fleet_action_id
+			value = 9
+		}
+		set_fleet_flag = recalculate_military_fleets_order
+		if = {
+			limit = {
+				exists = event_target:temp_escort_target
+			}
+			event_target:temp_escort_target = {
+				remove_fleet_flag = is_escorted
+				remove_fleet_flag = is_escorted_by_@prev
+			}
+		}
+	}
+	# check for allied convoy needing escort
+	else_if = {
+		limit = {
+			has_allied_convoy_needing_escort = yes
+		}
+		if = {
+			limit = {
+				exists = event_target:temp_escort_target
+			}
+			event_target:temp_escort_target = {
+				remove_fleet_flag = is_escorted
+				remove_fleet_flag = is_escorted_by_@prev
+			}
+		}
+		escort_closest_allied_convoy_fleet = yes
+		set_fleet_flag = recalculate_military_fleets_order
+	}
+	else_if = {
+		limit = {
+			exists = solar_system
+			exists = event_target:temp_escort_target
+			exists = event_target:temp_escort_target.solar_system
+			solar_system = {
+				is_same_value = event_target:temp_escort_target.solar_system
+			}
+			has_local_hostile = yes
+		}
+		hunt_local_hostile_and_override = yes
+		set_fleet_flag = recalculate_military_fleets_order
+	}
+	else_if = {
+		limit = {
+			NAND = {
+				exists = event_target:temp_escort_target
+				event_target:temp_escort_target = {
+					has_fleet_flag = is_escorted
+				}
+			}
+		}
+		# switch back to patrolling
+		set_variable = {
+			which = fleet_action_id
+			value = 1
+		}
+		set_fleet_flag = recalculate_military_fleets_order
+		if = {
+			limit = {
+				exists = event_target:temp_escort_target
+			}
+			event_target:temp_escort_target = {
+				remove_fleet_flag = is_escorted
+				remove_fleet_flag = is_escorted_by_@prev
+			}
+		}
+	}
 }
 
 # this = fleet
@@ -552,7 +620,26 @@ apply_military_orders_2 = {
 
 # this = fleet
 apply_military_orders_3 = {
-	#TODO
+	if = {
+		limit = {
+			OR = {
+				has_fleet_flag = changed_orders
+				is_fleet_idle = yes
+			}
+		}
+		# stop
+		remove_auto_move_target = yes
+		clear_fleet_actions = this
+		clear_orders = yes
+		# log = "temp escorting fleet:"
+		# event_target:temp_escort_target = {
+		# 	log = "temp escorting fleet: name = [This.GetName]"
+		# }
+		auto_follow_fleet = {
+			target = event_target:temp_escort_target
+			attack_fleet = no
+		}
+	}
 }
 
 # this = fleet
@@ -685,6 +772,40 @@ escort_closest_allied_fleet = {
 		random_fleet_in_system = {
 			limit = {
 				has_fleet_flag = fleet_needs_escort
+				exists = owner
+				owner = {
+					is_same_value = prevprevprev.owner
+				}
+			}
+			remove_fleet_flag = fleet_needs_escort
+			set_fleet_flag = is_escorted
+			set_fleet_flag = is_escorted_by_@prevprev
+			save_event_target_as = temp_escort_target
+		}
+	}
+	set_variable = {
+		which = fleet_action_id
+		value = 3
+	}
+}
+
+# this = fleet
+escort_closest_allied_convoy_fleet = {
+	closest_system = {
+		limit = {
+			any_fleet_in_system = {
+				has_fleet_flag = fleet_needs_escort
+				has_fleet_flag = space_corps_convoy
+				exists = owner
+				owner = {
+					is_same_value = prevprevprev.owner
+				}
+			}
+		}
+		random_fleet_in_system = {
+			limit = {
+				has_fleet_flag = fleet_needs_escort
+				has_fleet_flag = space_corps_convoy
 				exists = owner
 				owner = {
 					is_same_value = prevprevprev.owner

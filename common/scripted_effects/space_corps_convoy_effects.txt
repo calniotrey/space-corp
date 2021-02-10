@@ -32,6 +32,7 @@ create_convoy_fleet = {
 				days = 1800				# TODO increase?
 			}
 			set_fleet_flag = fleet_needs_escort
+			set_fleet_flag = space_corps_convoy
 			fleet_event = {
 				id = space_corps_convoy.20				# set name
 			}
@@ -51,11 +52,22 @@ set_convoy_orders = {
 				is_same_value = event_target:convoy_destination
 			}
 		}
-		land_convoy = yes		# will destroy fleet
+		if = {
+			limit = {
+				has_fleet_flag = going_back
+			}
+			land_convoy_headquarters = yes			# will destroy fleet
+		}
+		else = {
+			land_convoy_destination = yes
+		}
 	}
 	if = {
 		limit = {
-			is_fleet_idle = yes
+			OR = {
+				is_fleet_idle = yes
+				has_fleet_flag = going_back_temp
+			}
 			exists = event_target:convoy_destination
 		}
 		clear_orders = yes
@@ -114,7 +126,24 @@ set_convoy_orders = {
 }
 
 # this = fleet
-land_convoy = {
+land_convoy_destination = {
+	owner = {
+		add_resource = {
+			energy = @convoy_reward
+		}
+	}
+	set_fleet_flag = going_back
+	set_timed_fleet_flag = {
+		flag = going_back_temp
+		days = 1
+	}
+	event_target:headquarters_planet = {
+		save_event_target_as = convoy_destination
+	}
+}
+
+# this = fleet
+land_convoy_headquarters = {
 	owner = {
 		change_corp_money = {
 			TYPE = convoy
