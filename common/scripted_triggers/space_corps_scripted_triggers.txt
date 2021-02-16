@@ -3,6 +3,11 @@ is_space_corp_not_installed = {
 }
 
 # this = overlord
+can_have_space_corp = {
+	is_country_type = default
+}
+
+# this = overlord
 should_create_space_corp = {
 	check_variable = {
 		which = years_until_next_corp_creation

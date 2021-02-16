@@ -6,6 +6,9 @@ country_event = {
 	id = space_corps_pulse.10
 	is_triggered_only = yes
 	hide_window = yes
+	trigger = {
+		can_have_space_corp = yes
+	}
 	immediate = {
 		change_variable = {
 			which = years_until_next_corp_creation
