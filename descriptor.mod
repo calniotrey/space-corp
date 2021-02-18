@@ -4,4 +4,5 @@ tags={
 	"Gameplay"
 }
 name="Space Corps"
+path="mod/space-corp"
 supported_version="2.8.*"
