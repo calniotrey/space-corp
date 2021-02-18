@@ -1,0 +1,259 @@
+d_sc_clerk_1 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_building
+	planet_modifier = {
+		job_clerk_add = 1
+		trade_value_mult = 0.01
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_clerk_2 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_building
+	planet_modifier = {
+		job_clerk_add = 2
+		trade_value_mult = 0.02
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_clerk_3 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_building
+	planet_modifier = {
+		job_clerk_add = 3
+		trade_value_mult = 0.03
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_clerk_4 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_building
+	planet_modifier = {
+		job_clerk_add = 4
+		trade_value_mult = 0.04
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_clerk_5 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_building
+	planet_modifier = {
+		job_clerk_add = 5
+		trade_value_mult = 0.05
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_clerk_6 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_building
+	planet_modifier = {
+		job_clerk_add = 6
+		trade_value_mult = 0.06
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_clerk_7 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_building
+	planet_modifier = {
+		job_clerk_add = 7
+		trade_value_mult = 0.07
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_clerk_8 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_building
+	planet_modifier = {
+		job_clerk_add = 8
+		trade_value_mult = 0.08
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_clerk_9 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_building
+	planet_modifier = {
+		job_clerk_add = 9
+		trade_value_mult = 0.09
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_clerk_10 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_building
+	planet_modifier = {
+		job_clerk_add = 10
+		trade_value_mult = 0.1
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_energy_regular_1 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_station_reactor
+	planet_modifier = {
+		job_technician_add = 1
+		planet_technician_energy_produces_mult = 0.01
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_energy_regular_2 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_station_reactor
+	planet_modifier = {
+		job_technician_add = 2
+		planet_technician_energy_produces_mult = 0.02
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_energy_regular_3 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_station_reactor
+	planet_modifier = {
+		job_technician_add = 3
+		planet_technician_energy_produces_mult = 0.03
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_energy_regular_4 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_station_reactor
+	planet_modifier = {
+		job_technician_add = 4
+		planet_technician_energy_produces_mult = 0.04
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_energy_regular_5 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_station_reactor
+	planet_modifier = {
+		job_technician_add = 5
+		planet_technician_energy_produces_mult = 0.05
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_energy_regular_6 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_station_reactor
+	planet_modifier = {
+		job_technician_add = 6
+		planet_technician_energy_produces_mult = 0.06
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_energy_regular_7 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_station_reactor
+	planet_modifier = {
+		job_technician_add = 7
+		planet_technician_energy_produces_mult = 0.07
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_energy_regular_8 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_station_reactor
+	planet_modifier = {
+		job_technician_add = 8
+		planet_technician_energy_produces_mult = 0.08
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_energy_regular_9 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_station_reactor
+	planet_modifier = {
+		job_technician_add = 9
+		planet_technician_energy_produces_mult = 0.09
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_sc_energy_regular_10 = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_station_reactor
+	planet_modifier = {
+		job_technician_add = 10
+		planet_technician_energy_produces_mult = 0.1
+	}
+	drop_weight = {
+		weight = 0
+	}
+}

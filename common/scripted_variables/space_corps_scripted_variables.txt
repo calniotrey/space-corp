@@ -16,3 +16,6 @@
 @convoy_min = 1000
 @convoy_cost = 500
 @convoy_reward = 100
+# deposits
+@d_sc_clerk_cost = 100
+@d_sc_energy_regular_cost = 150

@@ -1,0 +1,271 @@
+# this = corp
+# hq set
+build_hq_deposit_if_possible = {
+	# if a deposit wasn't chosen, choose one
+	if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 0
+			}
+		}
+		space_corps_choose_hq_deposits = yes
+	}
+	# TODO performance change into binary search?
+	# switch on the chosen deposit
+	if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 1
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_clerk
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 2
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_energy_regular
+		}
+	}
+}
+
+# this = corp
+# TYPE = the name of the deposit
+# hq set
+build_hq_deposit_if_possible_aux = {
+	if = {
+		limit = {
+			check_variable = {
+				which = space_corp_budget_colonization
+				value >= space_corps_hq_deposit_chosen_cost
+			}
+			can_increase_space_corps_hq_deposit = {
+				TYPE = $TYPE$
+			}
+		}
+		subtract_corp_money = {
+			TYPE = colonization
+			AMOUNT = space_corps_hq_deposit_chosen_cost
+		}
+		increase_space_corps_hq_deposit = {
+			TYPE = $TYPE$
+		}
+		set_variable = {
+			which = space_corps_hq_deposit_chosen
+			value = 0
+		}
+	}
+}
+
+# this = overlord
+space_corps_choose_hq_deposits = {
+	# TODO
+	random_list = {
+		60 = {
+			modifier = {
+				factor = 0
+				event_target:headquarters_planet = {
+					has_deposit = d_sc_clerk_10
+				}
+			}
+			set_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 1
+			}
+			set_variable = {
+				which = space_corps_hq_deposit_chosen_cost
+				value = @d_sc_clerk_cost
+			}
+		}
+		40 = {
+			modifier = {
+				factor = 0
+				event_target:headquarters_planet = {
+					has_deposit = d_sc_energy_regular_10
+				}
+			}
+			set_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 2
+			}
+			set_variable = {
+				which = space_corps_hq_deposit_chosen_cost
+				value = @d_sc_energy_regular_cost
+			}
+		}
+	}
+}
+
+# this = corp
+# TYPE = deposit type
+# hq set
+increase_space_corps_hq_deposit = {
+	event_target:headquarters_planet = {
+		if = {
+			limit = {
+				has_deposit = $TYPE$_9
+			}
+			remove_deposit = $TYPE$_9
+			add_deposit = $TYPE$_10
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_8
+			}
+			remove_deposit = $TYPE$_8
+			add_deposit = $TYPE$_9
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_7
+			}
+			remove_deposit = $TYPE$_7
+			add_deposit = $TYPE$_8
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_6
+			}
+			remove_deposit = $TYPE$_6
+			add_deposit = $TYPE$_7
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_5
+			}
+			remove_deposit = $TYPE$_5
+			add_deposit = $TYPE$_6
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_4
+			}
+			remove_deposit = $TYPE$_4
+			add_deposit = $TYPE$_5
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_3
+			}
+			remove_deposit = $TYPE$_3
+			add_deposit = $TYPE$_4
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_2
+			}
+			remove_deposit = $TYPE$_2
+			add_deposit = $TYPE$_3
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_1
+			}
+			remove_deposit = $TYPE$_1
+			add_deposit = $TYPE$_2
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					# shouldn't happen
+					has_deposit = $TYPE$_10
+				}
+			}
+			add_deposit = $TYPE$_1
+		}
+	}
+	change_variable = {
+		which = space_corps_$TYPE$
+		value = 1
+	}
+}
+
+# this = corp
+# TYPE = deposit type
+# hq set
+# TODO when used : add a trigger to check if the corp has the deposit (in case we add several corps on one planet)
+decrease_space_corps_hq_deposit = {
+	subtract_variable = {
+		which = space_corps_$TYPE$
+		value = 1
+	}
+	event_target:headquarters_planet = {
+		if = {
+			limit = {
+				has_deposit = $TYPE$_10
+			}
+			remove_deposit = $TYPE$_10
+			add_deposit = $TYPE$_9
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_9
+			}
+			remove_deposit = $TYPE$_9
+			add_deposit = $TYPE$_8
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_8
+			}
+			remove_deposit = $TYPE$_8
+			add_deposit = $TYPE$_7
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_7
+			}
+			remove_deposit = $TYPE$_7
+			add_deposit = $TYPE$_6
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_6
+			}
+			remove_deposit = $TYPE$_6
+			add_deposit = $TYPE$_5
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_5
+			}
+			remove_deposit = $TYPE$_5
+			add_deposit = $TYPE$_4
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_4
+			}
+			remove_deposit = $TYPE$_4
+			add_deposit = $TYPE$_3
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_3
+			}
+			remove_deposit = $TYPE$_3
+			add_deposit = $TYPE$_2
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_2
+			}
+			remove_deposit = $TYPE$_2
+			add_deposit = $TYPE$_1
+		}
+		else_if = {
+			limit = {
+				has_deposit = $TYPE$_1
+			}
+			remove_deposit = $TYPE$_1
+		}
+	}
+}
