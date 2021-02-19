@@ -9,6 +9,10 @@ space_corps_dummy_effect = {
 		value = 0
 	}
 	set_variable = {
+		which = space_corp_food_income
+		value = 0
+	}
+	set_variable = {
 		which = space_corp_alloys_income
 		value = 0
 	}
@@ -18,6 +22,10 @@ space_corps_dummy_effect = {
 	}
 	set_variable = {
 		which = space_corp_minerals_taxed_total
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_food_taxed_total
 		value = 0
 	}
 	set_variable = {
@@ -110,6 +118,14 @@ space_corps_dummy_effect = {
 	}
 	set_variable = {
 		which = space_corps_d_sc_energy_regular
+		value = 0
+	}
+	set_variable = {
+		which = space_corps_d_sc_minerals_regular
+		value = 0
+	}
+	set_variable = {
+		which = space_corps_d_sc_food_regular
 		value = 0
 	}
 	set_global_flag = space_corps_paused

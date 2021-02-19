@@ -688,7 +688,19 @@ compute_income_from_hq_deposits = {
 	while = {
 		count = space_corps_d_sc_energy_regular
 		add_resource = {
-			energy = 1.5
+			energy = 2
+		}
+	}
+	while = {
+		count = space_corps_d_sc_minerals_regular
+		add_resource = {
+			minerals = 2
+		}
+	}
+	while = {
+		count = space_corps_d_sc_food_regular
+		add_resource = {
+			food = 3
 		}
 	}
 }
@@ -707,6 +719,9 @@ compute_and_tax_space_corp_income = {
 	compute_and_tax_space_corp_income_from_resource = {
 		RESOURCE = alloys
 	}
+	compute_and_tax_space_corp_income_from_resource = {
+		RESOURCE = food
+	}
 	# now transform that as money
 	change_variable = {
 		which = space_corp_money
@@ -715,6 +730,10 @@ compute_and_tax_space_corp_income = {
 	change_variable = {
 		which = space_corp_money
 		value = space_corp_minerals_income
+	}
+	change_variable = {
+		which = space_corp_money
+		value = space_corp_food_income
 	}
 	change_variable = {
 		which = space_corp_money
@@ -736,6 +755,10 @@ compute_and_tax_space_corp_income = {
 	change_variable = {
 		which = space_corp_total_taxed
 		value = space_corp_minerals_taxed_total
+	}
+	change_variable = {
+		which = space_corp_total_taxed
+		value = space_corp_food_taxed_total
 	}
 	change_variable = {
 		which = space_corp_total_taxed

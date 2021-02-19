@@ -35,6 +35,28 @@ build_hq_deposit_if_possible = {
 			TYPE = d_sc_energy_regular
 		}
 	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 3
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_minerals_regular
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 4
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_food_regular
+		}
+	}
 }
 
 # this = corp
@@ -65,40 +87,80 @@ build_hq_deposit_if_possible_aux = {
 	}
 }
 
-# this = overlord
+# this = corp
 space_corps_choose_hq_deposits = {
-	# TODO
-	random_list = {
-		60 = {
-			modifier = {
-				factor = 0
-				event_target:headquarters_planet = {
-					has_deposit = d_sc_clerk_10
-				}
-			}
-			set_variable = {
-				which = space_corps_hq_deposit_chosen
-				value = 1
-			}
-			set_variable = {
-				which = space_corps_hq_deposit_chosen_cost
-				value = @d_sc_clerk_cost
-			}
+	if = {
+		limit = {
+			has_ethic = ethic_gestalt_consciousness
 		}
-		40 = {
-			modifier = {
-				factor = 0
-				event_target:headquarters_planet = {
-					has_deposit = d_sc_energy_regular_10
+		# TODO add menial and complex drones
+	}
+	else = {
+		# TODO add specialists
+		random_list = {
+			60 = {
+				modifier = {
+					factor = 0
+					event_target:headquarters_planet = {
+						has_deposit = d_sc_clerk_10
+					}
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 1
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_clerk_cost
 				}
 			}
-			set_variable = {
-				which = space_corps_hq_deposit_chosen
-				value = 2
+			40 = {
+				modifier = {
+					factor = 0
+					event_target:headquarters_planet = {
+						has_deposit = d_sc_energy_regular_10
+					}
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 2
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_energy_regular_cost
+				}
 			}
-			set_variable = {
-				which = space_corps_hq_deposit_chosen_cost
-				value = @d_sc_energy_regular_cost
+			40 = {
+				modifier = {
+					factor = 0
+					event_target:headquarters_planet = {
+						has_deposit = d_sc_minerals_regular_10
+					}
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 3
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_minerals_regular_cost
+				}
+			}
+			40 = {
+				modifier = {
+					factor = 0
+					event_target:headquarters_planet = {
+						has_deposit = d_sc_food_regular_10
+					}
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 4
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_food_regular_cost
+				}
 			}
 		}
 	}
