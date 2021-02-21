@@ -24,10 +24,9 @@ create_space_corp = {
 		ethos = THIS
 		flag = THIS
 		name_list = THIS
-		species = THIS
+		species = event_target:original_pop.species
 		civics = random
 		auto_delete = no
-		
 		effect = {
 			set_country_flag = space_corp_from_@prev
 			establish_communications_no_message = prev
@@ -43,25 +42,59 @@ create_space_corp = {
 		event_target:original_pop = {
 			switch = {
 				trigger = pop_has_ethic
-				ethic_xenophile = { prev = { country_add_ethic = ethic_xenophile }}
-				ethic_xenophobe = { prev = { country_add_ethic = ethic_xenophobe }}
-				ethic_authoritarian = { prev = { country_add_ethic = ethic_authoritarian }}
-				ethic_egalitarian = { prev = { country_add_ethic = ethic_egalitarian }}
-				ethic_militarist = { prev = { country_add_ethic = ethic_militarist }}
-				ethic_pacifist = { prev = { country_add_ethic = ethic_pacifist }}
-				ethic_spiritualist = { prev = { country_add_ethic = ethic_spiritualist }}
-				ethic_materialist = { prev = { country_add_ethic = ethic_materialist }}
-				ethic_gestalt_consciousness = { prev = { country_add_ethic = ethic_gestalt_consciousness }}
+				ethic_xenophile = {
+					prev = {
+						country_add_ethic = ethic_xenophile
+					}
+				}
+				ethic_xenophobe = {
+					prev = {
+						country_add_ethic = ethic_xenophobe
+					}
+				}
+				ethic_authoritarian = {
+					prev = {
+						country_add_ethic = ethic_authoritarian
+					}
+				}
+				ethic_egalitarian = {
+					prev = {
+						country_add_ethic = ethic_egalitarian
+					}
+				}
+				ethic_militarist = {
+					prev = {
+						country_add_ethic = ethic_militarist
+					}
+				}
+				ethic_pacifist = {
+					prev = {
+						country_add_ethic = ethic_pacifist
+					}
+				}
+				ethic_spiritualist = {
+					prev = {
+						country_add_ethic = ethic_spiritualist
+					}
+				}
+				ethic_materialist = {
+					prev = {
+						country_add_ethic = ethic_materialist
+					}
+				}
+				ethic_gestalt_consciousness = {
+					prev = {
+						country_add_ethic = ethic_gestalt_consciousness
+					}
+				}
 			}
 		}
-		
 		# random_list = {
 		# 	5 = { set_country_flag = has_headquarters_prefixed_name }
 		# 	95 = {}
 		# }
 		set_name = random
 		# remove_country_flag = has_headquarters_prefixed_name
-
 		add_modifier = {
 			modifier = space_corp_country_modifier
 			days = -1

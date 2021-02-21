@@ -38,7 +38,6 @@ country_event = {
 			create_space_corp = yes
 			last_created_country = {
 				save_event_target_as = last_created_corp
-				get_headquarters = yes
 			}
 			change_variable = {
 				which = number_of_corps
