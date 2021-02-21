@@ -40,14 +40,14 @@ empire_name_parts_list = {
 	}
 }
 
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 999
-			is_country_type = space_corp
-		}
-	}
-	format = "<space_corps_core> <space_corps_suffix>"
-	noun = "[This.GetSpeciesName]"
-}
+# empire_name_format = {
+# 	random_weight = {
+# 		factor = 0
+# 		modifier = {
+# 			add = 999
+# 			is_country_type = space_corp
+# 		}
+# 	}
+# 	format = "<space_corps_core> <space_corps_suffix>"
+# 	noun = "[This.GetSpeciesName]"
+# }
