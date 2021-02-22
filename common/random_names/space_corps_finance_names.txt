@@ -19,7 +19,7 @@ empire_name_format = {
 		modifier = {
 			add = 1000
 			is_country_type = space_corp
-			has_civic = civic_financial_group
+			has_civic = sc_civic_financial_group
 		}
 	}
 	format = "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_finance>"
@@ -33,7 +33,7 @@ empire_name_format = {
 		modifier = {
 			add = 1000
 			is_country_type = space_corp
-			has_civic = civic_financial_group
+			has_civic = sc_civic_financial_group
 		}
 	}
 	format = "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_finance> <corporate_empire_names_final>"
@@ -47,7 +47,7 @@ empire_name_format = {
 		modifier = {
 			add = 1000
 			is_country_type = space_corp
-			has_civic = civic_financial_group
+			has_civic = sc_civic_financial_group
 		}
 	}
 	format = "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_finance>"
@@ -61,7 +61,7 @@ empire_name_format = {
 		modifier = {
 			add = 1000
 			is_country_type = space_corp
-			has_civic = civic_financial_group
+			has_civic = sc_civic_financial_group
 		}
 	}
 	format = "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_finance> <corporate_empire_names_final>"
@@ -75,7 +75,7 @@ empire_name_format = {
 		modifier = {
 			add = 1000
 			is_country_type = space_corp
-			has_civic = civic_financial_group
+			has_civic = sc_civic_financial_group
 		}
 	}
 	format = "<corporate_empire_names_standalone> <corporate_empire_names_field_finance>"
@@ -89,7 +89,7 @@ empire_name_format = {
 		modifier = {
 			add = 1000
 			is_country_type = space_corp
-			has_civic = civic_financial_group
+			has_civic = sc_civic_financial_group
 		}
 	}
 	format = "<corporate_empire_names_standalone> <corporate_empire_names_field_finance> <corporate_empire_names_final>"
@@ -103,7 +103,7 @@ empire_name_format = {
 		modifier = {
 			add = 1500
 			is_country_type = space_corp
-			has_civic = civic_financial_group
+			has_civic = sc_civic_financial_group
 		}
 	}
 	format = "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_finance> <corporate_empire_names_final>"
