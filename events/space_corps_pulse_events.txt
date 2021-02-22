@@ -44,8 +44,20 @@ country_event = {
 				value = 1
 			}
 			randomize_space_corps_spawn_delay = yes
-			country_event = {
-				id = space_corps_pulse.12
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = hide_space_corps_creation
+					}
+				}
+				random_list = {
+					# different images TODO
+					1 = {
+						country_event = {
+							id = space_corps_pulse.18
+						}
+					}
+				}
 			}
 		}
 		every_subject = {
@@ -77,36 +89,6 @@ country_event = {
 }
 
 # called from space_corps_pulse.11
-# spawn a corp
-country_event = {
-	id = space_corps_pulse.12
-	is_triggered_only = yes
-	hide_window = yes
-	immediate = {
-		event_target:last_created_corp = {
-			get_headquarters = yes
-			set_name = random			# isn't properly set otherwise
-			set_name = "[headquarters_planet.GetName] [This.GetName]"			# prefix headquarters name
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_country_flag = hide_space_corps_creation
-				}
-			}
-			random_list = {
-				# different images TODO
-				1 = {
-					country_event = {
-						id = space_corps_pulse.18
-					}
-				}
-			}
-		}
-	}
-}
-
-# called from space_corps_pulse.12
 # spawn a corp
 country_event = {
 	id = space_corps_pulse.18
