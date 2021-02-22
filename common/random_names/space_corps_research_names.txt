@@ -9,23 +9,19 @@ empire_name_parts_list = {
 		"Insights" = 5
 		"Logics" = 5
 		"Systems" = 5
-
 		#technology
 		"Technologies" = 5
 		"Research" = 5
-
 		"Nanotechnology" = 2
 		"Nanotech" = 2
 		"Nanotics" = 2
 		"Biotechnology" = 2
 		"Biotech" = 2
 		"Biotics" = 2
-
 		"Biochem" = 4
 		"Biochemicals" = 1
 		"Neurochem" = 4
 		"Neurochemicals" = 1
-
 		"Synthetics" = 5
 		"Genomics" = 5
 		"Laboratories" = 5
@@ -71,9 +67,6 @@ empire_name_format = {
 	noun = "[This.GetSpeciesName]"
 }
 
-
-
-
 #Blackstar Networks
 empire_name_format = {
 	random_weight = {
@@ -102,9 +95,6 @@ empire_name_format = {
 	noun = "[This.GetSpeciesName]"
 }
 
-
-
-
 #Serendipity Nanotechnology
 empire_name_format = {
 	random_weight = {
@@ -132,8 +122,6 @@ empire_name_format = {
 	format = "<corporate_empire_names_standalone> <corporate_empire_names_field_research> <corporate_empire_names_final>"
 	noun = "[This.GetSpeciesName]"
 }
-
-
 
 #National Bank Corporation
 empire_name_format = {

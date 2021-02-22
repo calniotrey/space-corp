@@ -1,9 +1,7 @@
 gov_space_corp = {
 	ruler_title = RT_CEO
 	ruler_title_female = RT_CEO_FEMALE
-	
 	# should_force_rename = yes
-
 	# election_candidates = {
 	# 	modifier = {
 	# 		add = 100
@@ -14,14 +12,15 @@ gov_space_corp = {
 	# 		leader_class = governor
 	# 	}
 	# }
-
-	possible = { has_authority = auth_space_corp }
-
-	weight = {							# scriptable value, scope: country; the (possible) government type with the biggest weight is assigned to the country
-        base = 0
-        modifier = {
-            add = 10000
-            has_authority = auth_space_corp
-        }
+	possible = {
+		has_authority = auth_space_corp
+	}
+	weight = {
+		# scriptable value, scope: country; the (possible) government type with the biggest weight is assigned to the country
+		base = 0
+		modifier = {
+			add = 10000
+			has_authority = auth_space_corp
+		}
 	}
 }

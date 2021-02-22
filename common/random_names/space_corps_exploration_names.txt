@@ -3,13 +3,11 @@ empire_name_parts_list = {
 	parts = {
 		#exploration
 		"Frontiers" = 5
-
 		#exploration/logistics generic
 		"Spaceways" = 5
 		"Spacelines" = 5
 		"Transways" = 5
 		"Charters" = 5
-
 	}
 }
 
@@ -41,9 +39,6 @@ empire_name_format = {
 	noun = "[This.GetSpeciesName]"
 }
 
-
-
-
 #Blackstar Networks
 empire_name_format = {
 	random_weight = {
@@ -72,9 +67,6 @@ empire_name_format = {
 	noun = "[This.GetSpeciesName]"
 }
 
-
-
-
 #Serendipity Nanotechnology
 empire_name_format = {
 	random_weight = {
@@ -102,8 +94,6 @@ empire_name_format = {
 	format = "<corporate_empire_names_standalone> <corporate_empire_names_field_exploration> <corporate_empire_names_final>"
 	noun = "[This.GetSpeciesName]"
 }
-
-
 
 #National Bank Corporation
 empire_name_format = {

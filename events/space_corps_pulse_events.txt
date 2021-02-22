@@ -45,10 +45,18 @@ country_event = {
 			}
 			randomize_space_corps_spawn_delay = yes
 			if = {
-				limit = { NOT = { has_country_flag = hide_space_corps_creation }}
+				limit = {
+					NOT = {
+						has_country_flag = hide_space_corps_creation
+					}
+				}
 				random_list = {
 					# different images TODO
-					1 = { country_event = { id = space_corps_pulse.18 }}
+					1 = {
+						country_event = {
+							id = space_corps_pulse.18
+						}
+					}
 				}
 			}
 		}

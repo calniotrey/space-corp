@@ -72,43 +72,31 @@ empire_name_parts_list = {
 		"net" = 5
 		"X" = 5
 		"Ex" = 5
-
 		"Corp" = 5
 		"corp" = 5
-
 		"Dyne" = 5
 		"dyne" = 5
-
 		"group" = 5
-
 		"Sec" = 5
 		"sec" = 5
-
 		"Sys" = 5
 		"sys" = 5
-
 		"Max" = 5
 		"max" = 5
-
 		"Zone" = 3
 		"zone" = 3
-
 		"Tel" = 3
 		"tel" = 3
-
 		"Tech" = 2
 		"tech" = 2
 		"Tec" = 2
 		"tec" = 2
 		"tex" = 2
-
 		"tronix" = 3
 		"tronics" = 3
-
 		"Gen" = 5
 		"gen" = 5
 		"Geni" = 3
-
 		"Pharma" = 5
 		"thix" = 5
 		"nex" = 5
@@ -149,7 +137,6 @@ empire_name_parts_list = {
 		"Green" = 5
 		"Pink" = 5
 		"Gray" = 5
-
 		"Thunder" = 5
 		"Sky" = 5
 		"Sun" = 5
@@ -157,7 +144,6 @@ empire_name_parts_list = {
 		"Storm" = 5
 		"Stellar" = 5
 		"Star" = 5
-
 		"Battle" = 5
 		"Hammer" = 5
 		"King" = 5
@@ -299,23 +285,18 @@ empire_name_parts_list = {
 		"Quantum" = 5
 		"Unified" = 5
 		"United" = 5
-
 		#space names
 		"Transgalactic" = 3
 		"Intergalactic" = 3
 		"Galactic" = 3
-
 		"Multisolar" = 3
 		"Transolar" = 3
 		"Intersolar" = 3
-
 		"Multistellar" = 3
 		"Interstellar" = 3
 		"Transtellar" = 3
-
 		"Transorbital" = 3
 		"Orbital" = 3
-
 		"Intercolonial" = 5
 		"Interplanetary" = 5
 		"Universal" = 5
@@ -324,7 +305,7 @@ empire_name_parts_list = {
 
 empire_name_parts_list = {
 	key = "corporate_empire_names_final"
-	parts = {	
+	parts = {
 		"Co." = 8
 		"Corporation" = 8
 		"Inc." = 8
@@ -355,9 +336,6 @@ empire_name_parts_list = {
 		"Telecommunications" = 5
 	}
 }
-
-
-
 
 #ChronoDyne
 empire_name_format = {
@@ -398,8 +376,6 @@ empire_name_format = {
 	noun = "[This.GetSpeciesName]"
 }
 
-
-
 #Blackstar Initiative
 empire_name_format = {
 	random_weight = {
@@ -425,8 +401,6 @@ empire_name_format = {
 	format = "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_standalone_adj>"
 	noun = "[This.GetSpeciesName]"
 }
-
-
 
 #Serendipity Transorbital
 empire_name_format = {

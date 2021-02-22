@@ -1,6 +1,12 @@
 civic_research_consortium = {
-	playable = { always = no }
-	potential = { authority = { value = auth_space_corp }}
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = auth_space_corp
+		}
+	}
 	possible = {
 		civics = {
 			NOR = {
@@ -13,12 +19,20 @@ civic_research_consortium = {
 			}
 		}
 	}
-	random_weight = { base = 1000 }
+	random_weight = {
+		base = 1000
+	}
 }
 
 civic_engineering_firm = {
-	playable = { always = no }
-	potential = { authority = { value = auth_space_corp }}
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = auth_space_corp
+		}
+	}
 	possible = {
 		civics = {
 			NOR = {
@@ -31,12 +45,20 @@ civic_engineering_firm = {
 			}
 		}
 	}
-	random_weight = { base = 1000 }
+	random_weight = {
+		base = 1000
+	}
 }
 
 civic_mining_union = {
-	playable = { always = no }
-	potential = { authority = { value = auth_space_corp }}
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = auth_space_corp
+		}
+	}
 	possible = {
 		civics = {
 			NOR = {
@@ -49,12 +71,20 @@ civic_mining_union = {
 			}
 		}
 	}
-	random_weight = { base = 1000 }
+	random_weight = {
+		base = 1000
+	}
 }
 
 civic_security_force = {
-	playable = { always = no }
-	potential = { authority = { value = auth_space_corp }}
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = auth_space_corp
+		}
+	}
 	possible = {
 		civics = {
 			NOR = {
@@ -67,12 +97,20 @@ civic_security_force = {
 			}
 		}
 	}
-	random_weight = { base = 1000 }
+	random_weight = {
+		base = 1000
+	}
 }
 
 civic_logistics_agency = {
-	playable = { always = no }
-	potential = { authority = { value = auth_space_corp }}
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = auth_space_corp
+		}
+	}
 	possible = {
 		civics = {
 			NOR = {
@@ -85,12 +123,20 @@ civic_logistics_agency = {
 			}
 		}
 	}
-	random_weight = { base = 1000 }
+	random_weight = {
+		base = 1000
+	}
 }
 
 civic_exploration_initiative = {
-	playable = { always = no }
-	potential = { authority = { value = auth_space_corp }}
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = auth_space_corp
+		}
+	}
 	possible = {
 		civics = {
 			NOR = {
@@ -103,12 +149,20 @@ civic_exploration_initiative = {
 			}
 		}
 	}
-	random_weight = { base = 1000 }
+	random_weight = {
+		base = 1000
+	}
 }
 
 civic_financial_group = {
-	playable = { always = no }
-	potential = { authority = { value = auth_space_corp }}
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = auth_space_corp
+		}
+	}
 	possible = {
 		civics = {
 			NOR = {
@@ -121,28 +175,38 @@ civic_financial_group = {
 			}
 		}
 	}
-	random_weight = { base = 1000 }
+	random_weight = {
+		base = 1000
+	}
 }
 
 civic_space_corp = {
-	playable = { always = no }
-	potential = { authority = { value = auth_space_corp }}
-	random_weight = { base = 1000000 }
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = auth_space_corp
+		}
+	}
+	random_weight = {
+		base = 1000000
+	}
 }
 
 origin_corporate_merger = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_hegemon.dds"
 	picture = GFX_origin_hegemon
-
 	playable = {
-		always = no # Non-player origin
+		always = no		# Non-player origin
 	}
-
-	possible = { authority = { value = auth_space_corp }}
-
+	possible = {
+		authority = {
+			value = auth_space_corp
+		}
+	}
 	description = origin_tooltip_corporate_merger
-
 	random_weight = {
 		base = 0
 	}
