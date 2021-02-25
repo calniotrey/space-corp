@@ -703,6 +703,62 @@ compute_income_from_hq_deposits = {
 			food = 3
 		}
 	}
+	while = {
+		count = space_corps_d_sc_researcher_regular
+		add_resource = {
+			physics_research = 1
+			society_research = 1
+			engineering_research = 1
+		}
+	}
+	while = {
+		count = space_corps_d_sc_artisan_regular
+		add_resource = {
+			consumer_goods = 1
+		}
+	}
+	while = {
+		count = space_corps_d_sc_foundry_regular
+		add_resource = {
+			alloys = 1
+		}
+	}
+	while = {
+		count = space_corps_d_sc_bureaucrat_regular
+		add_resource = {
+			energy = 2
+		}
+	}
+	while = {
+		count = space_corps_d_sc_culture_worker_regular
+		add_resource = {
+			energy = 1
+		}
+	}
+	while = {
+		count = space_corps_d_sc_priest_regular
+		add_resource = {
+			energy = 1
+		}
+	}
+	while = {
+		count = space_corps_d_sc_entertainer_regular
+		add_resource = {
+			energy = 1
+		}
+	}
+	while = {
+		count = space_corps_d_sc_duelist_regular
+		add_resource = {
+			energy = 1
+		}
+	}
+	while = {
+		count = space_corps_d_sc_enforcer_regular
+		add_resource = {
+			energy = 1
+		}
+	}
 }
 
 # this = corp
@@ -718,6 +774,9 @@ compute_and_tax_space_corp_income = {
 	}
 	compute_and_tax_space_corp_income_from_resource = {
 		RESOURCE = alloys
+	}
+	compute_and_tax_space_corp_income_from_resource = {
+		RESOURCE = consumer_goods
 	}
 	compute_and_tax_space_corp_income_from_resource = {
 		RESOURCE = food
@@ -743,7 +802,15 @@ compute_and_tax_space_corp_income = {
 		which = space_corp_money
 		value = space_corp_alloys_income
 	}
-	# twice because alloys = 2 energy here
+	change_variable = {
+		which = space_corp_money
+		value = space_corp_consumer_goods_income
+	}
+	change_variable = {
+		which = space_corp_money
+		value = space_corp_consumer_goods_income
+	}
+	# twice because alloys/CG = 2 energy here
 	set_variable = {
 		which = space_corp_total_taxed
 		value = 0
@@ -768,7 +835,15 @@ compute_and_tax_space_corp_income = {
 		which = space_corp_total_taxed
 		value = space_corp_alloys_taxed_total
 	}
-	# twice because alloys = 2 energy here
+	change_variable = {
+		which = space_corp_total_taxed
+		value = space_corp_consumer_goods_taxed_total
+	}
+	change_variable = {
+		which = space_corp_total_taxed
+		value = space_corp_consumer_goods_taxed_total
+	}
+	# twice because alloys/CG = 2 energy here
 	# compute month income
 	set_variable = {
 		which = space_corp_money_variation

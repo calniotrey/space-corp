@@ -57,6 +57,105 @@ build_hq_deposit_if_possible = {
 			TYPE = d_sc_food_regular
 		}
 	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 5
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_researcher_regular
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 6
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_artisan_regular
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 7
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_foundry_regular
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 8
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_bureaucrat_regular
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 9
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_culture_worker_regular
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 10
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_priest_regular
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 11
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_entertainer_regular
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 12
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_duelist_regular
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 13
+			}
+		}
+		build_hq_deposit_if_possible_aux = {
+			TYPE = d_sc_enforcer_regular_10
+		}
+	}
 }
 
 # this = corp
@@ -160,6 +259,206 @@ space_corps_choose_hq_deposits = {
 				set_variable = {
 					which = space_corps_hq_deposit_chosen_cost
 					value = @d_sc_food_regular_cost
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					event_target:headquarters_planet = {
+						has_deposit = d_sc_researcher_regular_10
+					}
+				}
+				modifier = {
+					factor = 3
+					has_ethic = ethic_materialist
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 5
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_researcher_regular_cost
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					event_target:headquarters_planet = {
+						has_deposit = d_sc_artisan_regular_10
+					}
+				}
+				modifier = {
+					factor = 3
+					has_ethic = ethic_pacifist
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 6
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_artisan_regular_cost
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					event_target:headquarters_planet = {
+						has_deposit = d_sc_foundry_regular_10
+					}
+				}
+				modifier = {
+					factor = 3
+					has_ethic = ethic_militarist
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 7
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_foundry_regular_cost
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					event_target:headquarters_planet = {
+						has_deposit = d_sc_bureaucrat_regular_10
+					}
+				}
+				modifier = {
+					factor = 3
+					has_ethic = ethic_xenophobe
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 8
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_bureaucrat_regular_cost
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					OR = {
+						event_target:headquarters_planet = {
+							has_deposit = d_sc_culture_worker_regular_10
+						}
+						overlord = {
+							has_ethic = ethic_spiritualist
+						}
+					}
+				}
+				modifier = {
+					factor = 3
+					has_ethic = ethic_spiritualist
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 9
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_culture_worker_regular_cost
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					OR = {
+						event_target:headquarters_planet = {
+							has_deposit = d_sc_priest_regular_10
+						}
+						NOT = {
+							overlord = {
+								has_ethic = ethic_spiritualist
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 3
+					has_ethic = ethic_spiritualist
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 10
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_priest_regular_cost
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					OR = {
+						event_target:headquarters_planet = {
+							has_deposit = d_sc_entertainer_regular_10
+						}
+						overlord = {
+							has_valid_civic = civic_warrior_culture
+						}
+					}
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 11
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_entertainer_regular_cost
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					OR = {
+						event_target:headquarters_planet = {
+							has_deposit = d_sc_duelist_regular_10
+						}
+						NOT = {
+							overlord = {
+								has_valid_civic = civic_warrior_culture
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 1.5
+					overlord = {
+						has_valid_civic = civic_warrior_culture
+					}
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 12
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_duelist_regular_cost
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					OR = {
+						event_target:headquarters_planet = {
+							has_deposit = d_sc_enforcer_regular_10
+						}
+					}
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 13
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen_cost
+					value = @d_sc_enforcer_regular_cost
 				}
 			}
 		}
