@@ -240,7 +240,7 @@ set_budget_multiplier = {
 	}
 	set_variable = {
 		which = space_corp_budget_multiplier_supply
-		value = 0.1
+		value = 0
 	}
 	set_variable = {
 		which = space_corp_budget_multiplier_builder
@@ -260,7 +260,7 @@ set_budget_multiplier = {
 	}
 	set_variable = {
 		which = space_corp_budget_multiplier_colonization
-		value = 0.05
+		value = 0.15
 	}
 	# TODO add ethic effect and normalize
 }

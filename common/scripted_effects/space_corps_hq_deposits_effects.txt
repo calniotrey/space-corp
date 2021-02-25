@@ -153,7 +153,7 @@ build_hq_deposit_if_possible = {
 			}
 		}
 		build_hq_deposit_if_possible_aux = {
-			TYPE = d_sc_enforcer_regular_10
+			TYPE = d_sc_enforcer_regular
 		}
 	}
 }

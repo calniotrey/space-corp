@@ -8,7 +8,9 @@ country_event = {
 		add_resource = {
 			energy = @corp_default_resources_amount
 			minerals = @corp_default_resources_amount
+			food = @corp_default_resources_amount
 			alloys = @corp_default_resources_amount
+			consumer_goods = @corp_default_resources_amount
 		}
 		# add_variable_resource = {
 		# 	RESOURCE = physics_research
