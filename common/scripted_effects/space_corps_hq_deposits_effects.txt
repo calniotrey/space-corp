@@ -162,23 +162,36 @@ build_hq_deposit_if_possible = {
 # TYPE = the name of the deposit
 # hq set
 build_hq_deposit_if_possible_aux = {
+	# if there isn't the last level of the deposit
 	if = {
 		limit = {
-			check_variable = {
-				which = space_corp_budget_colonization
-				value >= space_corps_hq_deposit_chosen_cost
-			}
 			can_increase_space_corps_hq_deposit = {
 				TYPE = $TYPE$
 			}
 		}
-		subtract_corp_money = {
-			TYPE = colonization
-			AMOUNT = space_corps_hq_deposit_chosen_cost
+		# then check if we have enough budget
+		if = {
+			limit = {
+				check_variable = {
+					which = space_corp_budget_colonization
+					value >= space_corps_hq_deposit_chosen_cost
+				}
+			}
+			subtract_corp_money = {
+				TYPE = colonization
+				AMOUNT = space_corps_hq_deposit_chosen_cost
+			}
+			increase_space_corps_hq_deposit = {
+				TYPE = $TYPE$
+			}
+			set_variable = {
+				which = space_corps_hq_deposit_chosen
+				value = 0
+			}
 		}
-		increase_space_corps_hq_deposit = {
-			TYPE = $TYPE$
-		}
+	}
+	# else it means the deposit is full, we need to choose another one (next month)
+	else = {
 		set_variable = {
 			which = space_corps_hq_deposit_chosen
 			value = 0
@@ -195,7 +208,6 @@ space_corps_choose_hq_deposits = {
 		# TODO add menial and complex drones
 	}
 	else = {
-		# TODO add specialists
 		random_list = {
 			60 = {
 				modifier = {
