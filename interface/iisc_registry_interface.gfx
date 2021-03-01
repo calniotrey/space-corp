@@ -1,0 +1,32 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_text_planet_type_icons"
+		texturefile = "gfx/interface/icons/text_icons/planet_type_icons.dds"
+		noOfFrames = 32
+	}
+	spriteType = {
+		name = "GFX_text_corp_civic_icons"
+		texturefile = "gfx/interface/icons/text_icons/corp_civic_icons.dds"
+		noOfFrames = 8
+	}
+	spriteType = {
+		name = "GFX_iisc_standard_button_34_34"
+		texturefile = "gfx/interface/buttons/iisc_button_34_animated.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/button_142_animated_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/button_142_animated_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 40.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+		hitbox_margin = { x=11 y=11 }
+	}
+}

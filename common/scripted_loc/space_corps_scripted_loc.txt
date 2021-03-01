@@ -537,3 +537,123 @@ defined_text = {
 		localization_key = planet_icon_nuked
 	}
 }
+
+defined_text = {
+	name = GetCorpCivicIcon
+	text = {
+		trigger = {
+			has_civic = sc_civic_research_consortium
+		}
+		localization_key = sc_civic_research_consortium_icon
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_engineering_firm
+		}
+		localization_key = sc_civic_engineering_firm_icon
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_mining_union
+		}
+		localization_key = sc_civic_mining_union_icon
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_security_force
+		}
+		localization_key = sc_civic_security_force_icon
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_logistics_agency
+		}
+		localization_key = sc_civic_logistics_agency_icon
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_exploration_initiative
+		}
+		localization_key = sc_civic_exploration_initiative_icon
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_financial_group
+		}
+		localization_key = sc_civic_financial_group_icon
+	}
+	text = {
+		trigger = {
+			NOR = {
+				has_civic = sc_civic_research_consortium
+				has_civic = sc_civic_engineering_firm
+				has_civic = sc_civic_mining_union
+				has_civic = sc_civic_security_force
+				has_civic = sc_civic_logistics_agency
+				has_civic = sc_civic_exploration_initiative
+				has_civic = sc_civic_financial_group
+			}
+		}
+		localization_key = sc_civic_unknown_icon
+	}
+}
+
+defined_text = {
+	name = GetCorpCivicTooltip
+	text = {
+		trigger = {
+			has_civic = sc_civic_research_consortium
+		}
+		localization_key = sc_civic_research_consortium_desc
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_engineering_firm
+		}
+		localization_key = sc_civic_engineering_firm_desc
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_mining_union
+		}
+		localization_key = sc_civic_mining_union_desc
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_security_force
+		}
+		localization_key = sc_civic_security_force_desc
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_logistics_agency
+		}
+		localization_key = sc_civic_logistics_agency_desc
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_exploration_initiative
+		}
+		localization_key = sc_civic_exploration_initiative_desc
+	}
+	text = {
+		trigger = {
+			has_civic = sc_civic_financial_group
+		}
+		localization_key = sc_civic_financial_group_desc
+	}
+	text = {
+		trigger = {
+			NOR = {
+				has_civic = sc_civic_research_consortium
+				has_civic = sc_civic_engineering_firm
+				has_civic = sc_civic_mining_union
+				has_civic = sc_civic_security_force
+				has_civic = sc_civic_logistics_agency
+				has_civic = sc_civic_exploration_initiative
+				has_civic = sc_civic_financial_group
+			}
+		}
+		localization_key = sc_civic_unknown_desc
+	}
+}
