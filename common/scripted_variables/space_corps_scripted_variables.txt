@@ -17,16 +17,4 @@
 @convoy_cost = 500
 @convoy_reward = 100
 # deposits
-@d_sc_clerk_cost = 100
-@d_sc_energy_regular_cost = 150
-@d_sc_minerals_regular_cost = 150
-@d_sc_food_regular_cost = 150
-@d_sc_researcher_regular_cost = 200
-@d_sc_artisan_regular_cost = 200
-@d_sc_foundry_regular_cost = 200
-@d_sc_bureaucrat_regular_cost = 150
-@d_sc_culture_worker_regular_cost = 150
-@d_sc_priest_regular_cost = 150
-@d_sc_entertainer_regular_cost = 150
-@d_sc_duelist_regular_cost = 150
-@d_sc_enforcer_regular_cost = 150
+@d_iisc_deposits_cost = 100
