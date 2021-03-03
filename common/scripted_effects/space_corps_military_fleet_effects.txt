@@ -262,16 +262,16 @@ set_military_orders_1 = {
 
 # this = fleet
 set_military_orders_2 = {
-	log = "----------------------------"
-	if = {
-		limit = {
-			exists = event_target:escort_target
-		}
-		log = "escort target exists :"
-		event_target:escort_target = {
-			log = "escort target exists : [This.GetName]"
-		}
-	}
+	# log = "----------------------------"
+	# if = {
+	# 	limit = {
+	# 		exists = event_target:escort_target
+	# 	}
+	# 	log = "escort target exists :"
+	# 	event_target:escort_target = {
+	# 		log = "escort target exists : [This.GetName]"
+	# 	}
+	# }
 	if = {
 		limit = {
 			exists = solar_system
