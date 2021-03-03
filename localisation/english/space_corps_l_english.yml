@@ -26,7 +26,7 @@
  space_corp_country_modifier: "Corporation hangars"
  ##### Events #####
  space_corps_pulse.18.title: "A New Corporation"
- space_corps_pulse.18.desc: "Today is a great day for our economy. Multiple small businesses from [This.GetHeadquartersPlanet] have merged together to form a new space corporation! According to the corporate registry, the firm is called [last_created_corp.GetName]."
+ space_corps_pulse.18.desc: "Today is a great day for our economy. Multiple small businesses from [headquarters_planet.GetName] have merged together to form a new space corporation! According to the corporate registry, the firm is called [last_created_corp.GetName]."
  space_corps_technology.title: "New technology"
  space_corps_technology.1011.desc: "One of our corp released the technology §Y$tech_space_science_1$§!."
  space_corps_technology.1012.desc: "One of our corp released the technology §Y$tech_space_science_2$§!."
@@ -65,7 +65,7 @@
  space_corps_diplomacy.11.name: "[space_corps_country.GetName]"
  space_corps_diplomacy.11.desc: "Welcome! What can we do for you?"
  space_corps_diplomacy.11.a: "More infos"
- space_corps_diplomacy.11.a.response: "We are located on [This.GetHeadquartersPlanet]. Our balance is [space_corps_country.GetMoney] credits. We payed a total of [space_corps_country.GetTotalPayedForLicenses] credits for licenses. We were taxed a total of [space_corps_country.GetTotalTaxed] credits. Our last month net income was [space_corps_country.GetMoneyVariation] credits."
+ space_corps_diplomacy.11.a.response: "We are located on [headquarters_planet.GetName]. Our balance is [space_corps_country.GetMoney] credits. We payed a total of [space_corps_country.GetTotalPayedForLicenses] credits for licenses. We were taxed a total of [space_corps_country.GetTotalTaxed] credits. Our last month net income was [space_corps_country.GetMoneyVariation] credits."
  space_corps_diplomacy.11.b: "Show me your budget"
  space_corps_diplomacy.11.b.response: "We have a total of [space_corps_country.GetMoney] credits. Our budget is currently:\n[space_corps_country.GetBudgetMilitary] credits for military purposes.\n[space_corps_country.GetBudgetConvoy] credits for convoys.\n[space_corps_country.GetBudgetSupply] credits for supply lines.\n[space_corps_country.GetBudgetBuilder] credits for building construction ships.\n[space_corps_country.GetBudgetScienceShip] credits for building science ships.\n[space_corps_country.GetBudgetMiningStation] credits for building mining stations.\n[space_corps_country.GetBudgetResearchStation] credits for building research stations.\n[space_corps_country.GetBudgetColonization] credits for colonization purposes."
  space_corps_diplomacy.11.hire_leader: "Hire a leader"
