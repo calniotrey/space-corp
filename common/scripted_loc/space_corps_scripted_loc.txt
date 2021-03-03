@@ -1,22 +1,4 @@
 defined_text = {
-	name = GetHeadquartersPlanet
-	text = {
-		trigger = {
-			exists = event_target:headquarters_planet
-		}
-		localization_key = "[headquarters_planet.GetName]"
-	}
-	text = {
-		trigger = {
-			NOT = {
-				exists = event_target:headquarters_planet
-			}
-		}
-		localization_key = "Unknown planet"
-	}
-}
-
-defined_text = {
 	name = GetMoney
 	text = {
 		trigger = {
