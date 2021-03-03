@@ -64,89 +64,48 @@ build_hq_deposit_if_possible = {
 # TYPE = the name of the deposit
 # hq set
 build_hq_deposit_if_possible_aux = {
-	# if there isn't the last level of the deposit
+	# check if we have enough budget
 	if = {
 		limit = {
 			exists = event_target:headquarters_planet.owner
-			OR = {
-				AND = {
-					event_target:headquarters_planet.owner = {
-						has_authority = auth_machine_intelligence
-					}
-					can_increase_space_corps_hq_deposit = {
-						TYPE = $TYPE$_machine
-					}
-				}
-				AND = {
-					event_target:headquarters_planet.owner = {
-						has_authority = auth_hive_mind
-					}
-					can_increase_space_corps_hq_deposit = {
-						TYPE = $TYPE$_hive
-					}
-				}
-				AND = {
-					event_target:headquarters_planet.owner = {
-						NOR = {
-							has_authority = auth_machine_intelligence
-							has_authority = auth_hive_mind
-						}
-					}
-					can_increase_space_corps_hq_deposit = {
-						TYPE = $TYPE$_regular
-					}
-				}
+			check_variable = {
+				which = space_corp_budget_colonization
+				value >= @d_iisc_deposits_cost
 			}
 		}
-		# then check if we have enough budget
+		subtract_corp_money = {
+			TYPE = colonization
+			AMOUNT = @d_iisc_deposits_cost
+		}
+		change_variable = {
+			which = iisc_major_deposit_size
+			value = 1
+		}
 		if = {
 			limit = {
-				check_variable = {
-					which = space_corp_budget_colonization
-					value >= @d_iisc_deposits_cost
+				event_target:headquarters_planet.owner = {
+					has_authority = auth_machine_intelligence
 				}
 			}
-			subtract_corp_money = {
-				TYPE = colonization
-				AMOUNT = @d_iisc_deposits_cost
-			}
-			change_variable = {
-				which = iisc_major_deposit_size
-				value = 1
-			}
-			if = {
-				limit = {
-					event_target:headquarters_planet.owner = {
-						has_authority = auth_machine_intelligence
-					}
-				}
-				increase_space_corps_hq_deposit = {
-					TYPE = $TYPE$_machine
-				}
-			}
-			else_if = {
-				limit = {
-					event_target:headquarters_planet.owner = {
-						has_authority = auth_hive_mind
-					}
-				}
-				increase_space_corps_hq_deposit = {
-					TYPE = $TYPE$_hive
-				}
-			}
-			else = {
-				increase_space_corps_hq_deposit = {
-					TYPE = $TYPE$_regular
-				}
-			}
-			set_variable = {
-				which = space_corps_hq_deposit_chosen
-				value = 0
+			increase_space_corps_hq_deposit = {
+				TYPE = $TYPE$_machine
 			}
 		}
-	}
-	# else it means the deposit is full, we need to choose another one (next month)
-	else = {
+		else_if = {
+			limit = {
+				event_target:headquarters_planet.owner = {
+					has_authority = auth_hive_mind
+				}
+			}
+			increase_space_corps_hq_deposit = {
+				TYPE = $TYPE$_hive
+			}
+		}
+		else = {
+			increase_space_corps_hq_deposit = {
+				TYPE = $TYPE$_regular
+			}
+		}
 		set_variable = {
 			which = space_corps_hq_deposit_chosen
 			value = 0
