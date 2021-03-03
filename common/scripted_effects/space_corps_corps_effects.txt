@@ -240,7 +240,7 @@ set_budget_multiplier = {
 	}
 	set_variable = {
 		which = space_corp_budget_multiplier_supply
-		value = 0.1
+		value = 0
 	}
 	set_variable = {
 		which = space_corp_budget_multiplier_builder
@@ -260,7 +260,7 @@ set_budget_multiplier = {
 	}
 	set_variable = {
 		which = space_corp_budget_multiplier_colonization
-		value = 0.05
+		value = 0.15
 	}
 	# TODO add ethic effect and normalize
 }
@@ -675,9 +675,23 @@ compute_passive_income = {
 }
 
 # this = corp
+# hq set
+compute_income_from_hq_deposits = {
+	# this adds raw resources to the corp before it being taxed and converted into money
+	# PERF For performance, we might want this to add the resources directly into the computed variables (so no need to do a bunch of whiles to add the resources)
+	while = {
+		count = iisc_major_deposit_size
+		add_resource = {
+			energy = 3
+		}
+	}
+}
+
+# this = corp
 compute_and_tax_space_corp_income = {
 	get_headquarters = yes
 	compute_passive_income = yes
+	compute_income_from_hq_deposits = yes
 	compute_and_tax_space_corp_income_from_resource = {
 		RESOURCE = energy
 	}
@@ -686,6 +700,12 @@ compute_and_tax_space_corp_income = {
 	}
 	compute_and_tax_space_corp_income_from_resource = {
 		RESOURCE = alloys
+	}
+	compute_and_tax_space_corp_income_from_resource = {
+		RESOURCE = consumer_goods
+	}
+	compute_and_tax_space_corp_income_from_resource = {
+		RESOURCE = food
 	}
 	# now transform that as money
 	change_variable = {
@@ -698,13 +718,25 @@ compute_and_tax_space_corp_income = {
 	}
 	change_variable = {
 		which = space_corp_money
+		value = space_corp_food_income
+	}
+	change_variable = {
+		which = space_corp_money
 		value = space_corp_alloys_income
 	}
 	change_variable = {
 		which = space_corp_money
 		value = space_corp_alloys_income
 	}
-	# twice because alloys = 2 energy here
+	change_variable = {
+		which = space_corp_money
+		value = space_corp_consumer_goods_income
+	}
+	change_variable = {
+		which = space_corp_money
+		value = space_corp_consumer_goods_income
+	}
+	# twice because alloys/CG = 2 energy here
 	set_variable = {
 		which = space_corp_total_taxed
 		value = 0
@@ -719,13 +751,25 @@ compute_and_tax_space_corp_income = {
 	}
 	change_variable = {
 		which = space_corp_total_taxed
+		value = space_corp_food_taxed_total
+	}
+	change_variable = {
+		which = space_corp_total_taxed
 		value = space_corp_alloys_taxed_total
 	}
 	change_variable = {
 		which = space_corp_total_taxed
 		value = space_corp_alloys_taxed_total
 	}
-	# twice because alloys = 2 energy here
+	change_variable = {
+		which = space_corp_total_taxed
+		value = space_corp_consumer_goods_taxed_total
+	}
+	change_variable = {
+		which = space_corp_total_taxed
+		value = space_corp_consumer_goods_taxed_total
+	}
+	# twice because alloys/CG = 2 energy here
 	# compute month income
 	set_variable = {
 		which = space_corp_money_variation

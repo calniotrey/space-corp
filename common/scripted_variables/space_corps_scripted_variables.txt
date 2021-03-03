@@ -16,3 +16,5 @@
 @convoy_min = 1000
 @convoy_cost = 500
 @convoy_reward = 100
+# deposits
+@d_iisc_deposits_cost = 100

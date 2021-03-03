@@ -185,6 +185,13 @@ country_event = {
 				create_corp_military_fleet = yes
 			}
 		}
+		# handle deposits
+		if = {
+			limit = {
+				should_build_hq_deposit = yes
+			}
+			build_hq_deposit_if_possible = yes
+		}
 		# check for tech
 		corps_load_research_points = yes
 		set_tech_costs = yes

@@ -9,7 +9,15 @@ space_corps_dummy_effect = {
 		value = 0
 	}
 	set_variable = {
+		which = space_corp_food_income
+		value = 0
+	}
+	set_variable = {
 		which = space_corp_alloys_income
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_consumer_goods_income
 		value = 0
 	}
 	set_variable = {
@@ -21,7 +29,15 @@ space_corps_dummy_effect = {
 		value = 0
 	}
 	set_variable = {
+		which = space_corp_food_taxed_total
+		value = 0
+	}
+	set_variable = {
 		which = space_corp_alloys_taxed_total
+		value = 0
+	}
+	set_variable = {
+		which = space_corp_consumer_goods_taxed_total
 		value = 0
 	}
 	set_variable = {
