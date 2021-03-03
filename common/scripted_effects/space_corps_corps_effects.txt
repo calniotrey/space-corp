@@ -680,83 +680,9 @@ compute_income_from_hq_deposits = {
 	# this adds raw resources to the corp before it being taxed and converted into money
 	# PERF For performance, we might want this to add the resources directly into the computed variables (so no need to do a bunch of whiles to add the resources)
 	while = {
-		count = space_corps_d_sc_clerk
+		count = iisc_major_deposit_size
 		add_resource = {
-			energy = 1
-		}
-	}
-	while = {
-		count = space_corps_d_sc_energy_regular
-		add_resource = {
-			energy = 2
-		}
-	}
-	while = {
-		count = space_corps_d_sc_minerals_regular
-		add_resource = {
-			minerals = 2
-		}
-	}
-	while = {
-		count = space_corps_d_sc_food_regular
-		add_resource = {
-			food = 3
-		}
-	}
-	while = {
-		count = space_corps_d_sc_researcher_regular
-		add_resource = {
-			physics_research = 1
-			society_research = 1
-			engineering_research = 1
-		}
-	}
-	while = {
-		count = space_corps_d_sc_artisan_regular
-		add_resource = {
-			consumer_goods = 1
-		}
-	}
-	while = {
-		count = space_corps_d_sc_foundry_regular
-		add_resource = {
-			alloys = 1
-		}
-	}
-	while = {
-		count = space_corps_d_sc_bureaucrat_regular
-		add_resource = {
-			energy = 2
-		}
-	}
-	while = {
-		count = space_corps_d_sc_culture_worker_regular
-		add_resource = {
-			energy = 1
-		}
-	}
-	while = {
-		count = space_corps_d_sc_priest_regular
-		add_resource = {
-			energy = 1
-		}
-	}
-	while = {
-		count = space_corps_d_sc_entertainer_regular
-		add_resource = {
-			energy = 1
-		}
-	}
-	while = {
-		count = space_corps_d_sc_duelist_regular
-		add_resource = {
-			energy = 1
-		}
-	}
-	while = {
-		count = space_corps_d_sc_enforcer_regular
-		add_resource = {
-			energy = 1
+			energy = 3
 		}
 	}
 }

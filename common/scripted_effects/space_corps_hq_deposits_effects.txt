@@ -23,37 +23,37 @@ build_hq_deposit_if_possible = {
 			trigger = has_civic
 			sc_civic_research_consortium = {
 				build_hq_deposit_if_possible_aux = {
-					TYPE = d_iisc_research_consortium_regular
+					TYPE = d_iisc_research_consortium
 				}
 			}
 			sc_civic_engineering_firm = {
 				build_hq_deposit_if_possible_aux = {
-					TYPE = d_iisc_engineering_firm_regular
+					TYPE = d_iisc_engineering_firm
 				}
 			}
 			sc_civic_mining_union = {
 				build_hq_deposit_if_possible_aux = {
-					TYPE = d_iisc_mining_union_regular
+					TYPE = d_iisc_mining_union
 				}
 			}
 			sc_civic_security_force = {
 				build_hq_deposit_if_possible_aux = {
-					TYPE = d_iisc_security_force_regular
+					TYPE = d_iisc_security_force
 				}
 			}
 			sc_civic_logistics_agency = {
 				build_hq_deposit_if_possible_aux = {
-					TYPE = d_iisc_logistics_agency_regular
+					TYPE = d_iisc_logistics_agency
 				}
 			}
 			sc_civic_exploration_initiative = {
 				build_hq_deposit_if_possible_aux = {
-					TYPE = d_iisc_exploration_initiative_regular
+					TYPE = d_iisc_exploration_initiative
 				}
 			}
 			sc_civic_financial_group = {
 				build_hq_deposit_if_possible_aux = {
-					TYPE = d_iisc_financial_group_regular
+					TYPE = d_iisc_financial_group
 				}
 			}
 		}
@@ -67,8 +67,35 @@ build_hq_deposit_if_possible_aux = {
 	# if there isn't the last level of the deposit
 	if = {
 		limit = {
-			can_increase_space_corps_hq_deposit = {
-				TYPE = $TYPE$
+			exists = event_target:headquarters_planet.owner
+			OR = {
+				AND = {
+					event_target:headquarters_planet.owner = {
+						has_authority = auth_machine_intelligence
+					}
+					can_increase_space_corps_hq_deposit = {
+						TYPE = $TYPE$_machine
+					}
+				}
+				AND = {
+					event_target:headquarters_planet.owner = {
+						has_authority = auth_hive_mind
+					}
+					can_increase_space_corps_hq_deposit = {
+						TYPE = $TYPE$_hive
+					}
+				}
+				AND = {
+					event_target:headquarters_planet.owner = {
+						NOR = {
+							has_authority = auth_machine_intelligence
+							has_authority = auth_hive_mind
+						}
+					}
+					can_increase_space_corps_hq_deposit = {
+						TYPE = $TYPE$_regular
+					}
+				}
 			}
 		}
 		# then check if we have enough budget
@@ -83,8 +110,34 @@ build_hq_deposit_if_possible_aux = {
 				TYPE = colonization
 				AMOUNT = @d_iisc_deposits_cost
 			}
-			increase_space_corps_hq_deposit = {
-				TYPE = $TYPE$
+			change_variable = {
+				which = iisc_major_deposit_size
+				value = 1
+			}
+			if = {
+				limit = {
+					event_target:headquarters_planet.owner = {
+						has_authority = auth_machine_intelligence
+					}
+				}
+				increase_space_corps_hq_deposit = {
+					TYPE = $TYPE$_machine
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:headquarters_planet.owner = {
+						has_authority = auth_hive_mind
+					}
+				}
+				increase_space_corps_hq_deposit = {
+					TYPE = $TYPE$_hive
+				}
+			}
+			else = {
+				increase_space_corps_hq_deposit = {
+					TYPE = $TYPE$_regular
+				}
 			}
 			set_variable = {
 				which = space_corps_hq_deposit_chosen
@@ -107,115 +160,143 @@ space_corps_choose_hq_deposits = {
 		limit = {
 			has_ethic = ethic_gestalt_consciousness
 		}
-		# TODO add major/minor deposits for gestalt
+		if = {
+			limit = {
+				exists = event_target:headquarters_planet.owner
+				event_target:headquarters_planet.owner = {
+					has_authority = auth_machine_intelligence
+				}
+			}
+			space_corps_choose_hq_deposits_aux = {
+				AUTHORITY = machine
+			}
+		}
+		else_if = {
+			limit = {
+				exists = event_target:headquarters_planet.owner
+				event_target:headquarters_planet.owner = {
+					has_authority = auth_hive_mind
+				}
+			}
+			space_corps_choose_hq_deposits_aux = {
+				AUTHORITY = hive
+			}
+		}
 	}
 	else = {
-		# TODO a randomlist for major/minor
-		switch = {
-			trigger = has_civic
-			sc_civic_research_consortium = {
-				if = {
-					limit = {
-						NOT = {
-							event_target:headquarters_planet = {
-								has_deposit = d_iisc_research_consortium_regular_10
-							}
+		space_corps_choose_hq_deposits_aux = {
+			AUTHORITY = regular
+		}
+	}
+}
+
+# this = corp
+space_corps_choose_hq_deposits_aux = {
+	# TODO a randomlist for major/minor
+	switch = {
+		trigger = has_civic
+		sc_civic_research_consortium = {
+			if = {
+				limit = {
+					NOT = {
+						event_target:headquarters_planet = {
+							has_deposit = d_iisc_research_consortium_$AUTHORITY$_10
 						}
-					}
-					set_variable = {
-						which = space_corps_hq_deposit_chosen
-						value = 1
 					}
 				}
-			}
-			sc_civic_engineering_firm = {
-				if = {
-					limit = {
-						NOT = {
-							event_target:headquarters_planet = {
-								has_deposit = d_iisc_engineering_firm_regular_10
-							}
-						}
-					}
-					set_variable = {
-						which = space_corps_hq_deposit_chosen
-						value = 1
-					}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 1
 				}
 			}
-			sc_civic_mining_union = {
-				if = {
-					limit = {
-						NOT = {
-							event_target:headquarters_planet = {
-								has_deposit = d_iisc_mining_union_regular_10
-							}
+		}
+		sc_civic_engineering_firm = {
+			if = {
+				limit = {
+					NOT = {
+						event_target:headquarters_planet = {
+							has_deposit = d_iisc_engineering_firm_$AUTHORITY$_10
 						}
-					}
-					set_variable = {
-						which = space_corps_hq_deposit_chosen
-						value = 1
 					}
 				}
-			}
-			sc_civic_security_force = {
-				if = {
-					limit = {
-						NOT = {
-							event_target:headquarters_planet = {
-								has_deposit = d_iisc_security_force_regular_10
-							}
-						}
-					}
-					set_variable = {
-						which = space_corps_hq_deposit_chosen
-						value = 1
-					}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 1
 				}
 			}
-			sc_civic_logistics_agency = {
-				if = {
-					limit = {
-						NOT = {
-							event_target:headquarters_planet = {
-								has_deposit = d_iisc_logistics_agency_regular_10
-							}
+		}
+		sc_civic_mining_union = {
+			if = {
+				limit = {
+					NOT = {
+						event_target:headquarters_planet = {
+							has_deposit = d_iisc_mining_union_$AUTHORITY$_10
 						}
-					}
-					set_variable = {
-						which = space_corps_hq_deposit_chosen
-						value = 1
 					}
 				}
-			}
-			sc_civic_exploration_initiative = {
-				if = {
-					limit = {
-						NOT = {
-							event_target:headquarters_planet = {
-								has_deposit = d_iisc_exploration_initiative_regular_10
-							}
-						}
-					}
-					set_variable = {
-						which = space_corps_hq_deposit_chosen
-						value = 1
-					}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 1
 				}
 			}
-			sc_civic_financial_group = {
-				if = {
-					limit = {
-						NOT = {
-							event_target:headquarters_planet = {
-								has_deposit = d_iisc_financial_group_regular_10
-							}
+		}
+		sc_civic_security_force = {
+			if = {
+				limit = {
+					NOT = {
+						event_target:headquarters_planet = {
+							has_deposit = d_iisc_security_force_$AUTHORITY$_10
 						}
 					}
-					set_variable = {
-						which = space_corps_hq_deposit_chosen
-						value = 1
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 1
+				}
+			}
+		}
+		sc_civic_logistics_agency = {
+			if = {
+				limit = {
+					NOT = {
+						event_target:headquarters_planet = {
+							has_deposit = d_iisc_logistics_agency_$AUTHORITY$_10
+						}
 					}
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 1
+				}
+			}
+		}
+		sc_civic_exploration_initiative = {
+			if = {
+				limit = {
+					NOT = {
+						event_target:headquarters_planet = {
+							has_deposit = d_iisc_exploration_initiative_$AUTHORITY$_10
+						}
+					}
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 1
+				}
+			}
+		}
+		sc_civic_financial_group = {
+			if = {
+				limit = {
+					NOT = {
+						event_target:headquarters_planet = {
+							has_deposit = d_iisc_financial_group_$AUTHORITY$_10
+						}
+					}
+				}
+				set_variable = {
+					which = space_corps_hq_deposit_chosen
+					value = 1
 				}
 			}
 		}
@@ -301,10 +382,6 @@ increase_space_corps_hq_deposit = {
 		}
 		check_planet_employment = yes
 	}
-	change_variable = {
-		which = space_corps_$TYPE$
-		value = 1
-	}
 }
 
 # this = corp
@@ -312,10 +389,6 @@ increase_space_corps_hq_deposit = {
 # hq set
 # TODO when used : add a trigger to check if the corp has the deposit (in case we add several corps on one planet)
 decrease_space_corps_hq_deposit = {
-	subtract_variable = {
-		which = space_corps_$TYPE$
-		value = 1
-	}
 	event_target:headquarters_planet = {
 		if = {
 			limit = {

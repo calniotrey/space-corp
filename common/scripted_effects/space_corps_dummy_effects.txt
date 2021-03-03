@@ -120,58 +120,6 @@ space_corps_dummy_effect = {
 		which = space_corp_budget_increase_colonization
 		value = 0
 	}
-	set_variable = {
-		which = space_corps_d_sc_clerk
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_energy_regular
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_minerals_regular
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_food_regular
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_researcher_regular
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_artisan_regular
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_foundry_regular
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_bureaucrat_regular
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_culture_worker_regular
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_priest_regular
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_entertainer_regular
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_duelist_regular
-		value = 0
-	}
-	set_variable = {
-		which = space_corps_d_sc_enforcer_regular
-		value = 0
-	}
 	set_global_flag = space_corps_paused
 	set_country_flag = hide_space_corps_creation
 }
