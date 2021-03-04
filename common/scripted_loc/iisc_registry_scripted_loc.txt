@@ -173,43 +173,43 @@ defined_text = {
 		trigger = {
 			has_civic = sc_civic_research_consortium
 		}
-		localization_key = sc_civic_research_consortium_desc
+		localization_key = iisc_registry_research_consortium_tooltip
 	}
 	text = {
 		trigger = {
 			has_civic = sc_civic_engineering_firm
 		}
-		localization_key = sc_civic_engineering_firm_desc
+		localization_key = iisc_registry_engineering_firm_tooltip
 	}
 	text = {
 		trigger = {
 			has_civic = sc_civic_mining_union
 		}
-		localization_key = sc_civic_mining_union_desc
+		localization_key = iisc_registry_mining_union_tooltip
 	}
 	text = {
 		trigger = {
 			has_civic = sc_civic_security_force
 		}
-		localization_key = sc_civic_security_force_desc
+		localization_key = iisc_registry_security_force_tooltip
 	}
 	text = {
 		trigger = {
 			has_civic = sc_civic_logistics_agency
 		}
-		localization_key = sc_civic_logistics_agency_desc
+		localization_key = iisc_registry_logistics_agency_tooltip
 	}
 	text = {
 		trigger = {
 			has_civic = sc_civic_exploration_initiative
 		}
-		localization_key = sc_civic_exploration_initiative_desc
+		localization_key = iisc_registry_exploration_initiative_tooltip
 	}
 	text = {
 		trigger = {
 			has_civic = sc_civic_financial_group
 		}
-		localization_key = sc_civic_financial_group_desc
+		localization_key = iisc_registry_financial_group_tooltip
 	}
 	text = {
 		trigger = {

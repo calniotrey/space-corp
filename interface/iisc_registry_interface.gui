@@ -43,6 +43,7 @@ guiTypes = {
 			size = { width = 40 height = 30 }
 			font = "cg_16b"
 			text = "OPTION_TEXT"
+			alwaysTransparent = yes
 		}
 	}
 	containerWindowType = {
@@ -153,7 +154,7 @@ guiTypes = {
 			name = "heading"
 			font = "malgun_goth_24"
 			text = "DIPLOMACY"
-			position = { x = 20 y = 5 }
+			position = { x = 10020 y = 5 }
 			maxWidth = 543
 			maxHeight = 22
 			fixedSize = yes
@@ -212,13 +213,13 @@ guiTypes = {
 		containerWindowType = {
 			name = "portrait"
 			position = { x = 17 y = 45 }
-			size = { width = 900 height = 350 }
-			clipping = yes			
+			size = { width = 964 height = 350 }
+			clipping = yes
+
 			iconType = {
 				name = "portrait"
 				spriteType = "GFX_portrait_gamesetup_mask"
 				alwaysTransparent = yes
-				position = { x = -20 y = -50 }
 			}
 					
 			iconType = {
@@ -374,25 +375,25 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "corp_list_heading_name"
-				position = { x = 539 y = 0 }
+				position = { x = 550 y = 0 }
 				font = "cg_16b"
 				maxWidth = 265
 				fixedSize = yes
 				format = center
 				#text_color_code = "E"
-				text = "Registered Name"
+				text = "REGISTERED_NAME"
 				alwaysTransparent = yes
 			}
 	
 			instantTextBoxType = {
 				name = "corp_list_heading_hq"
-				position = { x = 809 y = 0 }
+				position = { x = 817 y = 0 }
 				font = "cg_16b"
 				maxWidth = 142
 				fixedSize = yes
 				format = center
 				#text_color_code = "E"
-				text = "Headquarters"
+				text = "HEADQUARTERS"
 				alwaysTransparent = yes
 			}
 			
