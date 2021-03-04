@@ -76,9 +76,10 @@ pacifist:
 Passive income
 xenophile: +0.3EC per free not-purged organics pop of different species on HQ
 xenophobe: +/-0.3 EC per same/different free species pops on HQ
-egalitarian: +0.1EC per free (not purged either) pops on HQ
+egalitarian: +0.2EC per free (not purged either) pops on HQ
 authoritarian: +0.5EC per slaves on HQ
-materialist: +0.3EC per robot pops on HQ
+materialist: +0.5EC per robot pops on HQ
 spiritualist: +0.3EC per spirit pops on HQ
 militarist: +1EC per army on HQ
 pacifist: +0.5EC per years of peace from the overlord (up to 25 for 50 years, per 10 years intervals)
+gestalt: +5EC flat

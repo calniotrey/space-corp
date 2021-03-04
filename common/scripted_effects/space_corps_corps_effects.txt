@@ -570,7 +570,7 @@ compute_passive_income = {
 				}
 				prevprev = {
 					add_resource = {
-						energy = 0.3
+						energy = 0.5
 					}
 				}
 			}
@@ -670,6 +670,14 @@ compute_passive_income = {
 			add_resource = {
 				energy = 5
 			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+		add_resource = {
+			energy = 5
 		}
 	}
 }
