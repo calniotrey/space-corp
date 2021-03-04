@@ -102,7 +102,8 @@ defined_text = {
 		}
 		localization_key = planet_icon_city
 	}
-	text = { #default if none of the above ones (mod planet classes)
+	text = {
+		#default if none of the above ones (mod planet classes)
 		localization_key = planet_icon_nuked
 	}
 }
