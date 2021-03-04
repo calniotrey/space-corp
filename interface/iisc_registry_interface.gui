@@ -45,6 +45,65 @@ guiTypes = {
 			text = "OPTION_TEXT"
 		}
 	}
+	containerWindowType = {
+		name = "iisc_registry_foreign_list_button"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 5 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_button_animated_265_34"
+			position = { x=-400 y=210 }
+			size = { width = 40 height = 30 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+	}
+	containerWindowType = {
+		name = "iisc_registry_next_button"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 5 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_button_75_24"
+			position = { x=250 y=215 }
+			size = { width = 40 height = 30 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+	}
+	containerWindowType = {
+		name = "iisc_registry_previous_button"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 5 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_button_75_24"
+			position = { x=150 y=210 }
+			size = { width = 40 height = 30 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+	}
+	containerWindowType = {
+		name = "iisc_registry_dummy_option"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 10 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			position = { x=10000 y=0 }
+			size = { width = 40 height = 30 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+	}
 
 	containerWindowType = {
 		name = "iisc_registry_window"
@@ -153,19 +212,11 @@ guiTypes = {
 		containerWindowType = {
 			name = "portrait"
 			position = { x = 17 y = 45 }
-			size = { width = 470 height = 350 }
+			size = { width = 900 height = 350 }
 			clipping = yes			
-			# old back
-			iconType = {
-				name ="portrait_room"
-				spriteType = "GFX_portrait_room"
-				position = { x= 0 y= -10 }
-			}
-
-			
 			iconType = {
 				name = "portrait"
-				spriteType = "GFX_portrait_character"
+				spriteType = "GFX_portrait_gamesetup_mask"
 				alwaysTransparent = yes
 				position = { x = -20 y = -50 }
 			}
@@ -361,43 +412,13 @@ guiTypes = {
 			
 			listboxType = {
 				name = "option_list"
-				position = { x = 500 y = 20 }
+				position = { x = 500 y = 5 }
 				backGround=""
 				size = { x=462 y=200 }
 				spacing = 1
 				scrollbartype = "standardlistbox_slider"
 				borderSize = { x = 0 y = 0 }
 				Orientation = "UPPER_LEFT"
-			}
-
-			effectButtonType = {
-				name = "iisc_registry_foreign_list_button"
-				effect = iisc_registry_foreign_list_button_effect
-				quadTextureSprite = "GFX_button_animated_265_34"
-				position = { x=100 y=220 }
-				size = { width = 40 height = 30 }
-				font = "cg_16b"
-				text = "View Foreign Corporations"
-			}
-
-			effectButtonType = {
-				name = "iisc_registry_previous_button"
-				effect = iisc_registry_previous_button_effect
-				quadTextureSprite = "GFX_button_75_24"
-				position = { x=650 y=225 }
-				size = { width = 40 height = 30 }
-				font = "cg_16b"
-				text = "Previous"
-			}
-	
-			effectButtonType = {
-				name = "iisc_registry_next_button"
-				effect = iisc_registry_next_button_effect
-				quadTextureSprite = "GFX_button_75_24"
-				position = { x=750 y=225 }
-				size = { width = 40 height = 30 }
-				font = "cg_16b"
-				text = "Next"
 			}
 		}
 	}
