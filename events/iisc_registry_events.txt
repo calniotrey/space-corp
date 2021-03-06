@@ -30,25 +30,20 @@ country_event = {
 			which = iisc_registry_length
 			value = 0
 		}
-		every_country = {
-			limit = {
-				is_country_type = space_corp
-				overlord = {
-					is_same_value = event_target:iisc_registry_owner
+		event_target:iisc_registry_owner = {
+			every_subject = {
+				limit = {
+					is_country_type = space_corp
 				}
-			}
-			ROOT = {
-				SLEX_store_list_event_var_index = {
-					LIST = iisc_registry_corp_list
-					INDEX = iisc_registry_length
-					TARGET = PREV
-				}
-			}
-			overlord = {
-				random_owned_planet = {
-					limit = {
-						has_planet_flag = space_corp_headquarters_from_@PREVPREV
+				ROOT = {
+					SLEX_store_list_event_var_index = {
+						LIST = iisc_registry_corp_list
+						INDEX = iisc_registry_length
+						TARGET = PREV
 					}
+				}
+				get_headquarters = yes
+				event_target:headquarters_planet = {
 					ROOT = {
 						SLEX_store_list_event_var_index = {
 							LIST = iisc_registry_hq_list
@@ -57,12 +52,26 @@ country_event = {
 						}
 					}
 				}
-			}
-			ROOT = {
-				change_variable = {
-					which = iisc_registry_length
-					value = 1
+				PREV = {
+					random_owned_planet = {
+						limit = {
+							has_planet_flag = space_corp_headquarters_from_@PREVPREV
+						}
+						ROOT = {
+							SLEX_store_list_event_var_index = {
+								LIST = iisc_registry_hq_list
+								INDEX = iisc_registry_length
+								TARGET = PREV
+							}
+						}
+					}
 				}
+				ROOT = {
+					change_variable = {
+						which = iisc_registry_length
+						value = 1
+					}
+				}				
 			}
 		}
 		country_event = {
@@ -108,6 +117,10 @@ country_event = {
 					which = iisc_index
 					value < iisc_registry_length
 				}
+				check_variable = {
+					which = iisc_index_bis
+					value < 5
+				}
 			}
 			SLEX_load_list_event_var_index = {
 				LIST = iisc_registry_corp_list
@@ -132,7 +145,7 @@ country_event = {
 			SLEX_set_list_variable_var_index = {
 				LIST = iisc_registry_corp_index
 				INDEX = iisc_index_bis
-				VALUE = iisc_index
+				VALUE = 1
 			}
 			change_variable = {
 				which = iisc_index
@@ -147,13 +160,13 @@ country_event = {
 			limit = {
 				check_variable = {
 					which = iisc_index_bis
-					value < 10
+					value < 5
 				}
 			}
 			SLEX_set_list_variable_var_index = {
 				LIST = iisc_registry_corp_index
 				INDEX = iisc_index_bis
-				VALUE = 1000
+				VALUE = 0
 			}
 			change_variable = {
 				which = iisc_index_bis
@@ -165,22 +178,25 @@ country_event = {
 		name = iisc_registry.1.foreign_list
 		custom_gui = "iisc_registry_foreign_list_button"
 		allow = {
-			count_country = {
-				count > 0
-				limit = {
-					can_have_space_corp = yes
-					NOT = {
-						is_same_value = ROOT
-					}
-					has_communications = ROOT
-					check_variable = {
-						which = number_of_corps
-						value > 0
+			hidden_trigger = {
+				count_country = {
+					count > 0
+					limit = {
+						can_have_space_corp = yes
+						NOT = {
+							is_same_value = ROOT
+						}
+						has_communications = ROOT
+						check_variable = {
+							which = number_of_corps
+							value > 0
+						}
 					}
 				}
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			country_event = {
 				id = iisc_registry.10
 			}
@@ -190,9 +206,11 @@ country_event = {
 		name = iisc_registry.1.next
 		custom_gui = "iisc_registry_next_button"
 		allow = {
-			check_variable = {
-				which = iisc_registry_length
-				value > iisc_registry_page_limit
+			hidden_trigger = {
+				check_variable = {
+					which = iisc_registry_length
+					value > iisc_registry_page_limit
+				}
 			}
 		}
 		hidden_effect = {
@@ -209,9 +227,11 @@ country_event = {
 		name = iisc_registry.1.previous
 		custom_gui = "iisc_registry_previous_button"
 		allow = {
-			check_variable = {
-				which = iisc_registry_page
-				value > 0
+			hidden_trigger = {
+				check_variable = {
+					which = iisc_registry_page
+					value > 0
+				}
 			}
 		}
 		hidden_effect = {
@@ -231,10 +251,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_0
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_corp_0 = {
 				get_overlord = yes
 				get_headquarters = yes
@@ -251,10 +272,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_0
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_corp_0 = {
 				get_overlord = yes
 				get_headquarters = yes
@@ -271,7 +293,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_0
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 	}
@@ -282,10 +304,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_1
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_corp_1 = {
 				get_overlord = yes
 				get_headquarters = yes
@@ -302,10 +325,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_1
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_corp_1 = {
 				get_overlord = yes
 				get_headquarters = yes
@@ -322,7 +346,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_1
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 	}
@@ -333,10 +357,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_2
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_corp_2 = {
 				get_overlord = yes
 				get_headquarters = yes
@@ -353,10 +378,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_2
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_corp_2 = {
 				get_overlord = yes
 				get_headquarters = yes
@@ -373,7 +399,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_2
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 	}
@@ -384,10 +410,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_3
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_corp_3 = {
 				get_overlord = yes
 				get_headquarters = yes
@@ -404,10 +431,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_3
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_corp_3 = {
 				get_overlord = yes
 				get_headquarters = yes
@@ -424,7 +452,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_3
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 	}
@@ -435,10 +463,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_4
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_corp_4 = {
 				get_overlord = yes
 				get_headquarters = yes
@@ -455,10 +484,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_4
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_corp_4 = {
 				get_overlord = yes
 				get_headquarters = yes
@@ -475,7 +505,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_corp_index_4
-				value <= iisc_registry_length
+				value = 1
 			}
 		}
 	}
@@ -483,6 +513,9 @@ country_event = {
 		name = iisc_registry.1.dummy
 		custom_gui = "iisc_registry_dummy_option"
 		default_hide_option = yes
+		hidden_effect = {
+			clear_registry_variables = yes
+		}
 	}
 }
 
@@ -574,6 +607,10 @@ country_event = {
 					which = iisc_index
 					value < iisc_foreign_list_length
 				}
+				check_variable = {
+					which = iisc_index_bis
+					value < 10
+				}
 			}
 			SLEX_load_list_event_var_index = {
 				LIST = iisc_foreign_list
@@ -588,7 +625,7 @@ country_event = {
 			SLEX_set_list_variable_var_index = {
 				LIST = iisc_registry_country_index
 				INDEX = iisc_index_bis
-				VALUE = iisc_index
+				VALUE = 1
 			}
 			change_variable = {
 				which = iisc_index
@@ -609,7 +646,7 @@ country_event = {
 			SLEX_set_list_variable_var_index = {
 				LIST = iisc_registry_country_index
 				INDEX = iisc_index_bis
-				VALUE = 1000
+				VALUE = 0
 			}
 			change_variable = {
 				which = iisc_index_bis
@@ -622,10 +659,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_0
-				value <= iisc_foreign_list_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_country_0 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -639,10 +677,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_1
-				value <= iisc_foreign_list_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_country_1 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -656,10 +695,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_2
-				value <= iisc_foreign_list_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_country_2 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -673,10 +713,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_3
-				value <= iisc_foreign_list_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_country_3 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -690,10 +731,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_4
-				value <= iisc_foreign_list_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_country_4 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -707,10 +749,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_5
-				value <= iisc_foreign_list_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_country_5 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -724,10 +767,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_6
-				value <= iisc_foreign_list_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_country_6 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -741,10 +785,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_7
-				value <= iisc_foreign_list_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_country_7 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -758,10 +803,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_8
-				value <= iisc_foreign_list_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_country_8 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -775,10 +821,11 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_9
-				value <= iisc_foreign_list_length
+				value = 1
 			}
 		}
 		hidden_effect = {
+			clear_registry_variables = yes
 			event_target:iisc_registry_country_9 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -792,7 +839,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_1
-				value > iisc_foreign_list_length
+				value = 0
 			}
 		}
 		allow = {
@@ -804,7 +851,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_2
-				value > iisc_foreign_list_length
+				value = 0
 			}
 		}
 		allow = {
@@ -816,7 +863,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_3
-				value > iisc_foreign_list_length
+				value = 0
 			}
 		}
 		allow = {
@@ -828,7 +875,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_4
-				value > iisc_foreign_list_length
+				value = 0
 			}
 		}
 		allow = {
@@ -840,7 +887,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_5
-				value > iisc_foreign_list_length
+				value = 0
 			}
 		}
 		allow = {
@@ -852,7 +899,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_6
-				value > iisc_foreign_list_length
+				value = 0
 			}
 		}
 		allow = {
@@ -864,7 +911,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_7
-				value > iisc_foreign_list_length
+				value = 0
 			}
 		}
 		allow = {
@@ -876,7 +923,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_8
-				value > iisc_foreign_list_length
+				value = 0
 			}
 		}
 		allow = {
@@ -888,7 +935,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = iisc_registry_country_index_9
-				value > iisc_foreign_list_length
+				value = 0
 			}
 		}
 		allow = {
@@ -899,9 +946,11 @@ country_event = {
 		name = iisc_registry.11.next
 		custom_gui = "iisc_registry_foreign_list_next_button"
 		allow = {
-			check_variable = {
-				which = iisc_foreign_list_length
-				value > iisc_foreign_list_page_limit
+			hidden_trigger = {
+				check_variable = {
+					which = iisc_foreign_list_length
+					value > iisc_foreign_list_page_limit
+				}
 			}
 		}
 		hidden_effect = {
@@ -918,9 +967,11 @@ country_event = {
 		name = iisc_registry.11.previous
 		custom_gui = "iisc_registry_foreign_list_previous_button"
 		allow = {
-			check_variable = {
-				which = iisc_foreign_list_page
-				value > 0
+			hidden_trigger = {
+				check_variable = {
+					which = iisc_foreign_list_page
+					value > 0
+				}
 			}
 		}
 		hidden_effect = {
@@ -937,5 +988,8 @@ country_event = {
 		name = iisc_registry.11.dummy
 		custom_gui = "iisc_registry_dummy_option"
 		default_hide_option = yes
+		hidden_effect = {
+			clear_registry_variables = yes
+		}
 	}
 }
