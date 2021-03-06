@@ -52,20 +52,6 @@ country_event = {
 						}
 					}
 				}
-				PREV = {
-					random_owned_planet = {
-						limit = {
-							has_planet_flag = space_corp_headquarters_from_@PREVPREV
-						}
-						ROOT = {
-							SLEX_store_list_event_var_index = {
-								LIST = iisc_registry_hq_list
-								INDEX = iisc_registry_length
-								TARGET = PREV
-							}
-						}
-					}
-				}
 				ROOT = {
 					change_variable = {
 						which = iisc_registry_length
