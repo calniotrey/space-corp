@@ -499,7 +499,7 @@ guiTypes = {
 			instantTextBoxType={
 				name = "action_title"
 				font = "malgun_goth_24"
-				position = { x = 20 y = 0 }
+				position = { x = 20 y = 3 }
 				maxWidth = 520
 				alwaysTransparent = yes
 			}
