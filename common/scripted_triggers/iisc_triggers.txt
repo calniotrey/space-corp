@@ -1,0 +1,223 @@
+iisc_is_space_corp_not_installed = {
+	always = no
+}
+
+# this = overlord
+iisc_can_have_space_corp = {
+	is_country_type = default
+}
+
+# this = overlord
+iisc_should_create_corp = {
+	check_variable = {
+		which = iisc_years_until_next_corp_creation
+		value <= 0
+	}
+	check_variable = {
+		which = iisc_number_of_corps
+		value < 10
+	}
+	any_owned_planet = {
+		iisc_suitable_for_hq = yes
+	}
+}
+
+# this = planet
+iisc_suitable_for_hq = {
+	is_colony = yes
+	num_pops >= 10
+	NOT = {
+		has_planet_flag = iisc_hq
+	}
+}
+
+# this = corp
+iisc_search_mining_stations = {
+	always = yes
+}
+
+# this = corp
+iisc_search_research_stations = {
+	always = yes
+}
+
+# this = leader
+iisc_is_scientist_idle = {
+	NOR = {
+		exists = fleet
+		is_researching_area = physics
+		is_researching_area = society
+		is_researching_area = engineering
+	}
+}
+
+# this = corp
+iisc_should_build_science_ship = {
+	check_variable = {
+		which = iisc_budget_science_ship
+		value >= @iisc_science_ship_cost
+	}
+	count_owned_ship = {
+		limit = {
+			is_ship_size = science
+		}
+		count < 5		# TODO change
+	}
+}
+
+# this = corp
+iisc_should_destroy_science_ship = {
+	count_owned_ship = {
+		limit = {
+			is_ship_size = science
+		}
+		count > 5		# TODO change
+	}
+}
+
+# this = corp
+iisc_should_build_builder = {
+	check_variable = {
+		which = iisc_budget_builder
+		value >= @iisc_builder_cost
+	}
+	count_owned_ship = {
+		limit = {
+			is_ship_size = constructor
+		}
+		count < 1		# TODO change
+	}
+}
+
+# this = corp
+iisc_should_destroy_builder = {
+	count_owned_ship = {
+		limit = {
+			is_ship_size = constructor
+		}
+		count > 5		# TODO change
+	}
+}
+
+# this = corp
+iisc_should_start_convoy = {
+	NOT = {
+		has_country_flag = iisc_corp_sent_convoy_recently
+	}
+	check_variable = {
+		which = iisc_budget_convoy
+		value >= @iisc_convoy_min
+	}
+	any_country = {
+		is_country_type = iisc_space_corporation
+		iisc_is_suitable_convoy_partner = yes
+	}
+}
+
+# this = fleet
+iisc_should_destroy_convoy = {
+	NOT = {
+		has_fleet_flag = iisc_should_not_destroy_convoy
+	}
+}
+
+# this = target corp
+# prev = origin corp
+iisc_is_suitable_convoy_partner = {
+	NOT = {
+		is_same_value = prev
+	}
+	prev = {
+		has_country_flag = iisc_corp_connected_@prev
+	}
+	has_communications = prev
+	exists = overlord
+	NOR = {
+		is_hostile = prev
+		overlord = {
+			is_hostile = prevprev.overlord
+		}
+		overlord = {
+			is_at_war_with = prevprev.overlord
+		}
+		AND = {
+			has_ethic = ethic_spiritualist
+			prev.overlord = {
+				is_robot_empire = yes
+			}
+		}
+		AND = {
+			overlord = {
+				is_robot_empire = yes
+			}
+			prev = {
+				has_ethic = ethic_spiritualist
+			}
+		}
+		AND = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				prev = {
+					has_ethic = ethic_xenophobe
+				}
+			}
+			NOT = {
+				is_same_species = prev
+			}
+		}
+	}
+}
+
+# this = planet
+iisc_is_planet_eligible_for_mining_station = {
+	iisc_has_mining_deposits = yes
+	has_mining_station = no
+}
+
+# this = planet
+iisc_is_planet_eligible_for_research_station = {
+	iisc_has_research_deposits = yes
+	has_research_station = no
+}
+
+# this = system
+iisc_is_system_eligible_for_mining_station = {
+	any_system_planet = {
+		iisc_is_planet_eligible_for_mining_station = yes
+	}
+}
+
+# this = system
+iisc_is_system_eligible_for_research_station = {
+	any_system_planet = {
+		iisc_is_planet_eligible_for_research_station = yes
+	}
+}
+
+# this = fleet/planet/country
+iisc_has_close_system_eligible_for_mining_station = {
+	any_system = {
+		has_access_fleet = prev.owner
+		distance = {
+			source = prev
+			max_jumps = @iisc_builder_close_system
+			type = hyperlane
+			# uses_bypass = no # TODO change?
+		}
+		iisc_is_system_eligible_for_mining_station = yes
+	}
+}
+
+# this = fleet/planet/country
+iisc_has_close_system_eligible_for_research_station = {
+	any_system = {
+		has_access_fleet = prev.owner
+		distance = {
+			source = prev
+			max_jumps = @iisc_builder_close_system
+			type = hyperlane
+			# uses_bypass = no # TODO change?
+		}
+		iisc_is_system_eligible_for_research_station = yes
+	}
+}

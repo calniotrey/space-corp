@@ -1,0 +1,438 @@
+# this = overlord
+iisc_count_corps = {
+	set_variable = {
+		which = iisc_number_of_corps
+		value = 0
+	}
+	every_subject = {
+		limit = {
+			is_country_type = iisc_space_corporation
+		}
+		prev = {
+			change_variable = {
+				which = iisc_number_of_corps
+				value = 1
+			}
+		}
+	}
+}
+
+# this = overlord
+iisc_randomize_space_corps_spawn_delay = {
+	random_list = {
+		1 = {
+			set_variable = {
+				which = iisc_years_until_next_corp_creation
+				value = 3
+			}
+		}
+		1 = {
+			set_variable = {
+				which = iisc_years_until_next_corp_creation
+				value = 4
+			}
+		}
+		1 = {
+			set_variable = {
+				which = iisc_years_until_next_corp_creation
+				value = 5
+			}
+		}
+		1 = {
+			set_variable = {
+				which = iisc_years_until_next_corp_creation
+				value = 6
+			}
+		}
+		1 = {
+			set_variable = {
+				which = iisc_years_until_next_corp_creation
+				value = 7
+			}
+		}
+	}
+}
+
+# this = overlord
+iisc_compute_license_and_stations_cost = {
+	set_variable = {
+		which = iisc_mining_license_cost
+		value = @iisc_mining_station_cost
+	}
+	multiply_variable = {
+		which = iisc_mining_license_cost
+		value = iisc_license_cost_multiplier
+	}
+	set_variable = {
+		which = iisc_mining_station_total_cost
+		value = @iisc_mining_station_cost
+	}
+	change_variable = {
+		which = iisc_mining_station_total_cost
+		value = iisc_mining_license_cost
+	}
+	every_subject = {
+		limit = {
+			is_country_type = iisc_space_corporation
+		}
+		set_variable = {
+			which = iisc_mining_license_cost
+			value = prev
+		}
+		set_variable = {
+			which = iisc_mining_station_total_cost
+			value = prev
+		}
+	}
+}
+
+# this = country
+# source : SLEX
+iisc_add_variable_resource = {
+	set_variable = {
+		which = iisc_amount_to_add
+		value = $AMOUNT$
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = iisc_amount_to_add
+				value > 0
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value >= 100000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 100000
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = -100000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value >= 10000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 10000
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = -10000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value >= 1000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 1000
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = -1000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value >= 100
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 100
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = -100
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value >= 10
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 10
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = -10
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value >= 1
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				min = 1
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = -1
+			}
+		}
+		# while = {
+		#     limit = { check_variable = { which = iisc_amount_to_add value >= 0.1 } }
+		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 min = 0.1 }
+		#     change_variable = { which = iisc_amount_to_add value = -0.1 }
+		# }
+		# while = {
+		#     limit = { check_variable = { which = iisc_amount_to_add value >= 0.01 } }
+		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 min = 0.01 }
+		#     change_variable = { which = iisc_amount_to_add value = -0.01 }
+		# }
+	}
+	else = {
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value <= -100000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -100000
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = 100000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value <= -10000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -10000
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = 10000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value <= -1000
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -1000
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = 1000
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value <= -100
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -100
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = 100
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value <= -10
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -10
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = 10
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = iisc_amount_to_add
+					value <= -1
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = $RESOURCE$
+				value = 0
+				max = -1
+			}
+			change_variable = {
+				which = iisc_amount_to_add
+				value = 1
+			}
+		}
+		# while = {
+		#     limit = { check_variable = { which = iisc_amount_to_add value <= -0.1 } }
+		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 max = -0.1 }
+		#     change_variable = { which = iisc_amount_to_add value = 0.1 }
+		# }
+		# while = {
+		#     limit = { check_variable = { which = iisc_amount_to_add value <= -0.01 } }
+		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 max = -0.01 }
+		#     change_variable = { which = iisc_amount_to_add value = 0.01 }
+		# }
+	}
+	# To cleanup
+	set_variable = {
+		which = iisc_amount_to_add
+		value = 0
+	}
+}
+
+iisc_clear_registry_variables = {
+	set_variable = {
+		which = iisc_registry_page
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_length
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_page_limit
+		value = 0
+	}
+	set_variable = {
+		which = iisc_index
+		value = 0
+	}
+	set_variable = {
+		which = iisc_index_bis
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_corp_index_0
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_corp_index_1
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_corp_index_2
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_corp_index_3
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_corp_index_4
+		value = 0
+	}
+	set_variable = {
+		which = iisc_foreign_list_length
+		value = 0
+	}
+	set_variable = {
+		which = iisc_foreign_list_page
+		value = 0
+	}
+	set_variable = {
+		which = iisc_foreign_list_page_limit
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_country_index_0
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_country_index_1
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_country_index_2
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_country_index_3
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_country_index_4
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_country_index_5
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_country_index_6
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_country_index_7
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_country_index_8
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_country_index_9
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_corp_index_length
+		value = 0
+	}
+	set_variable = {
+		which = iisc_registry_country_index_length
+		value = 0
+	}
+}

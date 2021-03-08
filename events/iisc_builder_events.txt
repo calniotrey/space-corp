@@ -1,0 +1,17 @@
+namespace = iisc_builder
+# reset builders orders
+country_event = {
+	id = iisc_builder.10
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				exists = event_target:iisc_builder_fleet
+			}
+			event_target:iisc_builder_fleet = {
+				iisc_set_builders_orders = yes
+			}
+		}
+	}
+}

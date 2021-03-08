@@ -1,0 +1,17 @@
+namespace = iisc_military
+# reset military orders
+country_event = {
+	id = iisc_military.10
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				exists = event_target:iisc_military_fleet
+			}
+			event_target:iisc_military_fleet = {
+				iisc_set_military_fleet_orders = yes
+			}
+		}
+	}
+}
