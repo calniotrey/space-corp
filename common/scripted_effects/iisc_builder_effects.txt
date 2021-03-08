@@ -1,69 +1,69 @@
 #this = corp
-create_builder_fleet = {
-	subtract_corp_money = {
+iisc_create_iisc_builder_fleet = {
+	iisc_subtract_corp_money = {
 		TYPE = builder
-		AMOUNT = @builder_cost
+		AMOUNT = @iisc_builder_cost
 	}
 	create_fleet = {
 		name = random
 		effect = {
 			set_owner = prev
 			set_name = random
-			set_location = event_target:headquarters_planet
+			set_location = event_target:iisc_hq_planet
 			set_fleet_stance = passive
-			set_fleet_flag = fleet_needs_escort
+			set_fleet_flag = iisc_fleet_needs_escort
 			create_ship = {
 				name = random
 				random_existing_design = constructor
 			}
-			set_builders_orders = yes
+			iisc_set_builders_orders = yes
 		}
 	}
 }
 
 # this = builder fleet
 # has headquarters loaded
-set_builders_orders = {
-	# log = "set_builders_orders.1"
+iisc_set_builders_orders = {
+	# log = "iisc_set_builders_orders.1"
 	if = {
 		limit = {
 			exists = orbit
-			exists = event_target:builder_destination
+			exists = event_target:iisc_builder_dest
 			orbit = {
-				is_same_value = event_target:builder_destination
+				is_same_value = event_target:iisc_builder_dest
 				has_deposit_for = shipclass_mining_station
 				has_mining_station = no
 			}
 			owner = {
-				space_corp_searches_mining_stations = yes
+				iisc_search_mining_stations = yes
 				check_variable = {
-					which = space_corp_budget_mining_station
-					value >= space_corps_mining_station_total_cost
+					which = iisc_budget_mining_station
+					value >= iisc_mining_station_total_cost
 				}
 			}
 		}
 		owner = {
 			# log = "Subtracting money"
-			subtract_corp_money = {
+			iisc_subtract_corp_money = {
 				TYPE = mining_station
-				AMOUNT = space_corps_mining_station_total_cost
+				AMOUNT = iisc_mining_station_total_cost
 			}
 			if = {
 				limit = {
 					exists = overlord
 				}
 				change_variable = {
-					which = total_payed_for_licenses
-					value = space_corps_mining_license_cost
+					which = iisc_total_license_fees_paid
+					value = iisc_mining_license_cost
 				}
 				overlord = {
 					change_variable = {
-						which = total_received_from_licenses
-						value = space_corps_mining_license_cost
+						which = iisc_total_license_fees_rcv
+						value = iisc_mining_license_cost
 					}
-					add_variable_resource = {
+					iisc_add_variable_resource = {
 						RESOURCE = energy
-						AMOUNT = space_corps_mining_license_cost
+						AMOUNT = iisc_mining_license_cost
 					}
 				}
 			}
@@ -74,47 +74,47 @@ set_builders_orders = {
 				owner = prev.owner
 			}
 		}
-		remove_fleet_flag = builder_has_destination
+		remove_fleet_flag = iisc_builder_has_dest
 	}
 	else_if = {
 		limit = {
 			exists = orbit
-			exists = event_target:builder_destination
+			exists = event_target:iisc_builder_dest
 			orbit = {
-				is_same_value = event_target:builder_destination
+				is_same_value = event_target:iisc_builder_dest
 				has_deposit_for = shipclass_research_station
 				has_research_station = no
 			}
 			owner = {
-				space_corp_searches_research_stations = yes
+				iisc_search_research_stations = yes
 				check_variable = {
-					which = space_corp_budget_research_station
-					value >= space_corps_mining_station_total_cost					# TODO change if necessary
+					which = iisc_budget_research_station
+					value >= iisc_mining_station_total_cost					# TODO change if necessary
 				}
 			}
 		}
 		owner = {
 			# log = "Subtracting money"
-			subtract_corp_money = {
+			iisc_subtract_corp_money = {
 				TYPE = research_station
-				AMOUNT = space_corps_mining_station_total_cost
+				AMOUNT = iisc_mining_station_total_cost
 			}
 			if = {
 				limit = {
 					exists = overlord
 				}
 				change_variable = {
-					which = total_payed_for_licenses
-					value = space_corps_mining_license_cost
+					which = iisc_total_license_fees_paid
+					value = iisc_mining_license_cost
 				}
 				overlord = {
 					change_variable = {
-						which = total_received_from_licenses
-						value = space_corps_mining_license_cost
+						which = iisc_total_license_fees_rcv
+						value = iisc_mining_license_cost
 					}
-					add_variable_resource = {
+					iisc_add_variable_resource = {
 						RESOURCE = energy
-						AMOUNT = space_corps_mining_license_cost
+						AMOUNT = iisc_mining_license_cost
 					}
 				}
 			}
@@ -125,7 +125,7 @@ set_builders_orders = {
 				owner = prev.owner
 			}
 		}
-		remove_fleet_flag = builder_has_destination
+		remove_fleet_flag = iisc_builder_has_dest
 		# TODO advanced stations
 	}
 	if = {
@@ -136,89 +136,89 @@ set_builders_orders = {
 			OR = {
 				is_fleet_idle = yes
 				NOT = {
-					has_fleet_flag = builder_has_destination
+					has_fleet_flag = iisc_builder_has_dest
 				}
 			}
 		}
-		# log = "set_builders_orders.4"
+		# log = "iisc_set_builders_orders.4"
 		if = {
 			limit = {
 				owner.overlord = {
-					space_corp_searches_mining_stations = yes
+					iisc_search_mining_stations = yes
 				}
 				solar_system = {
-					is_system_eligible_for_mining_station = yes
+					iisc_is_system_eligible_for_mining_station = yes
 				}
 			}
-			# log = "set_builders_orders.5"
-			builders_find_local_mining_station = yes
+			# log = "iisc_set_builders_orders.5"
+			iisc_builders_find_local_mining_station = yes
 		}
 		else_if = {
 			limit = {
 				owner.overlord = {
-					space_corp_searches_research_stations = yes
+					iisc_search_research_stations = yes
 				}
 				solar_system = {
-					is_system_eligible_for_research_station = yes
+					iisc_is_system_eligible_for_research_station = yes
 				}
 			}
-			# log = "set_builders_orders.5"
-			builders_find_local_research_station = yes
+			# log = "iisc_set_builders_orders.5"
+			iisc_builders_find_local_research_station = yes
 		}
 		else_if = {
 			# TODO put local search for advanced?
 			limit = {
 				owner.overlord = {
-					space_corp_searches_mining_stations = yes
+					iisc_search_mining_stations = yes
 				}
-				has_close_system_eligible_for_mining_station = yes
+				iisc_has_close_system_eligible_for_mining_station = yes
 			}
-			# log = "set_builders_orders.6"
-			builders_find_close_mining_station = yes
+			# log = "iisc_set_builders_orders.6"
+			iisc_builders_find_close_mining_station = yes
 		}
 		else_if = {
 			limit = {
 				owner.overlord = {
-					space_corp_searches_research_stations = yes
+					iisc_search_research_stations = yes
 				}
-				has_close_system_eligible_for_research_station = yes
+				iisc_has_close_system_eligible_for_research_station = yes
 			}
-			builders_find_close_research_station = yes
+			iisc_builders_find_close_research_station = yes
 		}
 	}
-	# log = "set_builders_orders.7"
+	# log = "iisc_set_builders_orders.7"
 	if = {
 		limit = {
 			is_fleet_idle = yes
-			has_fleet_flag = builder_has_destination
-			exists = event_target:builder_destination
+			has_fleet_flag = iisc_builder_has_dest
+			exists = event_target:iisc_builder_dest
 		}
-		# log = "set_builders_orders.8"
+		# log = "iisc_set_builders_orders.8"
 		clear_fleet_actions = this
 		queue_actions = {
-			move_to = event_target:builder_destination
-			orbit_planet = event_target:builder_destination
+			move_to = event_target:iisc_builder_dest
+			orbit_planet = event_target:iisc_builder_dest
 		}
 		# auto_move_to_planet = {
-		#     target = event_target:builder_destination
+		#     target = event_target:iisc_builder_dest
 		#     clear_auto_move_on_arrival = yes
-		#     arrival_effect = set_builders_orders
+		#     arrival_effect = iisc_set_builders_orders
 		# }
 	}
-	# log = "set_builders_orders.9"
+	# log = "iisc_set_builders_orders.9"
 	if = {
 		limit = {
 			owner = {
-				should_destroy_builder = yes
+				iisc_should_destroy_builder = yes
 			}
 		}
 		delete_fleet = this
 	}
 	else = {
-		save_event_target_as = builder_fleet
+		save_event_target_as = iisc_builder_fleet
 		owner = {
 			country_event = {
-				id = space_corps_builder.10
+				id = iisc_builder.10
 				days = 30
 				random = 30
 			}
@@ -227,71 +227,71 @@ set_builders_orders = {
 }
 
 # this = fleet
-builders_find_local_mining_station = {
+iisc_builders_find_local_mining_station = {
 	solar_system = {
 		random_system_planet = {
 			limit = {
-				is_planet_eligible_for_mining_station = yes
+				iisc_is_planet_eligible_for_mining_station = yes
 			}
-			save_event_target_as = builder_destination
+			save_event_target_as = iisc_builder_dest
 		}
 	}
-	set_fleet_flag = builder_has_destination
+	set_fleet_flag = iisc_builder_has_dest
 }
 
 # this = fleet
-builders_find_local_research_station = {
+iisc_builders_find_local_research_station = {
 	solar_system = {
 		random_system_planet = {
 			limit = {
-				is_planet_eligible_for_research_station = yes
+				iisc_is_planet_eligible_for_research_station = yes
 			}
-			save_event_target_as = builder_destination
+			save_event_target_as = iisc_builder_dest
 		}
 	}
-	set_fleet_flag = builder_has_destination
+	set_fleet_flag = iisc_builder_has_dest
 }
 
 # this = fleet
-builders_find_close_mining_station = {
+iisc_builders_find_close_mining_station = {
 	random_system = {
 		limit = {
 			has_access_fleet = prev.owner
 			distance = {
 				source = prev
-				max_jumps = @builder_close_system
+				max_jumps = @iisc_builder_close_system
 				type = hyperlane
 			}
-			is_system_eligible_for_mining_station = yes
+			iisc_is_system_eligible_for_mining_station = yes
 		}
 		random_system_planet = {
 			limit = {
-				is_planet_eligible_for_mining_station = yes
+				iisc_is_planet_eligible_for_mining_station = yes
 			}
-			save_event_target_as = builder_destination
+			save_event_target_as = iisc_builder_dest
 		}
 	}
-	set_fleet_flag = builder_has_destination
+	set_fleet_flag = iisc_builder_has_dest
 }
 
 # this = fleet
-builders_find_close_research_station = {
+iisc_builders_find_close_research_station = {
 	random_system = {
 		limit = {
 			has_access_fleet = prev.owner
 			distance = {
 				source = prev
-				max_jumps = @builder_close_system
+				max_jumps = @iisc_builder_close_system
 				type = hyperlane
 			}
-			is_system_eligible_for_research_station = yes
+			iisc_is_system_eligible_for_research_station = yes
 		}
 		random_system_planet = {
 			limit = {
-				is_planet_eligible_for_research_station = yes
+				iisc_is_planet_eligible_for_research_station = yes
 			}
-			save_event_target_as = builder_destination
+			save_event_target_as = iisc_builder_dest
 		}
 	}
-	set_fleet_flag = builder_has_destination
+	set_fleet_flag = iisc_builder_has_dest
 }

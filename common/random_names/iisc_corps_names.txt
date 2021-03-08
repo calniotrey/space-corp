@@ -45,7 +45,7 @@ empire_name_parts_list = {
 # 		factor = 0
 # 		modifier = {
 # 			add = 999
-# 			is_country_type = space_corp
+# 			is_country_type = iisc_space_corporation
 # 		}
 # 	}
 # 	format = "<space_corps_core> <space_corps_suffix>"

@@ -1,4 +1,4 @@
-space_corp_vassal = {
+iisc_corp_vassal = {
 	can_expand = no
 	can_be_integrated = no
 	joins_overlord_wars = yes
@@ -12,7 +12,7 @@ space_corp_vassal = {
 	#     energy = 0.25
 	# }
 	potential = {
-		is_country_type = space_corp
+		is_country_type = iisc_space_corporation
 		from = {
 			is_country_type = default
 		}

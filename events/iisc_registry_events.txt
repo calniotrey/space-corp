@@ -6,7 +6,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
-		create_space_corp = yes
+		iisc_create_corp = yes
 		last_created_country = {
 			set_name = random
 		}
@@ -33,7 +33,7 @@ country_event = {
 		event_target:iisc_registry_owner = {
 			every_subject = {
 				limit = {
-					is_country_type = space_corp
+					is_country_type = iisc_space_corporation
 				}
 				ROOT = {
 					SLEX_store_list_event_var_index = {
@@ -42,8 +42,8 @@ country_event = {
 						TARGET = PREV
 					}
 				}
-				get_headquarters = yes
-				event_target:headquarters_planet = {
+				iisc_get_hq = yes
+				event_target:iisc_hq_planet = {
 					ROOT = {
 						SLEX_store_list_event_var_index = {
 							LIST = iisc_registry_hq_list
@@ -168,13 +168,13 @@ country_event = {
 				count_country = {
 					count > 0
 					limit = {
-						can_have_space_corp = yes
+						iisc_can_have_space_corp = yes
 						NOT = {
 							is_same_value = ROOT
 						}
 						has_communications = ROOT
 						check_variable = {
-							which = number_of_corps
+							which = iisc_number_of_corps
 							value > 0
 						}
 					}
@@ -182,7 +182,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			country_event = {
 				id = iisc_registry.10
 			}
@@ -241,14 +241,14 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_corp_0 = {
-				get_overlord = yes
-				get_headquarters = yes
-				save_event_target_as = space_corps_country
+				iisc_get_overlord = yes
+				iisc_get_hq = yes
+				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = space_corps_diplomacy.11
+				id = iisc_diplomacy.11
 			}
 		}
 	}
@@ -262,14 +262,14 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_corp_0 = {
-				get_overlord = yes
-				get_headquarters = yes
-				save_event_target_as = space_corps_country
+				iisc_get_overlord = yes
+				iisc_get_hq = yes
+				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = space_corps_diplomacy.11
+				id = iisc_diplomacy.11
 			}
 		}
 	}
@@ -294,14 +294,14 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_corp_1 = {
-				get_overlord = yes
-				get_headquarters = yes
-				save_event_target_as = space_corps_country
+				iisc_get_overlord = yes
+				iisc_get_hq = yes
+				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = space_corps_diplomacy.11
+				id = iisc_diplomacy.11
 			}
 		}
 	}
@@ -315,14 +315,14 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_corp_1 = {
-				get_overlord = yes
-				get_headquarters = yes
-				save_event_target_as = space_corps_country
+				iisc_get_overlord = yes
+				iisc_get_hq = yes
+				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = space_corps_diplomacy.11
+				id = iisc_diplomacy.11
 			}
 		}
 	}
@@ -347,14 +347,14 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_corp_2 = {
-				get_overlord = yes
-				get_headquarters = yes
-				save_event_target_as = space_corps_country
+				iisc_get_overlord = yes
+				iisc_get_hq = yes
+				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = space_corps_diplomacy.11
+				id = iisc_diplomacy.11
 			}
 		}
 	}
@@ -368,14 +368,14 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_corp_2 = {
-				get_overlord = yes
-				get_headquarters = yes
-				save_event_target_as = space_corps_country
+				iisc_get_overlord = yes
+				iisc_get_hq = yes
+				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = space_corps_diplomacy.11
+				id = iisc_diplomacy.11
 			}
 		}
 	}
@@ -400,14 +400,14 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_corp_3 = {
-				get_overlord = yes
-				get_headquarters = yes
-				save_event_target_as = space_corps_country
+				iisc_get_overlord = yes
+				iisc_get_hq = yes
+				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = space_corps_diplomacy.11
+				id = iisc_diplomacy.11
 			}
 		}
 	}
@@ -421,14 +421,14 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_corp_3 = {
-				get_overlord = yes
-				get_headquarters = yes
-				save_event_target_as = space_corps_country
+				iisc_get_overlord = yes
+				iisc_get_hq = yes
+				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = space_corps_diplomacy.11
+				id = iisc_diplomacy.11
 			}
 		}
 	}
@@ -453,14 +453,14 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_corp_4 = {
-				get_overlord = yes
-				get_headquarters = yes
-				save_event_target_as = space_corps_country
+				iisc_get_overlord = yes
+				iisc_get_hq = yes
+				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = space_corps_diplomacy.11
+				id = iisc_diplomacy.11
 			}
 		}
 	}
@@ -474,14 +474,14 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_corp_4 = {
-				get_overlord = yes
-				get_headquarters = yes
-				save_event_target_as = space_corps_country
+				iisc_get_overlord = yes
+				iisc_get_hq = yes
+				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = space_corps_diplomacy.11
+				id = iisc_diplomacy.11
 			}
 		}
 	}
@@ -500,7 +500,7 @@ country_event = {
 		custom_gui = "iisc_registry_dummy_option"
 		default_hide_option = yes
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 		}
 	}
 }
@@ -532,13 +532,13 @@ country_event = {
 		}
 		every_country = {
 			limit = {
-				can_have_space_corp = yes
+				iisc_can_have_space_corp = yes
 				NOT = {
 					is_same_value = ROOT
 				}
 				has_communications = ROOT
 				check_variable = {
-					which = number_of_corps
+					which = iisc_number_of_corps
 					value > 0
 				}
 			}
@@ -649,7 +649,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_country_0 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -667,7 +667,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_country_1 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -685,7 +685,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_country_2 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -703,7 +703,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_country_3 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -721,7 +721,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_country_4 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -739,7 +739,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_country_5 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -757,7 +757,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_country_6 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -775,7 +775,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_country_7 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -793,7 +793,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_country_8 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -811,7 +811,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 			event_target:iisc_registry_country_9 = {
 				save_event_target_as = iisc_registry_owner
 			}
@@ -975,7 +975,7 @@ country_event = {
 		custom_gui = "iisc_registry_dummy_option"
 		default_hide_option = yes
 		hidden_effect = {
-			clear_registry_variables = yes
+			iisc_clear_registry_variables = yes
 		}
 	}
 }

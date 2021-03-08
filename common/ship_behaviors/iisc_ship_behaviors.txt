@@ -26,7 +26,7 @@
 #}
 
 ship_behavior = {
-	name = "space_corp_convoy"
+	name = "iisc_convoy_behavior"
 	preferred_attack_range = 200
 	formation_distance = 250
 	return_to_formation_distance = 300

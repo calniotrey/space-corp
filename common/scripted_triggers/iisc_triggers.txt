@@ -1,48 +1,48 @@
-is_space_corp_not_installed = {
+iisc_is_space_corp_not_installed = {
 	always = no
 }
 
 # this = overlord
-can_have_space_corp = {
+iisc_can_have_space_corp = {
 	is_country_type = default
 }
 
 # this = overlord
-should_create_space_corp = {
+iisc_should_create_corp = {
 	check_variable = {
-		which = years_until_next_corp_creation
+		which = iisc_years_until_next_corp_creation
 		value <= 0
 	}
 	check_variable = {
-		which = number_of_corps
+		which = iisc_number_of_corps
 		value < 10
 	}
 	any_owned_planet = {
-		suitable_for_headquarters = yes
+		iisc_suitable_for_hq = yes
 	}
 }
 
 # this = planet
-suitable_for_headquarters = {
+iisc_suitable_for_hq = {
 	is_colony = yes
 	num_pops >= 10
 	NOT = {
-		has_planet_flag = space_corp_headquarters
+		has_planet_flag = iisc_hq
 	}
 }
 
 # this = corp
-space_corp_searches_mining_stations = {
+iisc_search_mining_stations = {
 	always = yes
 }
 
 # this = corp
-space_corp_searches_research_stations = {
+iisc_search_research_stations = {
 	always = yes
 }
 
 # this = leader
-is_scientist_idle = {
+iisc_is_scientist_idle = {
 	NOR = {
 		exists = fleet
 		is_researching_area = physics
@@ -52,10 +52,10 @@ is_scientist_idle = {
 }
 
 # this = corp
-should_build_science_ship = {
+iisc_should_build_science_ship = {
 	check_variable = {
-		which = space_corp_budget_science_ship
-		value >= @science_ship_cost
+		which = iisc_budget_science_ship
+		value >= @iisc_science_ship_cost
 	}
 	count_owned_ship = {
 		limit = {
@@ -66,7 +66,7 @@ should_build_science_ship = {
 }
 
 # this = corp
-should_destroy_science_ship = {
+iisc_should_destroy_science_ship = {
 	count_owned_ship = {
 		limit = {
 			is_ship_size = science
@@ -76,10 +76,10 @@ should_destroy_science_ship = {
 }
 
 # this = corp
-should_build_builder = {
+iisc_should_build_builder = {
 	check_variable = {
-		which = space_corp_budget_builder
-		value >= @builder_cost
+		which = iisc_budget_builder
+		value >= @iisc_builder_cost
 	}
 	count_owned_ship = {
 		limit = {
@@ -90,7 +90,7 @@ should_build_builder = {
 }
 
 # this = corp
-should_destroy_builder = {
+iisc_should_destroy_builder = {
 	count_owned_ship = {
 		limit = {
 			is_ship_size = constructor
@@ -100,35 +100,35 @@ should_destroy_builder = {
 }
 
 # this = corp
-should_start_convoy = {
+iisc_should_start_convoy = {
 	NOT = {
-		has_country_flag = corp_sent_convoy_recently
+		has_country_flag = iisc_corp_sent_convoy_recently
 	}
 	check_variable = {
-		which = space_corp_budget_convoy
-		value >= @convoy_min
+		which = iisc_budget_convoy
+		value >= @iisc_convoy_min
 	}
 	any_country = {
-		is_country_type = space_corp
-		is_suitable_convoy_partner = yes
+		is_country_type = iisc_space_corporation
+		iisc_is_suitable_convoy_partner = yes
 	}
 }
 
 # this = fleet
-should_destroy_convoy = {
+iisc_should_destroy_convoy = {
 	NOT = {
-		has_fleet_flag = should_not_destroy_convoy
+		has_fleet_flag = iisc_should_not_destroy_convoy
 	}
 }
 
 # this = target corp
 # prev = origin corp
-is_suitable_convoy_partner = {
+iisc_is_suitable_convoy_partner = {
 	NOT = {
 		is_same_value = prev
 	}
 	prev = {
-		has_country_flag = space_corp_connected_@prev
+		has_country_flag = iisc_corp_connected_@prev
 	}
 	has_communications = prev
 	exists = overlord
@@ -169,55 +169,55 @@ is_suitable_convoy_partner = {
 }
 
 # this = planet
-is_planet_eligible_for_mining_station = {
-	space_corp_has_mining_deposits = yes
+iisc_is_planet_eligible_for_mining_station = {
+	iisc_has_mining_deposits = yes
 	has_mining_station = no
 }
 
 # this = planet
-is_planet_eligible_for_research_station = {
-	space_corp_has_research_deposits = yes
+iisc_is_planet_eligible_for_research_station = {
+	iisc_has_research_deposits = yes
 	has_research_station = no
 }
 
 # this = system
-is_system_eligible_for_mining_station = {
+iisc_is_system_eligible_for_mining_station = {
 	any_system_planet = {
-		is_planet_eligible_for_mining_station = yes
+		iisc_is_planet_eligible_for_mining_station = yes
 	}
 }
 
 # this = system
-is_system_eligible_for_research_station = {
+iisc_is_system_eligible_for_research_station = {
 	any_system_planet = {
-		is_planet_eligible_for_research_station = yes
+		iisc_is_planet_eligible_for_research_station = yes
 	}
 }
 
 # this = fleet/planet/country
-has_close_system_eligible_for_mining_station = {
+iisc_has_close_system_eligible_for_mining_station = {
 	any_system = {
 		has_access_fleet = prev.owner
 		distance = {
 			source = prev
-			max_jumps = @builder_close_system
+			max_jumps = @iisc_builder_close_system
 			type = hyperlane
 			# uses_bypass = no # TODO change?
 		}
-		is_system_eligible_for_mining_station = yes
+		iisc_is_system_eligible_for_mining_station = yes
 	}
 }
 
 # this = fleet/planet/country
-has_close_system_eligible_for_research_station = {
+iisc_has_close_system_eligible_for_research_station = {
 	any_system = {
 		has_access_fleet = prev.owner
 		distance = {
 			source = prev
-			max_jumps = @builder_close_system
+			max_jumps = @iisc_builder_close_system
 			type = hyperlane
 			# uses_bypass = no # TODO change?
 		}
-		is_system_eligible_for_research_station = yes
+		iisc_is_system_eligible_for_research_station = yes
 	}
 }

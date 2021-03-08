@@ -1,4 +1,4 @@
-auth_space_corp = {
+iisc_auth_corporate = {
 	election_term_years = 20
 	election_type = oligarchic
 	can_have_emergency_elections = yes
@@ -12,7 +12,7 @@ auth_space_corp = {
 	}
 	possible = {
 		country_type = {
-			value = space_corp
+			value = iisc_space_corporation
 		}
 	}
 	tags = {

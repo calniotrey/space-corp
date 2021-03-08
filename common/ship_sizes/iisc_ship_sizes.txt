@@ -1,5 +1,5 @@
 # Civilian Freighter
-corp_civilian_freighter = {
+iisc_civilian_freighter = {
 	enable_default_design = yes
 	graphical_culture = no
 	entity = cargo_transport_containers_entity
@@ -33,7 +33,7 @@ corp_civilian_freighter = {
 }
 
 # Civilian Tanker
-corp_civilian_tanker = {
+iisc_civilian_tanker = {
 	enable_default_design = yes
 	graphical_culture = no
 	entity = cargo_transport_tanker_entity
@@ -67,7 +67,7 @@ corp_civilian_tanker = {
 }
 
 # Passenger Liner
-corp_passenger_liner = {
+iisc_passenger_liner = {
 	enable_default_design = yes
 	graphical_culture = no
 	entity = abandoned_ship_section_entity

@@ -6,10 +6,10 @@ add supply lines (from a country or from a corp) => event on arrival for remuner
 add technologies for military ships
 make convoys head back
 check fleet names
-change a bit should_create_military_fleet and reinforce
+change a bit iisc_should_create_military_fleet and reinforce
 add passive repair
 
-[19:16:49][trigger_impl.cpp:847]: Script Error: Invalid context switch[event_target:escort_target.solar_system], file:  file:  file: events/space_corps_military_events.txt line: 13 line: 1 line: 1, Scope: 
+[19:16:49][trigger_impl.cpp:847]: Script Error: Invalid context switch[event_target:iisc_escort_target.solar_system], file:  file:  file: events/iisc_military_events.txt line: 13 line: 1 line: 1, Scope: 
 ancient_mining_expansion_barge
 
 add new leader traits

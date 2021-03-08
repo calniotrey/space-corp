@@ -1,5 +1,5 @@
 # this = corp
-get_random_engineering_tech_if_possible = {
+iisc_get_random_engineering_tech_if_possible = {
 	random_list = {
 		100 = {
 		}
@@ -11,22 +11,22 @@ get_random_engineering_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_engineering_points
-					value < tech_cost_t1
+					which = iisc_stored_engineering_points
+					value < iisc_tech_cost_t1
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_engineering_points
-				value = tech_cost_t1
+				which = iisc_stored_engineering_points
+				value = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_space_mining_1
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.20011
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.20011
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -38,22 +38,22 @@ get_random_engineering_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_engineering_points
-					value < tech_cost_t1
+					which = iisc_stored_engineering_points
+					value < iisc_tech_cost_t1
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_engineering_points
-				value = tech_cost_t1
+				which = iisc_stored_engineering_points
+				value = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_space_mining_2
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.20012
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.20012
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -65,22 +65,22 @@ get_random_engineering_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_engineering_points
-					value < tech_cost_t2
+					which = iisc_stored_engineering_points
+					value < iisc_tech_cost_t2
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_engineering_points
-				value = tech_cost_t2
+				which = iisc_stored_engineering_points
+				value = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_space_mining_3
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.20013
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.20013
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -92,22 +92,22 @@ get_random_engineering_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_engineering_points
-					value < tech_cost_t2
+					which = iisc_stored_engineering_points
+					value < iisc_tech_cost_t2
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_engineering_points
-				value = tech_cost_t2
+				which = iisc_stored_engineering_points
+				value = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_space_mining_4
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.20014
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.20014
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -119,22 +119,22 @@ get_random_engineering_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_engineering_points
-					value < tech_cost_t3
+					which = iisc_stored_engineering_points
+					value < iisc_tech_cost_t3
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_engineering_points
-				value = tech_cost_t3
+				which = iisc_stored_engineering_points
+				value = iisc_tech_cost_t3
 			}
 			give_technology = {
 				tech = tech_space_mining_5
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.20015
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.20015
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -146,22 +146,22 @@ get_random_engineering_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_engineering_points
-					value < tech_cost_t1
+					which = iisc_stored_engineering_points
+					value < iisc_tech_cost_t1
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_engineering_points
-				value = tech_cost_t1
+				which = iisc_stored_engineering_points
+				value = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_engineering_1
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.20021
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.20021
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -173,22 +173,22 @@ get_random_engineering_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_engineering_points
-					value < tech_cost_t2
+					which = iisc_stored_engineering_points
+					value < iisc_tech_cost_t2
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_engineering_points
-				value = tech_cost_t2
+				which = iisc_stored_engineering_points
+				value = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_engineering_2
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.20022
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.20022
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -200,22 +200,22 @@ get_random_engineering_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_engineering_points
-					value < tech_cost_t4
+					which = iisc_stored_engineering_points
+					value < iisc_tech_cost_t4
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_engineering_points
-				value = tech_cost_t4
+				which = iisc_stored_engineering_points
+				value = iisc_tech_cost_t4
 			}
 			give_technology = {
 				tech = tech_engineering_3
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.20023
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.20023
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -227,22 +227,22 @@ get_random_engineering_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_engineering_points
-					value < tech_cost_t1
+					which = iisc_stored_engineering_points
+					value < iisc_tech_cost_t1
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_engineering_points
-				value = tech_cost_t1
+				which = iisc_stored_engineering_points
+				value = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_mining_1
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.20031
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.20031
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -254,22 +254,22 @@ get_random_engineering_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_engineering_points
-					value < tech_cost_t2
+					which = iisc_stored_engineering_points
+					value < iisc_tech_cost_t2
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_engineering_points
-				value = tech_cost_t2
+				which = iisc_stored_engineering_points
+				value = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_mining_2
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.20032
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.20032
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -281,22 +281,22 @@ get_random_engineering_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_engineering_points
-					value < tech_cost_t3
+					which = iisc_stored_engineering_points
+					value < iisc_tech_cost_t3
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_engineering_points
-				value = tech_cost_t3
+				which = iisc_stored_engineering_points
+				value = iisc_tech_cost_t3
 			}
 			give_technology = {
 				tech = tech_mining_3
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.20033
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.20033
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}

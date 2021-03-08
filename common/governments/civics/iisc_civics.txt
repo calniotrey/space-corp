@@ -1,21 +1,21 @@
-sc_civic_research_consortium = {
+iisc_civic_research_consortium = {
 	playable = {
 		always = no
 	}
 	potential = {
 		authority = {
-			value = auth_space_corp
+			value = iisc_auth_corporate
 		}
 	}
 	possible = {
 		civics = {
 			NOR = {
-				value = sc_civic_engineering_firm
-				value = sc_civic_mining_union
-				value = sc_civic_security_force
-				value = sc_civic_logistics_agency
-				value = sc_civic_exploration_initiative
-				value = sc_civic_financial_group
+				value = iisc_civic_engineering_firm
+				value = iisc_civic_mining_union
+				value = iisc_civic_security_force
+				value = iisc_civic_logistics_agency
+				value = iisc_civic_exploration_initiative
+				value = iisc_civic_financial_group
 			}
 		}
 	}
@@ -24,24 +24,24 @@ sc_civic_research_consortium = {
 	}
 }
 
-sc_civic_engineering_firm = {
+iisc_civic_engineering_firm = {
 	playable = {
 		always = no
 	}
 	potential = {
 		authority = {
-			value = auth_space_corp
+			value = iisc_auth_corporate
 		}
 	}
 	possible = {
 		civics = {
 			NOR = {
-				value = sc_civic_research_consortium
-				value = sc_civic_mining_union
-				value = sc_civic_security_force
-				value = sc_civic_logistics_agency
-				value = sc_civic_exploration_initiative
-				value = sc_civic_financial_group
+				value = iisc_civic_research_consortium
+				value = iisc_civic_mining_union
+				value = iisc_civic_security_force
+				value = iisc_civic_logistics_agency
+				value = iisc_civic_exploration_initiative
+				value = iisc_civic_financial_group
 			}
 		}
 	}
@@ -50,24 +50,24 @@ sc_civic_engineering_firm = {
 	}
 }
 
-sc_civic_mining_union = {
+iisc_civic_mining_union = {
 	playable = {
 		always = no
 	}
 	potential = {
 		authority = {
-			value = auth_space_corp
+			value = iisc_auth_corporate
 		}
 	}
 	possible = {
 		civics = {
 			NOR = {
-				value = sc_civic_research_consortium
-				value = sc_civic_engineering_firm
-				value = sc_civic_security_force
-				value = sc_civic_logistics_agency
-				value = sc_civic_exploration_initiative
-				value = sc_civic_financial_group
+				value = iisc_civic_research_consortium
+				value = iisc_civic_engineering_firm
+				value = iisc_civic_security_force
+				value = iisc_civic_logistics_agency
+				value = iisc_civic_exploration_initiative
+				value = iisc_civic_financial_group
 			}
 		}
 	}
@@ -76,24 +76,24 @@ sc_civic_mining_union = {
 	}
 }
 
-sc_civic_security_force = {
+iisc_civic_security_force = {
 	playable = {
 		always = no
 	}
 	potential = {
 		authority = {
-			value = auth_space_corp
+			value = iisc_auth_corporate
 		}
 	}
 	possible = {
 		civics = {
 			NOR = {
-				value = sc_civic_research_consortium
-				value = sc_civic_engineering_firm
-				value = sc_civic_mining_union
-				value = sc_civic_logistics_agency
-				value = sc_civic_exploration_initiative
-				value = sc_civic_financial_group
+				value = iisc_civic_research_consortium
+				value = iisc_civic_engineering_firm
+				value = iisc_civic_mining_union
+				value = iisc_civic_logistics_agency
+				value = iisc_civic_exploration_initiative
+				value = iisc_civic_financial_group
 			}
 		}
 	}
@@ -102,24 +102,24 @@ sc_civic_security_force = {
 	}
 }
 
-sc_civic_logistics_agency = {
+iisc_civic_logistics_agency = {
 	playable = {
 		always = no
 	}
 	potential = {
 		authority = {
-			value = auth_space_corp
+			value = iisc_auth_corporate
 		}
 	}
 	possible = {
 		civics = {
 			NOR = {
-				value = sc_civic_research_consortium
-				value = sc_civic_engineering_firm
-				value = sc_civic_mining_union
-				value = sc_civic_security_force
-				value = sc_civic_exploration_initiative
-				value = sc_civic_financial_group
+				value = iisc_civic_research_consortium
+				value = iisc_civic_engineering_firm
+				value = iisc_civic_mining_union
+				value = iisc_civic_security_force
+				value = iisc_civic_exploration_initiative
+				value = iisc_civic_financial_group
 			}
 		}
 	}
@@ -128,24 +128,24 @@ sc_civic_logistics_agency = {
 	}
 }
 
-sc_civic_exploration_initiative = {
+iisc_civic_exploration_initiative = {
 	playable = {
 		always = no
 	}
 	potential = {
 		authority = {
-			value = auth_space_corp
+			value = iisc_auth_corporate
 		}
 	}
 	possible = {
 		civics = {
 			NOR = {
-				value = sc_civic_research_consortium
-				value = sc_civic_engineering_firm
-				value = sc_civic_mining_union
-				value = sc_civic_security_force
-				value = sc_civic_logistics_agency
-				value = sc_civic_financial_group
+				value = iisc_civic_research_consortium
+				value = iisc_civic_engineering_firm
+				value = iisc_civic_mining_union
+				value = iisc_civic_security_force
+				value = iisc_civic_logistics_agency
+				value = iisc_civic_financial_group
 			}
 		}
 	}
@@ -154,24 +154,24 @@ sc_civic_exploration_initiative = {
 	}
 }
 
-sc_civic_financial_group = {
+iisc_civic_financial_group = {
 	playable = {
 		always = no
 	}
 	potential = {
 		authority = {
-			value = auth_space_corp
+			value = iisc_auth_corporate
 		}
 	}
 	possible = {
 		civics = {
 			NOR = {
-				value = sc_civic_research_consortium
-				value = sc_civic_engineering_firm
-				value = sc_civic_mining_union
-				value = sc_civic_security_force
-				value = sc_civic_logistics_agency
-				value = sc_civic_exploration_initiative
+				value = iisc_civic_research_consortium
+				value = iisc_civic_engineering_firm
+				value = iisc_civic_mining_union
+				value = iisc_civic_security_force
+				value = iisc_civic_logistics_agency
+				value = iisc_civic_exploration_initiative
 			}
 		}
 	}
@@ -180,13 +180,13 @@ sc_civic_financial_group = {
 	}
 }
 
-sc_civic_space_corp = {
+iisc_civic_space_corp = {
 	playable = {
 		always = no
 	}
 	potential = {
 		authority = {
-			value = auth_space_corp
+			value = iisc_auth_corporate
 		}
 	}
 	random_weight = {
@@ -194,7 +194,7 @@ sc_civic_space_corp = {
 	}
 }
 
-sc_origin_corporate_merger = {
+iisc_origin_corporate_merger = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_hegemon.dds"
 	picture = GFX_origin_hegemon
@@ -203,7 +203,7 @@ sc_origin_corporate_merger = {
 	}
 	possible = {
 		authority = {
-			value = auth_space_corp
+			value = iisc_auth_corporate
 		}
 	}
 	description = origin_tooltip_corporate_merger

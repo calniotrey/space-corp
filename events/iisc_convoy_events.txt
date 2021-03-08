@@ -1,16 +1,16 @@
-namespace = space_corps_convoy
+namespace = iisc_convoy
 # reset convoy orders
 country_event = {
-	id = space_corps_convoy.10
+	id = iisc_convoy.10
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
 		if = {
 			limit = {
-				exists = event_target:convoy_fleet
+				exists = event_target:iisc_convoy_fleet
 			}
-			event_target:convoy_fleet = {
-				set_convoy_orders = yes
+			event_target:iisc_convoy_fleet = {
+				iisc_set_convoy_orders = yes
 			}
 		}
 	}
@@ -18,10 +18,10 @@ country_event = {
 
 # set name
 fleet_event = {
-	id = space_corps_convoy.20
+	id = iisc_convoy.20
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
-		set_name = "[headquarters_planet.GetName] -> [convoy_destination.GetName] [This.GetName]"
+		set_name = "[iisc_hq_planet.GetName] -> [iisc_convoy_dest.GetName] [This.GetName]"
 	}
 }

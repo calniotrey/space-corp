@@ -1,16 +1,16 @@
 # this = planet
-has_naval_shipyard = {
+iisc_has_naval_shipyard = {
 	is_colony = yes
 	num_pops >= 20
 }
 
 # this = corp
-should_create_military_fleet = {
+iisc_should_create_military_fleet = {
 	NOT = {
 		any_owned_fleet = {
 			is_ship_class = shipclass_military
 			check_variable = {
-				which = fleet_action_id
+				which = iisc_fleet_action_id
 				value = 9
 			}
 		}
@@ -18,10 +18,10 @@ should_create_military_fleet = {
 }
 
 # this = corp
-should_reinforce_a_fleet = {
+iisc_should_reinforce_a_fleet = {
 	check_variable = {
-		which = space_corp_budget_military
-		value >= @corps_corvette_cost
+		which = iisc_budget_military
+		value >= @iisc_corp_corvette_cost
 	}
 	count_owned_fleet = {
 		count >= 5
@@ -37,7 +37,7 @@ should_reinforce_a_fleet = {
 		any_owned_fleet = {
 			is_ship_class = shipclass_military
 			check_variable = {
-				which = fleet_action_id
+				which = iisc_fleet_action_id
 				value = 9
 			}
 		}
@@ -45,7 +45,7 @@ should_reinforce_a_fleet = {
 }
 
 # this = fleet
-has_local_hostile = {
+iisc_has_local_hostile = {
 	solar_system = {
 		any_fleet_in_system = {
 			owner = {
@@ -56,7 +56,7 @@ has_local_hostile = {
 }
 
 # this = fleet
-has_close_hostile = {
+iisc_has_close_hostile = {
 	any_system = {
 		has_access_fleet = prev.owner
 		prev.owner = {
@@ -66,8 +66,8 @@ has_close_hostile = {
 			}
 		}
 		distance = {
-			source = event_target:headquarters_planet
-			max_jumps = @patrol_close_system
+			source = event_target:iisc_hq_planet
+			max_jumps = @iisc_patrol_close_system
 			type = hyperlane
 		}
 		any_fleet_in_system = {
@@ -79,25 +79,25 @@ has_close_hostile = {
 }
 
 # this = fleet
-has_allies_needing_escort = {
+iisc_has_allies_needing_escort = {
 	owner = {
 		any_owned_fleet = {
-			has_fleet_flag = fleet_needs_escort
+			has_fleet_flag = iisc_fleet_needs_escort
 		}
 	}
 }
 
 # this = fleet
-has_allied_convoy_needing_escort = {
+iisc_has_allied_convoy_needing_escort = {
 	owner = {
 		any_owned_fleet = {
-			has_fleet_flag = fleet_needs_escort
-			has_fleet_flag = space_corps_convoy
+			has_fleet_flag = iisc_fleet_needs_escort
+			has_fleet_flag = iisc_convoy
 		}
 	}
 }
 
 # this = fleet
-should_recalculate_military_fleets_orders = {
-	has_fleet_flag = recalculate_military_fleets_order
+iisc_should_recalculate_military_fleets_orders = {
+	has_fleet_flag = iisc_recalculate_military_fleets_order
 }

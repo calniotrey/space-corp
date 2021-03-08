@@ -25,8 +25,8 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 1000
-			is_country_type = space_corp
-			has_civic = sc_civic_logistics_agency
+			is_country_type = iisc_space_corporation
+			has_civic = iisc_civic_logistics_agency
 		}
 	}
 	format = "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_logistics>"
@@ -39,8 +39,8 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 1000
-			is_country_type = space_corp
-			has_civic = sc_civic_logistics_agency
+			is_country_type = iisc_space_corporation
+			has_civic = iisc_civic_logistics_agency
 		}
 	}
 	format = "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_logistics> <corporate_empire_names_final>"
@@ -53,8 +53,8 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 1000
-			is_country_type = space_corp
-			has_civic = sc_civic_logistics_agency
+			is_country_type = iisc_space_corporation
+			has_civic = iisc_civic_logistics_agency
 		}
 	}
 	format = "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_logistics>"
@@ -67,8 +67,8 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 1000
-			is_country_type = space_corp
-			has_civic = sc_civic_logistics_agency
+			is_country_type = iisc_space_corporation
+			has_civic = iisc_civic_logistics_agency
 		}
 	}
 	format = "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_logistics> <corporate_empire_names_final>"
@@ -81,8 +81,8 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 1000
-			is_country_type = space_corp
-			has_civic = sc_civic_logistics_agency
+			is_country_type = iisc_space_corporation
+			has_civic = iisc_civic_logistics_agency
 		}
 	}
 	format = "<corporate_empire_names_standalone> <corporate_empire_names_field_logistics>"
@@ -95,8 +95,8 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 1000
-			is_country_type = space_corp
-			has_civic = sc_civic_logistics_agency
+			is_country_type = iisc_space_corporation
+			has_civic = iisc_civic_logistics_agency
 		}
 	}
 	format = "<corporate_empire_names_standalone> <corporate_empire_names_field_logistics> <corporate_empire_names_final>"
@@ -109,8 +109,8 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 1500
-			is_country_type = space_corp
-			has_civic = sc_civic_logistics_agency
+			is_country_type = iisc_space_corporation
+			has_civic = iisc_civic_logistics_agency
 		}
 	}
 	format = "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_logistics> <corporate_empire_names_final>"

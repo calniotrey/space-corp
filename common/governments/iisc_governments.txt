@@ -1,4 +1,4 @@
-gov_space_corp = {
+iisc_gov_corporate = {
 	ruler_title = RT_CEO
 	ruler_title_female = RT_CEO_FEMALE
 	# should_force_rename = yes
@@ -13,14 +13,14 @@ gov_space_corp = {
 	# 	}
 	# }
 	possible = {
-		has_authority = auth_space_corp
+		has_authority = iisc_auth_corporate
 	}
 	weight = {
 		# scriptable value, scope: country; the (possible) government type with the biggest weight is assigned to the country
 		base = 0
 		modifier = {
 			add = 10000
-			has_authority = auth_space_corp
+			has_authority = iisc_auth_corporate
 		}
 	}
 }

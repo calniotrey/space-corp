@@ -1,20 +1,20 @@
-space_corp_has_mining_deposits = {
+iisc_has_mining_deposits = {
 	OR = {
-		space_corp_has_minerals_deposits = yes
-		space_corp_has_energy_deposits = yes
-		space_corp_has_alloys_deposits = yes
+		iisc_corp_has_minerals_deposits = yes
+		iisc_corp_has_energy_deposits = yes
+		iisc_has_alloys_deposits = yes
 	}
 }
 
-space_corp_has_research_deposits = {
+iisc_has_research_deposits = {
 	OR = {
-		space_corp_has_society_deposits = yes
-		space_corp_has_physics_deposits = yes
-		space_corp_has_engineering_deposits = yes
+		iisc_has_society_deposits = yes
+		iisc_has_physics_deposits = yes
+		iisc_has_engineering_deposits = yes
 	}
 }
 
-space_corp_has_minerals_deposits = {
+iisc_corp_has_minerals_deposits = {
 	OR = {
 		has_deposit = d_minerals_1
 		has_deposit = d_minerals_2
@@ -29,7 +29,7 @@ space_corp_has_minerals_deposits = {
 	}
 }
 
-space_corp_has_energy_deposits = {
+iisc_corp_has_energy_deposits = {
 	OR = {
 		has_deposit = d_energy_1
 		has_deposit = d_energy_2
@@ -44,7 +44,7 @@ space_corp_has_energy_deposits = {
 	}
 }
 
-space_corp_has_society_deposits = {
+iisc_has_society_deposits = {
 	OR = {
 		has_deposit = d_society_1
 		has_deposit = d_society_2
@@ -59,7 +59,7 @@ space_corp_has_society_deposits = {
 	}
 }
 
-space_corp_has_physics_deposits = {
+iisc_has_physics_deposits = {
 	OR = {
 		has_deposit = d_physics_1
 		has_deposit = d_physics_2
@@ -74,7 +74,7 @@ space_corp_has_physics_deposits = {
 	}
 }
 
-space_corp_has_engineering_deposits = {
+iisc_has_engineering_deposits = {
 	OR = {
 		has_deposit = d_engineering_1
 		has_deposit = d_engineering_2
@@ -89,7 +89,7 @@ space_corp_has_engineering_deposits = {
 	}
 }
 
-space_corp_has_trade_value_deposits = {
+iisc_has_trade_value_deposits = {
 	OR = {
 		has_deposit = d_trade_value_1
 		has_deposit = d_trade_value_2
@@ -104,7 +104,7 @@ space_corp_has_trade_value_deposits = {
 	}
 }
 
-space_corp_has_alloys_deposits = {
+iisc_has_alloys_deposits = {
 	OR = {
 		has_deposit = d_alloys_1
 		has_deposit = d_alloys_2

@@ -3,7 +3,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = {
-				which = space_corp_money
+				which = iisc_corp_money
 				value = 0
 			}
 		}
@@ -13,21 +13,21 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = space_corp_money
+					which = iisc_corp_money
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.space_corp_money]"
+		localization_key = "[This.iisc_corp_money]"
 	}
 }
 
 defined_text = {
-	name = GetTotalPayedForLicenses
+	name = GetTotalPaidForLicenses
 	text = {
 		trigger = {
 			check_variable = {
-				which = total_payed_for_licenses
+				which = iisc_total_license_fees_paid
 				value = 0
 			}
 		}
@@ -37,12 +37,12 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = total_payed_for_licenses
+					which = iisc_total_license_fees_paid
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.total_payed_for_licenses]"
+		localization_key = "[This.iisc_total_license_fees_paid]"
 	}
 }
 
@@ -51,7 +51,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = {
-				which = space_corp_total_taxed
+				which = iisc_total_taxed
 				value = 0
 			}
 		}
@@ -61,12 +61,12 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = space_corp_total_taxed
+					which = iisc_total_taxed
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.space_corp_total_taxed]"
+		localization_key = "[This.iisc_total_taxed]"
 	}
 }
 
@@ -75,7 +75,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = {
-				which = space_corp_money_variation
+				which = iisc_corp_money_variation
 				value = 0
 			}
 		}
@@ -85,12 +85,12 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = space_corp_money_variation
+					which = iisc_corp_money_variation
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.space_corp_money_variation]"
+		localization_key = "[This.iisc_corp_money_variation]"
 	}
 }
 
@@ -100,7 +100,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = {
-				which = space_corp_budget_military
+				which = iisc_budget_military
 				value = 0
 			}
 		}
@@ -110,12 +110,12 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = space_corp_budget_military
+					which = iisc_budget_military
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.space_corp_budget_military]"
+		localization_key = "[This.iisc_budget_military]"
 	}
 }
 
@@ -124,7 +124,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = {
-				which = space_corp_budget_convoy
+				which = iisc_budget_convoy
 				value = 0
 			}
 		}
@@ -134,12 +134,12 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = space_corp_budget_convoy
+					which = iisc_budget_convoy
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.space_corp_budget_convoy]"
+		localization_key = "[This.iisc_budget_convoy]"
 	}
 }
 
@@ -148,7 +148,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = {
-				which = space_corp_budget_supply
+				which = iisc_budget_supply
 				value = 0
 			}
 		}
@@ -158,12 +158,12 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = space_corp_budget_supply
+					which = iisc_budget_supply
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.space_corp_budget_supply]"
+		localization_key = "[This.iisc_budget_supply]"
 	}
 }
 
@@ -172,7 +172,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = {
-				which = space_corp_budget_builder
+				which = iisc_budget_builder
 				value = 0
 			}
 		}
@@ -182,12 +182,12 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = space_corp_budget_builder
+					which = iisc_budget_builder
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.space_corp_budget_builder]"
+		localization_key = "[This.iisc_budget_builder]"
 	}
 }
 
@@ -196,7 +196,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = {
-				which = space_corp_budget_science_ship
+				which = iisc_budget_science_ship
 				value = 0
 			}
 		}
@@ -206,12 +206,12 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = space_corp_budget_science_ship
+					which = iisc_budget_science_ship
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.space_corp_budget_science_ship]"
+		localization_key = "[This.iisc_budget_science_ship]"
 	}
 }
 
@@ -220,7 +220,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = {
-				which = space_corp_budget_mining_station
+				which = iisc_budget_mining_station
 				value = 0
 			}
 		}
@@ -230,12 +230,12 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = space_corp_budget_mining_station
+					which = iisc_budget_mining_station
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.space_corp_budget_mining_station]"
+		localization_key = "[This.iisc_budget_mining_station]"
 	}
 }
 
@@ -244,7 +244,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = {
-				which = space_corp_budget_research_station
+				which = iisc_budget_research_station
 				value = 0
 			}
 		}
@@ -254,12 +254,12 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = space_corp_budget_research_station
+					which = iisc_budget_research_station
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.space_corp_budget_research_station]"
+		localization_key = "[This.iisc_budget_research_station]"
 	}
 }
 
@@ -268,7 +268,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = {
-				which = space_corp_budget_colonization
+				which = iisc_budget_colonization
 				value = 0
 			}
 		}
@@ -278,12 +278,12 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = space_corp_budget_colonization
+					which = iisc_budget_colonization
 					value = 0
 				}
 			}
 		}
-		localization_key = "[This.space_corp_budget_colonization]"
+		localization_key = "[This.iisc_budget_colonization]"
 	}
 }
 

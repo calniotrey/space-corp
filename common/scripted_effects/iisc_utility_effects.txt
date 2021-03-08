@@ -1,16 +1,16 @@
 # this = overlord
-count_space_corps = {
+iisc_count_corps = {
 	set_variable = {
-		which = number_of_corps
+		which = iisc_number_of_corps
 		value = 0
 	}
 	every_subject = {
 		limit = {
-			is_country_type = space_corp
+			is_country_type = iisc_space_corporation
 		}
 		prev = {
 			change_variable = {
-				which = number_of_corps
+				which = iisc_number_of_corps
 				value = 1
 			}
 		}
@@ -18,35 +18,35 @@ count_space_corps = {
 }
 
 # this = overlord
-randomize_space_corps_spawn_delay = {
+iisc_randomize_space_corps_spawn_delay = {
 	random_list = {
 		1 = {
 			set_variable = {
-				which = years_until_next_corp_creation
+				which = iisc_years_until_next_corp_creation
 				value = 3
 			}
 		}
 		1 = {
 			set_variable = {
-				which = years_until_next_corp_creation
+				which = iisc_years_until_next_corp_creation
 				value = 4
 			}
 		}
 		1 = {
 			set_variable = {
-				which = years_until_next_corp_creation
+				which = iisc_years_until_next_corp_creation
 				value = 5
 			}
 		}
 		1 = {
 			set_variable = {
-				which = years_until_next_corp_creation
+				which = iisc_years_until_next_corp_creation
 				value = 6
 			}
 		}
 		1 = {
 			set_variable = {
-				which = years_until_next_corp_creation
+				which = iisc_years_until_next_corp_creation
 				value = 7
 			}
 		}
@@ -54,33 +54,33 @@ randomize_space_corps_spawn_delay = {
 }
 
 # this = overlord
-compute_license_and_stations_cost = {
+iisc_compute_license_and_stations_cost = {
 	set_variable = {
-		which = space_corps_mining_license_cost
-		value = @mining_station_cost
+		which = iisc_mining_license_cost
+		value = @iisc_mining_station_cost
 	}
 	multiply_variable = {
-		which = space_corps_mining_license_cost
-		value = space_corps_license_cost_multiplier
+		which = iisc_mining_license_cost
+		value = iisc_license_cost_multiplier
 	}
 	set_variable = {
-		which = space_corps_mining_station_total_cost
-		value = @mining_station_cost
+		which = iisc_mining_station_total_cost
+		value = @iisc_mining_station_cost
 	}
 	change_variable = {
-		which = space_corps_mining_station_total_cost
-		value = space_corps_mining_license_cost
+		which = iisc_mining_station_total_cost
+		value = iisc_mining_license_cost
 	}
 	every_subject = {
 		limit = {
-			is_country_type = space_corp
+			is_country_type = iisc_space_corporation
 		}
 		set_variable = {
-			which = space_corps_mining_license_cost
+			which = iisc_mining_license_cost
 			value = prev
 		}
 		set_variable = {
-			which = space_corps_mining_station_total_cost
+			which = iisc_mining_station_total_cost
 			value = prev
 		}
 	}
@@ -88,22 +88,22 @@ compute_license_and_stations_cost = {
 
 # this = country
 # source : SLEX
-add_variable_resource = {
+iisc_add_variable_resource = {
 	set_variable = {
-		which = amount_to_add
+		which = iisc_amount_to_add
 		value = $AMOUNT$
 	}
 	if = {
 		limit = {
 			check_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value > 0
 			}
 		}
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value >= 100000
 				}
 			}
@@ -113,14 +113,14 @@ add_variable_resource = {
 				min = 100000
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = -100000
 			}
 		}
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value >= 10000
 				}
 			}
@@ -130,14 +130,14 @@ add_variable_resource = {
 				min = 10000
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = -10000
 			}
 		}
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value >= 1000
 				}
 			}
@@ -147,14 +147,14 @@ add_variable_resource = {
 				min = 1000
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = -1000
 			}
 		}
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value >= 100
 				}
 			}
@@ -164,14 +164,14 @@ add_variable_resource = {
 				min = 100
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = -100
 			}
 		}
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value >= 10
 				}
 			}
@@ -181,14 +181,14 @@ add_variable_resource = {
 				min = 10
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = -10
 			}
 		}
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value >= 1
 				}
 			}
@@ -198,26 +198,26 @@ add_variable_resource = {
 				min = 1
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = -1
 			}
 		}
 		# while = {
-		#     limit = { check_variable = { which = amount_to_add value >= 0.1 } }
+		#     limit = { check_variable = { which = iisc_amount_to_add value >= 0.1 } }
 		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 min = 0.1 }
-		#     change_variable = { which = amount_to_add value = -0.1 }
+		#     change_variable = { which = iisc_amount_to_add value = -0.1 }
 		# }
 		# while = {
-		#     limit = { check_variable = { which = amount_to_add value >= 0.01 } }
+		#     limit = { check_variable = { which = iisc_amount_to_add value >= 0.01 } }
 		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 min = 0.01 }
-		#     change_variable = { which = amount_to_add value = -0.01 }
+		#     change_variable = { which = iisc_amount_to_add value = -0.01 }
 		# }
 	}
 	else = {
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value <= -100000
 				}
 			}
@@ -227,14 +227,14 @@ add_variable_resource = {
 				max = -100000
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = 100000
 			}
 		}
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value <= -10000
 				}
 			}
@@ -244,14 +244,14 @@ add_variable_resource = {
 				max = -10000
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = 10000
 			}
 		}
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value <= -1000
 				}
 			}
@@ -261,14 +261,14 @@ add_variable_resource = {
 				max = -1000
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = 1000
 			}
 		}
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value <= -100
 				}
 			}
@@ -278,14 +278,14 @@ add_variable_resource = {
 				max = -100
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = 100
 			}
 		}
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value <= -10
 				}
 			}
@@ -295,14 +295,14 @@ add_variable_resource = {
 				max = -10
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = 10
 			}
 		}
 		while = {
 			limit = {
 				check_variable = {
-					which = amount_to_add
+					which = iisc_amount_to_add
 					value <= -1
 				}
 			}
@@ -312,29 +312,29 @@ add_variable_resource = {
 				max = -1
 			}
 			change_variable = {
-				which = amount_to_add
+				which = iisc_amount_to_add
 				value = 1
 			}
 		}
 		# while = {
-		#     limit = { check_variable = { which = amount_to_add value <= -0.1 } }
+		#     limit = { check_variable = { which = iisc_amount_to_add value <= -0.1 } }
 		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 max = -0.1 }
-		#     change_variable = { which = amount_to_add value = 0.1 }
+		#     change_variable = { which = iisc_amount_to_add value = 0.1 }
 		# }
 		# while = {
-		#     limit = { check_variable = { which = amount_to_add value <= -0.01 } }
+		#     limit = { check_variable = { which = iisc_amount_to_add value <= -0.01 } }
 		#     add_monthly_resource_mult = { resource = $RESOURCE$ value = 0 max = -0.01 }
-		#     change_variable = { which = amount_to_add value = 0.01 }
+		#     change_variable = { which = iisc_amount_to_add value = 0.01 }
 		# }
 	}
 	# To cleanup
 	set_variable = {
-		which = amount_to_add
+		which = iisc_amount_to_add
 		value = 0
 	}
 }
 
-clear_registry_variables = {
+iisc_clear_registry_variables = {
 	set_variable = {
 		which = iisc_registry_page
 		value = 0

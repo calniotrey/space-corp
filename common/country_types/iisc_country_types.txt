@@ -81,7 +81,7 @@
 #        standard_expansion_module = {}
 #    }
 #}
-space_corp = {
+iisc_space_corporation = {
 	playable = no
 	has_pulse_events = no	# TODO check if used
 	custom_diplomacy = yes

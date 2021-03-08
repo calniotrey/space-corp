@@ -1,5 +1,5 @@
 # this = corp
-get_random_society_tech_if_possible = {
+iisc_get_random_society_tech_if_possible = {
 	random_list = {
 		100 = {
 		}
@@ -11,22 +11,22 @@ get_random_society_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_society_points
-					value < tech_cost_t1
+					which = iisc_stored_society_points
+					value < iisc_tech_cost_t1
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_society_points
-				value = tech_cost_t1
+				which = iisc_stored_society_points
+				value = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_eco_simulation
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.10011
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.10011
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -38,22 +38,22 @@ get_random_society_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_society_points
-					value < tech_cost_t2
+					which = iisc_stored_society_points
+					value < iisc_tech_cost_t2
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_society_points
-				value = tech_cost_t2
+				which = iisc_stored_society_points
+				value = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_gene_crops
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.10012
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.10012
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -65,22 +65,22 @@ get_random_society_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_society_points
-					value < tech_cost_t3
+					which = iisc_stored_society_points
+					value < iisc_tech_cost_t3
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_society_points
-				value = tech_cost_t3
+				which = iisc_stored_society_points
+				value = iisc_tech_cost_t3
 			}
 			give_technology = {
 				tech = tech_nano_vitality_crops
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.10013
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.10013
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -98,22 +98,22 @@ get_random_society_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_society_points
-					value < tech_cost_t4
+					which = iisc_stored_society_points
+					value < iisc_tech_cost_t4
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_society_points
-				value = tech_cost_t4
+				which = iisc_stored_society_points
+				value = iisc_tech_cost_t4
 			}
 			give_technology = {
 				tech = tech_nutrient_replication
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.10014
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.10014
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -125,22 +125,22 @@ get_random_society_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_society_points
-					value < tech_cost_t1
+					which = iisc_stored_society_points
+					value < iisc_tech_cost_t1
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_society_points
-				value = tech_cost_t1
+				which = iisc_stored_society_points
+				value = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_society_1
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.10021
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.10021
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -152,22 +152,22 @@ get_random_society_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_society_points
-					value < tech_cost_t2
+					which = iisc_stored_society_points
+					value < iisc_tech_cost_t2
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_society_points
-				value = tech_cost_t2
+				which = iisc_stored_society_points
+				value = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_society_2
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.10022
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.10022
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -179,22 +179,22 @@ get_random_society_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_society_points
-					value < tech_cost_t4
+					which = iisc_stored_society_points
+					value < iisc_tech_cost_t4
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_society_points
-				value = tech_cost_t4
+				which = iisc_stored_society_points
+				value = iisc_tech_cost_t4
 			}
 			give_technology = {
 				tech = tech_society_3
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.10023
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.10023
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -214,22 +214,22 @@ get_random_society_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_society_points
-					value < tech_cost_t2
+					which = iisc_stored_society_points
+					value < iisc_tech_cost_t2
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_society_points
-				value = tech_cost_t2
+				which = iisc_stored_society_points
+				value = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_colonization_2
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.10031
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.10031
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -249,22 +249,22 @@ get_random_society_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_society_points
-					value < tech_cost_t2
+					which = iisc_stored_society_points
+					value < iisc_tech_cost_t2
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_society_points
-				value = tech_cost_t2
+				which = iisc_stored_society_points
+				value = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_colonization_3
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.10032
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.10032
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -284,22 +284,22 @@ get_random_society_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_society_points
-					value < tech_cost_t3
+					which = iisc_stored_society_points
+					value < iisc_tech_cost_t3
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_society_points
-				value = tech_cost_t3
+				which = iisc_stored_society_points
+				value = iisc_tech_cost_t3
 			}
 			give_technology = {
 				tech = tech_colonization_4
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.10033
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.10033
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}
@@ -319,22 +319,22 @@ get_random_society_tech_if_possible = {
 			modifier = {
 				factor = 0
 				check_variable = {
-					which = space_corp_stored_society_points
-					value < tech_cost_t4
+					which = iisc_stored_society_points
+					value < iisc_tech_cost_t4
 				}
 			}
 			subtract_variable = {
-				which = space_corp_stored_society_points
-				value = tech_cost_t4
+				which = iisc_stored_society_points
+				value = iisc_tech_cost_t4
 			}
 			give_technology = {
 				tech = tech_colonization_5
 			}
 			overlord = {
 				country_event = {
-					id = space_corps_technology.10034
-					days = @tech_delay_base
-					random = @tech_delay_random
+					id = iisc_technology.10034
+					days = @iisc_tech_delay_base
+					random = @iisc_tech_delay_random
 				}
 			}
 		}

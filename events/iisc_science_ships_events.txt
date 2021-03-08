@@ -1,16 +1,16 @@
-namespace = space_corps_science_ships
+namespace = iisc_science_ships
 # reset science ships orders
 country_event = {
-	id = space_corps_science_ships.10
+	id = iisc_science_ships.10
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
 		if = {
 			limit = {
-				exists = event_target:science_ship_fleet
+				exists = event_target:iisc_science_ship_fleet
 			}
-			event_target:science_ship_fleet = {
-				set_science_ship_orders = yes
+			event_target:iisc_science_ship_fleet = {
+				iisc_set_science_ship_orders = yes
 			}
 		}
 	}

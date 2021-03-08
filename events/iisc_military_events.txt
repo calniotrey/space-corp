@@ -1,16 +1,16 @@
-namespace = space_corps_military
+namespace = iisc_military
 # reset military orders
 country_event = {
-	id = space_corps_military.10
+	id = iisc_military.10
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
 		if = {
 			limit = {
-				exists = event_target:military_fleet
+				exists = event_target:iisc_military_fleet
 			}
-			event_target:military_fleet = {
-				set_military_fleet_orders = yes
+			event_target:iisc_military_fleet = {
+				iisc_set_military_fleet_orders = yes
 			}
 		}
 	}

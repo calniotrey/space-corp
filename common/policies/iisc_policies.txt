@@ -1,18 +1,18 @@
 # TODO add AI_weight from ethics and gov type
 # TODO reduce number of options?
-space_corps_taxes_policy = {
+iisc_corp_tax_policy = {
 	potential = {
-		has_country_flag = space_corps_initialized
+		has_country_flag = iisc_initialized
 	}
 	option = {
-		name = "space_corps_no_taxes"
+		name = "iisc_no_corp_taxes"
 		policy_flags = {
-			space_corps_no_taxes
+			iisc_no_corp_taxes
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_taxes
+					which = iisc_corp_tax_policy_value
 					value = 0
 				}
 			}
@@ -22,14 +22,14 @@ space_corps_taxes_policy = {
 		}
 	}
 	option = {
-		name = "space_corps_low_taxes"
+		name = "iisc_low_corp_taxes"
 		policy_flags = {
-			space_corps_low_taxes
+			iisc_low_corp_taxes
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_taxes
+					which = iisc_corp_tax_policy_value
 					value = 0.15
 				}
 			}
@@ -39,14 +39,14 @@ space_corps_taxes_policy = {
 		}
 	}
 	option = {
-		name = "space_corps_medium_taxes"
+		name = "iisc_medium_corp_taxes"
 		policy_flags = {
-			space_corps_medium_taxes
+			iisc_medium_corp_taxes
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_taxes
+					which = iisc_corp_tax_policy_value
 					value = 0.3
 				}
 			}
@@ -56,14 +56,14 @@ space_corps_taxes_policy = {
 		}
 	}
 	option = {
-		name = "space_corps_high_taxes"
+		name = "iisc_high_corp_taxes"
 		policy_flags = {
-			space_corps_high_taxes
+			iisc_high_corp_taxes
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_taxes
+					which = iisc_corp_tax_policy_value
 					value = 0.45
 				}
 			}
@@ -73,14 +73,14 @@ space_corps_taxes_policy = {
 		}
 	}
 	option = {
-		name = "space_corps_extreme_taxes"
+		name = "iisc_extreme_corp_taxes"
 		policy_flags = {
-			space_corps_extreme_taxes
+			iisc_extreme_corp_taxes
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_taxes
+					which = iisc_corp_tax_policy_value
 					value = 0.6
 				}
 			}
@@ -91,22 +91,22 @@ space_corps_taxes_policy = {
 	}
 }
 
-space_corps_license_cost_policy = {
+iisc_license_cost_policy = {
 	potential = {
-		has_country_flag = space_corps_initialized
+		has_country_flag = iisc_initialized
 	}
 	option = {
-		name = "space_corps_negative_license_cost"
+		name = "iisc_negative_license_cost"
 		policy_flags = {
-			space_corps_negative_license_cost
+			iisc_negative_license_cost
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_license_cost_multiplier
+					which = iisc_license_cost_multiplier
 					value = -0.1
 				}
-				compute_license_and_stations_cost = yes
+				iisc_compute_license_and_stations_cost = yes
 			}
 		}
 		AI_weight = {
@@ -114,17 +114,17 @@ space_corps_license_cost_policy = {
 		}
 	}
 	option = {
-		name = "space_corps_no_license_cost"
+		name = "iisc_no_license_cost"
 		policy_flags = {
-			space_corps_no_license_cost
+			iisc_no_license_cost
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_license_cost_multiplier
+					which = iisc_license_cost_multiplier
 					value = 0
 				}
-				compute_license_and_stations_cost = yes
+				iisc_compute_license_and_stations_cost = yes
 			}
 		}
 		AI_weight = {
@@ -132,17 +132,17 @@ space_corps_license_cost_policy = {
 		}
 	}
 	option = {
-		name = "space_corps_low_license_cost"
+		name = "iisc_low_license_cost"
 		policy_flags = {
-			space_corps_low_license_cost
+			iisc_low_license_cost
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_license_cost_multiplier
+					which = iisc_license_cost_multiplier
 					value = 0.1
 				}
-				compute_license_and_stations_cost = yes
+				iisc_compute_license_and_stations_cost = yes
 			}
 		}
 		AI_weight = {
@@ -150,17 +150,17 @@ space_corps_license_cost_policy = {
 		}
 	}
 	option = {
-		name = "space_corps_medium_license_cost"
+		name = "iisc_medium_license_cost"
 		policy_flags = {
-			space_corps_medium_license_cost
+			iisc_medium_license_cost
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_license_cost_multiplier
+					which = iisc_license_cost_multiplier
 					value = 0.2
 				}
-				compute_license_and_stations_cost = yes
+				iisc_compute_license_and_stations_cost = yes
 			}
 		}
 		AI_weight = {
@@ -168,17 +168,17 @@ space_corps_license_cost_policy = {
 		}
 	}
 	option = {
-		name = "space_corps_high_license_cost"
+		name = "iisc_high_license_cost"
 		policy_flags = {
-			space_corps_high_license_cost
+			iisc_high_license_cost
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_license_cost_multiplier
+					which = iisc_license_cost_multiplier
 					value = 0.3
 				}
-				compute_license_and_stations_cost = yes
+				iisc_compute_license_and_stations_cost = yes
 			}
 		}
 		AI_weight = {
@@ -187,19 +187,19 @@ space_corps_license_cost_policy = {
 	}
 }
 
-space_corps_survey_reward_policy = {
+iisc_survey_reward_policy = {
 	potential = {
-		has_country_flag = space_corps_initialized
+		has_country_flag = iisc_initialized
 	}
 	option = {
-		name = "space_corps_survey_high_reward"
+		name = "iisc_survey_high_reward"
 		policy_flags = {
-			space_corps_survey_high_reward
+			iisc_survey_high_reward
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_survey_reward
+					which = iisc_survey_reward
 					value = 3
 				}
 			}
@@ -209,14 +209,14 @@ space_corps_survey_reward_policy = {
 		}
 	}
 	option = {
-		name = "space_corps_survey_medium_reward"
+		name = "iisc_survey_medium_reward"
 		policy_flags = {
-			space_corps_survey_medium_reward
+			iisc_survey_medium_reward
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_survey_reward
+					which = iisc_survey_reward
 					value = 2
 				}
 			}
@@ -226,14 +226,14 @@ space_corps_survey_reward_policy = {
 		}
 	}
 	option = {
-		name = "space_corps_survey_low_reward"
+		name = "iisc_low_reward"
 		policy_flags = {
-			space_corps_survey_low_reward
+			iisc_low_reward
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_survey_reward
+					which = iisc_survey_reward
 					value = 1
 				}
 			}
@@ -243,14 +243,14 @@ space_corps_survey_reward_policy = {
 		}
 	}
 	option = {
-		name = "space_corps_survey_no_reward"
+		name = "iisc_survey_no_reward"
 		policy_flags = {
-			space_corps_survey_no_reward
+			iisc_survey_no_reward
 		}
 		on_enabled = {
 			hidden_effect = {
 				set_variable = {
-					which = space_corps_survey_reward
+					which = iisc_survey_reward
 					value = 0
 				}
 			}

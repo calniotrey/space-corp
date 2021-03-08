@@ -1,23 +1,23 @@
 #this = corp
-create_science_ship_fleet = {
-	subtract_corp_money = {
+iisc_create_science_ship_fleet = {
+	iisc_subtract_corp_money = {
 		TYPE = science_ship
-		AMOUNT = @science_ship_cost
+		AMOUNT = @iisc_science_ship_cost
 	}
 	create_fleet = {
 		name = random
 		effect = {
 			set_owner = prev
 			set_name = random
-			set_location = event_target:headquarters_planet
+			set_location = event_target:iisc_hq_planet
 			set_fleet_stance = passive
-			set_fleet_flag = fleet_needs_escort
+			set_fleet_flag = iisc_fleet_needs_escort
 			create_ship = {
 				name = random
 				random_existing_design = science
 			}
-			set_science_ship_orders = yes
-			assign_random_scientist = yes
+			iisc_set_science_ship_orders = yes
+			iisc_assign_random_scientist = yes
 			set_fleet_stance = evasive
 		}
 	}
@@ -25,13 +25,13 @@ create_science_ship_fleet = {
 
 # this = science ship fleet
 # has headquarters loaded
-set_science_ship_orders = {
+iisc_set_science_ship_orders = {
 	if = {
 		limit = {
 			exists = orbit
-			exists = event_target:science_ship_destination
+			exists = event_target:iisc_science_ship_dest
 			orbit = {
-				is_same_value = event_target:science_ship_destination
+				is_same_value = event_target:iisc_science_ship_dest
 			}
 		}
 		orbit = {
@@ -57,12 +57,12 @@ set_science_ship_orders = {
 				}
 			}
 			owner = {
-				get_survey_reward = yes
+				iisc_get_survey_reward = yes
 			}
 		}
-		remove_fleet_flag = science_ship_has_destination
+		remove_fleet_flag = iisc_science_ship_has_dest
 		solar_system = {
-			remove_star_flag = being_surveyed_for_@prev.owner.overlord
+			remove_star_flag = iisc_being_surveyed_for_@prev.owner.overlord
 		}
 	}
 	if = {
@@ -73,7 +73,7 @@ set_science_ship_orders = {
 			OR = {
 				is_fleet_idle = yes
 				NOT = {
-					has_fleet_flag = science_ship_has_destination
+					has_fleet_flag = iisc_science_ship_has_dest
 				}
 			}
 		}
@@ -81,7 +81,7 @@ set_science_ship_orders = {
 			limit = {
 				solar_system = {
 					NOT = {
-						has_star_flag = being_surveyed_for_@prev.owner.overlord
+						has_star_flag = iisc_being_surveyed_for_@prev.owner.overlord
 					}
 					any_system_planet = {
 						is_surveyed = {
@@ -91,19 +91,19 @@ set_science_ship_orders = {
 					}
 				}
 			}
-			science_ship_find_local_survey_target = yes
+			iisc_science_ship_find_local_survey_target = yes
 		}
 		else_if = {
 			limit = {
-				event_target:headquarters_planet = {
+				event_target:iisc_hq_planet = {
 					any_system = {
 						has_access_fleet = prevprev.owner
 						NOT = {
-							has_star_flag = being_surveyed_for_@prevprev.owner.overlord
+							has_star_flag = iisc_being_surveyed_for_@prevprev.owner.overlord
 						}
 						distance = {
 							source = prev
-							max_jumps = @science_ship_close_system
+							max_jumps = @iisc_science_ship_close_system
 							type = hyperlane
 						}
 						any_system_planet = {
@@ -115,34 +115,34 @@ set_science_ship_orders = {
 					}
 				}
 			}
-			science_ship_find_closest_survey_target = yes
+			iisc_science_ship_find_closest_survey_target = yes
 		}
 	}
 	if = {
 		limit = {
 			is_fleet_idle = yes
-			has_fleet_flag = science_ship_has_destination
-			exists = event_target:science_ship_destination
+			has_fleet_flag = iisc_science_ship_has_dest
+			exists = event_target:iisc_science_ship_dest
 		}
 		clear_fleet_actions = this
 		queue_actions = {
-			move_to = event_target:science_ship_destination
-			orbit_planet = event_target:science_ship_destination
+			move_to = event_target:iisc_science_ship_dest
+			orbit_planet = event_target:iisc_science_ship_dest
 		}
 	}
 	if = {
 		limit = {
 			owner = {
-				should_destroy_science_ship = yes
+				iisc_should_destroy_science_ship = yes
 			}
 		}
 		delete_fleet = this
 	}
 	else = {
-		save_event_target_as = science_ship_fleet
+		save_event_target_as = iisc_science_ship_fleet
 		owner = {
 			country_event = {
-				id = space_corps_science_ships.10
+				id = iisc_science_ships.10
 				days = 30
 				random = 30
 			}
@@ -151,7 +151,7 @@ set_science_ship_orders = {
 }
 
 # this = fleet
-science_ship_find_local_survey_target = {
+iisc_science_ship_find_local_survey_target = {
 	solar_system = {
 		random_system_planet = {
 			limit = {
@@ -160,28 +160,28 @@ science_ship_find_local_survey_target = {
 					status = no
 				}
 			}
-			save_event_target_as = science_ship_destination
+			save_event_target_as = iisc_science_ship_dest
 		}
 		set_timed_star_flag = {
-			flag = being_surveyed_for_@prev.owner.overlord
+			flag = iisc_being_surveyed_for_@prev.owner.overlord
 			days = 1800
 		}
 	}
-	set_fleet_flag = science_ship_has_destination
+	set_fleet_flag = iisc_science_ship_has_dest
 }
 
 # this = fleet
-science_ship_find_closest_survey_target = {
-	event_target:headquarters_planet = {
+iisc_science_ship_find_closest_survey_target = {
+	event_target:iisc_hq_planet = {
 		closest_system = {
 			limit = {
 				has_access_fleet = prevprev.owner
 				NOT = {
-					has_star_flag = being_surveyed_for_@prevprev.owner.overlord
+					has_star_flag = iisc_being_surveyed_for_@prevprev.owner.overlord
 				}
 				distance = {
 					source = prev
-					max_jumps = @science_ship_close_system
+					max_jumps = @iisc_science_ship_close_system
 					type = hyperlane
 				}
 				any_system_planet = {
@@ -198,13 +198,13 @@ science_ship_find_closest_survey_target = {
 						status = no
 					}
 				}
-				save_event_target_as = science_ship_destination
+				save_event_target_as = iisc_science_ship_dest
 			}
 			set_timed_star_flag = {
-				flag = being_surveyed_for_@prevprev.owner.overlord
+				flag = iisc_being_surveyed_for_@prevprev.owner.overlord
 				days = 1800
 			}
 		}
 	}
-	set_fleet_flag = science_ship_has_destination
+	set_fleet_flag = iisc_science_ship_has_dest
 }
