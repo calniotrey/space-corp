@@ -15,6 +15,10 @@ iisc_should_create_military_fleet = {
 			}
 		}
 	}
+	check_variable = {
+		which = iisc_budget_military
+		value >= @iisc_corp_corvette_cost
+	}
 }
 
 # this = corp
