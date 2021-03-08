@@ -1,0 +1,17 @@
+namespace = iisc_science_ships
+# reset science ships orders
+country_event = {
+	id = iisc_science_ships.10
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				exists = event_target:iisc_science_ship_fleet
+			}
+			event_target:iisc_science_ship_fleet = {
+				iisc_set_science_ship_orders = yes
+			}
+		}
+	}
+}

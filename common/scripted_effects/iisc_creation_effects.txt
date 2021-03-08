@@ -1,0 +1,144 @@
+# This = overlord
+iisc_create_corp = {
+	random_owned_pop = {
+		limit = {
+			OR = {
+				has_citizenship_type = {
+					country = prev
+					type = citizenship_full
+				}
+				has_citizenship_type = {
+					country = prev
+					type = citizenship_full_machine
+				}
+				# has_citizenship_type = { country = prev type = citizenship_organic_trophy }
+			}
+		}
+		save_event_target_as = iisc_original_pop
+	}
+	create_country = {
+		type = iisc_space_corporation
+		name = THIS
+		authority = iisc_auth_corporate
+		origin = iisc_origin_corporate_merger
+		ethos = THIS
+		flag = THIS
+		name_list = THIS
+		species = event_target:iisc_original_pop.species
+		civics = random
+		auto_delete = no
+		effect = {
+			set_country_flag = iisc_corp_of_@prev
+			establish_communications_no_message = prev
+			set_subject_of = {
+				who = prev
+				subject_type = iisc_corp_vassal
+			}
+			iisc_set_hq = yes
+		}
+	}
+	last_created_country = {
+		clear_ethos = yes		# dunno if needed
+		event_target:iisc_original_pop = {
+			switch = {
+				trigger = pop_has_ethic
+				ethic_xenophile = {
+					prev = {
+						country_add_ethic = ethic_xenophile
+					}
+				}
+				ethic_xenophobe = {
+					prev = {
+						country_add_ethic = ethic_xenophobe
+					}
+				}
+				ethic_authoritarian = {
+					prev = {
+						country_add_ethic = ethic_authoritarian
+					}
+				}
+				ethic_egalitarian = {
+					prev = {
+						country_add_ethic = ethic_egalitarian
+					}
+				}
+				ethic_militarist = {
+					prev = {
+						country_add_ethic = ethic_militarist
+					}
+				}
+				ethic_pacifist = {
+					prev = {
+						country_add_ethic = ethic_pacifist
+					}
+				}
+				ethic_spiritualist = {
+					prev = {
+						country_add_ethic = ethic_spiritualist
+					}
+				}
+				ethic_materialist = {
+					prev = {
+						country_add_ethic = ethic_materialist
+					}
+				}
+				ethic_gestalt_consciousness = {
+					prev = {
+						country_add_ethic = ethic_gestalt_consciousness
+					}
+				}
+			}
+		}
+		# random_list = {
+		# 	5 = { set_country_flag = iisc_has_hq_prefixed_name }
+		# 	95 = {}
+		# }
+		set_name = random
+		# remove_country_flag = iisc_has_hq_prefixed_name
+		add_modifier = {
+			modifier = iisc_corp_country_modifier
+			days = -1
+		}
+		country_event = {
+			# add initial resources, needed to go over the max
+			id = iisc_corps.10
+			days = 1
+		}
+		set_variable = {
+			which = iisc_corp_money
+			value = 10000			# TODO put at 1k
+		}
+		set_variable = {
+			which = iisc_budget_builder
+			value = 1000
+		}
+		set_variable = {
+			which = iisc_budget_science_ship
+			value = 2000
+		}
+		set_variable = {
+			which = iisc_budget_mining_station
+			value = 3000
+		}
+		set_variable = {
+			which = iisc_budget_research_station
+			value = 2000
+		}
+		set_variable = {
+			which = iisc_budget_colonization
+			value = 1500
+		}
+		set_variable = {
+			which = iisc_corp_money_last_month
+			value = iisc_corp_money
+		}
+	}
+	set_country_flag = iisc_overlord_of_@last_created_country
+	every_country = {
+		limit = {
+			has_communications = prev
+		}
+		establish_communications_no_message = last_created_country
+	}
+	iisc_compute_license_and_stations_cost = yes
+}
