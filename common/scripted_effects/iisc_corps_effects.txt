@@ -1050,7 +1050,7 @@ iisc_compute_and_tax_space_corp_income_from_resource = {
 				AMOUNT = iisc_taxes
 			}
 			change_variable = {
-				which = space_corp_$RESOURCE$_taxed_total
+				which = iisc_$RESOURCE$_taxed_total
 				value = iisc_taxes
 			}
 			prev = {
@@ -1059,7 +1059,7 @@ iisc_compute_and_tax_space_corp_income_from_resource = {
 					value = prev
 				}
 				change_variable = {
-					which = space_corp_$RESOURCE$_taxed_total
+					which = iisc_$RESOURCE$_taxed_total
 					value = iisc_taxes
 				}
 				subtract_variable = {
