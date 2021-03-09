@@ -1,0 +1,85 @@
+
+#Scope type varies depending on what is selected
+# This = selected object or player country
+# From = player country
+
+iisc_corp_spawning_all_on = {
+	potential = {
+		NOT = { has_global_flag = iisc_corp_spawning_all }
+	}
+	allow = {
+		always = yes
+	}
+	
+	effect = {
+		set_global_flag = iisc_corp_spawning_all
+		remove_global_flag = iisc_corp_spawning_players
+		remove_global_flag = iisc_corp_spawning_ai
+	}
+}
+
+iisc_corp_spawning_all_off = {
+	potential = {
+		has_global_flag = iisc_corp_spawning_all
+	}
+	allow = {
+		always = yes
+	}
+	
+	effect = {
+	}
+}
+
+iisc_corp_spawning_players_on = {
+	potential = {
+		NOT = { has_global_flag = iisc_corp_spawning_players }
+	}
+	allow = {
+		always = yes
+	}
+	
+	effect = {
+		set_global_flag = iisc_corp_spawning_players
+		remove_global_flag = iisc_corp_spawning_all
+		remove_global_flag = iisc_corp_spawning_ai
+	}
+}
+
+iisc_corp_spawning_players_off = {
+	potential = {
+		has_global_flag = iisc_corp_spawning_players
+	}
+	allow = {
+		always = yes
+	}
+	
+	effect = {
+	}
+}
+
+iisc_corp_spawning_ai_on = {
+	potential = {
+		NOT = { has_global_flag = iisc_corp_spawning_ai }
+	}
+	allow = {
+		always = yes
+	}
+	
+	effect = {
+		set_global_flag = iisc_corp_spawning_ai
+		remove_global_flag = iisc_corp_spawning_all
+		remove_global_flag = iisc_corp_spawning_players
+	}
+}
+
+iisc_corp_spawning_ai_off = {
+	potential = {
+		has_global_flag = iisc_corp_spawning_ai
+	}
+	allow = {
+		always = yes
+	}
+	
+	effect = {
+	}
+}

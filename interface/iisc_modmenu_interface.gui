@@ -1,0 +1,328 @@
+@txt_x = 33
+@txt_y = 6
+
+guiTypes = {
+	containerWindowType = {
+		name = "iisc_modmenu_window"
+		orientation = center
+		origo = center
+		moveable = yes
+		size = { width = 480 height = 420 }
+
+		iconType = {
+			name = "city_planet_evt_icon"
+			position = { x = 15 y = 260 }
+			quadTextureSprite ="GFX_evt_city_planet"
+		}
+
+		containerWindowType = {
+			name = "iisc_modmenu.corp_spawning"
+			position = { x = 30 y = 50 }
+			size = { width = 20 height = 20 }
+
+			instantTextboxType = {
+				name = "text"
+				position = { x = 0 y = 0 }
+				maxWidth = 200
+				alwaysTransparent = yes
+				text_color_code = "E"
+				format = left
+				font = "cg_16b"
+				text = "Corporation Spawning"
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.corp_spawning.option_all"
+				position = { x = 10 y = 20 }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_spawning_all_off"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_spawning_all_on"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "All Countries" #"iisc_modmenu_corp_spawning_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.corp_spawning.option_players"
+				position = { x = 10 y = 45 }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_spawning_players_off"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_spawning_players_on"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "Players Only" #"iisc_modmenu_corp_spawning_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.corp_spawning.option_ai"
+				position = { x = 10 y = 70 }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_spawning_ai_off"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_spawning_ai_on"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "AI Only" #"iisc_modmenu_corp_spawning_text"
+				}
+			}
+		}
+
+		background = {
+			name = "background"
+			quadTextureSprite ="GFX_plain_bg_tile"
+		}
+
+		iconType = {
+			name = "hex_bg"
+			spriteType = "GFX_hex_bg"
+			position = { x = -10 y = -14 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "empire_header_line"
+			quadTextureSprite = "GFX_line_medium"
+			position = { x = 6 y = 22 }
+			alwaysTransparent = yes
+		}
+		
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_close"
+			position = { x= -42 y = 5 }
+			Orientation = "UPPER_RIGHT"
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
+		}
+		
+		### EVENT DIPLO ###
+		
+		containerWindowType = {
+			name = "EVENT_DIPLO"
+			position = { x = 0 y = 0 }
+			size = { width=563 height=220 }
+			moveable = no
+			
+			instantTextBoxType={
+				name = "action_title"
+				font = "malgun_goth_24"
+				position = { x = 20 y = 3 }
+				maxWidth = 520
+				alwaysTransparent = yes
+			}
+			
+			instantTextBoxType={
+				name = "action_desc"
+				font = "malgun_goth_24"
+				position = { x = 490 y = 0 }
+				maxWidth = 500
+				maxHeight = 180
+				Orientation = "UPPER_LEFT"
+				format = center
+				alwaysTransparent = yes
+				text_color_code = "H"
+			}
+			
+			listboxType = {
+				name = "option_list"
+				position = { x = 0 y = 50 }
+				backGround=""
+				size = { x=462 y=200 }
+				spacing = 1
+				scrollbartype = "standardlistbox_slider"
+				borderSize = { x = 0 y = 0 }
+				Orientation = "UPPER_LEFT"
+			}
+		}
+		
+		instantTextBoxType = { #hidden
+			name = "alien_message"
+			font = "cg_16b"
+			position = { x = 10020 y = 440 }
+			maxWidth = 465
+			maxHeight = 220
+			format = left
+			scrollbartype = "standardtext_slider"
+		}
+		buttonType = { #hidden
+			name = "focus_button"
+			position = { x = -10080 y = 12 }
+			spriteType = "GFX_fleetview_focus"
+		}
+		instantTextBoxType = { #hidden
+			name = "heading"
+			font = "malgun_goth_24"
+			position = { x = 10020 y = 5 }
+		}
+		buttonType = { #hidden
+			name = "alien_message_background"
+			size = { x = 0 y = 0 }
+			position = { x = 10010 y = 430 }
+			spriteType = "GFX_tiles_dark_area_cut_8"
+			alwaysTransparent = yes
+		}
+		buttonType = { #hidden
+			name = "confirm_button"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+		}
+		### PORTRAIT ###
+		containerWindowType = { #hidden
+			name = "portrait_background"
+			position = { x = 10017 y = 45 }
+			size = { width = 0 height = 0 }
+			iconType = {
+				name = "event_picture"
+				spriteType = "GFX_diplomacy_portrait_frame"
+			}
+			iconType = {
+				name = "portrait"
+				spriteType = "GFX_portrait_character"
+			}	
+		}
+		containerWindowType = { #hidden
+			name = "portrait"
+			position = { x = 10017 y = 45 }
+			size = { width = 0 height = 0 }
+			iconType = {
+				name = "portrait"
+				spriteType = "GFX_portrait_gamesetup_mask"
+			}	
+			iconType = {
+				name = "black_frame"
+				spriteType = "GFX_diplomacy_portrait_shadow_frame"
+			}
+			iconType = {
+				name = "stripes_1"
+				spriteType = "GFX_diplomacy_stripes_2"
+			}
+			iconType = {
+				name = "city_frame"
+				spriteType = "GFX_diplomacy_portrait_frame"
+			}
+		}
+		### EMPIRE INFO ###
+		iconType = { #hidden
+			name = "empire_info_bg"
+			spriteType = "GFX_diplomacy_dark_fade_bg"
+		}
+		instantTextBoxType={ #hidden
+			name = "empire_name"
+			font = "malgun_goth_24"
+		}
+		instantTextBoxType={ #hidden
+			name = "empire_government_type"
+			font = "cg_16b"
+		}
+		instantTextBoxType={ #hidden
+			name = "empire_personality_type"
+			font = "cg_16b"
+		}
+		OverlappingElementsBoxType = { #hidden
+			name = "empire_ethics_icons"
+			position = { x = 10045 y = 138 }
+		}
+		buttonType = { #hidden
+			name = "empire_flag"
+			quadTextureSprite = "GFX_empire_flag_128"
+			position = { x = 10025 y = 235 }
+		}
+		containerWindowType = { #hidden
+			name = "leader_details"
+			position = { x = 10025 y = 75 }
+			containerWindowType = {
+				name = "empire_traits_box"
+			}
+			instantTextBoxType = {
+				name = "empire_traits_label"
+				font = "cg_16b"
+			}
+			overlappingElementsBoxType = {
+				name = "leader_traits"
+			}
+			instantTextBoxType = {
+				name = "leader_name"
+				font = "cg_16b"
+			}
+			instantTextBoxType = {
+				name = "leader_species"
+				font = "cg_16b"
+			}
+		}
+		### OPINION
+		containerWindowType = { #hidden
+			name = "opinion_window"
+			position = { x = 10027 y = 110 }
+			size = { width = 94 height = 30 }
+			background = {
+				name = "opinion_bg"
+				spriteType = "GFX_tiled_window_transparent"
+			}
+			iconType = {
+				name = "their_opinion_icon"
+				spriteType = "GFX_diplomacy_opinion"
+			}
+			instantTextBoxType = {
+				name = "their_opinion"
+				font = "cg_16b"
+			}
+		}
+	}
+}

@@ -1,4 +1,14 @@
 namespace = iisc_start
+event = {
+	id = iisc_start.0
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		set_global_flag = iisc_corp_spawning_all
+	}
+}
+
 country_event = {
 	id = iisc_start.10
 	is_triggered_only = yes

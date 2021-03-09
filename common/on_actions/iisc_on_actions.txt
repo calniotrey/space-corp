@@ -1,3 +1,9 @@
+on_game_start = {
+	events = {
+		iisc_start.0
+	}
+}
+
 on_game_start_country = {
 	events = {
 		iisc_start.10
