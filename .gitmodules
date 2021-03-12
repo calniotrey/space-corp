@@ -1,0 +1,3 @@
+[submodule ".cwtools-rules"]
+	path = .cwtools-rules
+	url = https://github.com/calniotrey/cwtools-stellaris-config
