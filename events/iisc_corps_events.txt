@@ -436,6 +436,8 @@ country_event = {
 				# disband the corp
 				iisc_disband_corp = yes
 			}
+			# if necessary in the future:
+			# iisc_count_corps = yes
 		}
 	}
 }

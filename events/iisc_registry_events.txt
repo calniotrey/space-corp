@@ -57,7 +57,7 @@ country_event = {
 						which = iisc_registry_length
 						value = 1
 					}
-				}				
+				}
 			}
 		}
 		country_event = {
@@ -173,9 +173,8 @@ country_event = {
 							is_same_value = ROOT
 						}
 						has_communications = ROOT
-						check_variable = {
-							which = iisc_number_of_corps
-							value > 0
+						any_subject = {
+							is_country_type = iisc_space_corporation
 						}
 					}
 				}
@@ -537,9 +536,8 @@ country_event = {
 					is_same_value = ROOT
 				}
 				has_communications = ROOT
-				check_variable = {
-					which = iisc_number_of_corps
-					value > 0
+				any_subject = {
+					is_country_type = iisc_space_corporation
 				}
 			}
 			PREV = {

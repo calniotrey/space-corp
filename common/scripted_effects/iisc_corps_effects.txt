@@ -69,6 +69,7 @@ iisc_disband_corp = {
 						has_planet_flag = iisc_hq_of_@prevprevprev
 					}
 					save_event_target_as = iisc_hq_planet
+					remove_planet_flag = iisc_hq_of_@prevprevprev
 					prevprevprev = {
 						iisc_remove_hq_deposit_from_corp = yes
 					}
