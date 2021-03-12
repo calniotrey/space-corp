@@ -194,9 +194,7 @@ iisc_select_5_random_recruitable_leaders = {
 				which = iisc_recruit_price
 				value = 0
 			}
-			[[CLASS]
 			leader_class = $CLASS$
-			]
 		}
 		iisc_set_recruit_price = yes
 		save_event_target_as = iisc_recruitable_leader_1
@@ -207,9 +205,7 @@ iisc_select_5_random_recruitable_leaders = {
 				which = iisc_recruit_price
 				value = 0
 			}
-			[[CLASS]
 			leader_class = $CLASS$
-			]
 		}
 		iisc_set_recruit_price = yes
 		save_event_target_as = iisc_recruitable_leader_2
@@ -220,9 +216,7 @@ iisc_select_5_random_recruitable_leaders = {
 				which = iisc_recruit_price
 				value = 0
 			}
-			[[CLASS]
 			leader_class = $CLASS$
-			]
 		}
 		iisc_set_recruit_price = yes
 		save_event_target_as = iisc_recruitable_leader_3
@@ -233,9 +227,7 @@ iisc_select_5_random_recruitable_leaders = {
 				which = iisc_recruit_price
 				value = 0
 			}
-			[[CLASS]
 			leader_class = $CLASS$
-			]
 		}
 		iisc_set_recruit_price = yes
 		save_event_target_as = iisc_recruitable_leader_4
@@ -246,9 +238,7 @@ iisc_select_5_random_recruitable_leaders = {
 				which = iisc_recruit_price
 				value = 0
 			}
-			[[CLASS]
 			leader_class = $CLASS$
-			]
 		}
 		iisc_set_recruit_price = yes
 		save_event_target_as = iisc_recruitable_leader_5
