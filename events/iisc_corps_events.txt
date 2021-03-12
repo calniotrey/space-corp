@@ -408,3 +408,34 @@ country_event = {
 		}
 	}
 }
+
+# This = subject
+# From = subject's overlord
+country_event = {
+	id = iisc_corps.100
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		iisc_can_have_space_corp = yes
+	}
+	immediate = {
+		# selects the old corp of this
+		from = {
+			every_subject = {
+				limit = {
+					is_country_type = iisc_space_corporation
+					# which hq isn't owned by the new overlord
+					NOT = {
+						prev = {
+							any_owned_planet = {
+								has_planet_flag = iisc_hq_of_@prevprev
+							}
+						}
+					}
+				}
+				# disband the corp
+				iisc_disband_corp = yes
+			}
+		}
+	}
+}

@@ -32,6 +32,14 @@ on_join_federation = {
 	}
 }
 
+# This = subject
+# From = subject's overlord
+on_becoming_subject = {
+	events = {
+		iisc_corps.100
+	}
+}
+
 # A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
 # This = Country
 on_tech_increased = {

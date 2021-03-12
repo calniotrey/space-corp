@@ -47,6 +47,93 @@ iisc_get_overlord = {
 	}
 }
 
+# this = corp
+# overlord = the new overlord
+iisc_disband_corp = {
+	if = {
+		limit = {
+			exists = overlord
+		}
+		# load (old) hq
+		# remove hq deposit
+		overlord = {
+			random_subject = {
+				limit = {
+					iisc_can_have_space_corp = yes
+					any_owned_planet = {
+						has_planet_flag = iisc_hq_of_@prevprevprev
+					}
+				}
+				random_owned_planet = {
+					limit = {
+						has_planet_flag = iisc_hq_of_@prevprevprev
+					}
+					save_event_target_as = iisc_hq_planet
+					prevprevprev = {
+						iisc_remove_hq_deposit_from_corp = yes
+					}
+				}
+			}
+		}
+		# give some of the money to the corps of the overlord
+		if = {
+			limit = {
+				check_variable = {
+					which = iisc_corp_money
+					value > 0
+				}
+			}
+			divide_variable = {
+				which = iisc_corp_money
+				value = 5
+			}
+			set_variable = {
+				which = iisc_corp_money_to_give
+				value = iisc_corp_money
+			}
+			overlord = {
+				while = {
+					count = 3
+					# select a random corp
+					random_subject = {
+						limit = {
+							is_country_type = iisc_space_corporation
+							prev = {
+								any_owned_planet = {
+									has_planet_flag = iisc_hq_of_@prevprev
+								}
+							}
+						}
+						set_variable = {
+							which = iisc_corp_money_to_give
+							value = prevprev
+						}
+						iisc_add_variable_resource = {
+							AMOUNT = iisc_corp_money_to_give
+							RESOURCE = energy
+						}
+						# cleanup
+						set_variable = {
+							which = iisc_corp_money_to_give
+							value = 0
+						}
+					}
+				}
+			}
+		}
+	}
+	every_mining_station = {
+		delete_fleet = this
+	}
+	every_research_station = {
+		delete_fleet = this
+	}
+	every_owned_fleet = {
+		delete_fleet = this
+	}
+	destroy_country = yes
+}
+
 # this = overlord
 iisc_give_tech_overlord_and_corps = {
 	give_technology = {
