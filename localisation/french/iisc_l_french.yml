@@ -270,6 +270,6 @@
  iisc_civic_unknown_desc: "Cette Corporation semble ne pas avoir de civic de Corporation valide."
  iisc_origin_corporate_merger: "Fusion d'entreprises"
  iisc_origin_corporate_merger_desc: "Issue de la consolidation de la plupart des grandes entreprises d'un monde en une seule entité, cette Corporation continue de baser ses opérations principalement sur cette même planète d'origine."
- origin_tooltip_space_corp: ""
+ iisc_origin_corporate_merger_effect: ""
  iisc_gov_corporate: "Corporation"
  iisc_gov_corporate_desc: "Une Corporation est dirigée par un directeur général, qui peut être remplacé à la prérogative du conseil d'administration."
