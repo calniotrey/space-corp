@@ -54,6 +54,9 @@ iisc_handle_corp_connection_to_overlord = {
 				event_target:iisc_hq_planet.owner = {
 					iisc_can_have_space_corp = no
 				}
+				event_target:iisc_hq_planet.owner = {
+					is_subject = yes
+				}
 			}
 		}
 		iisc_destroy_corp = yes
