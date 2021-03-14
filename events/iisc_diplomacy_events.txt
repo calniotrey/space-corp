@@ -13,12 +13,23 @@ country_event = {
 	}
 	immediate = {
 		from = {
-			iisc_get_overlord = yes
-			iisc_get_hq = yes
-			save_event_target_as = iisc_corp_country
+			if = {
+				limit = {
+					exists = overlord
+					iisc_is_corp_connected = yes
+				}
+				iisc_get_overlord = yes
+				iisc_get_hq = yes
+				save_event_target_as = iisc_corp_country
+			}
 		}
-		country_event = {
-			id = iisc_diplomacy.11
+		if = {
+			limit = {
+				exists = event_target:iisc_corp_country
+			}
+			country_event = {
+				id = iisc_diplomacy.11
+			}
 		}
 	}
 }

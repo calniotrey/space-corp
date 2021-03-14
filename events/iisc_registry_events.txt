@@ -34,6 +34,7 @@ country_event = {
 			every_subject = {
 				limit = {
 					is_country_type = iisc_space_corporation
+					iisc_is_corp_connected = yes
 				}
 				ROOT = {
 					SLEX_store_list_event_var_index = {
