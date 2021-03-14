@@ -219,11 +219,8 @@ iisc_launch_convoy_if_possible = {
 			iisc_create_convoy_fleet = yes
 			set_timed_country_flag = {
 				flag = iisc_corp_sent_convoy_recently
-				days = 30
+				days = 90
 			}
-		}
-		event_target:iisc_hq_planet = {
-			# TODO ?
 		}
 	}
 }
