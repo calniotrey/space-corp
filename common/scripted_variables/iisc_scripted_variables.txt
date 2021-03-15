@@ -13,7 +13,7 @@
 @iisc_corp_destroyer_cost = 400
 @iisc_patrol_close_system = 7
 # convoys (TODO)
-@iisc_convoy_min = 1000
+@iisc_convoy_min = 500
 @iisc_convoy_cost = 500
 @iisc_convoy_reward = 100
 # deposits

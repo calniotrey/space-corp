@@ -106,31 +106,40 @@ iisc_create_corp = {
 		}
 		set_variable = {
 			which = iisc_corp_money
-			value = 10000			# TODO put at 1k
-		}
-		set_variable = {
-			which = iisc_budget_builder
 			value = 1000
 		}
 		set_variable = {
+			which = iisc_budget_builder
+			value = 100
+		}
+		set_variable = {
 			which = iisc_budget_science_ship
-			value = 2000
+			value = 200
 		}
 		set_variable = {
 			which = iisc_budget_mining_station
-			value = 3000
+			value = 200
 		}
 		set_variable = {
 			which = iisc_budget_research_station
-			value = 2000
+			value = 100
 		}
 		set_variable = {
 			which = iisc_budget_colonization
-			value = 1500
+			value = 100
 		}
 		set_variable = {
 			which = iisc_corp_money_last_month
 			value = iisc_corp_money
+		}
+		# to not penalize the budget
+		set_timed_country_flag = {
+			flag = iisc_built_mining_station_recently
+			years = 1
+		}
+		set_timed_country_flag = {
+			flag = iisc_built_research_station_recently
+			years = 1
 		}
 	}
 	set_country_flag = iisc_overlord_of_@last_created_country

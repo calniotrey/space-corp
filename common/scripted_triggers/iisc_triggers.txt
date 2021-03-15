@@ -57,22 +57,33 @@ iisc_should_build_science_ship = {
 		which = iisc_budget_science_ship
 		value >= @iisc_science_ship_cost
 	}
-	count_owned_ship = {
-		limit = {
-			is_ship_size = science
+	iisc_has_not_enough_science_ships = yes
+}
+
+# this = corp
+iisc_has_not_enough_science_ships = {
+	OR = {
+		count_owned_ship = {
+			limit = {
+				is_ship_size = science
+			}
+			count < 10
 		}
-		count < 5		# TODO change
+		AND = {
+			has_civic = iisc_civic_exploration_initiative
+			count_owned_ship = {
+				limit = {
+					is_ship_size = science
+				}
+				count < 20
+			}
+		}
 	}
 }
 
 # this = corp
 iisc_should_destroy_science_ship = {
-	count_owned_ship = {
-		limit = {
-			is_ship_size = science
-		}
-		count > 5		# TODO change
-	}
+	always = no
 }
 
 # this = corp
@@ -81,22 +92,22 @@ iisc_should_build_builder = {
 		which = iisc_budget_builder
 		value >= @iisc_builder_cost
 	}
+	iisc_has_not_enough_builders = yes
+}
+
+# this = corp
+iisc_has_not_enough_builders = {
 	count_owned_ship = {
 		limit = {
 			is_ship_size = constructor
 		}
-		count < 1		# TODO change
+		count < 5
 	}
 }
 
 # this = corp
 iisc_should_destroy_builder = {
-	count_owned_ship = {
-		limit = {
-			is_ship_size = constructor
-		}
-		count > 5		# TODO change
-	}
+	always = no
 }
 
 # this = corp
