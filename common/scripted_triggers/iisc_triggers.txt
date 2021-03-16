@@ -2,6 +2,16 @@ iisc_is_space_corp_not_installed = {
 	always = no
 }
 
+# this = corp
+# overlord exists
+iisc_is_corp_connected = {
+	overlord = {
+		any_owned_planet = {
+			has_planet_flag = iisc_hq_of_@prevprev
+		}
+	}
+}
+
 # this = overlord
 iisc_can_have_space_corp = {
 	is_country_type = default

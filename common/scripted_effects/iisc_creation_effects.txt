@@ -28,7 +28,6 @@ iisc_create_corp = {
 		civics = random
 		auto_delete = no
 		effect = {
-			set_country_flag = iisc_corp_of_@prev
 			establish_communications_no_message = prev
 			set_subject_of = {
 				who = prev
@@ -141,8 +140,12 @@ iisc_create_corp = {
 			flag = iisc_built_research_station_recently
 			years = 1
 		}
+		# setup recurrent monthly event
+		country_event = {
+			id = iisc_pulse.20
+			days = 1
+		}
 	}
-	set_country_flag = iisc_overlord_of_@last_created_country
 	every_country = {
 		limit = {
 			has_communications = prev
