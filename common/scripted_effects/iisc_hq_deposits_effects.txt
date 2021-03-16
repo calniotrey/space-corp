@@ -420,3 +420,84 @@ iisc_downgrade_hq_deposit = {
 		}
 	}
 }
+
+# this = corp
+# hq set
+# this removes ALL of the deposits added by this corp
+iisc_remove_hq_deposit_from_corp = {
+	switch = {
+		trigger = has_civic
+		iisc_civic_research_consortium = {
+			iisc_remove_hq_deposit_from_corp_aux = {
+				TYPE = d_iisc_research_consortium
+			}
+		}
+		iisc_civic_engineering_firm = {
+			iisc_remove_hq_deposit_from_corp_aux = {
+				TYPE = d_iisc_engineering_firm
+			}
+		}
+		iisc_civic_mining_union = {
+			iisc_remove_hq_deposit_from_corp_aux = {
+				TYPE = d_iisc_mining_union
+			}
+		}
+		iisc_civic_security_force = {
+			iisc_remove_hq_deposit_from_corp_aux = {
+				TYPE = d_iisc_security_force
+			}
+		}
+		iisc_civic_logistics_agency = {
+			iisc_remove_hq_deposit_from_corp_aux = {
+				TYPE = d_iisc_logistics_agency
+			}
+		}
+		iisc_civic_exploration_initiative = {
+			iisc_remove_hq_deposit_from_corp_aux = {
+				TYPE = d_iisc_exploration_initiative
+			}
+		}
+		iisc_civic_financial_group = {
+			iisc_remove_hq_deposit_from_corp_aux = {
+				TYPE = d_iisc_financial_group
+			}
+		}
+	}
+}
+
+# this = corp
+# hq set
+iisc_remove_hq_deposit_from_corp_aux = {
+	event_target:iisc_hq_planet = {
+		remove_deposit = $TYPE$_machine_1
+		remove_deposit = $TYPE$_machine_2
+		remove_deposit = $TYPE$_machine_3
+		remove_deposit = $TYPE$_machine_4
+		remove_deposit = $TYPE$_machine_5
+		remove_deposit = $TYPE$_machine_6
+		remove_deposit = $TYPE$_machine_7
+		remove_deposit = $TYPE$_machine_8
+		remove_deposit = $TYPE$_machine_9
+		remove_deposit = $TYPE$_machine_10
+		remove_deposit = $TYPE$_hive_1
+		remove_deposit = $TYPE$_hive_2
+		remove_deposit = $TYPE$_hive_3
+		remove_deposit = $TYPE$_hive_4
+		remove_deposit = $TYPE$_hive_5
+		remove_deposit = $TYPE$_hive_6
+		remove_deposit = $TYPE$_hive_7
+		remove_deposit = $TYPE$_hive_8
+		remove_deposit = $TYPE$_hive_9
+		remove_deposit = $TYPE$_hive_10
+		remove_deposit = $TYPE$_regular_1
+		remove_deposit = $TYPE$_regular_2
+		remove_deposit = $TYPE$_regular_3
+		remove_deposit = $TYPE$_regular_4
+		remove_deposit = $TYPE$_regular_5
+		remove_deposit = $TYPE$_regular_6
+		remove_deposit = $TYPE$_regular_7
+		remove_deposit = $TYPE$_regular_8
+		remove_deposit = $TYPE$_regular_9
+		remove_deposit = $TYPE$_regular_10
+	}
+}

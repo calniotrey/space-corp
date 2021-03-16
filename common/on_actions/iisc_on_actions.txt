@@ -10,12 +10,6 @@ on_yearly_pulse_country = {
 	}
 }
 
-on_monthly_pulse = {
-	events = {
-		iisc_pulse.20
-	}
-}
-
 # This = target country (player)
 # From = source country
 on_custom_diplomacy = {
@@ -29,6 +23,14 @@ on_custom_diplomacy = {
 on_join_federation = {
 	events = {
 		iisc_corps.20
+	}
+}
+
+# This = subject
+# From = subject's overlord
+on_becoming_subject = {
+	events = {
+		iisc_corps.100
 	}
 }
 

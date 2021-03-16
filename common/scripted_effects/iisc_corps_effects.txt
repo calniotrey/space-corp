@@ -20,11 +20,6 @@ iisc_set_hq = {
 			}
 		}
 		set_country_flag = iisc_hq_set
-		event_target:iisc_hq_planet = {
-			prev = {
-				set_country_flag = iisc_hq_set_on_@prev
-			}
-		}
 	}
 }
 
@@ -44,6 +39,172 @@ iisc_get_hq = {
 iisc_get_overlord = {
 	overlord = {
 		save_event_target_as = iisc_overlord
+	}
+}
+
+# this = corp
+# hq set and exists
+iisc_handle_corp_connection_to_overlord = {
+	if = {
+		limit = {
+			OR = {
+				NOT = {
+					exists = event_target:iisc_hq_planet.owner
+				}
+				event_target:iisc_hq_planet.owner = {
+					iisc_can_have_space_corp = no
+				}
+				event_target:iisc_hq_planet.owner = {
+					is_subject = yes
+				}
+			}
+		}
+		iisc_destroy_corp = yes
+	}
+	else_if = {
+		# the owner exists and can have corps
+		limit = {
+			# same as a NAND without the NOTs but this way it's easier to understand
+			OR = {
+				NOT = {
+					exists = overlord
+				}
+				NOT = {
+					overlord = {
+						is_same_value = event_target:iisc_hq_planet.owner
+					}
+				}
+			}
+		}
+		# the corp is not connected
+		# we need to make it subject to the owner of the planet
+		# the owner of the planet should not be already a subject thanks to the on_becoming_subject
+		set_subject_of = {
+			who = event_target:iisc_hq_planet.owner
+			subject_type = iisc_corp_vassal
+		}
+		# if necessary in the future: scope to overlord and
+		# iisc_count_corps = yes
+		# TODO add an event with a window?
+	}
+}
+
+# this = corp
+# corp is supposed to be destroyed => its money is copied, not transferred
+# overlord exists
+iisc_split_disbanded_corp_money = {
+	if = {
+		limit = {
+			check_variable = {
+				which = iisc_corp_money
+				value > 0
+			}
+		}
+		divide_variable = {
+			which = iisc_corp_money
+			value = 5
+		}
+		set_variable = {
+			which = iisc_corp_money_to_give
+			value = iisc_corp_money
+		}
+		overlord = {
+			while = {
+				count = 3
+				# select a random corp
+				random_subject = {
+					limit = {
+						is_country_type = iisc_space_corporation
+						iisc_is_corp_connected = yes
+					}
+					set_variable = {
+						which = iisc_corp_money_to_give
+						value = prevprev
+					}
+					iisc_add_variable_resource = {
+						AMOUNT = iisc_corp_money_to_give
+						RESOURCE = energy
+					}
+					# cleanup
+					set_variable = {
+						which = iisc_corp_money_to_give
+						value = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+# this = corp
+# overlord = the new overlord (should exist)
+iisc_disband_disconnected_corp = {
+	if = {
+		limit = {
+			is_country_type = iisc_space_corporation
+		}
+		# just a redundant check
+		if = {
+			limit = {
+				exists = overlord
+			}
+			# load (old) hq
+			# removal of hq deposit is done afterwards in iisc_destroy_corp
+			overlord = {
+				random_subject = {
+					limit = {
+						iisc_can_have_space_corp = yes
+						any_owned_planet = {
+							has_planet_flag = iisc_hq_of_@prevprevprev
+						}
+					}
+					random_owned_planet = {
+						limit = {
+							has_planet_flag = iisc_hq_of_@prevprevprev
+						}
+						save_event_target_as = iisc_hq_planet
+					}
+				}
+			}
+			# give some of the money to the corps of the overlord
+			iisc_split_disbanded_corp_money = yes
+		}
+		iisc_destroy_corp = yes
+	}
+	else = {
+		log = "Tried to disband non corp country by iisc_disband_disconnected_corp"
+	}
+}
+
+# this = corp
+iisc_destroy_corp = {
+	if = {
+		limit = {
+			is_country_type = iisc_space_corporation
+		}
+		# just a redundant check
+		if = {
+			limit = {
+				exists = event_target:iisc_hq_planet
+			}
+			event_target:iisc_hq_planet = {
+				remove_planet_flag = iisc_hq_of_@prev
+			}
+			iisc_remove_hq_deposit_from_corp = yes
+		}
+		every_mining_station = {
+			delete_fleet = this
+		}
+		every_research_station = {
+			delete_fleet = this
+		}
+		every_owned_fleet = {
+			delete_fleet = this
+		}
+		destroy_country = yes
+	}
+	else = {
+		log = "Tried to delete non corp country by iisc_destroy_corp"
 	}
 }
 
@@ -693,8 +854,8 @@ iisc_compute_income_from_hq_deposits = {
 }
 
 # this = corp
+# hq set
 iisc_compute_and_tax_space_corp_income = {
-	iisc_get_hq = yes
 	iisc_compute_passive_income = yes
 	iisc_compute_income_from_hq_deposits = yes
 	iisc_compute_and_tax_space_corp_income_from_resource = {
