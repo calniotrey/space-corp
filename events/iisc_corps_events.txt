@@ -425,16 +425,10 @@ country_event = {
 				limit = {
 					is_country_type = iisc_space_corporation
 					# which hq isn't owned by the new overlord
-					NOT = {
-						prev = {
-							any_owned_planet = {
-								has_planet_flag = iisc_hq_of_@prevprev
-							}
-						}
-					}
+					iisc_is_corp_connected = no
 				}
 				# disband the corp
-				iisc_disband_corp = yes
+				iisc_disband_disconnected_corp = yes
 			}
 			# if necessary in the future:
 			# iisc_count_corps = yes

@@ -106,7 +106,7 @@ country_event = {
 	}
 }
 
-# monthly pulse but fires itself
+# fires itself every 30 days (doesn't use monthly_pulse)
 # trigger event for corps randomly in the month
 # hq set
 country_event = {
@@ -123,7 +123,7 @@ country_event = {
 					has_global_flag = iisc_stopped
 				}
 			}
-			# TODO destroy the country and cleanup
+			iisc_destroy_corp = yes
 		}
 		else = {
 			if = {
