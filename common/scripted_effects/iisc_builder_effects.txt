@@ -48,6 +48,10 @@ iisc_set_builders_orders = {
 				TYPE = mining_station
 				AMOUNT = iisc_mining_station_total_cost
 			}
+			set_timed_country_flag = {
+				flag = iisc_built_mining_station_recently
+				years = 1
+			}
 			if = {
 				limit = {
 					exists = overlord
@@ -98,6 +102,10 @@ iisc_set_builders_orders = {
 			iisc_subtract_corp_money = {
 				TYPE = research_station
 				AMOUNT = iisc_mining_station_total_cost
+			}
+			set_timed_country_flag = {
+				flag = iisc_built_research_station_recently
+				years = 1
 			}
 			if = {
 				limit = {

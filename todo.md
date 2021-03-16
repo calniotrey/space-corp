@@ -46,12 +46,12 @@ Colonization 5%
 Modification on budget
 xenophile: higher convoy and science ships
 xenophobe: higher colonization, lower science ships
-egalitarian: 
-authoritarian: higher mining stations and builder
+egalitarian: higher colo and military
+authoritarian: higher mining stations, builder and military
 materialist: higher science ships, science stations, lower convoys and supply
-spiritualist: higher convoys, colonization
+spiritualist: higher convoys, colonization, lower science ships, research stations
 militarist: higher military and supplies
-pacifist: higher convoys, colonization, stations
+pacifist: higher convoys, colonization, stations, lower military
 
 Ideas
 xenophile: more profit from trade

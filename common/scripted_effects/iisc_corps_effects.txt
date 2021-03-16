@@ -420,7 +420,395 @@ iisc_set_budget_multiplier = {
 		which = iisc_budget_multiplier_colonization
 		value = 0.15
 	}
-	# TODO add ethic effect and normalize
+	# ethic effect
+	switch = {
+		trigger = has_ethic
+		ethic_xenophile = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_convoy
+				value = 1.25
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_science_ship
+				value = 1.1
+			}
+		}
+		ethic_xenophobe = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_colonization
+				value = 1.25
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_science_ship
+				value = 0.9
+			}
+		}
+		ethic_egalitarian = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_colonization
+				value = 1.1
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_military
+				value = 1.1
+			}
+		}
+		ethic_authoritarian = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_mining_station
+				value = 1.1
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_builder
+				value = 1.1
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_military
+				value = 1.1
+			}
+		}
+		ethic_materialist = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_science_ship
+				value = 1.2
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_research_station
+				value = 1.5
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_convoy
+				value = 0.9
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_supply
+				value = 0.9
+			}
+		}
+		ethic_spiritualist = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_science_ship
+				value = 0.9
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_research_station
+				value = 0.8
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_convoy
+				value = 1.2
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_colonization
+				value = 1.2
+			}
+		}
+		ethic_militarist = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_military
+				value = 1.5
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_supply
+				value = 1.25
+			}
+		}
+		ethic_pacifist = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_military
+				value = 0.8
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_convoy
+				value = 1.1
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_colonization
+				value = 1.1
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_mining_station
+				value = 1.1
+			}
+		}
+	}
+	# civic effects
+	switch = {
+		trigger = has_civic
+		iisc_civic_research_consortium = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_research_station
+				value = 1.5
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_science_ship
+				value = 1.25
+			}
+		}
+		iisc_civic_engineering_firm = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_mining_station
+				value = 1.2
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_research_station
+				value = 1.2
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_military
+				value = 1.3
+			}
+		}
+		iisc_civic_mining_union = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_mining_station
+				value = 1.5
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_builder
+				value = 1.1
+			}
+		}
+		iisc_civic_security_force = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_military
+				value = 2
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_mining_station
+				value = 0.5
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_research_station
+				value = 0.3
+			}
+		}
+		iisc_civic_logistics_agency = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_colonization
+				value = 1.5
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_supply
+				value = 2
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_convoy
+				value = 1.5
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_military
+				value = 0.8
+			}
+		}
+		iisc_civic_exploration_initiative = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_science_ship
+				value = 2
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_research_station
+				value = 1.3
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_colonization
+				value = 0.7
+			}
+		}
+		iisc_civic_financial_group = {
+			multiply_variable = {
+				which = iisc_budget_multiplier_convoy
+				value = 1.5
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_colonization
+				value = 1.5
+			}
+			multiply_variable = {
+				which = iisc_budget_multiplier_military
+				value = 0.7
+			}
+		}
+	}
+	# dynamic effects
+	if = {
+		limit = {
+			check_variable = {
+				which = iisc_budget_convoy
+				value > 2000
+			}
+		}
+		multiply_variable = {
+			which = iisc_budget_multiplier_convoy
+			value = 0
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = iisc_budget_convoy
+				value > 1000
+			}
+		}
+		multiply_variable = {
+			which = iisc_budget_multiplier_convoy
+			value = 0.5
+		}
+	}
+	if = {
+		limit = {
+			iisc_below_builders_cap = no
+		}
+		multiply_variable = {
+			which = iisc_budget_multiplier_builder
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			iisc_below_science_ship_cap = no
+		}
+		multiply_variable = {
+			which = iisc_budget_multiplier_science_ship
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = iisc_built_mining_station_recently
+			}
+			check_variable = {
+				which = iisc_budget_mining_station
+				value >= @iisc_mining_station_cost
+			}
+		}
+		multiply_variable = {
+			which = iisc_budget_multiplier_mining_station
+			value = 0.5
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = iisc_budget_mining_station
+				value >= 1000
+			}
+		}
+		multiply_variable = {
+			which = iisc_budget_multiplier_mining_station
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = iisc_budget_research_station
+				value >= 1000
+			}
+		}
+		multiply_variable = {
+			which = iisc_budget_multiplier_research_station
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = iisc_built_research_station_recently
+			}
+			check_variable = {
+				which = iisc_budget_research_station
+				value >= @iisc_mining_station_cost
+			}
+		}
+		multiply_variable = {
+			which = iisc_budget_multiplier_research_station
+			value = 0.5
+		}
+	}
+	if = {
+		limit = {
+			iisc_hq_deposits_full = yes
+		}
+		multiply_variable = {
+			which = iisc_budget_multiplier_colonization
+			value = 0
+		}
+	}
+	# normalize so the sum is (almost) 1
+	set_variable = {
+		which = iisc_budget_multiplier_total
+		value = iisc_budget_multiplier_military
+	}
+	change_variable = {
+		which = iisc_budget_multiplier_total
+		value = iisc_budget_multiplier_convoy
+	}
+	change_variable = {
+		which = iisc_budget_multiplier_total
+		value = iisc_budget_multiplier_supply
+	}
+	change_variable = {
+		which = iisc_budget_multiplier_total
+		value = iisc_budget_multiplier_builder
+	}
+	change_variable = {
+		which = iisc_budget_multiplier_total
+		value = iisc_budget_multiplier_science_ship
+	}
+	change_variable = {
+		which = iisc_budget_multiplier_total
+		value = iisc_budget_multiplier_mining_station
+	}
+	change_variable = {
+		which = iisc_budget_multiplier_total
+		value = iisc_budget_multiplier_research_station
+	}
+	change_variable = {
+		which = iisc_budget_multiplier_total
+		value = iisc_budget_multiplier_colonization
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = iisc_budget_multiplier_total
+				value > 0
+			}
+		}
+		divide_variable = {
+			which = iisc_budget_multiplier_military
+			value = iisc_budget_multiplier_total
+		}
+		divide_variable = {
+			which = iisc_budget_multiplier_convoy
+			value = iisc_budget_multiplier_total
+		}
+		divide_variable = {
+			which = iisc_budget_multiplier_supply
+			value = iisc_budget_multiplier_total
+		}
+		divide_variable = {
+			which = iisc_budget_multiplier_builder
+			value = iisc_budget_multiplier_total
+		}
+		divide_variable = {
+			which = iisc_budget_multiplier_science_ship
+			value = iisc_budget_multiplier_total
+		}
+		divide_variable = {
+			which = iisc_budget_multiplier_mining_station
+			value = iisc_budget_multiplier_total
+		}
+		divide_variable = {
+			which = iisc_budget_multiplier_research_station
+			value = iisc_budget_multiplier_total
+		}
+		divide_variable = {
+			which = iisc_budget_multiplier_colonization
+			value = iisc_budget_multiplier_total
+		}
+	}
 }
 
 # this = corp
@@ -475,7 +863,7 @@ iisc_compute_budget_change = {
 		value = -1
 	}
 	# iisc_budget_total remaining is what we need to split between the budgets
-	iisc_set_budget_multiplier = yes	# TODO remove
+	iisc_set_budget_multiplier = yes
 	iisc_compute_budget_change_aux = {
 		TYPE = military
 	}
