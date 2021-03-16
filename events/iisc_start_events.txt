@@ -6,6 +6,11 @@ event = {
 
 	immediate = {
 		set_global_flag = iisc_corp_spawning_all
+		set_global_flag = iisc_mining_stations_all
+		set_global_flag = iisc_research_stations_all
+		set_global_flag = iisc_corp_surveying_all
+		set_global_flag = iisc_corp_convoys_all
+		set_global_flag = iisc_hq_development_all
 	}
 }
 

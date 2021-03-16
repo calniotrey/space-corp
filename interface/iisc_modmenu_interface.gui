@@ -1,5 +1,17 @@
 @txt_x = 33
 @txt_y = 6
+@opt_x_1 = 10
+@opt_x_2 = 150
+@opt_x_3 = 290
+@opt_y = 20
+@setting_x = 30
+@setting_y_1 = 50
+@setting_y_2 = 100
+@setting_y_3 = 150
+@setting_y_4 = 200
+@setting_y_5 = 250
+@setting_y_6 = 300
+
 
 guiTypes = {
 	containerWindowType = {
@@ -7,17 +19,17 @@ guiTypes = {
 		orientation = center
 		origo = center
 		moveable = yes
-		size = { width = 480 height = 420 }
+		size = { width = 480 height = 540 }
 
 		iconType = {
 			name = "city_planet_evt_icon"
-			position = { x = 15 y = 260 }
+			position = { x = 15 y = 370 }
 			quadTextureSprite ="GFX_evt_city_planet"
 		}
 
 		containerWindowType = {
 			name = "iisc_modmenu.corp_spawning"
-			position = { x = 30 y = 50 }
+			position = { x = @setting_x y = @setting_y_1 }
 			size = { width = 20 height = 20 }
 
 			instantTextboxType = {
@@ -28,19 +40,19 @@ guiTypes = {
 				text_color_code = "E"
 				format = left
 				font = "cg_16b"
-				text = "Corporation Spawning"
+				text = "iisc_modmenu_corp_spawning_setting"
 			}
 
 			containerWindowType = {
 				name = "iisc_modmenu.corp_spawning.option_all"
-				position = { x = 10 y = 20 }
+				position = { x = @opt_x_1 y = @opt_y }
 				size = { width = 20 height = 20 }
 	
 				effectButtonType = {
 					name = "on"
 					position = { x = 0 y = 0 }
 					quadTextureSprite = "GFX_checkbox_20_20_01"
-					effect = "iisc_corp_spawning_all_off"
+					effect = "iisc_corp_spawning_all_dummy"
 					frame = 2
 					alwaysTransparent = yes
 				}
@@ -48,7 +60,7 @@ guiTypes = {
 					name = "off"
 					position = { x = 0 y = 0 }
 					quadTextureSprite = "GFX_checkbox_20_20_01"
-					effect = "iisc_corp_spawning_all_on"
+					effect = "iisc_corp_spawning_all"
 				}
 				instantTextboxType = {
 					name = "text"
@@ -58,20 +70,20 @@ guiTypes = {
 					text_color_code = "E"
 					format = left
 					font = "cg_16b"
-					text = "All Countries" #"iisc_modmenu_corp_spawning_text"
+					text = "iisc_modmenu_all_option_text"
 				}
 			}
 
 			containerWindowType = {
 				name = "iisc_modmenu.corp_spawning.option_players"
-				position = { x = 10 y = 45 }
+				position = { x = @opt_x_2 y = @opt_y }
 				size = { width = 20 height = 20 }
 	
 				effectButtonType = {
 					name = "on"
 					position = { x = 0 y = 0 }
 					quadTextureSprite = "GFX_checkbox_20_20_01"
-					effect = "iisc_corp_spawning_players_off"
+					effect = "iisc_corp_spawning_players_dummy"
 					frame = 2
 					alwaysTransparent = yes
 				}
@@ -79,7 +91,7 @@ guiTypes = {
 					name = "off"
 					position = { x = 0 y = 0 }
 					quadTextureSprite = "GFX_checkbox_20_20_01"
-					effect = "iisc_corp_spawning_players_on"
+					effect = "iisc_corp_spawning_players"
 				}
 				instantTextboxType = {
 					name = "text"
@@ -89,20 +101,20 @@ guiTypes = {
 					text_color_code = "E"
 					format = left
 					font = "cg_16b"
-					text = "Players Only" #"iisc_modmenu_corp_spawning_text"
+					text = "iisc_modmenu_players_option_text"
 				}
 			}
 
 			containerWindowType = {
-				name = "iisc_modmenu.corp_spawning.option_ai"
-				position = { x = 10 y = 70 }
+				name = "iisc_modmenu.corp_spawning.option_off"
+				position = { x = @opt_x_3 y = @opt_y }
 				size = { width = 20 height = 20 }
 	
 				effectButtonType = {
 					name = "on"
 					position = { x = 0 y = 0 }
 					quadTextureSprite = "GFX_checkbox_20_20_01"
-					effect = "iisc_corp_spawning_ai_off"
+					effect = "iisc_corp_spawning_off_dummy"
 					frame = 2
 					alwaysTransparent = yes
 				}
@@ -110,7 +122,7 @@ guiTypes = {
 					name = "off"
 					position = { x = 0 y = 0 }
 					quadTextureSprite = "GFX_checkbox_20_20_01"
-					effect = "iisc_corp_spawning_ai_on"
+					effect = "iisc_corp_spawning_off"
 				}
 				instantTextboxType = {
 					name = "text"
@@ -120,7 +132,562 @@ guiTypes = {
 					text_color_code = "E"
 					format = left
 					font = "cg_16b"
-					text = "AI Only" #"iisc_modmenu_corp_spawning_text"
+					text = "iisc_modmenu_off_option_text"
+				}
+			}
+		}
+
+
+		containerWindowType = {
+			name = "iisc_modmenu.mining_stations"
+			position = { x = @setting_x y = @setting_y_2 }
+			size = { width = 20 height = 20 }
+
+			instantTextboxType = {
+				name = "text"
+				position = { x = 0 y = 0 }
+				maxWidth = 200
+				alwaysTransparent = yes
+				text_color_code = "E"
+				format = left
+				font = "cg_16b"
+				text = "iisc_modmenu_mining_stations_setting"
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.mining_stations.option_all"
+				position = { x = @opt_x_1 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_mining_stations_all_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_mining_stations_all"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_all_option_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.mining_stations.option_players"
+				position = { x = @opt_x_2 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_mining_stations_players_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_mining_stations_players"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_players_option_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.mining_stations.option_off"
+				position = { x = @opt_x_3 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_mining_stations_off_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_mining_stations_off"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_off_option_text"
+				}
+			}
+		}
+
+
+		containerWindowType = {
+			name = "iisc_modmenu.research_stations"
+			position = { x = @setting_x y = @setting_y_3 }
+			size = { width = 20 height = 20 }
+
+			instantTextboxType = {
+				name = "text"
+				position = { x = 0 y = 0 }
+				maxWidth = 200
+				alwaysTransparent = yes
+				text_color_code = "E"
+				format = left
+				font = "cg_16b"
+				text = "iisc_modmenu_research_stations_setting"
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.research_stations.option_all"
+				position = { x = @opt_x_1 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_research_stations_all_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_research_stations_all"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_all_option_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.research_stations.option_players"
+				position = { x = @opt_x_2 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_research_stations_players_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_research_stations_players"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_players_option_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.research_stations.option_off"
+				position = { x = @opt_x_3 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_research_stations_off_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_research_stations_off"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_off_option_text"
+				}
+			}
+		}
+
+
+		containerWindowType = {
+			name = "iisc_modmenu.corp_surveying"
+			position = { x = @setting_x y = @setting_y_4 }
+			size = { width = 20 height = 20 }
+
+			instantTextboxType = {
+				name = "text"
+				position = { x = 0 y = 0 }
+				maxWidth = 200
+				alwaysTransparent = yes
+				text_color_code = "E"
+				format = left
+				font = "cg_16b"
+				text = "iisc_modmenu_corp_surveying_setting"
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.corp_surveying.option_all"
+				position = { x = @opt_x_1 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_surveying_all_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_surveying_all"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_all_option_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.corp_surveying.option_players"
+				position = { x = @opt_x_2 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_surveying_players_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_surveying_players"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_players_option_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.corp_surveying.option_off"
+				position = { x = @opt_x_3 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_surveying_off_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_surveying_off"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_off_option_text"
+				}
+			}
+		}
+
+
+		containerWindowType = {
+			name = "iisc_modmenu.corp_convoys"
+			position = { x = @setting_x y = @setting_y_5 }
+			size = { width = 20 height = 20 }
+
+			instantTextboxType = {
+				name = "text"
+				position = { x = 0 y = 0 }
+				maxWidth = 200
+				alwaysTransparent = yes
+				text_color_code = "E"
+				format = left
+				font = "cg_16b"
+				text = "iisc_modmenu_corp_convoys_setting"
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.corp_convoys.option_all"
+				position = { x = @opt_x_1 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_convoys_all_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_convoys_all"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_all_option_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.corp_convoys.option_players"
+				position = { x = @opt_x_2 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_convoys_players_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_convoys_players"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_players_option_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.corp_convoys.option_off"
+				position = { x = @opt_x_3 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_convoys_off_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_corp_convoys_off"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_off_option_text"
+				}
+			}
+		}
+
+
+		containerWindowType = {
+			name = "iisc_modmenu.hq_development"
+			position = { x = @setting_x y = @setting_y_6 }
+			size = { width = 20 height = 20 }
+
+			instantTextboxType = {
+				name = "text"
+				position = { x = 0 y = 0 }
+				maxWidth = 200
+				alwaysTransparent = yes
+				text_color_code = "E"
+				format = left
+				font = "cg_16b"
+				text = "iisc_modmenu_hq_development_setting"
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.hq_development.option_all"
+				position = { x = @opt_x_1 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_hq_development_all_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_hq_development_all"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_all_option_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.hq_development.option_players"
+				position = { x = @opt_x_2 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_hq_development_players_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_hq_development_players"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_players_option_text"
+				}
+			}
+
+			containerWindowType = {
+				name = "iisc_modmenu.hq_development.option_off"
+				position = { x = @opt_x_3 y = @opt_y }
+				size = { width = 20 height = 20 }
+	
+				effectButtonType = {
+					name = "on"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_hq_development_off_dummy"
+					frame = 2
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "off"
+					position = { x = 0 y = 0 }
+					quadTextureSprite = "GFX_checkbox_20_20_01"
+					effect = "iisc_hq_development_off"
+				}
+				instantTextboxType = {
+					name = "text"
+					position = { x = @txt_x y = @txt_y }
+					maxWidth = 100
+					alwaysTransparent = yes
+					text_color_code = "E"
+					format = left
+					font = "cg_16b"
+					text = "iisc_modmenu_off_option_text"
 				}
 			}
 		}
