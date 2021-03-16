@@ -657,7 +657,7 @@ iisc_set_budget_multiplier = {
 	}
 	if = {
 		limit = {
-			iisc_has_not_enough_builders = no
+			iisc_below_builders_cap = no
 		}
 		multiply_variable = {
 			which = iisc_budget_multiplier_builder
@@ -666,7 +666,7 @@ iisc_set_budget_multiplier = {
 	}
 	if = {
 		limit = {
-			iisc_has_not_enough_science_ships = no
+			iisc_below_science_ship_cap = no
 		}
 		multiply_variable = {
 			which = iisc_budget_multiplier_science_ship
