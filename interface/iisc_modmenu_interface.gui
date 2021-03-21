@@ -1,19 +1,184 @@
+@run_mod_text_x = 50
+@run_mod_text_y = 20
+@run_mod_icon_x_1 = 330
+@run_mod_icon_x_2 = 370
+@run_mod_icon_x_3 = 410
+@run_mod_icon_y = 10
 @txt_x = 33
 @txt_y = 6
 @opt_x_1 = 10
 @opt_x_2 = 150
 @opt_x_3 = 290
-@opt_y = 20
+@opt_y = 25
 @setting_x = 30
 @setting_y_1 = 50
-@setting_y_2 = 100
-@setting_y_3 = 150
-@setting_y_4 = 200
-@setting_y_5 = 250
-@setting_y_6 = 300
+@setting_y_2 = 120
+@setting_y_3 = 180
+@setting_y_4 = 240
+@setting_y_5 = 300
+@setting_y_6 = 360
+@setting_y_7 = 420
+@opt_line_x = 0
+@opt_line_y = 7
 
 
 guiTypes = {
+	containerWindowType = {
+		name = "iisc_modmenu_resume"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 0 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_iisc_button_play"
+			position = { x= @run_mod_icon_x_1 y=@run_mod_icon_y }
+			size = { x = 40 y = 30 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+	}
+	containerWindowType = {
+		name = "iisc_modmenu_resume_dummy"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 0 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_iisc_button_play"
+			frame = 2
+			position = { x= @run_mod_icon_x_1 y=@run_mod_icon_y }
+			size = { x = 40 y = 30 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+			alwaysTransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "iisc_modmenu_pause"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 0 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_iisc_button_pause"
+			position = { x= @run_mod_icon_x_2 y=@run_mod_icon_y }
+			size = { x = 40 y = 30 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+	}
+	containerWindowType = {
+		name = "iisc_modmenu_pause_dummy"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 0 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_iisc_button_pause"
+			frame = 2
+			position = { x= @run_mod_icon_x_2 y=@run_mod_icon_y }
+			size = { x = 40 y = 30 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+			alwaysTransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "iisc_modmenu_stop"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 0 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_fleet_order_button_stop"
+			position = { x= @run_mod_icon_x_3 y=@run_mod_icon_y }
+			size = { x = 40 y = 30 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+	}
+	containerWindowType = {
+		name = "iisc_modmenu_stop_dummy"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 0 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_fleet_order_button_stop"
+			frame = 2
+			position = { x= @run_mod_icon_x_3 y=@run_mod_icon_y }
+			size = { x = 40 y = 30 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+			alwaysTransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "iisc_modmenu_status_text_running"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 10 }
+		moveable = no
+		
+		instantTextBoxType = {
+			name = "option_button"
+			position = { x=@run_mod_text_x y=0 }
+			size = { x = 400 y = 200 }
+			font = "cg_16b"
+			text = iisc_modmenu_status_text_running
+			alwaysTransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "iisc_modmenu_status_text_paused"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 10 }
+		moveable = no
+		
+		instantTextBoxType = {
+			name = "option_button"
+			position = { x=@run_mod_text_x y=0 }
+			size = { x = 400 y = 200 }
+			font = "cg_16b"
+			text = iisc_modmenu_status_text_paused
+			alwaysTransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "iisc_modmenu_status_text_stopped"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 10 }
+		moveable = no
+		
+		instantTextBoxType = {
+			name = "option_button"
+			position = { x=@run_mod_text_x y=0 }
+			size = { x = 400 y = 200 }
+			font = "cg_16b"
+			text = iisc_modmenu_status_text_stopped
+			alwaysTransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "iisc_modmenu_status_text_stopped_timer"
+		position = { x=0 y=0 }
+		size = { width = 0 height = 10 }
+		moveable = no
+		
+		instantTextBoxType = {
+			name = "option_button"
+			position = { x=@run_mod_text_x y=0 }
+			size = { x = 400 y = 200 }
+			font = "cg_16b"
+			text = iisc_modmenu_status_text_stopped_timer
+			alwaysTransparent = yes
+		}
+	}
 	containerWindowType = {
 		name = "iisc_modmenu_window"
 		orientation = center
@@ -29,8 +194,15 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "iisc_modmenu.corp_spawning"
-			position = { x = @setting_x y = @setting_y_1 }
+			position = { x = @setting_x y = @setting_y_2 }
 			size = { width = 20 height = 20 }
+
+			iconType = {
+				name = "iisc_modmenu_option_line"
+				quadTextureSprite = "GFX_line_medium"
+				position = { x = @opt_line_x y = @opt_line_y }
+				alwaysTransparent = yes
+			}
 
 			instantTextboxType = {
 				name = "text"
@@ -140,8 +312,15 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "iisc_modmenu.mining_stations"
-			position = { x = @setting_x y = @setting_y_2 }
+			position = { x = @setting_x y = @setting_y_3 }
 			size = { width = 20 height = 20 }
+
+			iconType = {
+				name = "iisc_modmenu_option_line"
+				quadTextureSprite = "GFX_line_medium"
+				position = { x = @opt_line_x y = @opt_line_y }
+				alwaysTransparent = yes
+			}
 
 			instantTextboxType = {
 				name = "text"
@@ -251,8 +430,15 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "iisc_modmenu.research_stations"
-			position = { x = @setting_x y = @setting_y_3 }
+			position = { x = @setting_x y = @setting_y_4 }
 			size = { width = 20 height = 20 }
+
+			iconType = {
+				name = "iisc_modmenu_option_line"
+				quadTextureSprite = "GFX_line_medium"
+				position = { x = @opt_line_x y = @opt_line_y }
+				alwaysTransparent = yes
+			}
 
 			instantTextboxType = {
 				name = "text"
@@ -362,8 +548,15 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "iisc_modmenu.corp_surveying"
-			position = { x = @setting_x y = @setting_y_4 }
+			position = { x = @setting_x y = @setting_y_5 }
 			size = { width = 20 height = 20 }
+
+			iconType = {
+				name = "iisc_modmenu_option_line"
+				quadTextureSprite = "GFX_line_medium"
+				position = { x = @opt_line_x y = @opt_line_y }
+				alwaysTransparent = yes
+			}
 
 			instantTextboxType = {
 				name = "text"
@@ -473,8 +666,15 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "iisc_modmenu.corp_convoys"
-			position = { x = @setting_x y = @setting_y_5 }
+			position = { x = @setting_x y = @setting_y_6 }
 			size = { width = 20 height = 20 }
+
+			iconType = {
+				name = "iisc_modmenu_option_line"
+				quadTextureSprite = "GFX_line_medium"
+				position = { x = @opt_line_x y = @opt_line_y }
+				alwaysTransparent = yes
+			}
 
 			instantTextboxType = {
 				name = "text"
@@ -584,8 +784,15 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "iisc_modmenu.hq_development"
-			position = { x = @setting_x y = @setting_y_6 }
+			position = { x = @setting_x y = @setting_y_7 }
 			size = { width = 20 height = 20 }
+
+			iconType = {
+				name = "iisc_modmenu_option_line"
+				quadTextureSprite = "GFX_line_medium"
+				position = { x = @opt_line_x y = @opt_line_y }
+				alwaysTransparent = yes
+			}
 
 			instantTextboxType = {
 				name = "text"

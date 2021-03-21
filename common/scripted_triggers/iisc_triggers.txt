@@ -5,6 +5,13 @@ iisc_is_space_corp_not_installed = {
 # this = overlord
 iisc_can_have_space_corp = {
 	is_country_type = default
+	OR = {
+		has_global_flag = iisc_corp_spawning_all
+		AND = {
+			has_global_flag = iisc_corp_spawning_players
+			is_ai = no
+		}
+	}
 }
 
 # this = overlord

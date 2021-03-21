@@ -10,4 +10,129 @@ country_event = {
 	trigger = {
 		is_ai = no
 	}
+
+	option = {
+		name = iisc_modmenu.0.resume
+		custom_gui = "iisc_modmenu_resume"
+		trigger = {
+			OR = {
+				has_global_flag = iisc_stopped
+				has_global_flag = iisc_paused
+			}
+		}
+		hidden_effect = {
+			remove_global_flag = iisc_paused
+			remove_global_flag = iisc_stopped
+			remove_global_flag = iisc_stopped_timer
+			country_event = {
+				id = iisc_modmenu.0
+			}
+		}
+	}
+
+	option = {
+		name = iisc_modmenu.0.resume_dummy
+		custom_gui = "iisc_modmenu_resume_dummy"
+		trigger = {
+			NOR = {
+				has_global_flag = iisc_stopped
+				has_global_flag = iisc_paused
+			}
+		}
+	}
+
+	option = {
+		name = iisc_modmenu.0.pause
+		custom_gui = "iisc_modmenu_pause"
+		trigger = {
+			NOT = { has_global_flag = iisc_paused }
+		}
+		hidden_effect = {
+			set_global_flag = iisc_paused
+			remove_global_flag = iisc_stopped
+			remove_global_flag = iisc_stopped_timer
+			country_event = {
+				id = iisc_modmenu.0
+			}
+		}
+	}
+
+	option = {
+		name = iisc_modmenu.0.pause_dummy
+		custom_gui = "iisc_modmenu_pause_dummy"
+		trigger = {
+			has_global_flag = iisc_paused
+		}
+	}
+
+	option = {
+		name = iisc_modmenu.0.stop
+		custom_gui = "iisc_modmenu_stop"
+		trigger = {
+			NOT = { has_global_flag = iisc_stopped }
+		}
+		hidden_effect = {
+			set_global_flag = iisc_stopped
+			set_timed_global_flag = {
+				flag = iisc_stopped_timer
+				days = 30
+			}
+			remove_global_flag = iisc_paused
+			country_event = {
+				id = iisc_modmenu.0
+			}
+		}
+	}
+
+	option = {
+		name = iisc_modmenu.0.stop_dummy
+		custom_gui = "iisc_modmenu_stop_dummy"
+		trigger = {
+			has_global_flag = iisc_stopped
+		}
+	}
+
+	option = {
+		name = iisc_modmenu.0.status_text_running
+		custom_gui = "iisc_modmenu_status_text_running"
+		trigger = {
+			NOR = {
+				has_global_flag = iisc_stopped
+				has_global_flag = iisc_paused
+			}
+		}
+		default_hide_option = yes
+		iisc_actualize_modmenu_settings = yes
+	}
+
+	option = {
+		name = iisc_modmenu.0.status_text_paused
+		custom_gui = "iisc_modmenu_status_text_paused"
+		trigger = {
+			has_global_flag = iisc_paused
+		}
+		default_hide_option = yes
+		iisc_actualize_modmenu_settings = yes
+	}
+
+	option = {
+		name = iisc_modmenu.0.status_text_stopped
+		custom_gui = "iisc_modmenu_status_text_stopped"
+		trigger = {
+			has_global_flag = iisc_stopped
+			NOT = { has_global_flag = iisc_stopped_timer }
+		}
+		default_hide_option = yes
+		iisc_actualize_modmenu_settings = yes
+	}
+
+	option = {
+		name = iisc_modmenu.0.status_text_stopped_timer
+		custom_gui = "iisc_modmenu_status_text_stopped_timer"
+		trigger = {
+			has_global_flag = iisc_stopped_timer
+		}
+		default_hide_option = yes
+		iisc_actualize_modmenu_settings = yes
+	}
 }
