@@ -19,7 +19,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_country_type = default
+		iisc_can_have_space_corp = yes
 		NOT = {
 			has_country_flag = iisc_initialized
 		}

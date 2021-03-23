@@ -2,6 +2,16 @@ iisc_is_space_corp_not_installed = {
 	always = no
 }
 
+# this = corp
+# overlord exists
+iisc_is_corp_connected = {
+	overlord = {
+		any_owned_planet = {
+			has_planet_flag = iisc_hq_of_@prevprev
+		}
+	}
+}
+
 # this = overlord
 iisc_can_have_space_corp = {
 	is_country_type = default
@@ -64,22 +74,33 @@ iisc_should_build_science_ship = {
 		which = iisc_budget_science_ship
 		value >= @iisc_science_ship_cost
 	}
-	count_owned_ship = {
-		limit = {
-			is_ship_size = science
+	iisc_below_science_ship_cap = yes
+}
+
+# this = corp
+iisc_below_science_ship_cap = {
+	OR = {
+		count_owned_ship = {
+			limit = {
+				is_ship_size = science
+			}
+			count < 5
 		}
-		count < 5		# TODO change
+		AND = {
+			has_civic = iisc_civic_exploration_initiative
+			count_owned_ship = {
+				limit = {
+					is_ship_size = science
+				}
+				count < 10
+			}
+		}
 	}
 }
 
 # this = corp
 iisc_should_destroy_science_ship = {
-	count_owned_ship = {
-		limit = {
-			is_ship_size = science
-		}
-		count > 5		# TODO change
-	}
+	always = no
 }
 
 # this = corp
@@ -88,22 +109,22 @@ iisc_should_build_builder = {
 		which = iisc_budget_builder
 		value >= @iisc_builder_cost
 	}
+	iisc_below_builders_cap = yes
+}
+
+# this = corp
+iisc_below_builders_cap = {
 	count_owned_ship = {
 		limit = {
 			is_ship_size = constructor
 		}
-		count < 1		# TODO change
+		count < 3
 	}
 }
 
 # this = corp
 iisc_should_destroy_builder = {
-	count_owned_ship = {
-		limit = {
-			is_ship_size = constructor
-		}
-		count > 5		# TODO change
-	}
+	always = no
 }
 
 # this = corp

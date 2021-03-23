@@ -206,7 +206,7 @@ iisc_origin_corporate_merger = {
 			value = iisc_auth_corporate
 		}
 	}
-	description = origin_tooltip_corporate_merger
+	description = iisc_origin_corporate_merger_effect
 	random_weight = {
 		base = 0
 	}

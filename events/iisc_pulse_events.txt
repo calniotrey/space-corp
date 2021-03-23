@@ -63,6 +63,11 @@ country_event = {
 		every_subject = {
 			limit = {
 				is_country_type = iisc_space_corporation
+				overlord = {
+					any_owned_planet = {
+						has_planet_flag = iisc_hq_of_@prevprev
+					}
+				}
 			}
 			iisc_get_hq = yes
 			# performance intensive?
@@ -101,9 +106,10 @@ country_event = {
 	}
 }
 
-# monthly pulse
+# fires itself every 30 days (doesn't use monthly_pulse)
 # trigger event for corps randomly in the month
-event = {
+# hq set
+country_event = {
 	id = iisc_pulse.20
 	is_triggered_only = yes
 	hide_window = yes
@@ -116,16 +122,36 @@ event = {
 	immediate = {
 		every_country = {
 			limit = {
-				is_country_type = iisc_space_corporation
+				OR = {
+					NOT = {
+						exists = event_target:iisc_hq_planet
+					}
+					has_global_flag = iisc_stopped
+				}
+			}
+			iisc_destroy_corp = yes
+		}
+		else = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = iisc_paused
+					}
+				}
+				iisc_handle_corp_connection_to_overlord = yes
+				country_event = {
+					id = iisc_pulse.21
+					days = 1
+					random = 28
+				}
+				country_event = {
+					id = iisc_pulse.22
+					days = 1
+				}
 			}
 			country_event = {
-				id = iisc_pulse.21
-				days = 1
-				random = 28
-			}
-			country_event = {
-				id = iisc_pulse.22
-				days = 1
+				id = iisc_pulse.20
+				days = 30
 			}
 		}
 	}
@@ -133,17 +159,22 @@ event = {
 
 # build ships if necessary
 # checks if enough research to get a tech
-# once per month
+# once per 30 days
 # triggered by iisc_pulse.20
+# hq set
 country_event = {
 	id = iisc_pulse.21
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		exists = overlord
+		exists = event_target:iisc_hq_planet
+		NOR = {
+			has_global_flag = iisc_stopped
+			has_global_flag = iisc_paused
+		}
 	}
 	immediate = {
-		iisc_get_hq = yes
+		iisc_handle_corp_connection_to_overlord = yes
 		# build ships
 		if = {
 			limit = {
@@ -203,14 +234,20 @@ country_event = {
 # compute income and taxes
 # once per month
 # triggered by iisc_pulse.20
+# hq set
 country_event = {
 	id = iisc_pulse.22
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		exists = overlord
+		exists = event_target:iisc_hq_planet
+		NOR = {
+			has_global_flag = iisc_stopped
+			has_global_flag = iisc_paused
+		}
 	}
 	immediate = {
+		iisc_handle_corp_connection_to_overlord = yes
 		iisc_compute_and_tax_space_corp_income = yes
 	}
 }

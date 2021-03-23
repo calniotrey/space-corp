@@ -270,8 +270,8 @@
  iisc_civic_unknown_desc: "This corporation doesn't seem to have a valid corporate specialty civic."
  iisc_origin_corporate_merger: "Corporate Merger"
  iisc_origin_corporate_merger_desc: "A result of the consolidation of most of the major corporate enterprises on a single world into a single entity, this company continues to base its operations primarily out of that same original planet."
- origin_tooltip_space_corp: "REPLACE_ME"
- iisc_gov_corporate:0 "Corporation"
+ iisc_origin_corporate_merger_effect: ""
+ iisc_gov_corporate: "Corporation"
  iisc_gov_corporate_desc: "A corporation is headed by a Chief Executive Officer, who can be replaced at the prerogative of the Board."
  # modmenu loc
  iisc_modmenu.0.name: "IISC Mod Menu"

@@ -10,7 +10,7 @@ guiTypes = {
 			name = "option_button"
 			quadTextureSprite = "GFX_iisc_standard_button_34_34"
 			position = { x=0 y=0 }
-			size = { width = 40 height = 30 }
+			size = { x = 40 y = 30 }
 			font = "cg_16b"
 			text = "OPTION_TEXT"
 		}
@@ -25,7 +25,7 @@ guiTypes = {
 			name = "option_button"
 			quadTextureSprite = "GFX_button_animated_265_34"
 			position = { x=39 y=0 }
-			size = { width = 40 height = 30 }
+			size = { x = 40 y = 30 }
 			font = "cg_16b"
 			text = "OPTION_TEXT"
 		}
@@ -40,7 +40,7 @@ guiTypes = {
 			name = "option_button"
 			quadTextureSprite = "GFX_standard_button_142_34_button"
 			position = { x=309 y=-30 }
-			size = { width = 40 height = 30 }
+			size = { x = 40 y = 30 }
 			font = "cg_16b"
 			text = "OPTION_TEXT"
 			alwaysTransparent = yes
@@ -56,7 +56,7 @@ guiTypes = {
 			name = "option_button"
 			quadTextureSprite = "GFX_button_animated_265_34"
 			position = { x=-400 y=210 }
-			size = { width = 40 height = 30 }
+			size = { x = 40 y = 30 }
 			font = "cg_16b"
 			text = "OPTION_TEXT"
 		}
@@ -71,7 +71,7 @@ guiTypes = {
 			name = "option_button"
 			quadTextureSprite = "GFX_button_75_24"
 			position = { x=250 y=215 }
-			size = { width = 40 height = 30 }
+			size = { x = 40 y = 30 }
 			font = "cg_16b"
 			text = "OPTION_TEXT"
 		}
@@ -86,7 +86,7 @@ guiTypes = {
 			name = "option_button"
 			quadTextureSprite = "GFX_button_75_24"
 			position = { x=150 y=210 }
-			size = { width = 40 height = 30 }
+			size = { x = 40 y = 30 }
 			font = "cg_16b"
 			text = "OPTION_TEXT"
 		}
@@ -100,7 +100,7 @@ guiTypes = {
 		buttonType = {
 			name = "option_button"
 			position = { x=10000 y=0 }
-			size = { width = 40 height = 30 }
+			size = { x = 40 y = 30 }
 			font = "cg_16b"
 			text = "OPTION_TEXT"
 		}
@@ -414,7 +414,7 @@ guiTypes = {
 			listboxType = {
 				name = "option_list"
 				position = { x = 500 y = 5 }
-				backGround=""
+				# backGround=""
 				size = { x=462 y=200 }
 				spacing = 1
 				scrollbartype = "standardlistbox_slider"
@@ -433,7 +433,7 @@ guiTypes = {
 			name = "option_button"
 			quadTextureSprite = "GFX_button_75_24"
 			position = { x=150 y=5 }
-			size = { width = 40 height = 30 }
+			size = { x = 40 y = 30 }
 			font = "cg_16b"
 			text = "OPTION_TEXT"
 		}
@@ -448,7 +448,7 @@ guiTypes = {
 			name = "option_button"
 			quadTextureSprite = "GFX_button_75_24"
 			position = { x=250 y=10 }
-			size = { width = 40 height = 30 }
+			size = { x = 40 y = 30 }
 			font = "cg_16b"
 			text = "OPTION_TEXT"
 		}
@@ -519,7 +519,7 @@ guiTypes = {
 			listboxType = {
 				name = "option_list"
 				position = { x = 0 y = 50 }
-				backGround=""
+				# backGround=""
 				size = { x=462 y=200 }
 				spacing = 1
 				scrollbartype = "standardlistbox_slider"
