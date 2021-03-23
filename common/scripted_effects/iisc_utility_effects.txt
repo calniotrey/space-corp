@@ -459,7 +459,7 @@ iisc_actualize_modmenu_settings = {
 				limit = {
 					is_country_type = iisc_space_corporation
 				}
-				#destroy corp
+				iisc_destroy_corp = yes
 			}
 		}
 	}
@@ -488,7 +488,7 @@ iisc_actualize_modmenu_settings = {
 					limit = {
 						is_ship_class = mining_station
 					}
-					delete_ship = yes #or is it delete_ship = THIS ?
+					delete_ship = THIS
 				}
 			}
 		}
@@ -518,7 +518,7 @@ iisc_actualize_modmenu_settings = {
 					limit = {
 						is_ship_class = research_station
 					}
-					delete_ship = yes #or is it delete_ship = THIS ?
+					delete_ship = THIS
 				}
 			}
 		}
@@ -571,9 +571,9 @@ iisc_actualize_modmenu_settings = {
 				}
 				every_owned_fleet = {
 					limit = {
-						#is convoy fleet
+						has_fleet_flag = iisc_convoy
 					}
-					delete_fleet = THIS # or is it yes
+					delete_fleet = THIS
 				}
 			}
 		}
@@ -599,7 +599,7 @@ iisc_actualize_modmenu_settings = {
 				limit = {
 					is_country_type = iisc_space_corporation
 				}
-				#delete HQ deposit
+				iisc_remove_hq_deposit_from_corp = yes
 			}
 		}
 	}
