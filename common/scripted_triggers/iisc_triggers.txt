@@ -108,6 +108,13 @@ iisc_should_destroy_builder = {
 
 # this = corp
 iisc_should_start_convoy = {
+	OR = {
+		has_global_flag = iisc_corp_convoys_all
+		AND = {
+			has_global_flag = iisc_corp_convoys_player
+			overlord = { is_ai = no }
+		}
+	}
 	NOT = {
 		has_country_flag = iisc_corp_sent_convoy_recently
 	}

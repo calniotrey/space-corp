@@ -107,26 +107,25 @@ event = {
 	id = iisc_pulse.20
 	is_triggered_only = yes
 	hide_window = yes
+	trigger = {
+		NOR = {
+			has_global_flag = iisc_paused
+			has_global_flag = iisc_stopped
+		}
+	}
 	immediate = {
-		if = {
+		every_country = {
 			limit = {
-				NOT = {
-					has_global_flag = iisc_paused
-				}
+				is_country_type = iisc_space_corporation
 			}
-			every_country = {
-				limit = {
-					is_country_type = iisc_space_corporation
-				}
-				country_event = {
-					id = iisc_pulse.21
-					days = 1
-					random = 28
-				}
-				country_event = {
-					id = iisc_pulse.22
-					days = 1
-				}
+			country_event = {
+				id = iisc_pulse.21
+				days = 1
+				random = 28
+			}
+			country_event = {
+				id = iisc_pulse.22
+				days = 1
 			}
 		}
 	}

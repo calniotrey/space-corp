@@ -1,7 +1,13 @@
 # this = corp
 # hq set
 iisc_should_build_hq_deposit = {
-	always = yes	# TODO add cooldown?
+	OR = {
+		has_global_flag = iisc_hq_development_all
+		AND = {
+			has_global_flag = iisc_hq_development_player
+			overlord = { is_ai = no }
+		}
+	}
 }
 
 # this = corp
