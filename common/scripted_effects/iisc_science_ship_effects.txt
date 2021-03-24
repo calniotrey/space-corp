@@ -31,7 +31,7 @@ iisc_set_science_ship_orders = {
 			OR = {
 				AND = {
 					has_global_flag = iisc_corp_surveying_players
-					is_ai = no
+					owner = { overlord = { is_ai = no }}
 				}
 				has_global_flag = iisc_mining_stations_all
 			}

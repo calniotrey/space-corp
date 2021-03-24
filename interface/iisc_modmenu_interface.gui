@@ -128,7 +128,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "option_button"
 			position = { x=@run_mod_text_x y=0 }
-			size = { x = 400 y = 200 }
+			maxWidth = 400
 			font = "cg_16b"
 			text = iisc_modmenu_status_text_running
 			alwaysTransparent = yes
@@ -143,7 +143,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "option_button"
 			position = { x=@run_mod_text_x y=0 }
-			size = { x = 400 y = 200 }
+			maxWidth = 400
 			font = "cg_16b"
 			text = iisc_modmenu_status_text_paused
 			alwaysTransparent = yes
@@ -158,7 +158,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "option_button"
 			position = { x=@run_mod_text_x y=0 }
-			size = { x = 400 y = 200 }
+			maxWidth = 400
 			font = "cg_16b"
 			text = iisc_modmenu_status_text_stopped
 			alwaysTransparent = yes
@@ -173,7 +173,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "option_button"
 			position = { x=@run_mod_text_x y=0 }
-			size = { x = 400 y = 200 }
+			maxWidth = 400
 			font = "cg_16b"
 			text = iisc_modmenu_status_text_stopped_timer
 			alwaysTransparent = yes
