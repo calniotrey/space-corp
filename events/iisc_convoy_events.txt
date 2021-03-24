@@ -9,8 +9,25 @@ country_event = {
 			limit = {
 				exists = event_target:iisc_convoy_fleet
 			}
-			event_target:iisc_convoy_fleet = {
-				iisc_set_convoy_orders = yes
+			if = {
+				limit = {
+					has_global_flag = iisc_paused
+				}
+				country_event = {
+					id = iisc_convoy.10
+					days = 30
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = iisc_stopped }
+				event_target:iisc_convoy_fleet = {
+					delete_fleet = THIS
+				}
+			}
+			else = {
+				event_target:iisc_convoy_fleet = {
+					iisc_set_convoy_orders = yes
+				}
 			}
 		}
 	}

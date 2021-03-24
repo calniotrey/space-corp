@@ -1,16 +1,15 @@
-
 #Scope type varies depending on what is selected
 # This = selected object or player country
 # From = player country
-
 iisc_corp_spawning_all = {
 	potential = {
-		NOT = { has_global_flag = iisc_corp_spawning_all }
+		NOT = {
+			has_global_flag = iisc_corp_spawning_all
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_corp_spawning_setting_changed
@@ -33,12 +32,13 @@ iisc_corp_spawning_all_dummy = {
 
 iisc_corp_spawning_players = {
 	potential = {
-		NOT = { has_global_flag = iisc_corp_spawning_players }
+		NOT = {
+			has_global_flag = iisc_corp_spawning_players
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_corp_spawning_setting_changed
@@ -61,12 +61,13 @@ iisc_corp_spawning_players_dummy = {
 
 iisc_corp_spawning_off = {
 	potential = {
-		NOT = { has_global_flag = iisc_corp_spawning_off }
+		NOT = {
+			has_global_flag = iisc_corp_spawning_off
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_corp_spawning_setting_changed
@@ -87,17 +88,15 @@ iisc_corp_spawning_off_dummy = {
 	}
 }
 
-
-
-
 iisc_mining_stations_all = {
 	potential = {
-		NOT = { has_global_flag = iisc_mining_stations_all }
+		NOT = {
+			has_global_flag = iisc_mining_stations_all
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_mining_stations_setting_changed
@@ -120,12 +119,13 @@ iisc_mining_stations_all_dummy = {
 
 iisc_mining_stations_players = {
 	potential = {
-		NOT = { has_global_flag = iisc_mining_stations_players }
+		NOT = {
+			has_global_flag = iisc_mining_stations_players
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_mining_stations_setting_changed
@@ -148,12 +148,13 @@ iisc_mining_stations_players_dummy = {
 
 iisc_mining_stations_off = {
 	potential = {
-		NOT = { has_global_flag = iisc_mining_stations_off }
+		NOT = {
+			has_global_flag = iisc_mining_stations_off
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_mining_stations_setting_changed
@@ -174,17 +175,15 @@ iisc_mining_stations_off_dummy = {
 	}
 }
 
-
-
-
 iisc_research_stations_all = {
 	potential = {
-		NOT = { has_global_flag = iisc_research_stations_all }
+		NOT = {
+			has_global_flag = iisc_research_stations_all
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_research_stations_setting_changed
@@ -207,12 +206,13 @@ iisc_research_stations_all_dummy = {
 
 iisc_research_stations_players = {
 	potential = {
-		NOT = { has_global_flag = iisc_research_stations_players }
+		NOT = {
+			has_global_flag = iisc_research_stations_players
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_research_stations_setting_changed
@@ -235,12 +235,13 @@ iisc_research_stations_players_dummy = {
 
 iisc_research_stations_off = {
 	potential = {
-		NOT = { has_global_flag = iisc_research_stations_off }
+		NOT = {
+			has_global_flag = iisc_research_stations_off
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_research_stations_setting_changed
@@ -261,17 +262,15 @@ iisc_research_stations_off_dummy = {
 	}
 }
 
-
-
-
 iisc_corp_surveying_all = {
 	potential = {
-		NOT = { has_global_flag = iisc_corp_surveying_all }
+		NOT = {
+			has_global_flag = iisc_corp_surveying_all
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_corp_surveying_setting_changed
@@ -294,12 +293,13 @@ iisc_corp_surveying_all_dummy = {
 
 iisc_corp_surveying_players = {
 	potential = {
-		NOT = { has_global_flag = iisc_corp_surveying_players }
+		NOT = {
+			has_global_flag = iisc_corp_surveying_players
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_corp_surveying_setting_changed
@@ -322,12 +322,13 @@ iisc_corp_surveying_players_dummy = {
 
 iisc_corp_surveying_off = {
 	potential = {
-		NOT = { has_global_flag = iisc_corp_surveying_off }
+		NOT = {
+			has_global_flag = iisc_corp_surveying_off
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_corp_surveying_setting_changed
@@ -348,17 +349,15 @@ iisc_corp_surveying_off_dummy = {
 	}
 }
 
-
-
-
 iisc_corp_convoys_all = {
 	potential = {
-		NOT = { has_global_flag = iisc_corp_convoys_all }
+		NOT = {
+			has_global_flag = iisc_corp_convoys_all
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_corp_convoys_setting_changed
@@ -381,12 +380,13 @@ iisc_corp_convoys_all_dummy = {
 
 iisc_corp_convoys_players = {
 	potential = {
-		NOT = { has_global_flag = iisc_corp_convoys_players }
+		NOT = {
+			has_global_flag = iisc_corp_convoys_players
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_corp_convoys_setting_changed
@@ -409,12 +409,13 @@ iisc_corp_convoys_players_dummy = {
 
 iisc_corp_convoys_off = {
 	potential = {
-		NOT = { has_global_flag = iisc_corp_convoys_off }
+		NOT = {
+			has_global_flag = iisc_corp_convoys_off
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_corp_convoys_setting_changed
@@ -435,17 +436,15 @@ iisc_corp_convoys_off_dummy = {
 	}
 }
 
-
-
-
 iisc_hq_development_all = {
 	potential = {
-		NOT = { has_global_flag = iisc_hq_development_all }
+		NOT = {
+			has_global_flag = iisc_hq_development_all
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_hq_development_setting_changed
@@ -468,12 +467,13 @@ iisc_hq_development_all_dummy = {
 
 iisc_hq_development_players = {
 	potential = {
-		NOT = { has_global_flag = iisc_hq_development_players }
+		NOT = {
+			has_global_flag = iisc_hq_development_players
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_hq_development_setting_changed
@@ -496,12 +496,13 @@ iisc_hq_development_players_dummy = {
 
 iisc_hq_development_off = {
 	potential = {
-		NOT = { has_global_flag = iisc_hq_development_off }
+		NOT = {
+			has_global_flag = iisc_hq_development_off
+		}
 	}
 	allow = {
 		always = yes
 	}
-	
 	effect = {
 		set_timed_global_flag = {
 			flag = iisc_hq_development_setting_changed

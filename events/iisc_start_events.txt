@@ -3,7 +3,6 @@ event = {
 	id = iisc_start.0
 	is_triggered_only = yes
 	hide_window = yes
-
 	immediate = {
 		set_global_flag = iisc_corp_spawning_all
 		set_global_flag = iisc_mining_stations_all

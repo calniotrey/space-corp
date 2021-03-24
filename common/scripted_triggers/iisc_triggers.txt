@@ -53,7 +53,9 @@ iisc_search_mining_stations = {
 	OR = {
 		AND = {
 			has_global_flag = iisc_mining_stations_players
-			overlord = { is_ai = no }
+			overlord = {
+				is_ai = no
+			}
 		}
 		has_global_flag = iisc_corp_mining_stations_all
 	}
@@ -64,7 +66,9 @@ iisc_search_research_stations = {
 	OR = {
 		AND = {
 			has_global_flag = iisc_research_stations_players
-			overlord = { is_ai = no }
+			overlord = {
+				is_ai = no
+			}
 		}
 		has_global_flag = iisc_corp_research_stations_all
 	}
@@ -145,7 +149,9 @@ iisc_should_start_convoy = {
 		has_global_flag = iisc_corp_convoys_all
 		AND = {
 			has_global_flag = iisc_corp_convoys_player
-			overlord = { is_ai = no }
+			overlord = {
+				is_ai = no
+			}
 		}
 	}
 	NOT = {

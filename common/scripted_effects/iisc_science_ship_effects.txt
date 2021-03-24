@@ -31,7 +31,11 @@ iisc_set_science_ship_orders = {
 			OR = {
 				AND = {
 					has_global_flag = iisc_corp_surveying_players
-					owner = { overlord = { is_ai = no }}
+					owner = {
+						overlord = {
+							is_ai = no
+						}
+					}
 				}
 				has_global_flag = iisc_mining_stations_all
 			}
@@ -78,8 +82,8 @@ iisc_set_science_ship_orders = {
 		if = {
 			# find new destination
 			limit = {
-				exists = solar_system			# if not, it means the fleet is currently ftl, so we will wait
-				exists = owner.overlord			# if overlord is disconnected, we wait for reconnection
+				exists = solar_system				# if not, it means the fleet is currently ftl, so we will wait
+				exists = owner.overlord				# if overlord is disconnected, we wait for reconnection
 				OR = {
 					is_fleet_idle = yes
 					NOT = {
