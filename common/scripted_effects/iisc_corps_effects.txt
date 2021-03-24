@@ -189,6 +189,7 @@ iisc_destroy_corp = {
 			}
 			event_target:iisc_hq_planet = {
 				remove_planet_flag = iisc_hq_of_@prev
+				remove_planet_flag = iisc_hq
 			}
 			iisc_remove_hq_deposit_from_corp = yes
 		}
