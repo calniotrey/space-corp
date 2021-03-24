@@ -113,14 +113,8 @@ country_event = {
 	id = iisc_pulse.20
 	is_triggered_only = yes
 	hide_window = yes
-	trigger = {
-		NOR = {
-			has_global_flag = iisc_paused
-			has_global_flag = iisc_stopped
-		}
-	}
 	immediate = {
-		every_country = {
+		if = {
 			limit = {
 				OR = {
 					NOT = {
