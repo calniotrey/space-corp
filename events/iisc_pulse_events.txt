@@ -31,6 +31,7 @@ country_event = {
 	hide_window = yes
 	immediate = {
 		iisc_count_corps = yes
+		iisc_calc_corp_cap = yes
 		if = {
 			limit = {
 				iisc_should_create_corp = yes
@@ -60,6 +61,7 @@ country_event = {
 				}
 			}
 		}
+		set_variable = { which = iisc_corp_cap value = 0 }
 		every_subject = {
 			limit = {
 				is_country_type = iisc_space_corporation
