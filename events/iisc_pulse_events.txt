@@ -61,7 +61,10 @@ country_event = {
 				}
 			}
 		}
-		set_variable = { which = iisc_corp_cap value = 0 }
+		set_variable = {
+			which = iisc_corp_cap
+			value = 0
+		}
 		every_subject = {
 			limit = {
 				is_country_type = iisc_space_corporation
