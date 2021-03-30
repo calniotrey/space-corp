@@ -48,7 +48,7 @@ iisc_calc_corp_cap = {
 			change_variable = { which = iisc_corp_cap_temp value = -1 }
 		}
 		subtract_variable = { which = iisc_corp_cap value = iisc_corp_cap_temp }
-		change_variable = { which = iisc_corp_cap value = 4 } #because already at 4 corps at 50 systems
+		change_variable = { which = iisc_corp_cap value = 5 } #because already at 5 corps at 50 systems
 		set_variable = { which = iisc_corp_cap_temp value = 0 }
 	}
 }
