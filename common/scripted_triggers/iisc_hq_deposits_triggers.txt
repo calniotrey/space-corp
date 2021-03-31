@@ -4,7 +4,7 @@ iisc_should_build_hq_deposit = {
 	OR = {
 		has_global_flag = iisc_hq_development_all
 		AND = {
-			has_global_flag = iisc_hq_development_player
+			has_global_flag = iisc_hq_development_players
 			overlord = {
 				is_ai = no
 			}

@@ -11,10 +11,7 @@ iisc_corp_spawning_all = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_corp_spawning_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_corp_spawning_setting_changed
 		set_global_flag = iisc_corp_spawning_all
 		remove_global_flag = iisc_corp_spawning_players
 		remove_global_flag = iisc_corp_spawning_off
@@ -40,10 +37,7 @@ iisc_corp_spawning_players = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_corp_spawning_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_corp_spawning_setting_changed
 		set_global_flag = iisc_corp_spawning_players
 		remove_global_flag = iisc_corp_spawning_all
 		remove_global_flag = iisc_corp_spawning_off
@@ -69,10 +63,7 @@ iisc_corp_spawning_off = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_corp_spawning_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_corp_spawning_setting_changed
 		set_global_flag = iisc_corp_spawning_off
 		remove_global_flag = iisc_corp_spawning_all
 		remove_global_flag = iisc_corp_spawning_players
@@ -98,10 +89,7 @@ iisc_mining_stations_all = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_mining_stations_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_mining_stations_setting_changed
 		set_global_flag = iisc_mining_stations_all
 		remove_global_flag = iisc_mining_stations_players
 		remove_global_flag = iisc_mining_stations_off
@@ -127,10 +115,7 @@ iisc_mining_stations_players = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_mining_stations_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_mining_stations_setting_changed
 		set_global_flag = iisc_mining_stations_players
 		remove_global_flag = iisc_mining_stations_all
 		remove_global_flag = iisc_mining_stations_off
@@ -156,10 +141,7 @@ iisc_mining_stations_off = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_mining_stations_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_mining_stations_setting_changed
 		set_global_flag = iisc_mining_stations_off
 		remove_global_flag = iisc_mining_stations_all
 		remove_global_flag = iisc_mining_stations_players
@@ -185,10 +167,7 @@ iisc_research_stations_all = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_research_stations_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_research_stations_setting_changed
 		set_global_flag = iisc_research_stations_all
 		remove_global_flag = iisc_research_stations_players
 		remove_global_flag = iisc_research_stations_off
@@ -214,10 +193,7 @@ iisc_research_stations_players = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_research_stations_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_research_stations_setting_changed
 		set_global_flag = iisc_research_stations_players
 		remove_global_flag = iisc_research_stations_all
 		remove_global_flag = iisc_research_stations_off
@@ -243,10 +219,7 @@ iisc_research_stations_off = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_research_stations_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_research_stations_setting_changed
 		set_global_flag = iisc_research_stations_off
 		remove_global_flag = iisc_research_stations_all
 		remove_global_flag = iisc_research_stations_players
@@ -272,10 +245,7 @@ iisc_corp_surveying_all = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_corp_surveying_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_corp_surveying_setting_changed
 		set_global_flag = iisc_corp_surveying_all
 		remove_global_flag = iisc_corp_surveying_players
 		remove_global_flag = iisc_corp_surveying_off
@@ -301,10 +271,7 @@ iisc_corp_surveying_players = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_corp_surveying_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_corp_surveying_setting_changed
 		set_global_flag = iisc_corp_surveying_players
 		remove_global_flag = iisc_corp_surveying_all
 		remove_global_flag = iisc_corp_surveying_off
@@ -330,10 +297,7 @@ iisc_corp_surveying_off = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_corp_surveying_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_corp_surveying_setting_changed
 		set_global_flag = iisc_corp_surveying_off
 		remove_global_flag = iisc_corp_surveying_all
 		remove_global_flag = iisc_corp_surveying_players
@@ -359,10 +323,7 @@ iisc_corp_convoys_all = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_corp_convoys_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_corp_convoys_setting_changed
 		set_global_flag = iisc_corp_convoys_all
 		remove_global_flag = iisc_corp_convoys_players
 		remove_global_flag = iisc_corp_convoys_off
@@ -388,10 +349,7 @@ iisc_corp_convoys_players = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_corp_convoys_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_corp_convoys_setting_changed
 		set_global_flag = iisc_corp_convoys_players
 		remove_global_flag = iisc_corp_convoys_all
 		remove_global_flag = iisc_corp_convoys_off
@@ -417,10 +375,7 @@ iisc_corp_convoys_off = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_corp_convoys_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_corp_convoys_setting_changed
 		set_global_flag = iisc_corp_convoys_off
 		remove_global_flag = iisc_corp_convoys_all
 		remove_global_flag = iisc_corp_convoys_players
@@ -446,10 +401,7 @@ iisc_hq_development_all = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_hq_development_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_hq_development_setting_changed
 		set_global_flag = iisc_hq_development_all
 		remove_global_flag = iisc_hq_development_players
 		remove_global_flag = iisc_hq_development_off
@@ -475,10 +427,7 @@ iisc_hq_development_players = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_hq_development_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_hq_development_setting_changed
 		set_global_flag = iisc_hq_development_players
 		remove_global_flag = iisc_hq_development_all
 		remove_global_flag = iisc_hq_development_off
@@ -504,10 +453,7 @@ iisc_hq_development_off = {
 		always = yes
 	}
 	effect = {
-		set_timed_global_flag = {
-			flag = iisc_hq_development_setting_changed
-			days = 1
-		}
+		set_global_flag = iisc_hq_development_setting_changed
 		set_global_flag = iisc_hq_development_off
 		remove_global_flag = iisc_hq_development_all
 		remove_global_flag = iisc_hq_development_players

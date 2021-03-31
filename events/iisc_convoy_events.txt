@@ -19,7 +19,9 @@ country_event = {
 				}
 			}
 			else_if = {
-				limit = { has_global_flag = iisc_stopped }
+				limit = {
+					has_global_flag = iisc_stopped
+				}
 				event_target:iisc_convoy_fleet = {
 					delete_fleet = THIS
 				}

@@ -3,7 +3,16 @@ event = {
 	id = iisc_start.0
 	is_triggered_only = yes
 	hide_window = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = iisc_initialized
+			has_global_flag = iisc_paused
+			has_global_flag = iisc_stopped
+		}
+	}
 	immediate = {
+		set_global_flag = iisc_initialized
 		set_global_flag = iisc_corp_spawning_all
 		set_global_flag = iisc_mining_stations_all
 		set_global_flag = iisc_research_stations_all

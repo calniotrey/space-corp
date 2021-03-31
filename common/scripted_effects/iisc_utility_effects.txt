@@ -462,6 +462,7 @@ iisc_actualize_modmenu_settings = {
 				iisc_destroy_corp = yes
 			}
 		}
+		remove_global_flag = iisc_corp_spawning_setting_changed
 	}
 	if = {
 		limit = {
@@ -492,6 +493,7 @@ iisc_actualize_modmenu_settings = {
 				}
 			}
 		}
+		remove_global_flag = iisc_mining_stations_setting_changed
 	}
 	if = {
 		limit = {
@@ -522,6 +524,7 @@ iisc_actualize_modmenu_settings = {
 				}
 			}
 		}
+		remove_global_flag = iisc_research_stations_setting_changed
 	}
 	if = {
 		limit = {
@@ -547,6 +550,7 @@ iisc_actualize_modmenu_settings = {
 				# remove research ships? probably nothing required for this setting actually
 			}
 		}
+		remove_global_flag = iisc_corp_surveying_setting_changed
 	}
 	if = {
 		limit = {
@@ -577,6 +581,7 @@ iisc_actualize_modmenu_settings = {
 				}
 			}
 		}
+		remove_global_flag = iisc_corp_convoys_setting_changed
 	}
 	if = {
 		limit = {
@@ -599,8 +604,10 @@ iisc_actualize_modmenu_settings = {
 				limit = {
 					is_country_type = iisc_space_corporation
 				}
+				iisc_get_hq = yes
 				iisc_remove_hq_deposit_from_corp = yes
 			}
 		}
+		remove_global_flag = iisc_hq_development_setting_changed
 	}
 }

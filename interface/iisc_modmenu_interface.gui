@@ -10,7 +10,7 @@
 @opt_x_2 = 150
 @opt_x_3 = 290
 @opt_y = 25
-@setting_x = 30
+@setting_x = 112
 @setting_y_1 = 50
 @setting_y_2 = 120
 @setting_y_3 = 180
@@ -126,11 +126,18 @@ guiTypes = {
 		moveable = no
 		
 		instantTextBoxType = {
-			name = "option_button"
+			name = "iisc_modmenu.status_text"
 			position = { x=@run_mod_text_x y=0 }
-			maxWidth = 400
+			maxWidth = 280
 			font = "cg_16b"
 			text = iisc_modmenu_status_text_running
+			alwaysTransparent = yes
+		}
+		buttonType = {
+			name = "option_button"
+			font = "cg_16b"
+			position = { x=1000 y=0 }
+			text = "OPTION_TEXT"
 			alwaysTransparent = yes
 		}
 	}
@@ -141,11 +148,18 @@ guiTypes = {
 		moveable = no
 		
 		instantTextBoxType = {
-			name = "option_button"
+			name = "iisc_modmenu.status_text"
 			position = { x=@run_mod_text_x y=0 }
-			maxWidth = 400
+			maxWidth = 280
 			font = "cg_16b"
 			text = iisc_modmenu_status_text_paused
+			alwaysTransparent = yes
+		}
+		buttonType = {
+			name = "option_button"
+			font = "cg_16b"
+			position = { x=1000 y=0 }
+			text = "OPTION_TEXT"
 			alwaysTransparent = yes
 		}
 	}
@@ -156,11 +170,18 @@ guiTypes = {
 		moveable = no
 		
 		instantTextBoxType = {
-			name = "option_button"
+			name = "iisc_modmenu.status_text"
 			position = { x=@run_mod_text_x y=0 }
-			maxWidth = 400
+			maxWidth = 280
 			font = "cg_16b"
 			text = iisc_modmenu_status_text_stopped
+			alwaysTransparent = yes
+		}
+		buttonType = {
+			name = "option_button"
+			font = "cg_16b"
+			position = { x=1000 y=0 }
+			text = "OPTION_TEXT"
 			alwaysTransparent = yes
 		}
 	}
@@ -171,11 +192,18 @@ guiTypes = {
 		moveable = no
 		
 		instantTextBoxType = {
-			name = "option_button"
+			name = "iisc_modmenu.status_text"
 			position = { x=@run_mod_text_x y=0 }
-			maxWidth = 400
+			maxWidth = 280
 			font = "cg_16b"
 			text = iisc_modmenu_status_text_stopped_timer
+			alwaysTransparent = yes
+		}
+		buttonType = {
+			name = "option_button"
+			font = "cg_16b"
+			position = { x=1000 y=0 }
+			text = "OPTION_TEXT"
 			alwaysTransparent = yes
 		}
 	}
@@ -184,12 +212,51 @@ guiTypes = {
 		orientation = center
 		origo = center
 		moveable = yes
-		size = { width = 480 height = 540 }
+		size = { width = 664 height = 540 }
+
+		containerWindowType = {
+			name = "iisc_modmenu.sidebar_window"
+			position = { x = 0 y = 0 }
+			size = { width = 661 height = 578 }
+
+			iconType = {
+				name = "iisc_modmenu.sidebar_image"
+				position = { x = 0 y = 0 }
+				quadTextureSprite = "GFX_modmenu_sidebar_image"
+			}
+			iconType = {
+				name = "iisc_modmenu.sidebar"
+				position = { x = 0 y = 0 }
+				quadTextureSprite = "GFX_modmenu_sidebar"
+			}
+		}
+
+		background = {
+			name = "background"
+			quadTextureSprite ="GFX_modmenu_bg"
+		}
 
 		iconType = {
-			name = "city_planet_evt_icon"
-			position = { x = 15 y = 370 }
-			quadTextureSprite ="GFX_evt_city_planet"
+			name = "hex_bg"
+			spriteType = "GFX_hex_bg"
+			position = { x = 82 y = -14 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "empire_header_line"
+			quadTextureSprite = "GFX_line_medium"
+			position = { x = 98 y = 22 }
+			alwaysTransparent = yes
+		}
+		
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_close"
+			position = { x= -134 y = 5 }
+			Orientation = "UPPER_RIGHT"
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
 		}
 
 		containerWindowType = {
@@ -899,39 +966,11 @@ guiTypes = {
 			}
 		}
 
-		background = {
-			name = "background"
-			quadTextureSprite ="GFX_plain_bg_tile"
-		}
-
-		iconType = {
-			name = "hex_bg"
-			spriteType = "GFX_hex_bg"
-			position = { x = -10 y = -14 }
-			alwaysTransparent = yes
-		}
-
-		iconType = {
-			name = "empire_header_line"
-			quadTextureSprite = "GFX_line_medium"
-			position = { x = 6 y = 22 }
-			alwaysTransparent = yes
-		}
-		
-		buttonType = {
-			name = "close"
-			quadTextureSprite = "GFX_close"
-			position = { x= -42 y = 5 }
-			Orientation = "UPPER_RIGHT"
-			shortcut = "ESCAPE"
-			clicksound = "back_click"
-		}
-		
 		### EVENT DIPLO ###
 		
 		containerWindowType = {
 			name = "EVENT_DIPLO"
-			position = { x = 0 y = 0 }
+			position = { x = 92 y = 0 }
 			size = { width=563 height=220 }
 			moveable = no
 			

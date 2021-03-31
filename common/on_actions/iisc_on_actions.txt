@@ -10,6 +10,12 @@ on_game_start_country = {
 	}
 }
 
+on_monthly_pulse = {
+	events = {
+		iisc_start.0
+	}
+}
+
 on_yearly_pulse_country = {
 	events = {
 		iisc_pulse.10
