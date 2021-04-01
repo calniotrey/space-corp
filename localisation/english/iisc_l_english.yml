@@ -293,6 +293,7 @@
  iisc_modmenu_status_text_stopped: "IISC is §Rstopped§!. It should be safe to uninstall the mod at present."
  iisc_modmenu_status_text_paused: "IISC is §Ypaused§!. Most mod functions will not run until you allow the mod to resume."
  iisc_modmenu_status_text_running: "IISC is §Grunning§!. Stop the mod before uninstalling."
+ iisc_modmenu_status_text_unknown: "IISC status is unknown! Something is very wrong."
  iisc_modmenu_corp_spawning_setting: "Corporation Spawning"
  iisc_modmenu_mining_stations_setting: "Corporate Mining Stations"
  iisc_modmenu_research_stations_setting: "Corporate Research Stations"

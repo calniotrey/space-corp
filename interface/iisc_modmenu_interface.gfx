@@ -40,11 +40,13 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_modmenu_sidebar"
 		texturefile = "gfx/interface/modmenu/sidebar.dds"
+		alwaysTransparent = yes
 	}
 	spriteType = {
 		name = "GFX_modmenu_sidebar_image"
 		texturefile = "gfx/interface/modmenu/sidebar_image.dds"
 		masking_texture = "gfx/interface/modmenu/sidebar_mask.dds" 
+		alwaysTransparent = yes
 	}
 	spriteType = {
 		name = "GFX_modmenu_bg"

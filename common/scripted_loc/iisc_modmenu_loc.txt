@@ -20,12 +20,19 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			has_global_flag = iisc_initialized
+		}
+		localization_key = iisc_modmenu_status_text_running
+	}
+	text = {
+		trigger = {
 			NOR = {
+				has_global_flag = iisc_initialized
 				has_global_flag = iisc_stopped_timer
 				has_global_flag = iisc_stopped
 				has_global_flag = iisc_paused
 			}
 		}
-		localization_key = iisc_modmenu_status_text_running
+		localization_key = iisc_modmenu_status_text_unknown
 	}
 }
