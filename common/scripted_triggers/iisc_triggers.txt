@@ -32,7 +32,7 @@ iisc_should_create_corp = {
 	}
 	check_variable = {
 		which = iisc_number_of_corps
-		value < 10
+		value < iisc_corp_cap
 	}
 	any_owned_planet = {
 		iisc_suitable_for_hq = yes
