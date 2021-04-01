@@ -17,6 +17,102 @@ iisc_count_corps = {
 	}
 }
 
+iisc_calc_corp_cap = {
+	#one corp at 2, 2 at 5, 3 at 10, 4 at 20, 5 at 50, 1 per 50 systems after that (so 6 at 100, 24 at 1000)
+	every_system_within_border = {
+		ROOT = {
+			change_variable = {
+				which = iisc_corp_cap
+				value = 1
+			}
+		}
+	}
+	#log = "[THIS.GetName] has [THIS.iisc_corp_cap] systems"
+	if = {
+		limit = {
+			check_variable = {
+				which = iisc_corp_cap
+				value < 2
+			}
+		}
+		set_variable = {
+			which = iisc_corp_cap
+			value = 0
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = iisc_corp_cap
+				value < 5
+			}
+		}
+		set_variable = {
+			which = iisc_corp_cap
+			value = 1
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = iisc_corp_cap
+				value < 10
+			}
+		}
+		set_variable = {
+			which = iisc_corp_cap
+			value = 2
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = iisc_corp_cap
+				value < 20
+			}
+		}
+		set_variable = {
+			which = iisc_corp_cap
+			value = 3
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = iisc_corp_cap
+				value < 50
+			}
+		}
+		set_variable = {
+			which = iisc_corp_cap
+			value = 4
+		}
+	}
+	else = {
+		change_variable = {
+			which = iisc_corp_cap
+			value = -50
+		}		#first 50 systems have different rules
+		divide_variable = {
+			which = iisc_corp_cap
+			value = 50
+		}
+		#remove remainder - replace with rounding in 3.0
+		divide_variable = {
+			which = iisc_corp_cap
+			value = 100000
+		}
+		multiply_variable = {
+			which = iisc_corp_cap
+			value = 100000
+		}
+		change_variable = {
+			which = iisc_corp_cap
+			value = 5
+		}		#because already at 5 corps at 50 systems
+	}
+}
+
 # this = overlord
 iisc_randomize_space_corps_spawn_delay = {
 	random_list = {
