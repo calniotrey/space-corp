@@ -15,6 +15,13 @@ iisc_is_corp_connected = {
 # this = overlord
 iisc_can_have_space_corp = {
 	is_country_type = default
+	OR = {
+		has_global_flag = iisc_corp_spawning_all
+		AND = {
+			has_global_flag = iisc_corp_spawning_players
+			is_ai = no
+		}
+	}
 }
 
 # this = overlord
@@ -43,12 +50,28 @@ iisc_suitable_for_hq = {
 
 # this = corp
 iisc_search_mining_stations = {
-	always = yes
+	OR = {
+		AND = {
+			has_global_flag = iisc_mining_stations_players
+			overlord = {
+				is_ai = no
+			}
+		}
+		has_global_flag = iisc_mining_stations_all
+	}
 }
 
 # this = corp
 iisc_search_research_stations = {
-	always = yes
+	OR = {
+		AND = {
+			has_global_flag = iisc_research_stations_players
+			overlord = {
+				is_ai = no
+			}
+		}
+		has_global_flag = iisc_research_stations_all
+	}
 }
 
 # this = leader
@@ -122,6 +145,15 @@ iisc_should_destroy_builder = {
 
 # this = corp
 iisc_should_start_convoy = {
+	OR = {
+		has_global_flag = iisc_corp_convoys_all
+		AND = {
+			has_global_flag = iisc_corp_convoys_players
+			overlord = {
+				is_ai = no
+			}
+		}
+	}
 	NOT = {
 		has_country_flag = iisc_corp_sent_convoy_recently
 	}
