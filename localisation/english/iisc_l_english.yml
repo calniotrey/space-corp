@@ -86,7 +86,7 @@
  ##### Policies #####
  # taxes
  policy_iisc_corp_tax_policy: "Corporate Taxes"
- policy_iisc_corp_tax_policy_desc: "What portion of corporate income should be tithed to the state?"
+ policy_iisc_corp_tax_policy_desc: "What portion of corporate income should be taxed to the state?"
  iisc_no_corp_taxes_name: "0% name" # doesn't show up
  iisc_no_corp_taxes: "0%"
  iisc_no_corp_taxes_desc: "The state should not levy a corporate tax, as this infringes upon their rights."
