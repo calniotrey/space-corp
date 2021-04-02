@@ -25,7 +25,7 @@ guiTypes = {
 			name = "option_button"
 			quadTextureSprite = "GFX_button_animated_265_34"
 			position = { x=124 y=0 }
-            size = { x = 40 y = 30 }
+			size = { x = 40 y = 30 }
 			font = "cg_16b"
 			text = "OPTION_TEXT"
 		}

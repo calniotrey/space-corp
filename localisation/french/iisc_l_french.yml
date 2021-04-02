@@ -248,6 +248,17 @@
  iisc_civic_exploration_initiative_icon: "£corp_civic_icons|2£"
  iisc_civic_financial_group_icon: "£corp_civic_icons|3£"
  iisc_civic_unknown_icon: "£corp_civic_icons|8£"
+ # ethics text icons
+ iisc_registry_ethic_authoritarian: "£iisc_ethic_authoritarian£"
+ iisc_registry_ethic_egalitarian: "£iisc_ethic_egalitarian£"
+ iisc_registry_ethic_gestalt_consciousness: "£iisc_ethic_gestalt_consciousness£"
+ iisc_registry_ethic_materialist: "£iisc_ethic_materialist£"
+ iisc_registry_ethic_militarist: "£iisc_ethic_militarist£"
+ iisc_registry_ethic_pacifist: "£iisc_ethic_pacifist£"
+ iisc_registry_ethic_spiritualist: "£iisc_ethic_spiritualist£"
+ iisc_registry_ethic_xenophile: "£iisc_ethic_xenophile£"
+ iisc_registry_ethic_xenophobe: "£iisc_ethic_xenophobe£"
+ iisc_registry_ethic_unknown: "£corp_civic_icons|8£"
  # space corp government
  iisc_auth_corporate: "Corporation"
  iisc_auth_corporate_desc: "Un système oligarchique dirigé par un conseil d'administration ou une entité similaire. Les Corporations sont redevables aux actionnaires ou à d'autres intérêts privés."
