@@ -48,35 +48,47 @@ iisc_set_science_ship_orders = {
 					is_same_value = event_target:iisc_science_ship_dest
 				}
 			}
-			orbit = {
-				surveyed = {
-					set_surveyed = yes
-					surveyor = prev.owner
-				}
-			}
 			if = {
 				limit = {
-					orbit = {
-						is_surveyed = {
-							who = prev.owner.overlord
-							status = no
-						}
-					}
+					has_fleet_flag = iisc_science_ship_has_begun_survey
 				}
-				# overlord didn't have data on this planet => give him data and make him pay
 				orbit = {
 					surveyed = {
 						set_surveyed = yes
-						surveyor = prev.owner.overlord
+						surveyor = prev.owner
 					}
 				}
-				owner = {
-					iisc_get_survey_reward = yes
+				if = {
+					limit = {
+						orbit = {
+							is_surveyed = {
+								who = prev.owner.overlord
+								status = no
+							}
+						}
+					}
+					# overlord didn't have data on this planet => give him data and make him pay
+					orbit = {
+						surveyed = {
+							set_surveyed = yes
+							surveyor = prev.owner.overlord
+						}
+					}
+					owner = {
+						iisc_get_survey_reward = yes
+					}
+				}
+				remove_fleet_flag = iisc_science_ship_has_dest
+				remove_fleet_flag = iisc_science_ship_has_begun_survey
+				solar_system = {
+					remove_star_flag = iisc_being_surveyed_for_@prev.owner.overlord
 				}
 			}
-			remove_fleet_flag = iisc_science_ship_has_dest
-			solar_system = {
-				remove_star_flag = iisc_being_surveyed_for_@prev.owner.overlord
+			else = {
+				set_timed_fleet_flag = {
+					flag = iisc_science_ship_has_begun_survey
+					days = 61
+				}
 			}
 		}
 		if = {
@@ -89,6 +101,9 @@ iisc_set_science_ship_orders = {
 					NOT = {
 						has_fleet_flag = iisc_science_ship_has_dest
 					}
+				}
+				NOT = {
+					has_fleet_flag = iisc_science_ship_has_begun_survey
 				}
 			}
 			if = {
@@ -137,6 +152,9 @@ iisc_set_science_ship_orders = {
 				is_fleet_idle = yes
 				has_fleet_flag = iisc_science_ship_has_dest
 				exists = event_target:iisc_science_ship_dest
+				NOT = {
+					has_fleet_flag = iisc_science_ship_has_begun_survey
+				}
 			}
 			clear_fleet_actions = this
 			queue_actions = {
