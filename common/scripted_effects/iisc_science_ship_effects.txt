@@ -37,7 +37,7 @@ iisc_set_science_ship_orders = {
 						}
 					}
 				}
-				has_global_flag = iisc_mining_stations_all
+				has_global_flag = iisc_corp_surveying_all
 			}
 		}
 		if = {
