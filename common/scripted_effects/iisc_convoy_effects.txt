@@ -35,6 +35,7 @@ iisc_create_convoy_fleet = {
 			set_fleet_flag = iisc_convoy
 			fleet_event = {
 				id = iisc_convoy.20				# set name
+				days = 1
 			}
 			iisc_set_convoy_orders = yes
 		}
@@ -112,6 +113,30 @@ iisc_set_convoy_orders = {
 			iisc_should_destroy_convoy = yes
 		}
 		delete_fleet = this
+		# reimburse
+		iisc_change_corp_money = {
+			TYPE = convoy
+			AMOUNT = @iisc_convoy_cost
+		}
+		# unconnect destination
+		if = {
+			limit = {
+				exists = event_target:iisc_convoy_dest
+				exists = event_target:iisc_convoy_dest.owner
+			}
+			event_target:iisc_convoy_dest.owner = {
+				random_subject = {
+					limit = {
+						event_target:iisc_convoy_dest = {
+							has_planet_flag = iisc_hq_of_@prev
+						}
+					}
+					prevprev.owner = {
+						remove_country_flag = iisc_corp_connected_@prev
+					}
+				}
+			}
+		}
 	}
 	else = {
 		save_event_target_as = iisc_convoy_fleet
@@ -137,8 +162,15 @@ iisc_land_convoy_dest = {
 		flag = iisc_fleet_returning_temp
 		days = 1
 	}
+	event_target:iisc_convoy_dest = {
+		save_event_target_as = iisc_convoy_old_dest
+	}
 	event_target:iisc_hq_planet = {
 		save_event_target_as = iisc_convoy_dest
+	}
+	fleet_event = {
+		id = iisc_convoy.21		# set name
+		days = 1
 	}
 }
 

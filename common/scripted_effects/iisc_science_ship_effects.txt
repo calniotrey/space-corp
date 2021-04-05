@@ -19,6 +19,10 @@ iisc_create_science_ship_fleet = {
 			iisc_set_science_ship_orders = yes
 			iisc_assign_random_scientist = yes
 			set_fleet_stance = evasive
+			fleet_event = {
+				id = iisc_science_ships.20
+				days = 1
+			}
 		}
 	}
 }

@@ -34,3 +34,13 @@ country_event = {
 		}
 	}
 }
+
+# rename
+fleet_event = {
+	id = iisc_science_ships.20
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		set_name = random
+	}
+}

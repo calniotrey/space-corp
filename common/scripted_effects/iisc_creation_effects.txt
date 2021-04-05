@@ -81,7 +81,7 @@ iisc_create_corp = {
 						country_add_ethic = ethic_materialist
 					}
 				}
-				ethic_gestalt_consciousness = {
+				default = {
 					prev = {
 						country_add_ethic = ethic_gestalt_consciousness
 					}
