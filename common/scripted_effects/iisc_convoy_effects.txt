@@ -33,6 +33,9 @@ iisc_create_convoy_fleet = {
 			}
 			set_fleet_flag = iisc_fleet_needs_escort
 			set_fleet_flag = iisc_convoy
+			event_target:iisc_hq_planet = {
+				save_event_target_as = iisc_convoy_old_dest
+			}
 			fleet_event = {
 				id = iisc_convoy.20				# set name
 				days = 1
@@ -169,7 +172,7 @@ iisc_land_convoy_dest = {
 		save_event_target_as = iisc_convoy_dest
 	}
 	fleet_event = {
-		id = iisc_convoy.21		# set name
+		id = iisc_convoy.20		# set name
 		days = 1
 	}
 }

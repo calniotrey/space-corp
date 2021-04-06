@@ -41,16 +41,6 @@ fleet_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
-		set_name = "[iisc_hq_planet.GetName] -> [iisc_convoy_dest.GetName]"
-	}
-}
-
-# set name
-fleet_event = {
-	id = iisc_convoy.21
-	is_triggered_only = yes
-	hide_window = yes
-	immediate = {
-		set_name = "[iisc_convoy_old_dest.GetName] -> [iisc_hq_planet.GetName]"
+		set_name = "[iisc_convoy_old_dest.GetName] -> [iisc_convoy_dest.GetName]"
 	}
 }
