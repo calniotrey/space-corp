@@ -693,7 +693,7 @@ iisc_set_budget_multiplier = {
 		limit = {
 			check_variable = {
 				which = iisc_budget_mining_station
-				value >= 1000
+				value >= 500
 			}
 		}
 		multiply_variable = {
@@ -705,7 +705,7 @@ iisc_set_budget_multiplier = {
 		limit = {
 			check_variable = {
 				which = iisc_budget_research_station
-				value >= 1000
+				value >= 500
 			}
 		}
 		multiply_variable = {

@@ -227,9 +227,18 @@ iisc_is_suitable_convoy_partner = {
 iisc_is_planet_eligible_for_mining_station = {
 	iisc_has_mining_deposits = yes
 	has_mining_station = no
-	is_surveyed = {
-		who = prevprev.owner
-		status = yes
+	OR = {
+		is_surveyed = {
+			who = prevprev.owner
+			status = yes
+		}
+		AND = {
+			exists = prevprev.owner.overlord
+			is_surveyed = {
+				who = prevprev.owner.overlord
+				status = yes
+			}
+		}
 	}
 }
 
@@ -239,9 +248,18 @@ iisc_is_planet_eligible_for_mining_station = {
 iisc_is_planet_eligible_for_research_station = {
 	iisc_has_research_deposits = yes
 	has_research_station = no
-	is_surveyed = {
-		who = prevprev.owner
-		status = yes
+	OR = {
+		is_surveyed = {
+			who = prevprev.owner
+			status = yes
+		}
+		AND = {
+			exists = prevprev.owner.overlord
+			is_surveyed = {
+				who = prevprev.owner.overlord
+				status = yes
+			}
+		}
 	}
 }
 

@@ -17,6 +17,10 @@ iisc_create_iisc_builder_fleet = {
 				random_existing_design = constructor
 			}
 			iisc_set_builders_orders = yes
+			fleet_event = {
+				id = iisc_builder.20
+				days = 1
+			}
 		}
 	}
 }
