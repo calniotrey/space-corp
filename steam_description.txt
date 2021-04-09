@@ -1,0 +1,61 @@
+Ever felt like the economy and space in Stellaris is far too bland and boring? Do you want to experience a living space and economy? You've come to the right place!
+
+[b]Interstellar Incorporated: Space Corp[/b] adds corporations as sub-national entities within your empire, headquartered on one of your planets, and based on one of your free pops. These corporations are subjects of the empire, and have an exclusive civic and an ethic based on their founding pop, which influences their behavior and function. They will operate semi-independently from their overlord, seeking to fulfill their own interests.
+
+This initial release is meant to be a foundation for what’s to come. We are far from finished with what we want to do! Check out the Planned Features for more info. This mod can be considered a spiritual successor to Interstellar Incorporated: A Civilian Space Odyssey. If you were a fan of that mod, we decided to start from the ground up, because there were a lot of issues with performance and otherwise that plagued the original. We decided to reassess the mod and start with a slightly different take, but with a similar general idea!
+
+TL;DR: Performance friendly mod for 2.8.* with a new upload for 3.0 with tons of new features planned
+
+[h1]Features List[/h1]
+[list]
+[*] Diverse corporations (of various types - private security force, research firm, mining company, etc) spawn as vassals of the empire
+[*] Corporations have a complex budgeting mechanism
+[*] Corporations build their own military escort ships, construction and research ships, mining stations, and trade convoys, all controlled by custom, performance-friendly AI
+[*] Corporations sell new technology, leaders, and survey information
+[*] Corporations will develop their HQ, providing interesting jobs
+[*] New policies to decide issues like corporate tax rate
+[*] Custom UI - easily see all of your corporations, and use a mod menu to decide which features you want to play with!
+[/list]
+
+[h1]Planned Features[/h1]
+[list]
+[*] Expansion and refinement of all current features - more tech and leader types to buy, more types of corporations, more corporate functions, more types of headquarters, etc.
+[*] Supply mechanic for fleets, which can be contracted out to corporations
+[*] Blockade mechanic to bring a planet to its knees without firing a shot
+[*] Extensive flavor events and interactions with corporate entities
+[*] Gestalt empire specific corporations (styled as “Semi-Autonomous Optimization Processes”, or something similar) - we don’t want to leave gestalts out!
+[*] Criminal organizations, such as syndicates and gangs, who can fight among themselves and against peacekeeping/police forces - and a general overhaul of how crime works
+[*] Slavers, pirates, smugglers, scavengers, prison barges
+[*] Immersive diplomacy, with corporations or normal countries
+[*] Potentially much more - we’re looking at other ways to deepen the economy of Stellaris
+[/list]
+Feel free to give us your own suggestions for where you think this mod could go!
+
+[h1]Remarks[/h1]
+Not achievement compatible obviously.
+Should not require a new save game (but it is highly recommended)..
+You can remove the mod during a game. Be sure to use the mod menu ingame to allow for a clean uninstall.
+3.0 update should be save game compatible.
+
+[h1]Compatibility[/h1]
+Relatively good, minor localisation issues if other mods add planet types or ethics.
+Don't use mods removing all blockers on colonized planets during the game.
+Fully localized in english and french.
+
+[h1]Known bugs[/h1]
+[list]
+[*] Nothing!
+[/list]
+
+[h1]Credits[/h1]
+[list]
+[*] matthubelart for the wonderful image used in the mod menu
+[*] MCN for the civics icons
+[/list]
+
+[h1]Legal stuff[/h1]
+Do not copy any content from this mod without permission. This includes modpacking of course.
+Translations are most welcome! Either contact us so we put it directly inside the mod (and your name in the credits), or publish a mod with only the localisation and we will add a link to it.
+
+[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
+

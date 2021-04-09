@@ -3,7 +3,9 @@ tags={
 	"Economy"
 	"Gameplay"
 }
-name="Space Corps"
-path="mod/space-corp"
+dependencies={
+	"Stellaris List EXtender - SLEX"
+}
+name="Interstellar Incorporated: Space Corp"
 supported_version="2.8.*"
 picture="thumbnail.png"
