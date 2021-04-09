@@ -90,6 +90,32 @@ iisc_handle_corp_connection_to_overlord = {
 }
 
 # this = corp
+# overlord exists
+iisc_copy_techs_from_overlord_if_needed = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = iisc_copy_techs_on_cooldown
+			}
+		}
+		set_timed_country_flag = {
+			flag = iisc_copy_techs_on_cooldown
+			years = 5
+		}
+		copy_techs_from = {
+			target = overlord
+			except = {
+				# not dangerous techs?
+				tech_synthetic_workers
+				tech_combat_computers_3
+				tech_jump_drive_1
+				tech_psi_jump_drive_1
+			}
+		}
+	}
+}
+
+# this = corp
 # corp is supposed to be destroyed => its money is copied, not transferred
 # overlord exists
 iisc_split_disbanded_corp_money = {

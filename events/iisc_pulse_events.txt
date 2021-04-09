@@ -221,6 +221,7 @@ country_event = {
 			}
 			iisc_build_hq_deposit_if_possible = yes
 		}
+		iisc_copy_techs_from_overlord_if_needed = yes
 		# check for tech
 		iisc_corps_load_research_points = yes
 		iisc_set_tech_costs = yes

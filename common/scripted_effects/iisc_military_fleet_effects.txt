@@ -22,10 +22,64 @@ iisc_create_corp_military_fleet = {
 iisc_build_military_ships = {
 	# TODO spawn other types of ships
 	# to remove the errors from the log
+	if = {
+		limit = {
+			owner = {
+				check_variable = {
+					which = iisc_budget_military
+					value >= @iisc_corp_battleship_cost
+				}
+			}
+		}
+		owner = {
+			iisc_subtract_corp_money = {
+				TYPE = military
+				AMOUNT = @iisc_corp_battleship_cost
+			}
+		}
+		create_ship = {
+			name = random
+			random_existing_design = battleship
+		}
+	}
 	owner = {
 		set_variable = {
 			which = iisc_loop_index
 			value = 2
+		}
+	}
+	while = {
+		limit = {
+			owner = {
+				check_variable = {
+					which = iisc_budget_military
+					value >= @iisc_corp_cruiser_cost
+				}
+				check_variable = {
+					which = iisc_loop_index
+					value > 0
+				}
+			}
+		}
+		owner = {
+			iisc_subtract_corp_money = {
+				TYPE = military
+				AMOUNT = @iisc_corp_cruiser_cost
+			}
+			subtract_variable = {
+				which = iisc_loop_index
+				value = 1
+			}
+		}
+		create_ship = {
+			name = random
+			random_existing_design = cruiser
+		}
+	}
+	owner = {
+		set_variable = {
+			which = iisc_loop_index
+			value = 4
 		}
 	}
 	while = {
@@ -59,7 +113,7 @@ iisc_build_military_ships = {
 	owner = {
 		set_variable = {
 			which = iisc_loop_index
-			value = 4
+			value = 8
 		}
 	}
 	while = {
