@@ -33,14 +33,14 @@ Feel free to give us your own suggestions for where you think this mod could go!
 
 [h1]Remarks[/h1]
 Not achievement compatible obviously.
-Should not require a new save game (but it is highly recommended)..
+Should not require a new save game (but it is highly recommended).
 You can remove the mod during a game. Be sure to use the mod menu ingame to allow for a clean uninstall.
 3.0 update should be save game compatible.
 
 [h1]Compatibility[/h1]
 Relatively good, minor localisation issues if other mods add planet types or ethics.
-Don't use mods removing all blockers on colonized planets during the game.
-Fully localized in english and french.
+Don't use mods removing all blockers on colonized planets during the game or mods that change your country type (patch needed).
+Fully localized in english, french, german and russian. For the other languages, this mod localisations will be displayed in english.
 
 [h1]Known bugs[/h1]
 [list]
@@ -49,6 +49,8 @@ Fully localized in english and french.
 
 [h1]Credits[/h1]
 [list]
+[*] Fusiongames for the german translation
+[*] Hate from the Stellaris Modding Den for the russian translation
 [*] matthubelart for the wonderful image used in the mod menu
 [*] MCN for the civics icons
 [/list]
