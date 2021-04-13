@@ -1,5 +1,18 @@
 # This = overlord
 iisc_create_corp = {
+	if = {
+		limit = {
+			exists = federation
+			federation = {
+				has_federation_law = allow_subjects_to_join_yes
+				federation_cohesion < 0
+			}
+		}
+		federation = {
+			add_cohesion = 100
+			set_federation_flag = iisc_added_cohesion
+		}
+	}
 	random_owned_pop = {
 		limit = {
 			OR = {

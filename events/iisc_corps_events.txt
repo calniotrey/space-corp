@@ -40,9 +40,38 @@ country_event = {
 		}
 	}
 	immediate = {
+		# Either the federation had [0, 100] cohesion before creating the corp
+		# After the corp joined, it had [-100, 0], so we add 100, then make the corp leave, then add 100 again
+		# Or the federation had [-100, 0] before creating the corp
+		# Then we added 100 cohesion right before creating the corp (check iisc_create_corp) and added the federation_flag
+		# So the federation has [0, 100], corp joins, [-100, 0], add 100, corp leaves, [-100, 0]
+		# => only add the last 100 cohesion if the flag is not set
 		from = {
+			alliance = {
+				add_cohesion = 100
+				save_event_target_as = iisc_old_federation
+			}
 			leave_alliance = {
 				override_requirements = yes
+			}
+			if = {
+				limit = {
+					exists = event_target:iisc_old_federation
+				}
+				# I don't see how the federation could have been destroyed by a corp leaving but let's play safe
+				event_target:iisc_old_federation = {
+					if = {
+						limit = {
+							NOT = {
+								has_federation_flag = iisc_added_cohesion
+							}
+						}
+						add_cohesion = 100
+					}
+					else = {
+						remove_federation_flag = iisc_added_cohesion
+					}
+				}
 			}
 		}
 	}
