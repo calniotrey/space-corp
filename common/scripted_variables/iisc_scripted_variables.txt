@@ -9,10 +9,10 @@
 @iisc_tech_delay_base = 180
 @iisc_tech_delay_random = 180
 # military
-@iisc_corp_corvette_cost = 100
-@iisc_corp_destroyer_cost = 200
-@iisc_corp_cruiser_cost = 400
-@iisc_corp_battleship_cost = 800
+@iisc_corp_corvette_cost = 150
+@iisc_corp_destroyer_cost = 300
+@iisc_corp_cruiser_cost = 600
+@iisc_corp_battleship_cost = 1200
 @iisc_patrol_close_system = 7
 # convoys (TODO)
 @iisc_convoy_min = 500
