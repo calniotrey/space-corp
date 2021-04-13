@@ -29,6 +29,7 @@ iisc_build_military_ships = {
 					which = iisc_budget_military
 					value >= @iisc_corp_battleship_cost
 				}
+				has_technology = tech_battleships
 			}
 		}
 		owner = {
@@ -42,72 +43,86 @@ iisc_build_military_ships = {
 			random_existing_design = battleship
 		}
 	}
-	owner = {
-		set_variable = {
-			which = iisc_loop_index
-			value = 2
-		}
-	}
-	while = {
+	if = {
 		limit = {
 			owner = {
-				check_variable = {
-					which = iisc_budget_military
-					value >= @iisc_corp_cruiser_cost
-				}
-				check_variable = {
-					which = iisc_loop_index
-					value > 0
-				}
+				has_technology = tech_cruisers
 			}
 		}
 		owner = {
-			iisc_subtract_corp_money = {
-				TYPE = military
-				AMOUNT = @iisc_corp_cruiser_cost
-			}
-			subtract_variable = {
+			set_variable = {
 				which = iisc_loop_index
-				value = 1
+				value = 2
 			}
 		}
-		create_ship = {
-			name = random
-			random_existing_design = cruiser
+		while = {
+			limit = {
+				owner = {
+					check_variable = {
+						which = iisc_budget_military
+						value >= @iisc_corp_cruiser_cost
+					}
+					check_variable = {
+						which = iisc_loop_index
+						value > 0
+					}
+				}
+			}
+			owner = {
+				iisc_subtract_corp_money = {
+					TYPE = military
+					AMOUNT = @iisc_corp_cruiser_cost
+				}
+				subtract_variable = {
+					which = iisc_loop_index
+					value = 1
+				}
+			}
+			create_ship = {
+				name = random
+				random_existing_design = cruiser
+			}
 		}
 	}
-	owner = {
-		set_variable = {
-			which = iisc_loop_index
-			value = 4
-		}
-	}
-	while = {
+	if = {
 		limit = {
 			owner = {
-				check_variable = {
-					which = iisc_budget_military
-					value >= @iisc_corp_destroyer_cost
-				}
-				check_variable = {
-					which = iisc_loop_index
-					value > 0
-				}
+				has_technology = tech_destroyers
 			}
 		}
 		owner = {
-			iisc_subtract_corp_money = {
-				TYPE = military
-				AMOUNT = @iisc_corp_destroyer_cost
-			}
-			subtract_variable = {
+			set_variable = {
 				which = iisc_loop_index
-				value = 1
+				value = 4
 			}
 		}
-		create_ship = {
-			name = random
-			random_existing_design = destroyer
+		while = {
+			limit = {
+				owner = {
+					check_variable = {
+						which = iisc_budget_military
+						value >= @iisc_corp_destroyer_cost
+					}
+					check_variable = {
+						which = iisc_loop_index
+						value > 0
+					}
+				}
+			}
+			owner = {
+				iisc_subtract_corp_money = {
+					TYPE = military
+					AMOUNT = @iisc_corp_destroyer_cost
+				}
+				subtract_variable = {
+					which = iisc_loop_index
+					value = 1
+				}
+			}
+			create_ship = {
+				name = random
+				random_existing_design = destroyer
+			}
 		}
 	}
 	owner = {
