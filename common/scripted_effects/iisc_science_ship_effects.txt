@@ -213,8 +213,9 @@ iisc_science_ship_find_closest_survey_target = {
 		closest_system = {
 			limit = {
 				has_access_fleet = prevprev.owner
-				NOT = {
+				NOR = {
 					has_star_flag = iisc_being_surveyed_for_@prevprev.owner.overlord
+					has_star_flag = precursor_system
 				}
 				distance = {
 					source = prev
