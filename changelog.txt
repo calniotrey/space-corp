@@ -1,0 +1,9 @@
+1.0.1
+[*] Prevent corps to survey precursor systems
+[*] Increase military ships cost by 50% for corps
+[*] Switch convoys to colonizer type (to fix transport model bug)
+[*] Fix lost cohesion from corporation spawning
+[*] Fix hull sizes being used without the tech
+[*] Add russian and german localisation
+[*] Add changelog file
+1.0.0
