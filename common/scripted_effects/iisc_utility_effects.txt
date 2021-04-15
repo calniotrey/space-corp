@@ -92,7 +92,8 @@ iisc_calc_corp_cap = {
 		change_variable = {
 			which = iisc_corp_cap
 			value = -50
-		}		#first 50 systems have different rules
+		}
+		#first 50 systems have different rules
 		divide_variable = {
 			which = iisc_corp_cap
 			value = 50
@@ -109,7 +110,8 @@ iisc_calc_corp_cap = {
 		change_variable = {
 			which = iisc_corp_cap
 			value = 5
-		}		#because already at 5 corps at 50 systems
+		}
+		#because already at 5 corps at 50 systems
 	}
 }
 
@@ -154,6 +156,18 @@ iisc_compute_license_and_stations_cost = {
 	set_variable = {
 		which = iisc_mining_license_cost
 		value = @iisc_mining_station_cost
+	}
+	# to clean error.log
+	if = {
+		limit = {
+			NOT = {
+				is_variable_set = iisc_corp_tax_policy_value
+			}
+		}
+		set_variable = {
+			which = iisc_license_cost_multiplier
+			value = 0
+		}
 	}
 	multiply_variable = {
 		which = iisc_mining_license_cost
@@ -583,7 +597,7 @@ iisc_actualize_modmenu_settings = {
 				}
 				every_owned_ship = {
 					limit = {
-						is_ship_class = mining_station
+						is_ship_size = mining_station
 					}
 					delete_ship = THIS
 				}
@@ -614,7 +628,7 @@ iisc_actualize_modmenu_settings = {
 				}
 				every_owned_ship = {
 					limit = {
-						is_ship_class = research_station
+						is_ship_size = research_station
 					}
 					delete_ship = THIS
 				}

@@ -1614,6 +1614,17 @@ iisc_compute_and_tax_space_corp_income_from_resource = {
 				which = iisc_taxes
 				value = iisc_$RESOURCE$_income
 			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = iisc_corp_tax_policy_value
+					}
+				}
+				set_variable = {
+					which = iisc_corp_tax_policy_value
+					value = 0
+				}
+			}
 			multiply_variable = {
 				which = iisc_taxes
 				value = iisc_corp_tax_policy_value

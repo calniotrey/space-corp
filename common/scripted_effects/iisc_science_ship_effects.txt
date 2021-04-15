@@ -46,6 +46,14 @@ iisc_set_science_ship_orders = {
 		}
 		if = {
 			limit = {
+				NOT = {
+					exists = leader
+				}
+			}
+			iisc_assign_random_scientist = yes
+		}
+		if = {
+			limit = {
 				exists = orbit
 				exists = event_target:iisc_science_ship_dest
 				orbit = {
@@ -57,8 +65,8 @@ iisc_set_science_ship_orders = {
 					has_fleet_flag = iisc_science_ship_has_begun_survey
 				}
 				orbit = {
-					surveyed = {
-						set_surveyed = yes
+					set_surveyed = {
+						surveyed = yes
 						surveyor = prev.owner
 					}
 				}
@@ -73,8 +81,8 @@ iisc_set_science_ship_orders = {
 					}
 					# overlord didn't have data on this planet => give him data and make him pay
 					orbit = {
-						surveyed = {
-							set_surveyed = yes
+						set_surveyed = {
+							surveyed = yes
 							surveyor = prev.owner.overlord
 						}
 					}
