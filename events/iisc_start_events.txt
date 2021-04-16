@@ -3,7 +3,6 @@ event = {
 	id = iisc_start.0
 	is_triggered_only = yes
 	hide_window = yes
-
 	trigger = {
 		NOR = {
 			has_global_flag = iisc_initialized
@@ -70,6 +69,19 @@ country_event = {
 		set_variable = {
 			which = iisc_years_until_next_corp_creation
 			value = 0
+		}
+	}
+}
+
+# register in DMM
+event = {
+	id = iisc_start.20
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		dmm_register_mod = {
+			DMM_NAME = iisc_dmm.name
+			DMM_FLAG = interstellar_incorporated_space_corp
 		}
 	}
 }

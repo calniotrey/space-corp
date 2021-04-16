@@ -1,6 +1,13 @@
 on_game_start = {
 	events = {
 		iisc_start.0
+		iisc_start.20
+	}
+}
+
+on_single_player_save_game_load = {
+	events = {
+		iisc_start.20
 	}
 }
 
@@ -62,5 +69,11 @@ on_tech_increased = {
 on_post_communications_established = {
 	events = {
 		iisc_corps.40
+	}
+}
+
+dmm_mod_selected = {
+	events = {
+		iisc_start.20
 	}
 }

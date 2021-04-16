@@ -6,9 +6,6 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = "iisc_modmenu_window"
-	trigger = {
-		is_ai = no
-	}
 	option = {
 		name = iisc_modmenu.0.resume
 		custom_gui = "iisc_modmenu_resume"
@@ -125,5 +122,22 @@ country_event = {
 		}
 		default_hide_option = yes
 		iisc_actualize_modmenu_settings = yes
+	}
+}
+
+# called by dmm
+country_event = {
+	id = iisc_modmenu.10
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		from = {
+			has_leader_flag = interstellar_incorporated_space_corp
+		}
+	}
+	immediate = {
+		country_event = {
+			id = iisc_modmenu.0
+		}
 	}
 }
