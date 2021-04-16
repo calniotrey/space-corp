@@ -87,6 +87,7 @@ iisc_has_allies_needing_escort = {
 	owner = {
 		any_owned_fleet = {
 			has_fleet_flag = iisc_fleet_needs_escort
+			exists = solar_system
 		}
 	}
 }
@@ -97,6 +98,7 @@ iisc_has_allied_convoy_needing_escort = {
 		any_owned_fleet = {
 			has_fleet_flag = iisc_fleet_needs_escort
 			has_fleet_flag = iisc_convoy
+			exists = solar_system
 		}
 	}
 }
