@@ -2,7 +2,7 @@
 iisc_spawn_scientist = {
 	create_leader = {
 		class = scientist
-		species = event_target:iisc_original_pop.species
+		species = owner_main_species
 		name = random
 		skill = 1
 	}
