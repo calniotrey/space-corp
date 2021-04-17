@@ -74,6 +74,6 @@ on_post_communications_established = {
 
 dmm_mod_selected = {
 	events = {
-		iisc_start.20
+		iisc_modmenu.10
 	}
 }
