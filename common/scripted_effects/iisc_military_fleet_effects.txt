@@ -30,6 +30,7 @@ iisc_build_military_ships = {
 					value >= @iisc_corp_battleship_cost
 				}
 				has_technology = tech_battleships
+				has_existing_ship_design = battleship
 			}
 		}
 		owner = {
@@ -47,6 +48,7 @@ iisc_build_military_ships = {
 		limit = {
 			owner = {
 				has_technology = tech_cruisers
+				has_existing_ship_design = cruiser
 			}
 		}
 		owner = {
@@ -88,6 +90,7 @@ iisc_build_military_ships = {
 		limit = {
 			owner = {
 				has_technology = tech_destroyers
+				has_existing_ship_design = destroyer
 			}
 		}
 		owner = {

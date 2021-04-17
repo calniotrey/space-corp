@@ -29,6 +29,9 @@ iisc_civilian_freighter = {
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
 	auto_upgrade = yes
+	possible_country = {
+		is_country_type = iisc_space_corporation
+	}
 }
 
 # Civilian Tanker
@@ -62,6 +65,9 @@ iisc_civilian_tanker = {
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
 	auto_upgrade = yes
+	possible_country = {
+		is_country_type = iisc_space_corporation
+	}
 }
 
 # Passenger Liner
@@ -95,4 +101,7 @@ iisc_passenger_liner = {
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
 	auto_upgrade = yes
+	possible_country = {
+		is_country_type = iisc_space_corporation
+	}
 }

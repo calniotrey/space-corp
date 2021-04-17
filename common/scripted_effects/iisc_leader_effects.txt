@@ -2,6 +2,9 @@
 iisc_spawn_scientist = {
 	create_leader = {
 		class = scientist
+		species = owner_main_species
+		name = random
+		skill = 1
 	}
 	# TODO add experience/traits?
 }
@@ -13,6 +16,7 @@ iisc_transfer_leader_to_overlord = {
 }
 
 # this = fleet (science)
+# original pop set
 iisc_assign_random_scientist = {
 	if = {
 		limit = {
@@ -305,7 +309,6 @@ iisc_overlord_recruit_leader = {
 				unassign_leader = this
 				set_owner = event_target:iisc_overlord
 			}
-			iisc_assign_random_scientist = yes
 		}
 	}
 	else = {

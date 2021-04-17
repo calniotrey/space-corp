@@ -201,7 +201,14 @@ iisc_get_random_society_tech_if_possible = {
 		8 = {
 			modifier = {
 				factor = 0
-				has_technology = tech_colonization_2
+				OR = {
+					has_technology = tech_colonization_2
+					overlord = {
+						NOT = {
+							can_research_technology = tech_colonization_2
+						}
+					}
+				}
 			}
 			modifier = {
 				factor = 0
@@ -236,7 +243,14 @@ iisc_get_random_society_tech_if_possible = {
 		8 = {
 			modifier = {
 				factor = 0
-				has_technology = tech_colonization_3
+				OR = {
+					has_technology = tech_colonization_3
+					overlord = {
+						NOT = {
+							can_research_technology = tech_colonization_3
+						}
+					}
+				}
 			}
 			modifier = {
 				factor = 0
@@ -271,7 +285,14 @@ iisc_get_random_society_tech_if_possible = {
 		4 = {
 			modifier = {
 				factor = 0
-				has_technology = tech_colonization_4
+				OR = {
+					has_technology = tech_colonization_4
+					overlord = {
+						NOT = {
+							can_research_technology = tech_colonization_4
+						}
+					}
+				}
 			}
 			modifier = {
 				factor = 0
@@ -306,7 +327,14 @@ iisc_get_random_society_tech_if_possible = {
 		2 = {
 			modifier = {
 				factor = 0
-				has_technology = tech_colonization_5
+				OR = {
+					has_technology = tech_colonization_5
+					overlord = {
+						NOT = {
+							can_research_technology = tech_colonization_5
+						}
+					}
+				}
 			}
 			modifier = {
 				factor = 0

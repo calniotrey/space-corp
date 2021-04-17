@@ -121,6 +121,7 @@ iisc_space_corporation = {
 		standard_leader_module = {
 		}
 		exclusive_diplomacy_module = {
+			contact_rule = on_action_only
 			can_receive = {
 				action_offer_peace
 			}
@@ -147,29 +148,29 @@ iisc_space_corporation = {
 	}
 }
 
-supply_leader_pool = {
-	share_communications = no
-	default_ships = no
-	government = no
-	observable = no
-	ai = {
-		enabled = no
-	}
-	faction = {
-		hostile = no
-		needs_border_access = no
-		generate_borders = no
-		needs_colony = no
-		auto_delete = no
-	}
-	modules = {
-		standard_event_module = {
-			# Needed for events
-		}
-		exclusive_diplomacy_module = {
-			contact_rule = script_only
-		}
-		standard_leader_module = {
-		}
-	}
-}
+# supply_leader_pool = {
+# 	share_communications = no
+# 	default_ships = no
+# 	government = no
+# 	observable = no
+# 	ai = {
+# 		enabled = no
+# 	}
+# 	faction = {
+# 		hostile = no
+# 		needs_border_access = no
+# 		generate_borders = no
+# 		needs_colony = no
+# 		auto_delete = no
+# 	}
+# 	modules = {
+# 		standard_event_module = {
+# 			# Needed for events
+# 		}
+# 		exclusive_diplomacy_module = {
+# 			contact_rule = script_only
+# 		}
+# 		standard_leader_module = {
+# 		}
+# 	}
+# }

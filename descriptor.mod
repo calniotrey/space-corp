@@ -4,9 +4,9 @@ tags={
 	"Gameplay"
 }
 dependencies={
-	"Stellaris List EXtender - SLEX"
+	"SLEX"
 }
 name="Interstellar Incorporated: Space Corp"
 picture="thumbnail.png"
-supported_version="2.8.*"
+supported_version="3.0.*"
 remote_file_id="2451639452"

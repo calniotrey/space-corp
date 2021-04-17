@@ -121,6 +121,18 @@ iisc_create_corp = {
 			value = 1000
 		}
 		set_variable = {
+			which = iisc_budget_military
+			value = 0
+		}
+		set_variable = {
+			which = iisc_budget_convoy
+			value = 0
+		}
+		set_variable = {
+			which = iisc_budget_supply
+			value = 0
+		}
+		set_variable = {
 			which = iisc_budget_builder
 			value = 100
 		}
@@ -143,6 +155,11 @@ iisc_create_corp = {
 		set_variable = {
 			which = iisc_corp_money_last_month
 			value = iisc_corp_money
+		}
+		# Initialize to 0
+		set_variable = {
+			which = iisc_major_deposit_size
+			value = 0
 		}
 		# to not penalize the budget
 		set_timed_country_flag = {

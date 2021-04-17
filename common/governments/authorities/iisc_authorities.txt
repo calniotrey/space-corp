@@ -15,6 +15,11 @@ iisc_auth_corporate = {
 			value = iisc_space_corporation
 		}
 	}
+	potential = {
+		country_type = {
+			value = iisc_space_corporation
+		}
+	}
 	tags = {
 		AUTHORITY_ELECTION_OLIGARCHIC
 	}
