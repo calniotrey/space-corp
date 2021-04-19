@@ -529,24 +529,27 @@ iisc_set_military_orders_5 = {
 	}
 	else_if = {
 		limit = {
-			NOT = {
+			# if the target doesn't exist or if it isn't hostile
+			NAND = {
 				exists = event_target:iisc_attack_target
-			}
-			has_fleet_flag = iisc_overriden_fleet_action
-		}
-		resume_fleet_action = yes
-	}
-	else_if = {
-		limit = {
-			NOT = {
-				exists = event_target:iisc_attack_target
+				event_target:iisc_attack_target.owner = {
+					is_hostile = prev.owner
+				}
 			}
 		}
-		set_variable = {
-			which = iisc_fleet_action_id
-			value = 1
+		if = {
+			limit = {
+				has_fleet_flag = iisc_overriden_fleet_action
+			}
+			resume_fleet_action = yes
 		}
-		set_fleet_flag = iisc_recalculate_military_fleets_order
+		else = {
+			set_variable = {
+				which = iisc_fleet_action_id
+				value = 1
+			}
+			set_fleet_flag = iisc_recalculate_military_fleets_order
+		}
 	}
 }
 
