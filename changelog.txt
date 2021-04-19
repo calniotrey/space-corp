@@ -1,3 +1,10 @@
+1.1
+[*] Updated mod for 3.0.1
+[*] Added DMM support, removed the edict firing up the mod menu
+[*] Fixed a bug for military AI where ships wouldn't find a friendly fleet to escort as they are ftl
+[*] Fixed a bug where convoy ships were being displayed in colonisation screen (but not buildable)
+[*] Fixed a bug where iisc authority was being displayed on empire creation screen
+[*] Fixed a typo in the localisations that made the game completely unplayable
 1.0.1
 [*] Prevent corps to survey precursor systems
 [*] Increase military ships cost by 50% for corps

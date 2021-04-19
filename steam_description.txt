@@ -4,7 +4,7 @@ Ever felt like the economy and space in Stellaris is far too bland and boring? D
 
 This initial release is meant to be a foundation for what’s to come. We are far from finished with what we want to do! Check out the Planned Features for more info. This mod can be considered a spiritual successor to Interstellar Incorporated: A Civilian Space Odyssey. If you were a fan of that mod, we decided to start from the ground up, because there were a lot of issues with performance and otherwise that plagued the original. We decided to reassess the mod and start with a slightly different take, but with a similar general idea!
 
-TL;DR: Performance friendly mod for 2.8.* with a new upload for 3.0 with tons of new features planned
+TL;DR: Performance friendly mod for 3.0.* with tons of new features planned
 
 [h1]Features List[/h1]
 [list]
@@ -35,7 +35,7 @@ Feel free to give us your own suggestions for where you think this mod could go!
 Not achievement compatible obviously.
 Should not require a new save game (but it is highly recommended).
 You can remove the mod during a game. Be sure to use the mod menu ingame to allow for a clean uninstall.
-3.0 update should be save game compatible.
+You can open the mod menu using DMM (open the "main menu" by pressing when in game).
 
 [h1]Compatibility[/h1]
 Relatively good, minor localisation issues if other mods add planet types or ethics.
