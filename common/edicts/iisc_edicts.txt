@@ -31,7 +31,7 @@ iisc_modmenu_edict = {
 	}
 	potential = {
 		NOT = {
-			is_ai = yes
+			has_global_flag = dmm_installed
 		}
 	}
 	effect = {
