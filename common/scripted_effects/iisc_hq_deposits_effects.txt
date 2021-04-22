@@ -65,17 +65,29 @@ iisc_build_hq_deposit_if_possible = {
 # hq set
 iisc_build_hq_deposit_if_possible_aux = {
 	# check if we have enough budget
+	set_variable = {
+		which = iisc_major_deposit_cost
+		value = iisc_major_deposit_size
+	}
+	change_variable = {
+		which = iisc_major_deposit_cost
+		value = 1
+	}
+	multiply_variable = {
+		which = iisc_major_deposit_cost
+		value = @d_iisc_deposits_cost_base
+	}
 	if = {
 		limit = {
 			exists = event_target:iisc_hq_planet.owner
 			check_variable = {
 				which = iisc_budget_colonization
-				value >= @d_iisc_deposits_cost
+				value >= iisc_major_deposit_cost
 			}
 		}
 		iisc_subtract_corp_money = {
 			TYPE = colonization
-			AMOUNT = @d_iisc_deposits_cost
+			AMOUNT = iisc_major_deposit_cost
 		}
 		change_variable = {
 			which = iisc_major_deposit_size

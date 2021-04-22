@@ -19,4 +19,4 @@
 @iisc_convoy_cost = 500
 @iisc_convoy_reward = 100
 # deposits
-@d_iisc_deposits_cost = 100
+@d_iisc_deposits_cost_base = 100
