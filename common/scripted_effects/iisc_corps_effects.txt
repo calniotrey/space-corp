@@ -720,7 +720,13 @@ iisc_set_budget_multiplier = {
 	}
 	if = {
 		limit = {
-			iisc_below_builders_cap = no
+			OR = {
+				AND = {
+					iisc_search_mining_stations = no
+					iisc_search_research_stations = no
+				}
+				iisc_below_builders_cap = no
+			}
 		}
 		multiply_variable = {
 			which = iisc_budget_multiplier_builder
@@ -738,6 +744,21 @@ iisc_set_budget_multiplier = {
 	}
 	if = {
 		limit = {
+			OR = {
+				iisc_search_mining_stations = no
+				check_variable = {
+					which = iisc_budget_mining_station
+					value >= 500
+				}
+			}
+		}
+		multiply_variable = {
+			which = iisc_budget_multiplier_mining_station
+			value = 0
+		}
+	}
+	else_if = {
+		limit = {
 			NOT = {
 				has_country_flag = iisc_built_mining_station_recently
 			}
@@ -753,21 +774,12 @@ iisc_set_budget_multiplier = {
 	}
 	if = {
 		limit = {
-			check_variable = {
-				which = iisc_budget_mining_station
-				value >= 500
-			}
-		}
-		multiply_variable = {
-			which = iisc_budget_multiplier_mining_station
-			value = 0
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = iisc_budget_research_station
-				value >= 500
+			OR = {
+				iisc_search_research_stations = no
+				check_variable = {
+					which = iisc_budget_research_station
+					value >= 500
+				}
 			}
 		}
 		multiply_variable = {
@@ -775,7 +787,7 @@ iisc_set_budget_multiplier = {
 			value = 0
 		}
 	}
-	if = {
+	else_if = {
 		limit = {
 			NOT = {
 				has_country_flag = iisc_built_research_station_recently
@@ -792,7 +804,10 @@ iisc_set_budget_multiplier = {
 	}
 	if = {
 		limit = {
-			iisc_hq_deposits_full = yes
+			OR = {
+				iisc_should_build_hq_deposit = no
+				iisc_hq_deposits_full = yes
+			}
 		}
 		multiply_variable = {
 			which = iisc_budget_multiplier_colonization
