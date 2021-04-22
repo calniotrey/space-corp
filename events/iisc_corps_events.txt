@@ -12,18 +12,6 @@ country_event = {
 			alloys = @corp_default_resources_amount
 			consumer_goods = @corp_default_resources_amount
 		}
-		# iisc_add_variable_resource = {
-		# 	RESOURCE = physics_research
-		# 	AMOUNT = @corp_default_resources_amount
-		# }
-		# iisc_add_variable_resource = {
-		# 	RESOURCE = society_research
-		# 	AMOUNT = @corp_default_resources_amount
-		# }
-		# iisc_add_variable_resource = {
-		# 	RESOURCE = engineering_research
-		# 	AMOUNT = @corp_default_resources_amount
-		# }
 	}
 }
 

@@ -272,26 +272,18 @@ iisc_overlord_recruit_leader = {
 			which = iisc_recruit_price
 			value = prev
 		}
-		SLEX_add_resource = {
-			RESOURCE = energy
-			AMOUNT = iisc_recruit_price
+		add_resource = {
+			energy = 1
+			mult = iisc_recruit_price
 		}
 		event_target:iisc_overlord = {
 			set_variable = {
 				which = iisc_recruit_price
 				value = prev
 			}
-			multiply_variable = {
-				which = iisc_recruit_price
-				value = -1
-			}
-			SLEX_add_resource = {
-				RESOURCE = energy
-				AMOUNT = iisc_recruit_price
-			}
-			set_variable = {
-				which = iisc_recruit_price
-				value = 0
+			add_resource = {
+				energy = -1
+				mult = iisc_recruit_price
 			}
 		}
 		set_variable = {

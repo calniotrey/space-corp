@@ -95,9 +95,9 @@ iisc_set_builders_orders = {
 							which = iisc_total_license_fees_rcv
 							value = iisc_mining_license_cost
 						}
-						iisc_add_variable_resource = {
-							RESOURCE = energy
-							AMOUNT = iisc_mining_license_cost
+						add_resource = {
+							energy = 1
+							mult = iisc_mining_license_cost
 						}
 					}
 				}
@@ -148,9 +148,9 @@ iisc_set_builders_orders = {
 							which = iisc_total_license_fees_rcv
 							value = iisc_mining_license_cost
 						}
-						iisc_add_variable_resource = {
-							RESOURCE = energy
-							AMOUNT = iisc_mining_license_cost
+						add_resource = {
+							energy = 1
+							mult = iisc_mining_license_cost
 						}
 					}
 				}
