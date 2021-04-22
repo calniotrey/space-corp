@@ -59,6 +59,13 @@ iisc_search_mining_stations = {
 		}
 		has_global_flag = iisc_mining_stations_all
 	}
+	# TODO take galaxy size into account?
+	count_owned_ship = {
+		limit = {
+			is_ship_class = shipclass_mining_station
+		}
+		count < 10
+	}
 }
 
 # this = corp
@@ -71,6 +78,13 @@ iisc_search_research_stations = {
 			}
 		}
 		has_global_flag = iisc_research_stations_all
+	}
+	# TODO take galaxy size into account?
+	count_owned_ship = {
+		limit = {
+			is_ship_class = shipclass_research_station
+		}
+		count < 10
 	}
 }
 
