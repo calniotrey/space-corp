@@ -216,6 +216,42 @@ iisc_destroy_corp = {
 			event_target:iisc_hq_planet = {
 				remove_planet_flag = iisc_hq_of_@prev
 				remove_planet_flag = iisc_hq
+				remove_deposit = d_iisc_income_deposit
+				subtract_variable = {
+					which = iisc_taxes_energy
+					value = {
+						scope = prev
+						variable = iisc_previous_taxes_energy
+					}
+				}
+				subtract_variable = {
+					which = iisc_taxes_minerals
+					value = {
+						scope = prev
+						variable = iisc_previous_taxes_minerals
+					}
+				}
+				subtract_variable = {
+					which = iisc_taxes_food
+					value = {
+						scope = prev
+						variable = iisc_previous_taxes_food
+					}
+				}
+				subtract_variable = {
+					which = iisc_taxes_alloys
+					value = {
+						scope = prev
+						variable = iisc_previous_taxes_alloys
+					}
+				}
+				subtract_variable = {
+					which = iisc_taxes_consumer_goods
+					value = {
+						scope = prev
+						variable = iisc_previous_taxes_consumer_goods
+					}
+				}
 			}
 			iisc_remove_hq_deposit_from_corp = yes
 		}
@@ -1629,9 +1665,39 @@ iisc_compute_and_tax_space_corp_income_from_resource = {
 				which = iisc_taxes
 				value = iisc_corp_tax_policy_value
 			}
-			iisc_add_variable_resource = {
-				RESOURCE = $RESOURCE$
-				AMOUNT = iisc_taxes
+			event_target:iisc_hq_planet = {
+				if = {
+					limit = {
+						NOT = {
+							has_deposit = d_iisc_income_deposit
+						}
+					}
+					add_deposit = d_iisc_income_deposit
+				}
+				# as there could be several corps on the HQ
+				# we add the taxes and subtract the previous taxes
+				# that way, iisc_taxes_$RESOURCE$ should always have the sum of the taxes from every corps on that HQ
+				set_variable = {
+					which = iisc_previous_taxes_$RESOURCE$
+					value = prevprev
+				}
+				subtract_variable = {
+					which = iisc_taxes_$RESOURCE$
+					value = iisc_previous_taxes_$RESOURCE$
+				}
+				change_variable = {
+					which = iisc_taxes_$RESOURCE$
+					value = {
+						scope = prev
+						variable = iisc_taxes
+					}
+				}
+				# decompose it into a list of 0 and 1 up to 1023
+				# remark: iisc_taxes_$RESOURCE$_0 is the modulo by 2 => might not be integer => we check in the deposit if >= 1
+				iisc_decompose_into_binary = {
+					LIST = iisc_taxes_$RESOURCE$
+					VARIABLE = iisc_taxes_$RESOURCE$
+				}
 			}
 			change_variable = {
 				which = iisc_$RESOURCE$_taxed_total
@@ -1641,6 +1707,10 @@ iisc_compute_and_tax_space_corp_income_from_resource = {
 				set_variable = {
 					which = iisc_taxes
 					value = prev
+				}
+				set_variable = {
+					which = iisc_previous_taxes_$RESOURCE$
+					value = iisc_taxes
 				}
 				change_variable = {
 					which = iisc_$RESOURCE$_taxed_total

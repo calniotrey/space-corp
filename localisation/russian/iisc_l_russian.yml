@@ -25,6 +25,9 @@
  SUBJECT_iisc_corp_vassal: "Корпорация"
  SUBJECT_DESC_iisc_corp_vassal: "Субнациональная корпорация."
  iisc_corp_country_modifier: "Бюджет Корпорации"
+ d_iisc_income_deposit: "Tax Center"
+ d_iisc_income_deposit_desc: "Armies of accountants calculate the amount of taxes payed by the corporations established on this planet."
+ iisc_corporation_tax: "Corporation Taxes"
  ##### Events #####
  iisc_pulse.18.title: "Новая Корпорация"
  iisc_pulse.18.desc: "Сегодня отличный день для нашей экономики. Множество малых бизнесов на §Y[iisc_hq_planet.GetName]§! объединились и создали новую космическую корпорацию! По информации из нашего реестра корпораций, она называется §Y[iisc_last_created_corp.GetName]§!."

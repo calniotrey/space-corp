@@ -25,6 +25,9 @@
  SUBJECT_iisc_corp_vassal: "Corporation"
  SUBJECT_DESC_iisc_corp_vassal: "Ceci est une corporation affiliée à ce pays."
  iisc_corp_country_modifier: "Hangars de corporation"
+ d_iisc_income_deposit: "Centre d'impôts"
+ d_iisc_income_deposit_desc: "Des cohortes de comptables calculent chaque mois les impôts payés par les corporations établies sur cette planète."
+ iisc_corporation_tax: "Taxes des Corporations"
  ##### Events #####
  iisc_pulse.18.title: "Une Nouvelle Corporation"
  iisc_pulse.18.desc: "C'est un grand jour pour notre économie ! De nombreuses entreprises de [iisc_hq_planet.GetName] se sont agglomérées en une seule corporation ! D'après notre registre, elle s'appelerait [iisc_last_created_corp.GetName]."

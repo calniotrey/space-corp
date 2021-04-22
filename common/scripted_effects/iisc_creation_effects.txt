@@ -47,6 +47,16 @@ iisc_create_corp = {
 				subject_type = iisc_corp_vassal
 			}
 			iisc_set_hq = yes
+			event_target:iisc_hq_planet = {
+				if = {
+					limit = {
+						NOT = {
+							has_deposit = d_iisc_income_deposit
+						}
+					}
+					add_deposit = d_iisc_income_deposit
+				}
+			}
 		}
 	}
 	last_created_country = {
@@ -159,6 +169,26 @@ iisc_create_corp = {
 		# Initialize to 0
 		set_variable = {
 			which = iisc_major_deposit_size
+			value = 0
+		}
+		set_variable = {
+			which = iisc_previous_taxes_energy
+			value = 0
+		}
+		set_variable = {
+			which = iisc_previous_taxes_minerals
+			value = 0
+		}
+		set_variable = {
+			which = iisc_previous_taxes_food
+			value = 0
+		}
+		set_variable = {
+			which = iisc_previous_taxes_alloys
+			value = 0
+		}
+		set_variable = {
+			which = iisc_previous_taxes_consumer_goods
 			value = 0
 		}
 		# to not penalize the budget

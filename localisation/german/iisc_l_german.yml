@@ -25,6 +25,9 @@
  SUBJECT_iisc_corp_vassal: "Konzern"
  SUBJECT_DESC_iisc_corp_vassal: "Dies ist ein Konzern der dem Staat untergeordnet ist."
  iisc_corp_country_modifier: "Konzernkasse"
+ d_iisc_income_deposit: "Steuerzentrum"
+ d_iisc_income_deposit_desc: "Armeen von Buchhaltern berechnen die Höhe der Steuern, die von den auf diesem Planeten ansässigen Konzernen gezahlt werden." # thanks Deepl
+ iisc_corporation_tax: "Corporation Steuern"
  ##### Events #####
  iisc_pulse.18.title: "Ein neuer Konzern entsteht"
  iisc_pulse.18.desc: "Heute ist ein Großartiger Tag für unsere Wirtschaft. Mehrere kleine Unternehmen von [iisc_hq_planet.GetName] haben sich zusammengetan um ein Weltraum-Konzern zu bilden! Laut Unternehmensregister nennt sich der Konzern [iisc_last_created_corp.GetName]."
