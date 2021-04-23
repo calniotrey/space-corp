@@ -474,54 +474,53 @@ iisc_actualize_modmenu_settings = {
 	}
 }
 
-# TRIGGER
-# VARIABLE
-# assumes trigger > 0
-iisc_get_parameter = {
-	set_variable = {
-		which = iisc_value
-		value = 0
-	}
-	set_variable = {
-		which = iisc_temp
-		value = 1
-	}
-	while = {
-		limit = {
-			$TRIGGER$ > iisc_temp
-		}
-		multiply_variable = {
-			which = iisc_temp
-			value = 2
-		}
-	}
-	while = {
-		limit = {
-			check_variable = {
-				which = iisc_temp
-				value > 1				# or whatever
-			}
-		}
-		divide_variable = {
-			which = iisc_temp
-			value = 2
-		}
-		change_variable = {
-			which = iisc_value
-			value = iisc_temp
-		}
-		if = {
-			limit = {
-				$TRIGGER$ < iisc_value
-			}
-			subtract_variable = {
-				which = iisc_value
-				value = iisc_temp
-			}
-		}
-	}
-}
-
+# # TRIGGER
+# # VARIABLE
+# # assumes trigger > 0
+# iisc_get_parameter = {
+# 	set_variable = {
+# 		which = iisc_value
+# 		value = 0
+# 	}
+# 	set_variable = {
+# 		which = iisc_temp
+# 		value = 1
+# 	}
+# 	while = {
+# 		limit = {
+# 			$TRIGGER$ > iisc_temp
+# 		}
+# 		multiply_variable = {
+# 			which = iisc_temp
+# 			value = 2
+# 		}
+# 	}
+# 	while = {
+# 		limit = {
+# 			check_variable = {
+# 				which = iisc_temp
+# 				value > 1				# or whatever
+# 			}
+# 		}
+# 		divide_variable = {
+# 			which = iisc_temp
+# 			value = 2
+# 		}
+# 		change_variable = {
+# 			which = iisc_value
+# 			value = iisc_temp
+# 		}
+# 		if = {
+# 			limit = {
+# 				$TRIGGER$ < iisc_value
+# 			}
+# 			subtract_variable = {
+# 				which = iisc_value
+# 				value = iisc_temp
+# 			}
+# 		}
+# 	}
+# }
 # VARIABLE
 # LIST
 iisc_decompose_into_binary = {

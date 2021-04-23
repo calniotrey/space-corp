@@ -1,7 +1,7 @@
 d_iisc_income_deposit = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	icon = d_central_spire
+	icon = d_city
 	resources = {
 		category = iisc_corporation_tax
 		produces = {

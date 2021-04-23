@@ -7,7 +7,6 @@
 [*] Improve budgeting ai
 [*] Fix military AI bug where fleets could end up in perpetual attack loop after corp changing overlord
 [*] Hide "show mod menu" edict when DMM is installed
-
 1.1
 [*] Updated mod for 3.0.1
 [*] Added DMM support, removed the edict firing up the mod menu

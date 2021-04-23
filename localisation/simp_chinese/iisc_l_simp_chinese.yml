@@ -26,7 +26,7 @@
  SUBJECT_DESC_iisc_corp_vassal: "This is a subnational corporate entity."
  iisc_corp_country_modifier: "Corporate Coffers"
  d_iisc_income_deposit: "Tax Center"
- d_iisc_income_deposit_desc: "Armies of accountants calculate the amount of taxes payed by the corporations established on this planet."
+ d_iisc_income_deposit_desc: "Armies of accountants calculate the amount of taxes paid by the corporations established on this planet."
  iisc_corporation_tax: "Corporation Taxes"
  ##### Events #####
  iisc_pulse.18.title: "A New Corporation"
