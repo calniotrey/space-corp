@@ -1,3 +1,12 @@
+1.1.1
+[*] Added a deposit on HQ planets that produce the taxes income
+[*] Make HQ deposits cost increase linearly
+[*] Increase HQ deposits production for the corp
+[*] Switch to 3.0 added effects, less RAM usage, negligible perf enhancement
+[*] Hard cap mining/science station to 10 each.
+[*] Improve budgeting ai
+[*] Fix military AI bug where fleets could end up in perpetual attack loop after corp changing overlord
+[*] Hide "show mod menu" edict when DMM is installed
 1.1
 [*] Updated mod for 3.0.1
 [*] Added DMM support, removed the edict firing up the mod menu
