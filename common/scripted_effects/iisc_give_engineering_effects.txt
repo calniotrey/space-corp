@@ -15,9 +15,9 @@ iisc_get_random_engineering_tech_if_possible = {
 					value < iisc_tech_cost_t1
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_engineering_points
-				value = iisc_tech_cost_t1
+			add_resource = {
+				engineering_research = -1
+				mult = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_space_mining_1
@@ -42,9 +42,9 @@ iisc_get_random_engineering_tech_if_possible = {
 					value < iisc_tech_cost_t1
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_engineering_points
-				value = iisc_tech_cost_t1
+			add_resource = {
+				engineering_research = -1
+				mult = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_space_mining_2
@@ -69,9 +69,9 @@ iisc_get_random_engineering_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_engineering_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				engineering_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_space_mining_3
@@ -96,9 +96,9 @@ iisc_get_random_engineering_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_engineering_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				engineering_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_space_mining_4
@@ -123,9 +123,9 @@ iisc_get_random_engineering_tech_if_possible = {
 					value < iisc_tech_cost_t3
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_engineering_points
-				value = iisc_tech_cost_t3
+			add_resource = {
+				engineering_research = -1
+				mult = iisc_tech_cost_t3
 			}
 			give_technology = {
 				tech = tech_space_mining_5
@@ -150,9 +150,9 @@ iisc_get_random_engineering_tech_if_possible = {
 					value < iisc_tech_cost_t1
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_engineering_points
-				value = iisc_tech_cost_t1
+			add_resource = {
+				engineering_research = -1
+				mult = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_engineering_1
@@ -177,9 +177,9 @@ iisc_get_random_engineering_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_engineering_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				engineering_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_engineering_2
@@ -204,9 +204,9 @@ iisc_get_random_engineering_tech_if_possible = {
 					value < iisc_tech_cost_t4
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_engineering_points
-				value = iisc_tech_cost_t4
+			add_resource = {
+				engineering_research = -1
+				mult = iisc_tech_cost_t4
 			}
 			give_technology = {
 				tech = tech_engineering_3
@@ -231,9 +231,9 @@ iisc_get_random_engineering_tech_if_possible = {
 					value < iisc_tech_cost_t1
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_engineering_points
-				value = iisc_tech_cost_t1
+			add_resource = {
+				engineering_research = -1
+				mult = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_mining_1
@@ -258,9 +258,9 @@ iisc_get_random_engineering_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_engineering_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				engineering_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_mining_2
@@ -285,9 +285,9 @@ iisc_get_random_engineering_tech_if_possible = {
 					value < iisc_tech_cost_t3
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_engineering_points
-				value = iisc_tech_cost_t3
+			add_resource = {
+				engineering_research = -1
+				mult = iisc_tech_cost_t3
 			}
 			give_technology = {
 				tech = tech_mining_3
