@@ -1,0 +1,91 @@
+iisc_civic_inquisitive_intelligence = { #research
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = iisc_auth_hive_corporate
+		}
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = iisc_civic_vigilant_submind
+				value = iisc_civic_migrating_swarm
+				value = iisc_civic_seed_biont
+			}
+		}
+	}
+	random_weight = {
+		base = 1000
+	}
+}
+
+iisc_civic_vigilant_submind = { #defense
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = iisc_auth_hive_corporate
+		}
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = iisc_civic_inquisitive_intelligence
+				value = iisc_civic_migrating_swarm
+				value = iisc_civic_seed_biont
+			}
+		}
+	}
+	random_weight = {
+		base = 1000
+	}
+}
+
+iisc_civic_migrating_swarm = { #expansion
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = iisc_auth_hive_corporate
+		}
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = iisc_civic_inquisitive_intelligence
+				value = iisc_civic_vigilant_submind
+				value = iisc_civic_seed_biont
+			}
+		}
+	}
+	random_weight = {
+		base = 1000
+	}
+}
+
+iisc_civic_seed_biont = { #terraforming
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = iisc_auth_hive_corporate
+		}
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = iisc_civic_inquisitive_intelligence
+				value = iisc_civic_vigilant_submind
+				value = iisc_civic_migrating_swarm
+			}
+		}
+	}
+	random_weight = {
+		base = 1000
+	}
+}

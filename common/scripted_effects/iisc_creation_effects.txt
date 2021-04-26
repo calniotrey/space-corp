@@ -29,37 +29,68 @@ iisc_create_corp = {
 		}
 		save_event_target_as = iisc_original_pop
 	}
-	create_country = {
-		type = iisc_space_corporation
-		name = THIS
-		authority = iisc_auth_corporate
-		origin = iisc_origin_corporate_merger
-		ethos = THIS
-		flag = THIS
-		name_list = THIS
-		species = event_target:iisc_original_pop.species
-		civics = random
-		auto_delete = no
-		effect = {
-			establish_communications_no_message = prev
-			set_subject_of = {
-				who = prev
-				subject_type = iisc_corp_vassal
+	switch = {
+		trigger = has_authority
+		auth_machine_intelligence = {
+			create_country = {
+				type = iisc_space_corporation
+				name = THIS
+				authority = iisc_auth_machine_corporate
+				origin = iisc_origin_corporate_merger
+				ethos = THIS
+				flag = THIS
+				name_list = THIS
+				species = event_target:iisc_original_pop.species
+				civics = random
+				auto_delete = no
 			}
-			iisc_set_hq = yes
-			event_target:iisc_hq_planet = {
-				if = {
-					limit = {
-						NOT = {
-							has_deposit = d_iisc_income_deposit
-						}
-					}
-					add_deposit = d_iisc_income_deposit
-				}
+		}
+		auth_hive_mind = {
+			create_country = {
+				type = iisc_space_corporation
+				name = THIS
+				authority = iisc_auth_hive_corporate
+				origin = iisc_origin_corporate_merger
+				ethos = THIS
+				flag = THIS
+				name_list = THIS
+				species = event_target:iisc_original_pop.species
+				civics = random
+				auto_delete = no
+			}
+		}
+		default = {
+			create_country = {
+				type = iisc_space_corporation
+				name = THIS
+				authority = iisc_auth_corporate
+				origin = iisc_origin_corporate_merger
+				ethos = THIS
+				flag = THIS
+				name_list = THIS
+				species = event_target:iisc_original_pop.species
+				civics = random
+				auto_delete = no
 			}
 		}
 	}
 	last_created_country = {
+		establish_communications_no_message = prev
+		set_subject_of = {
+			who = prev
+			subject_type = iisc_corp_vassal
+		}
+		iisc_set_hq = yes
+		event_target:iisc_hq_planet = {
+			if = {
+				limit = {
+					NOT = {
+						has_deposit = d_iisc_income_deposit
+					}
+				}
+				add_deposit = d_iisc_income_deposit
+			}
+		}
 		clear_ethos = yes		# dunno if needed
 		event_target:iisc_original_pop = {
 			switch = {

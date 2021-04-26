@@ -186,7 +186,11 @@ iisc_civic_space_corp = {
 	}
 	potential = {
 		authority = {
-			value = iisc_auth_corporate
+			OR = {
+				value = iisc_auth_corporate
+				value = iisc_auth_machine_corporate
+				value = iisc_auth_hive_corporate
+			}
 		}
 	}
 	random_weight = {
@@ -203,7 +207,11 @@ iisc_origin_corporate_merger = {
 	}
 	possible = {
 		authority = {
-			value = iisc_auth_corporate
+			OR = {
+				value = iisc_auth_corporate
+				value = iisc_auth_machine_corporate
+				value = iisc_auth_hive_corporate
+			}
 		}
 	}
 	description = iisc_origin_corporate_merger_effect

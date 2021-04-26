@@ -1,0 +1,91 @@
+iisc_civic_computational_framework = { #research
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = iisc_auth_machine_corporate
+		}
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = iisc_civic_self_defense_prototype
+				value = iisc_civic_replicative_automaton
+				value = iisc_civic_adaptive_subroutine
+			}
+		}
+	}
+	random_weight = {
+		base = 1000
+	}
+}
+
+iisc_civic_self_defense_prototype = { #defense
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = iisc_auth_machine_corporate
+		}
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = iisc_civic_computational_framework
+				value = iisc_civic_replicative_automaton
+				value = iisc_civic_adaptive_subroutine
+			}
+		}
+	}
+	random_weight = {
+		base = 1000
+	}
+}
+
+iisc_civic_replicative_automaton = { #expansion
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = iisc_auth_machine_corporate
+		}
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = iisc_civic_computational_framework
+				value = iisc_civic_self_defense_prototype
+				value = iisc_civic_adaptive_subroutine
+			}
+		}
+	}
+	random_weight = {
+		base = 1000
+	}
+}
+
+iisc_civic_adaptive_subroutine = { #terraforming
+	playable = {
+		always = no
+	}
+	potential = {
+		authority = {
+			value = iisc_auth_machine_corporate
+		}
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = iisc_civic_computational_framework
+				value = iisc_civic_self_defense_prototype
+				value = iisc_civic_replicative_automaton
+			}
+		}
+	}
+	random_weight = {
+		base = 1000
+	}
+}
