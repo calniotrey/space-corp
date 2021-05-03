@@ -15,9 +15,9 @@ iisc_get_random_physics_tech_if_possible = {
 					value < iisc_tech_cost_t1
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_physics_points
-				value = iisc_tech_cost_t1
+			add_resource = {
+				physics_research = -1
+				mult = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_space_science_1
@@ -42,9 +42,9 @@ iisc_get_random_physics_tech_if_possible = {
 					value < iisc_tech_cost_t1
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_physics_points
-				value = iisc_tech_cost_t1
+			add_resource = {
+				physics_research = -1
+				mult = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_space_science_2
@@ -69,9 +69,9 @@ iisc_get_random_physics_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_physics_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				physics_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_space_science_3
@@ -96,9 +96,9 @@ iisc_get_random_physics_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_physics_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				physics_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_space_science_4
@@ -123,9 +123,9 @@ iisc_get_random_physics_tech_if_possible = {
 					value < iisc_tech_cost_t3
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_physics_points
-				value = iisc_tech_cost_t3
+			add_resource = {
+				physics_research = -1
+				mult = iisc_tech_cost_t3
 			}
 			give_technology = {
 				tech = tech_space_science_5
@@ -150,9 +150,9 @@ iisc_get_random_physics_tech_if_possible = {
 					value < iisc_tech_cost_t1
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_physics_points
-				value = iisc_tech_cost_t1
+			add_resource = {
+				physics_research = -1
+				mult = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_physics_1
@@ -177,9 +177,9 @@ iisc_get_random_physics_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_physics_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				physics_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_physics_2
@@ -204,9 +204,9 @@ iisc_get_random_physics_tech_if_possible = {
 					value < iisc_tech_cost_t4
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_physics_points
-				value = iisc_tech_cost_t4
+			add_resource = {
+				physics_research = -1
+				mult = iisc_tech_cost_t4
 			}
 			give_technology = {
 				tech = tech_physics_3
@@ -231,9 +231,9 @@ iisc_get_random_physics_tech_if_possible = {
 					value < iisc_tech_cost_t1
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_physics_points
-				value = iisc_tech_cost_t1
+			add_resource = {
+				physics_research = -1
+				mult = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_power_plant_2
@@ -258,9 +258,9 @@ iisc_get_random_physics_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_physics_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				physics_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_power_plant_3
@@ -285,9 +285,9 @@ iisc_get_random_physics_tech_if_possible = {
 					value < iisc_tech_cost_t3
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_physics_points
-				value = iisc_tech_cost_t3
+			add_resource = {
+				physics_research = -1
+				mult = iisc_tech_cost_t3
 			}
 			give_technology = {
 				tech = tech_power_plant_4

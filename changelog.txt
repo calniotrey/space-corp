@@ -1,3 +1,5 @@
+1.1.2
+[*] Fix a bug where corps researching a tech would not remove the tech cost from their tech points
 1.1.1
 [*] Added a deposit on HQ planets that produce the taxes income
 [*] Make HQ deposits cost increase linearly

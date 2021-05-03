@@ -15,9 +15,9 @@ iisc_get_random_society_tech_if_possible = {
 					value < iisc_tech_cost_t1
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_society_points
-				value = iisc_tech_cost_t1
+			add_resource = {
+				society_research = -1
+				mult = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_eco_simulation
@@ -42,9 +42,9 @@ iisc_get_random_society_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_society_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				society_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_gene_crops
@@ -69,9 +69,9 @@ iisc_get_random_society_tech_if_possible = {
 					value < iisc_tech_cost_t3
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_society_points
-				value = iisc_tech_cost_t3
+			add_resource = {
+				society_research = -1
+				mult = iisc_tech_cost_t3
 			}
 			give_technology = {
 				tech = tech_nano_vitality_crops
@@ -102,9 +102,9 @@ iisc_get_random_society_tech_if_possible = {
 					value < iisc_tech_cost_t4
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_society_points
-				value = iisc_tech_cost_t4
+			add_resource = {
+				society_research = -1
+				mult = iisc_tech_cost_t4
 			}
 			give_technology = {
 				tech = tech_nutrient_replication
@@ -129,9 +129,9 @@ iisc_get_random_society_tech_if_possible = {
 					value < iisc_tech_cost_t1
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_society_points
-				value = iisc_tech_cost_t1
+			add_resource = {
+				society_research = -1
+				mult = iisc_tech_cost_t1
 			}
 			give_technology = {
 				tech = tech_society_1
@@ -156,9 +156,9 @@ iisc_get_random_society_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_society_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				society_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_society_2
@@ -183,9 +183,9 @@ iisc_get_random_society_tech_if_possible = {
 					value < iisc_tech_cost_t4
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_society_points
-				value = iisc_tech_cost_t4
+			add_resource = {
+				society_research = -1
+				mult = iisc_tech_cost_t4
 			}
 			give_technology = {
 				tech = tech_society_3
@@ -225,9 +225,9 @@ iisc_get_random_society_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_society_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				society_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_colonization_2
@@ -267,9 +267,9 @@ iisc_get_random_society_tech_if_possible = {
 					value < iisc_tech_cost_t2
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_society_points
-				value = iisc_tech_cost_t2
+			add_resource = {
+				society_research = -1
+				mult = iisc_tech_cost_t2
 			}
 			give_technology = {
 				tech = tech_colonization_3
@@ -309,9 +309,9 @@ iisc_get_random_society_tech_if_possible = {
 					value < iisc_tech_cost_t3
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_society_points
-				value = iisc_tech_cost_t3
+			add_resource = {
+				society_research = -1
+				mult = iisc_tech_cost_t3
 			}
 			give_technology = {
 				tech = tech_colonization_4
@@ -351,9 +351,9 @@ iisc_get_random_society_tech_if_possible = {
 					value < iisc_tech_cost_t4
 				}
 			}
-			subtract_variable = {
-				which = iisc_stored_society_points
-				value = iisc_tech_cost_t4
+			add_resource = {
+				society_research = -1
+				mult = iisc_tech_cost_t4
 			}
 			give_technology = {
 				tech = tech_colonization_5
