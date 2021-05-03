@@ -433,6 +433,115 @@ iisc_downgrade_hq_deposit = {
 	}
 }
 
+# this = planet
+# changes the deposit on the planet to be adapted to the authority of the owner
+# does not change the level of the deposit
+iisc_reset_hq_deposit_authority = {
+	iisc_reset_hq_deposit_authority_aux = {
+		TYPE = d_iisc_research_consortium
+	}
+	iisc_reset_hq_deposit_authority_aux = {
+		TYPE = d_iisc_engineering_firm
+	}
+	iisc_reset_hq_deposit_authority_aux = {
+		TYPE = d_iisc_mining_union
+	}
+	iisc_reset_hq_deposit_authority_aux = {
+		TYPE = d_iisc_security_force
+	}
+	iisc_reset_hq_deposit_authority_aux = {
+		TYPE = d_iisc_logistics_agency
+	}
+	iisc_reset_hq_deposit_authority_aux = {
+		TYPE = d_iisc_exploration_initiative
+	}
+	iisc_reset_hq_deposit_authority_aux = {
+		TYPE = d_iisc_financial_group
+	}
+}
+
+# this = planet
+# TYPE = deposit type
+iisc_reset_hq_deposit_authority_aux = {
+	iisc_reset_hq_deposit_authority_aux_aux = {
+		TYPE = $TYPE$
+		LEVEL = 1
+	}
+	iisc_reset_hq_deposit_authority_aux_aux = {
+		TYPE = $TYPE$
+		LEVEL = 2
+	}
+	iisc_reset_hq_deposit_authority_aux_aux = {
+		TYPE = $TYPE$
+		LEVEL = 3
+	}
+	iisc_reset_hq_deposit_authority_aux_aux = {
+		TYPE = $TYPE$
+		LEVEL = 4
+	}
+	iisc_reset_hq_deposit_authority_aux_aux = {
+		TYPE = $TYPE$
+		LEVEL = 5
+	}
+	iisc_reset_hq_deposit_authority_aux_aux = {
+		TYPE = $TYPE$
+		LEVEL = 6
+	}
+	iisc_reset_hq_deposit_authority_aux_aux = {
+		TYPE = $TYPE$
+		LEVEL = 7
+	}
+	iisc_reset_hq_deposit_authority_aux_aux = {
+		TYPE = $TYPE$
+		LEVEL = 8
+	}
+	iisc_reset_hq_deposit_authority_aux_aux = {
+		TYPE = $TYPE$
+		LEVEL = 9
+	}
+	iisc_reset_hq_deposit_authority_aux_aux = {
+		TYPE = $TYPE$
+		LEVEL = 10
+	}
+}
+
+# this = planet
+# TYPE = deposit type
+# LEVEL = deposit level
+iisc_reset_hq_deposit_authority_aux_aux = {
+	if = {
+		limit = {
+			OR = {
+				has_deposit = $TYPE$_regular_$LEVEL$
+				has_deposit = $TYPE$_hive_$LEVEL$
+				has_deposit = $TYPE$_machine_$LEVEL$
+			}
+		}
+		remove_deposit = $TYPE$_regular_$LEVEL$
+		remove_deposit = $TYPE$_hive_$LEVEL$
+		remove_deposit = $TYPE$_machine_$LEVEL$
+		if = {
+			limit = {
+				owner = {
+					has_authority = auth_hive_mind
+				}
+			}
+			add_deposit = $TYPE$_hive_$LEVEL$
+		}
+		else_if = {
+			limit = {
+				owner = {
+					has_authority = auth_machine_intelligence
+				}
+			}
+			add_deposit = $TYPE$_machine_$LEVEL$
+		}
+		else = {
+			add_deposit = $TYPE$_regular_$LEVEL$
+		}
+	}
+}
+
 # this = corp
 # hq set
 # this removes ALL of the deposits added by this corp

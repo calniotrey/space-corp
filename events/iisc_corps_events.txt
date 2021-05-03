@@ -452,3 +452,18 @@ country_event = {
 		}
 	}
 }
+
+# This = subject
+# From = subject's overlord
+country_event = {
+	id = iisc_corps.110
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_country_type = iisc_space_corporation
+	}
+	immediate = {
+		# mark that the corp should use iisc_reset_hq_deposit_authority
+		set_country_flag = iisc_should_reset_hq_deposit_authority
+	}
+}
