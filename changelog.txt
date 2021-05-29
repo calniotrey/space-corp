@@ -1,3 +1,5 @@
+1.1.3
+[*] Limit corps fleet power to around 1/4 of the overlord 
 1.1.2
 [*] Fix a bug where corps researching a tech would not remove the tech cost from their tech points
 [*] Change the HQ deposits type when the corps change overlord (hive => machine for example)
