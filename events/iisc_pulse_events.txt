@@ -227,6 +227,17 @@ country_event = {
 		# handle deposits
 		if = {
 			limit = {
+				check_variable = {
+					which = iisc_major_deposit_size
+					value > 0
+				}
+				iisc_has_hq_deposits = no
+			}
+			# the deposits were removed for some reason, add them back
+			iisc_add_back_hq_deposits = yes
+		}
+		else_if = {
+			limit = {
 				has_country_flag = iisc_should_reset_hq_deposit_authority
 			}
 			remove_country_flag = iisc_should_reset_hq_deposit_authority
