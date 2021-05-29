@@ -16,6 +16,7 @@ iisc_should_create_military_fleet = {
 		value < overlord
 		mode = multiply
 	}
+	iisc_can_spawn_ships = yes
 	NOT = {
 		any_owned_fleet = {
 			is_ship_class = shipclass_military

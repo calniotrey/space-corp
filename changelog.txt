@@ -1,4 +1,5 @@
 1.1.3
+[*] Block corp ship spawn when solar system starbase is captured and when planet is occupied
 [*] Check and respawn deposits when needed (if they were removed by a mod/terraformation/...)
 [*] Limit corps fleet power to around 1/4 of the overlord 
 1.1.2

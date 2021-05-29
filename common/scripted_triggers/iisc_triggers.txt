@@ -99,11 +99,33 @@ iisc_is_scientist_idle = {
 }
 
 # this = corp
+# hq set
+iisc_can_spawn_ships = {
+	event_target:iisc_hq_planet = {
+		has_orbital_bombardment = no
+		# starbase is not captured
+		solar_system.starbase.fleet.owner = {
+			# the fleet owner is the controller
+			prev.solar_system.starbase.owner = {
+				# the starbase owner is the owner
+				is_same_value = prev
+			}
+		}
+		owner = {
+			prev.controller = {
+				is_same_value = prev
+			}
+		}
+	}
+}
+
+# this = corp
 iisc_should_build_science_ship = {
 	check_variable = {
 		which = iisc_budget_science_ship
 		value >= @iisc_science_ship_cost
 	}
+	iisc_can_spawn_ships = yes
 	iisc_below_science_ship_cap = yes
 }
 
@@ -139,6 +161,7 @@ iisc_should_build_builder = {
 		which = iisc_budget_builder
 		value >= @iisc_builder_cost
 	}
+	iisc_can_spawn_ships = yes
 	iisc_below_builders_cap = yes
 }
 
@@ -175,6 +198,7 @@ iisc_should_start_convoy = {
 		which = iisc_budget_convoy
 		value >= @iisc_convoy_min
 	}
+	iisc_can_spawn_ships = yes
 	any_country = {
 		is_country_type = iisc_space_corporation
 		iisc_is_suitable_convoy_partner = yes
