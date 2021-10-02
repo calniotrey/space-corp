@@ -9,6 +9,8 @@
 @iisc_tech_delay_base = 180
 @iisc_tech_delay_random = 180
 # military
+# overlord has 4 times as much military than a corp
+@iisc_overlord_fleet_power_multiple = 4
 @iisc_corp_corvette_cost = 150
 @iisc_corp_destroyer_cost = 300
 @iisc_corp_cruiser_cost = 600
