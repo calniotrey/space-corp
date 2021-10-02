@@ -622,3 +622,80 @@ iisc_remove_hq_deposit_from_corp_aux = {
 		remove_deposit = $TYPE$_regular_10
 	}
 }
+
+# this = corp
+# hq set
+iisc_add_back_hq_deposits = {
+	switch = {
+		trigger = has_civic
+		iisc_civic_research_consortium = {
+			iisc_add_back_hq_deposits_aux = {
+				TYPE = d_iisc_research_consortium
+			}
+		}
+		iisc_civic_engineering_firm = {
+			iisc_add_back_hq_deposits_aux = {
+				TYPE = d_iisc_engineering_firm
+			}
+		}
+		iisc_civic_mining_union = {
+			iisc_add_back_hq_deposits_aux = {
+				TYPE = d_iisc_mining_union
+			}
+		}
+		iisc_civic_security_force = {
+			iisc_add_back_hq_deposits_aux = {
+				TYPE = d_iisc_security_force
+			}
+		}
+		iisc_civic_logistics_agency = {
+			iisc_add_back_hq_deposits_aux = {
+				TYPE = d_iisc_logistics_agency
+			}
+		}
+		iisc_civic_exploration_initiative = {
+			iisc_add_back_hq_deposits_aux = {
+				TYPE = d_iisc_exploration_initiative
+			}
+		}
+		iisc_civic_financial_group = {
+			iisc_add_back_hq_deposits_aux = {
+				TYPE = d_iisc_financial_group
+			}
+		}
+	}
+}
+
+# this = corp
+# hq set
+# TYPE = deposit type
+iisc_add_back_hq_deposits_aux = {
+	while = {
+		count = iisc_major_deposit_size
+		if = {
+			limit = {
+				event_target:iisc_hq_planet.owner = {
+					has_authority = auth_machine_intelligence
+				}
+			}
+			iisc_upgrade_hq_deposit = {
+				TYPE = $TYPE$_machine
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:iisc_hq_planet.owner = {
+					has_authority = auth_hive_mind
+				}
+			}
+			iisc_upgrade_hq_deposit = {
+				TYPE = $TYPE$_hive
+			}
+		}
+		else = {
+			iisc_upgrade_hq_deposit = {
+				TYPE = $TYPE$_regular
+			}
+		}
+	}
+}
