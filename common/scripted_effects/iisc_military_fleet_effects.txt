@@ -881,23 +881,11 @@ iisc_select_patrolling_destination = {
 
 # this = fleet
 iisc_escort_closest_allied_fleet = {
-	closest_system = {
-		limit = {
-			any_fleet_in_system = {
-				has_fleet_flag = iisc_fleet_needs_escort
-				exists = owner
-				owner = {
-					is_same_value = prevprevprev.owner
-				}
-			}
-		}
-		random_fleet_in_system = {
+	owner = {
+		random_owned_fleet = {
 			limit = {
 				has_fleet_flag = iisc_fleet_needs_escort
-				exists = owner
-				owner = {
-					is_same_value = prevprevprev.owner
-				}
+				exists = solar_system
 			}
 			remove_fleet_flag = iisc_fleet_needs_escort
 			set_fleet_flag = iisc_is_escorted
@@ -913,25 +901,12 @@ iisc_escort_closest_allied_fleet = {
 
 # this = fleet
 iisc_escort_closest_allied_convoy_fleet = {
-	closest_system = {
-		limit = {
-			any_fleet_in_system = {
-				has_fleet_flag = iisc_fleet_needs_escort
-				has_fleet_flag = iisc_convoy
-				exists = owner
-				owner = {
-					is_same_value = prevprevprev.owner
-				}
-			}
-		}
-		random_fleet_in_system = {
+	owner = {
+		random_owned_fleet = {
 			limit = {
 				has_fleet_flag = iisc_fleet_needs_escort
 				has_fleet_flag = iisc_convoy
-				exists = owner
-				owner = {
-					is_same_value = prevprevprev.owner
-				}
+				exists = solar_system
 			}
 			remove_fleet_flag = iisc_fleet_needs_escort
 			set_fleet_flag = iisc_is_escorted
