@@ -217,6 +217,15 @@ country_event = {
 		# handle deposits
 		if = {
 			limit = {
+				has_country_flag = iisc_should_reset_hq_deposit_authority
+			}
+			remove_country_flag = iisc_should_reset_hq_deposit_authority
+			event_target:iisc_hq_planet = {
+				iisc_reset_hq_deposit_authority = yes
+			}
+		}
+		if = {
+			limit = {
 				iisc_should_build_hq_deposit = yes
 			}
 			iisc_build_hq_deposit_if_possible = yes

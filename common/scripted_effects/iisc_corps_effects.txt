@@ -83,6 +83,9 @@ iisc_handle_corp_connection_to_overlord = {
 			who = event_target:iisc_hq_planet.owner
 			subject_type = iisc_corp_vassal
 		}
+		event_target:iisc_hq_planet = {
+			iisc_reset_hq_deposit_authority = yes
+		}
 		# if necessary in the future: scope to overlord and
 		# iisc_count_corps = yes
 		# TODO add an event with a window?
