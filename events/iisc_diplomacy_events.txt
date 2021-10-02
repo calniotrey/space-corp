@@ -100,32 +100,36 @@ country_event = {
 	option = {
 		name = iisc_diplomacy.20.hire_scientist
 		hidden_effect = {
-			if = {
-				limit = {
-					has_country_resource = {
-						type = energy
-						amount > 4095
-					}
-				}
-				SLEX_get_custom_parameter_advanced = {
-					CONDITION_NAME = has_country_resource
-					FIRST_KW = type
-					SECOND_KW = energy
-					THIRD_KW = amount
-					VARIABLE = iisc_energy_stock
-					ROUNDING_ZEROES = "00"
-				}
+			export_resource_stockpile_to_variable = {
+				resource = energy
+				variable = iisc_energy_stock
 			}
-			else = {
-				SLEX_get_custom_parameter_advanced = {
-					CONDITION_NAME = has_country_resource
-					FIRST_KW = type
-					SECOND_KW = energy
-					THIRD_KW = amount
-					VARIABLE = iisc_energy_stock
-					ROUNDING_ZEROES = "0"
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		has_country_resource = {
+			# 			type = energy
+			# 			amount > 4095
+			# 		}
+			# 	}
+			# 	SLEX_get_custom_parameter_advanced = {
+			# 		CONDITION_NAME = has_country_resource
+			# 		FIRST_KW = type
+			# 		SECOND_KW = energy
+			# 		THIRD_KW = amount
+			# 		VARIABLE = iisc_energy_stock
+			# 		ROUNDING_ZEROES = "00"
+			# 	}
+			# }
+			# else = {
+			# 	SLEX_get_custom_parameter_advanced = {
+			# 		CONDITION_NAME = has_country_resource
+			# 		FIRST_KW = type
+			# 		SECOND_KW = energy
+			# 		THIRD_KW = amount
+			# 		VARIABLE = iisc_energy_stock
+			# 		ROUNDING_ZEROES = "0"
+			# 	}
+			# }
 			event_target:iisc_corp_country = {
 				iisc_select_5_random_recruitable_leaders = {
 					CLASS = scientist
@@ -310,32 +314,36 @@ country_event = {
 		name = iisc_diplomacy.21.other_scientists
 		hidden_effect = {
 			iisc_deselect_random_recruitable_leaders = yes
-			if = {
-				limit = {
-					has_country_resource = {
-						type = energy
-						amount > 4095
-					}
-				}
-				SLEX_get_custom_parameter_advanced = {
-					CONDITION_NAME = has_country_resource
-					FIRST_KW = type
-					SECOND_KW = energy
-					THIRD_KW = amount
-					VARIABLE = iisc_energy_stock
-					ROUNDING_ZEROES = "00"
-				}
+			export_resource_stockpile_to_variable = {
+				resource = energy
+				variable = iisc_energy_stock
 			}
-			else = {
-				SLEX_get_custom_parameter_advanced = {
-					CONDITION_NAME = has_country_resource
-					FIRST_KW = type
-					SECOND_KW = energy
-					THIRD_KW = amount
-					VARIABLE = iisc_energy_stock
-					ROUNDING_ZEROES = "0"
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		has_country_resource = {
+			# 			type = energy
+			# 			amount > 4095
+			# 		}
+			# 	}
+			# 	SLEX_get_custom_parameter_advanced = {
+			# 		CONDITION_NAME = has_country_resource
+			# 		FIRST_KW = type
+			# 		SECOND_KW = energy
+			# 		THIRD_KW = amount
+			# 		VARIABLE = iisc_energy_stock
+			# 		ROUNDING_ZEROES = "00"
+			# 	}
+			# }
+			# else = {
+			# 	SLEX_get_custom_parameter_advanced = {
+			# 		CONDITION_NAME = has_country_resource
+			# 		FIRST_KW = type
+			# 		SECOND_KW = energy
+			# 		THIRD_KW = amount
+			# 		VARIABLE = iisc_energy_stock
+			# 		ROUNDING_ZEROES = "0"
+			# 	}
+			# }
 			event_target:iisc_corp_country = {
 				iisc_select_5_random_recruitable_leaders = {
 					CLASS = scientist

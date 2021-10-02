@@ -148,7 +148,7 @@ iisc_split_disbanded_corp_money = {
 					}
 					set_variable = {
 						which = iisc_corp_money_to_give
-						value = prevprev
+						value = prevprev.iisc_corp_money_to_give
 					}
 					add_resource = {
 						energy = 1
@@ -222,46 +222,34 @@ iisc_destroy_corp = {
 				remove_deposit = d_iisc_income_deposit
 				subtract_variable = {
 					which = iisc_taxes_energy
-					value = {
-						scope = prev
-						variable = iisc_previous_taxes_energy
-					}
+					value = prev.iisc_previous_taxes_energy
 				}
 				subtract_variable = {
 					which = iisc_taxes_minerals
-					value = {
-						scope = prev
-						variable = iisc_previous_taxes_minerals
-					}
+					value = prev.iisc_previous_taxes_minerals
 				}
 				subtract_variable = {
 					which = iisc_taxes_food
-					value = {
-						scope = prev
-						variable = iisc_previous_taxes_food
-					}
+					value = prev.iisc_previous_taxes_food
 				}
 				subtract_variable = {
 					which = iisc_taxes_alloys
-					value = {
-						scope = prev
-						variable = iisc_previous_taxes_alloys
-					}
+					value = prev.iisc_previous_taxes_alloys
 				}
 				subtract_variable = {
 					which = iisc_taxes_consumer_goods
-					value = {
-						scope = prev
-						variable = iisc_previous_taxes_consumer_goods
-					}
+					value = prev.iisc_previous_taxes_consumer_goods
 				}
 			}
 			iisc_remove_hq_deposit_from_corp = yes
 		}
-		every_mining_station = {
-			delete_fleet = this
-		}
-		every_research_station = {
+		every_orbital_station = {
+			limit = {
+				OR = {
+					is_ship_class = shipclass_mining_station
+					is_ship_class = shipclass_research_station
+				}
+			}
 			delete_fleet = this
 		}
 		every_owned_fleet = {
@@ -1453,7 +1441,7 @@ iisc_compute_and_tax_space_corp_income_from_resource = {
 		overlord = {
 			set_variable = {
 				which = iisc_$RESOURCE$_income
-				value = prev
+				value = prev.iisc_$RESOURCE$_income
 			}
 			set_variable = {
 				which = iisc_taxes
@@ -1488,7 +1476,7 @@ iisc_compute_and_tax_space_corp_income_from_resource = {
 				# that way, iisc_taxes_$RESOURCE$ should always have the sum of the taxes from every corps on that HQ
 				set_variable = {
 					which = iisc_previous_taxes_$RESOURCE$
-					value = prevprev
+					value = prevprev.iisc_previous_taxes_$RESOURCE$
 				}
 				subtract_variable = {
 					which = iisc_taxes_$RESOURCE$
@@ -1496,10 +1484,7 @@ iisc_compute_and_tax_space_corp_income_from_resource = {
 				}
 				change_variable = {
 					which = iisc_taxes_$RESOURCE$
-					value = {
-						scope = prev
-						variable = iisc_taxes
-					}
+					value = prev.iisc_taxes
 				}
 				# decompose it into a list of 0 and 1 up to 1023
 				# remark: iisc_taxes_$RESOURCE$_0 is the modulo by 2 => might not be integer => we check in the deposit if >= 1
@@ -1515,7 +1500,7 @@ iisc_compute_and_tax_space_corp_income_from_resource = {
 			prev = {
 				set_variable = {
 					which = iisc_taxes
-					value = prev
+					value = prev.iisc_taxes
 				}
 				set_variable = {
 					which = iisc_previous_taxes_$RESOURCE$

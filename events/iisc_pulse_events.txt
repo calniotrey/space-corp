@@ -178,12 +178,6 @@ country_event = {
 			trigger = fleet_power
 			variable = iisc_current_fleet_power
 		}
-		overlord = {
-			export_trigger_value_to_variable = {
-				trigger = fleet_power
-				variable = iisc_current_fleet_power
-			}
-		}
 		# build ships
 		if = {
 			limit = {

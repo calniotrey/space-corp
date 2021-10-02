@@ -12,9 +12,8 @@ iisc_should_create_military_fleet = {
 	}
 	check_variable_arithmetic = {
 		which = iisc_current_fleet_power
-		by = @iisc_overlord_fleet_power_multiple
-		value < overlord
-		mode = multiply
+		multiply = @iisc_overlord_fleet_power_multiple
+		value < overlord.trigger:fleet_power
 	}
 	iisc_can_spawn_ships = yes
 	NOT = {
@@ -36,9 +35,8 @@ iisc_should_reinforce_a_fleet = {
 	}
 	check_variable_arithmetic = {
 		which = iisc_current_fleet_power
-		by = @iisc_overlord_fleet_power_multiple
-		value < overlord
-		mode = multiply
+		multiply = @iisc_overlord_fleet_power_multiple
+		value < overlord.trigger:fleet_power
 	}
 	count_owned_fleet = {
 		count >= 5

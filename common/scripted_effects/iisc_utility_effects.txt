@@ -187,11 +187,11 @@ iisc_compute_license_and_stations_cost = {
 		}
 		set_variable = {
 			which = iisc_mining_license_cost
-			value = prev
+			value = prev.iisc_mining_license_cost
 		}
 		set_variable = {
 			which = iisc_mining_station_total_cost
-			value = prev
+			value = prev.iisc_mining_station_total_cost
 		}
 	}
 }
