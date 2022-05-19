@@ -1,5 +1,5 @@
 d_iisc_research_consortium_hive_1 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_central_spire
 	planet_modifier = {
@@ -11,7 +11,7 @@ d_iisc_research_consortium_hive_1 = {
 }
 
 d_iisc_research_consortium_hive_2 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_central_spire
 	planet_modifier = {
@@ -24,7 +24,7 @@ d_iisc_research_consortium_hive_2 = {
 }
 
 d_iisc_research_consortium_hive_3 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_central_spire
 	planet_modifier = {
@@ -37,7 +37,7 @@ d_iisc_research_consortium_hive_3 = {
 }
 
 d_iisc_research_consortium_hive_4 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_central_spire
 	planet_modifier = {
@@ -50,7 +50,7 @@ d_iisc_research_consortium_hive_4 = {
 }
 
 d_iisc_research_consortium_hive_5 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_central_spire
 	planet_modifier = {
@@ -66,7 +66,7 @@ d_iisc_research_consortium_hive_5 = {
 }
 
 d_iisc_research_consortium_hive_6 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_central_spire
 	planet_modifier = {
@@ -82,7 +82,7 @@ d_iisc_research_consortium_hive_6 = {
 }
 
 d_iisc_research_consortium_hive_7 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_central_spire
 	planet_modifier = {
@@ -98,7 +98,7 @@ d_iisc_research_consortium_hive_7 = {
 }
 
 d_iisc_research_consortium_hive_8 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_central_spire
 	planet_modifier = {
@@ -115,7 +115,7 @@ d_iisc_research_consortium_hive_8 = {
 }
 
 d_iisc_research_consortium_hive_9 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_central_spire
 	planet_modifier = {
@@ -132,7 +132,7 @@ d_iisc_research_consortium_hive_9 = {
 }
 
 d_iisc_research_consortium_hive_10 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_central_spire
 	planet_modifier = {
@@ -150,7 +150,7 @@ d_iisc_research_consortium_hive_10 = {
 }
 
 d_iisc_engineering_firm_hive_1 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_metal_boneyard
 	planet_modifier = {
@@ -162,7 +162,7 @@ d_iisc_engineering_firm_hive_1 = {
 }
 
 d_iisc_engineering_firm_hive_2 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_metal_boneyard
 	planet_modifier = {
@@ -175,7 +175,7 @@ d_iisc_engineering_firm_hive_2 = {
 }
 
 d_iisc_engineering_firm_hive_3 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_metal_boneyard
 	planet_modifier = {
@@ -188,7 +188,7 @@ d_iisc_engineering_firm_hive_3 = {
 }
 
 d_iisc_engineering_firm_hive_4 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_metal_boneyard
 	planet_modifier = {
@@ -202,7 +202,7 @@ d_iisc_engineering_firm_hive_4 = {
 }
 
 d_iisc_engineering_firm_hive_5 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_metal_boneyard
 	planet_modifier = {
@@ -218,7 +218,7 @@ d_iisc_engineering_firm_hive_5 = {
 }
 
 d_iisc_engineering_firm_hive_6 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_metal_boneyard
 	planet_modifier = {
@@ -234,7 +234,7 @@ d_iisc_engineering_firm_hive_6 = {
 }
 
 d_iisc_engineering_firm_hive_7 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_metal_boneyard
 	planet_modifier = {
@@ -250,7 +250,7 @@ d_iisc_engineering_firm_hive_7 = {
 }
 
 d_iisc_engineering_firm_hive_8 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_metal_boneyard
 	planet_modifier = {
@@ -267,7 +267,7 @@ d_iisc_engineering_firm_hive_8 = {
 }
 
 d_iisc_engineering_firm_hive_9 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_metal_boneyard
 	planet_modifier = {
@@ -284,7 +284,7 @@ d_iisc_engineering_firm_hive_9 = {
 }
 
 d_iisc_engineering_firm_hive_10 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_metal_boneyard
 	planet_modifier = {
@@ -302,7 +302,7 @@ d_iisc_engineering_firm_hive_10 = {
 }
 
 d_iisc_mining_union_hive_1 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
@@ -314,7 +314,7 @@ d_iisc_mining_union_hive_1 = {
 }
 
 d_iisc_mining_union_hive_2 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
@@ -326,7 +326,7 @@ d_iisc_mining_union_hive_2 = {
 }
 
 d_iisc_mining_union_hive_3 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
@@ -338,7 +338,7 @@ d_iisc_mining_union_hive_3 = {
 }
 
 d_iisc_mining_union_hive_4 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
@@ -351,7 +351,7 @@ d_iisc_mining_union_hive_4 = {
 }
 
 d_iisc_mining_union_hive_5 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
@@ -365,7 +365,7 @@ d_iisc_mining_union_hive_5 = {
 }
 
 d_iisc_mining_union_hive_6 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
@@ -380,7 +380,7 @@ d_iisc_mining_union_hive_6 = {
 }
 
 d_iisc_mining_union_hive_7 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
@@ -396,7 +396,7 @@ d_iisc_mining_union_hive_7 = {
 }
 
 d_iisc_mining_union_hive_8 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
@@ -412,7 +412,7 @@ d_iisc_mining_union_hive_8 = {
 }
 
 d_iisc_mining_union_hive_9 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
@@ -428,7 +428,7 @@ d_iisc_mining_union_hive_9 = {
 }
 
 d_iisc_mining_union_hive_10 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
@@ -446,7 +446,7 @@ d_iisc_mining_union_hive_10 = {
 }
 
 d_iisc_security_force_hive_1 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_derelict_interior
 	planet_modifier = {
@@ -458,7 +458,7 @@ d_iisc_security_force_hive_1 = {
 }
 
 d_iisc_security_force_hive_2 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_derelict_interior
 	planet_modifier = {
@@ -471,7 +471,7 @@ d_iisc_security_force_hive_2 = {
 }
 
 d_iisc_security_force_hive_3 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_derelict_interior
 	planet_modifier = {
@@ -484,7 +484,7 @@ d_iisc_security_force_hive_3 = {
 }
 
 d_iisc_security_force_hive_4 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_derelict_interior
 	planet_modifier = {
@@ -498,7 +498,7 @@ d_iisc_security_force_hive_4 = {
 }
 
 d_iisc_security_force_hive_5 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_derelict_interior
 	planet_modifier = {
@@ -513,7 +513,7 @@ d_iisc_security_force_hive_5 = {
 }
 
 d_iisc_security_force_hive_6 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_derelict_interior
 	planet_modifier = {
@@ -528,7 +528,7 @@ d_iisc_security_force_hive_6 = {
 }
 
 d_iisc_security_force_hive_7 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_derelict_interior
 	planet_modifier = {
@@ -543,7 +543,7 @@ d_iisc_security_force_hive_7 = {
 }
 
 d_iisc_security_force_hive_8 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_derelict_interior
 	planet_modifier = {
@@ -559,7 +559,7 @@ d_iisc_security_force_hive_8 = {
 }
 
 d_iisc_security_force_hive_9 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_derelict_interior
 	planet_modifier = {
@@ -575,7 +575,7 @@ d_iisc_security_force_hive_9 = {
 }
 
 d_iisc_security_force_hive_10 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_derelict_interior
 	planet_modifier = {
@@ -592,7 +592,7 @@ d_iisc_security_force_hive_10 = {
 }
 
 d_iisc_logistics_agency_hive_1 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_building
 	planet_modifier = {
@@ -604,7 +604,7 @@ d_iisc_logistics_agency_hive_1 = {
 }
 
 d_iisc_logistics_agency_hive_2 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_building
 	planet_modifier = {
@@ -616,7 +616,7 @@ d_iisc_logistics_agency_hive_2 = {
 }
 
 d_iisc_logistics_agency_hive_3 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_building
 	planet_modifier = {
@@ -629,7 +629,7 @@ d_iisc_logistics_agency_hive_3 = {
 }
 
 d_iisc_logistics_agency_hive_4 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_building
 	planet_modifier = {
@@ -642,7 +642,7 @@ d_iisc_logistics_agency_hive_4 = {
 }
 
 d_iisc_logistics_agency_hive_5 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_building
 	planet_modifier = {
@@ -656,7 +656,7 @@ d_iisc_logistics_agency_hive_5 = {
 }
 
 d_iisc_logistics_agency_hive_6 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_building
 	planet_modifier = {
@@ -670,7 +670,7 @@ d_iisc_logistics_agency_hive_6 = {
 }
 
 d_iisc_logistics_agency_hive_7 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_building
 	planet_modifier = {
@@ -684,7 +684,7 @@ d_iisc_logistics_agency_hive_7 = {
 }
 
 d_iisc_logistics_agency_hive_8 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_building
 	planet_modifier = {
@@ -698,7 +698,7 @@ d_iisc_logistics_agency_hive_8 = {
 }
 
 d_iisc_logistics_agency_hive_9 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_building
 	planet_modifier = {
@@ -713,7 +713,7 @@ d_iisc_logistics_agency_hive_9 = {
 }
 
 d_iisc_logistics_agency_hive_10 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_building
 	planet_modifier = {
@@ -729,7 +729,7 @@ d_iisc_logistics_agency_hive_10 = {
 }
 
 d_iisc_exploration_initiative_hive_1 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_alien_propaganda
 	planet_modifier = {
@@ -741,7 +741,7 @@ d_iisc_exploration_initiative_hive_1 = {
 }
 
 d_iisc_exploration_initiative_hive_2 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_alien_propaganda
 	planet_modifier = {
@@ -754,7 +754,7 @@ d_iisc_exploration_initiative_hive_2 = {
 }
 
 d_iisc_exploration_initiative_hive_3 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_alien_propaganda
 	planet_modifier = {
@@ -768,7 +768,7 @@ d_iisc_exploration_initiative_hive_3 = {
 }
 
 d_iisc_exploration_initiative_hive_4 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_alien_propaganda
 	planet_modifier = {
@@ -783,7 +783,7 @@ d_iisc_exploration_initiative_hive_4 = {
 }
 
 d_iisc_exploration_initiative_hive_5 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_alien_propaganda
 	planet_modifier = {
@@ -800,7 +800,7 @@ d_iisc_exploration_initiative_hive_5 = {
 }
 
 d_iisc_exploration_initiative_hive_6 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_alien_propaganda
 	planet_modifier = {
@@ -817,7 +817,7 @@ d_iisc_exploration_initiative_hive_6 = {
 }
 
 d_iisc_exploration_initiative_hive_7 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_alien_propaganda
 	planet_modifier = {
@@ -834,7 +834,7 @@ d_iisc_exploration_initiative_hive_7 = {
 }
 
 d_iisc_exploration_initiative_hive_8 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_alien_propaganda
 	planet_modifier = {
@@ -852,7 +852,7 @@ d_iisc_exploration_initiative_hive_8 = {
 }
 
 d_iisc_exploration_initiative_hive_9 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_alien_propaganda
 	planet_modifier = {
@@ -870,7 +870,7 @@ d_iisc_exploration_initiative_hive_9 = {
 }
 
 d_iisc_exploration_initiative_hive_10 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_alien_propaganda
 	planet_modifier = {
@@ -890,7 +890,7 @@ d_iisc_exploration_initiative_hive_10 = {
 }
 
 d_iisc_financial_group_hive_1 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_galactic_senate
 	planet_modifier = {
@@ -902,7 +902,7 @@ d_iisc_financial_group_hive_1 = {
 }
 
 d_iisc_financial_group_hive_2 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_galactic_senate
 	planet_modifier = {
@@ -914,7 +914,7 @@ d_iisc_financial_group_hive_2 = {
 }
 
 d_iisc_financial_group_hive_3 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_galactic_senate
 	planet_modifier = {
@@ -926,7 +926,7 @@ d_iisc_financial_group_hive_3 = {
 }
 
 d_iisc_financial_group_hive_4 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_galactic_senate
 	planet_modifier = {
@@ -939,7 +939,7 @@ d_iisc_financial_group_hive_4 = {
 }
 
 d_iisc_financial_group_hive_5 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_galactic_senate
 	planet_modifier = {
@@ -953,7 +953,7 @@ d_iisc_financial_group_hive_5 = {
 }
 
 d_iisc_financial_group_hive_6 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_galactic_senate
 	planet_modifier = {
@@ -968,7 +968,7 @@ d_iisc_financial_group_hive_6 = {
 }
 
 d_iisc_financial_group_hive_7 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_galactic_senate
 	planet_modifier = {
@@ -984,7 +984,7 @@ d_iisc_financial_group_hive_7 = {
 }
 
 d_iisc_financial_group_hive_8 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_galactic_senate
 	planet_modifier = {
@@ -1000,7 +1000,7 @@ d_iisc_financial_group_hive_8 = {
 }
 
 d_iisc_financial_group_hive_9 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_galactic_senate
 	planet_modifier = {
@@ -1016,7 +1016,7 @@ d_iisc_financial_group_hive_9 = {
 }
 
 d_iisc_financial_group_hive_10 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_galactic_senate
 	planet_modifier = {
