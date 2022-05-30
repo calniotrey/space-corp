@@ -346,8 +346,9 @@ empire_name_format = {
 			is_country_type = iisc_space_corporation
 		}
 	}
-	format = "<corporate_empire_names_prefix><corporate_empire_names_suffix>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.generic.1 # "<corporate_empire_names_prefix><corporate_empire_names_suffix>"
+	lookups = "<corporate_empire_names_prefix> <corporate_empire_names_suffix>"
+	noun = "format.species"
 }
 
 #ChronoDyne Initiative
@@ -359,8 +360,9 @@ empire_name_format = {
 			is_country_type = iisc_space_corporation
 		}
 	}
-	format = "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_final>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.generic.2 # "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_final>"
+	lookups = "<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_final>"
+	noun = "format.species"
 }
 
 #ChronoDyne National
@@ -372,8 +374,9 @@ empire_name_format = {
 			is_country_type = iisc_space_corporation
 		}
 	}
-	format = "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_standalone_adj>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.generic.3 # "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_standalone_adj>"
+	lookups = "<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_standalone_adj>"
+	noun = "format.species"
 }
 
 #Blackstar Initiative
@@ -385,8 +388,9 @@ empire_name_format = {
 			is_country_type = iisc_space_corporation
 		}
 	}
-	format = "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_final>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.generic.4 # "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_final>"
+	lookups = "<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_final>"
+	noun = "format.species"
 }
 
 #Blackstar National
@@ -398,8 +402,9 @@ empire_name_format = {
 			is_country_type = iisc_space_corporation
 		}
 	}
-	format = "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_standalone_adj>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.generic.5 # "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_standalone_adj>"
+	lookups = "<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_standalone_adj>"
+	noun = "format.species"
 }
 
 #Serendipity Transorbital
@@ -411,8 +416,9 @@ empire_name_format = {
 			is_country_type = iisc_space_corporation
 		}
 	}
-	format = "<corporate_empire_names_standalone> <corporate_empire_names_standalone_adj>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.generic.6 # "<corporate_empire_names_standalone> <corporate_empire_names_standalone_adj>"
+	lookups = "<corporate_empire_names_standalone> <corporate_empire_names_standalone_adj>"
+	noun = "format.species"
 }
 
 #Serendipity Corporation
@@ -424,6 +430,7 @@ empire_name_format = {
 			is_country_type = iisc_space_corporation
 		}
 	}
-	format = "<corporate_empire_names_standalone> <corporate_empire_names_final>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.generic.7 # "<corporate_empire_names_standalone> <corporate_empire_names_final>"
+	lookups = "<corporate_empire_names_standalone> <corporate_empire_names_final>"
+	noun = "format.species"
 }

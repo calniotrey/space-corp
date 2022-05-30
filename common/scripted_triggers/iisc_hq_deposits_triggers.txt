@@ -13,20 +13,6 @@ iisc_should_build_hq_deposit = {
 }
 
 # this = corp
-# TYPE = deposit type
-# hq set
-# negated for 2.8.1 trigger inversion
-iisc_can_upgrade_hq_deposit = {
-	NOT = {
-		event_target:iisc_hq_planet = {
-			NOT = {
-				has_deposit = $TYPE$_10
-			}
-		}
-	}
-}
-
-# this = corp
 # hq set
 iisc_hq_deposits_full = {
 	switch = {

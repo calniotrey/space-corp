@@ -11,7 +11,12 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_global_flag = iisc_paused
+					OR = {
+						NOT = {
+							exists = overlord							# if overlord is disconnected, we wait for reconnection
+						}
+						has_global_flag = iisc_paused
+					}
 				}
 				country_event = {
 					id = iisc_convoy.10
@@ -41,6 +46,11 @@ fleet_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
-		set_name = "[iisc_convoy_old_dest.GetName] -> [iisc_convoy_dest.GetName]"
+		# set_name = "[iisc_convoy_old_dest.GetName] -> [iisc_convoy_dest.GetName]"
+		set_name = {
+			key = "iisc_convoy_name"
+			variable_string = "[iisc_convoy_old_dest.GetName]"
+			variable_string = "[iisc_convoy_dest.GetName]"
+		}
 	}
 }

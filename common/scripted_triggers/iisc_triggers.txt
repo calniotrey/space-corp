@@ -26,6 +26,9 @@ iisc_can_have_space_corp = {
 
 # this = overlord
 iisc_should_create_corp = {
+	NOT = {
+		exists = overlord
+	}
 	check_variable = {
 		which = iisc_years_until_next_corp_creation
 		value <= 0
@@ -60,11 +63,27 @@ iisc_search_mining_stations = {
 		has_global_flag = iisc_mining_stations_all
 	}
 	# TODO take galaxy size into account?
-	count_owned_ship = {
-		limit = {
-			is_ship_class = shipclass_mining_station
+	OR = {
+		AND = {
+			has_civic = iisc_civic_mining_union
+			count_owned_ship = {
+				limit = {
+					is_ship_class = shipclass_mining_station
+				}
+				count < 30
+			}
 		}
-		count < 10
+		AND = {
+			NOT = {
+				has_civic = iisc_civic_mining_union
+			}
+			count_owned_ship = {
+				limit = {
+					is_ship_class = shipclass_mining_station
+				}
+				count < 15
+			}
+		}
 	}
 }
 
@@ -80,11 +99,27 @@ iisc_search_research_stations = {
 		has_global_flag = iisc_research_stations_all
 	}
 	# TODO take galaxy size into account?
-	count_owned_ship = {
-		limit = {
-			is_ship_class = shipclass_research_station
+	OR = {
+		AND = {
+			has_civic = iisc_civic_research_consortium
+			count_owned_ship = {
+				limit = {
+					is_ship_class = shipclass_research_station
+				}
+				count < 30
+			}
 		}
-		count < 10
+		AND = {
+			NOT = {
+				has_civic = iisc_civic_research_consortium
+			}
+			count_owned_ship = {
+				limit = {
+					is_ship_class = shipclass_research_station
+				}
+				count < 15
+			}
+		}
 	}
 }
 
@@ -318,6 +353,9 @@ iisc_is_system_eligible_for_research_station = {
 # this = fleet
 iisc_has_close_system_eligible_for_mining_station = {
 	any_system = {
+		NOT = {
+			has_star_flag = iisc_station_construction_underway_for_@prev.owner.overlord
+		}
 		has_access_fleet = prev.owner
 		distance = {
 			source = prev
@@ -332,6 +370,9 @@ iisc_has_close_system_eligible_for_mining_station = {
 # this = fleet/planet/country
 iisc_has_close_system_eligible_for_research_station = {
 	any_system = {
+		NOT = {
+			has_star_flag = iisc_station_construction_underway_for_@prev.owner.overlord
+		}
 		has_access_fleet = prev.owner
 		distance = {
 			source = prev

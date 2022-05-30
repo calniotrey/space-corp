@@ -1,3 +1,5 @@
+@system_exclusivity_duration = 1800
+#
 #this = corp
 iisc_create_iisc_builder_fleet = {
 	iisc_subtract_corp_money = {
@@ -279,6 +281,10 @@ iisc_builders_find_local_mining_station = {
 			}
 			save_event_target_as = iisc_builder_dest
 		}
+		set_timed_star_flag = {
+			flag = iisc_station_construction_underway_for_@prev.owner.overlord
+			days = @system_exclusivity_duration
+		}
 	}
 	set_fleet_flag = iisc_builder_has_dest
 }
@@ -292,6 +298,10 @@ iisc_builders_find_local_research_station = {
 			}
 			save_event_target_as = iisc_builder_dest
 		}
+		set_timed_star_flag = {
+			flag = iisc_station_construction_underway_for_@prev.owner.overlord
+			days = @system_exclusivity_duration
+		}
 	}
 	set_fleet_flag = iisc_builder_has_dest
 }
@@ -300,6 +310,9 @@ iisc_builders_find_local_research_station = {
 iisc_builders_find_close_mining_station = {
 	random_system = {
 		limit = {
+			NOT = {
+				has_star_flag = iisc_station_construction_underway_for_@prev.owner.overlord
+			}
 			has_access_fleet = prev.owner
 			distance = {
 				source = prev
@@ -314,6 +327,10 @@ iisc_builders_find_close_mining_station = {
 			}
 			save_event_target_as = iisc_builder_dest
 		}
+		set_timed_star_flag = {
+			flag = iisc_station_construction_underway_for_@prev.owner.overlord
+			days = @system_exclusivity_duration
+		}
 	}
 	set_fleet_flag = iisc_builder_has_dest
 }
@@ -322,6 +339,9 @@ iisc_builders_find_close_mining_station = {
 iisc_builders_find_close_research_station = {
 	random_system = {
 		limit = {
+			NOT = {
+				has_star_flag = iisc_station_construction_underway_for_@prev.owner.overlord
+			}
 			has_access_fleet = prev.owner
 			distance = {
 				source = prev
@@ -335,6 +355,10 @@ iisc_builders_find_close_research_station = {
 				iisc_is_planet_eligible_for_research_station = yes
 			}
 			save_event_target_as = iisc_builder_dest
+		}
+		set_timed_star_flag = {
+			flag = iisc_station_construction_underway_for_@prev.owner.overlord
+			days = @system_exclusivity_duration
 		}
 	}
 	set_fleet_flag = iisc_builder_has_dest

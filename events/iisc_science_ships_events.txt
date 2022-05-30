@@ -11,7 +11,12 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_global_flag = iisc_paused
+					OR = {
+						NOT = {
+							exists = overlord							# if overlord is disconnected, we wait for reconnection
+						}
+						has_global_flag = iisc_paused
+					}
 				}
 				country_event = {
 					id = iisc_science_ships.10

@@ -81,7 +81,8 @@ iisc_handle_corp_connection_to_overlord = {
 		# the owner of the planet should not be already a subject thanks to the on_becoming_subject
 		set_subject_of = {
 			who = event_target:iisc_hq_planet.owner
-			subject_type = iisc_corp_vassal
+			# subject_type = iisc_corp_vassal
+			preset = iisc_agreement_preset
 		}
 		event_target:iisc_hq_planet = {
 			iisc_reset_hq_deposit_authority = yes
@@ -1488,10 +1489,10 @@ iisc_compute_and_tax_space_corp_income_from_resource = {
 				}
 				# decompose it into a list of 0 and 1 up to 1023
 				# remark: iisc_taxes_$RESOURCE$_0 is the modulo by 2 => might not be integer => we check in the deposit if >= 1
-				iisc_decompose_into_binary = {
-					LIST = iisc_taxes_$RESOURCE$
-					VARIABLE = iisc_taxes_$RESOURCE$
-				}
+				# iisc_decompose_into_binary = {
+				# 	LIST = iisc_taxes_$RESOURCE$
+				# 	VARIABLE = iisc_taxes_$RESOURCE$
+				# }
 			}
 			change_variable = {
 				which = iisc_$RESOURCE$_taxed_total

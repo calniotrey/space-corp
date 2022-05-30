@@ -38,8 +38,9 @@ empire_name_format = {
 			has_civic = iisc_civic_engineering_firm
 		}
 	}
-	format = "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_engineering>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.engineering.1 # "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_engineering>"
+	noun = "format.species"
+	lookups = "<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_engineering>"
 }
 
 #ChronoDyne Networks Corporation
@@ -52,8 +53,9 @@ empire_name_format = {
 			has_civic = iisc_civic_engineering_firm
 		}
 	}
-	format = "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.engineering.2 # "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
+	noun = "format.species"
+	lookups = "<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
 }
 
 #Blackstar Networks
@@ -66,8 +68,9 @@ empire_name_format = {
 			has_civic = iisc_civic_engineering_firm
 		}
 	}
-	format = "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_engineering>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.engineering.3 # "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_engineering>"
+	noun = "format.species"
+	lookups = "<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_engineering>"
 }
 
 #Blackstar Networks Corporation
@@ -80,8 +83,9 @@ empire_name_format = {
 			has_civic = iisc_civic_engineering_firm
 		}
 	}
-	format = "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.engineering.4 # "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
+	noun = "format.species"
+	lookups = "<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
 }
 
 #Serendipity Nanotechnology
@@ -94,8 +98,9 @@ empire_name_format = {
 			has_civic = iisc_civic_engineering_firm
 		}
 	}
-	format = "<corporate_empire_names_standalone> <corporate_empire_names_field_engineering>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.engineering.5 # "<corporate_empire_names_standalone> <corporate_empire_names_field_engineering>"
+	lookups = "<corporate_empire_names_standalone> <corporate_empire_names_field_engineering>"
+	noun = "format.species"
 }
 
 #Serendipity Nanotechnology Corporation
@@ -108,8 +113,9 @@ empire_name_format = {
 			has_civic = iisc_civic_engineering_firm
 		}
 	}
-	format = "<corporate_empire_names_standalone> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.engineering.6 # "<corporate_empire_names_standalone> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
+	lookups = "<corporate_empire_names_standalone> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
+	noun = "format.species"
 }
 
 #National Bank Corporation
@@ -122,6 +128,7 @@ empire_name_format = {
 			has_civic = iisc_civic_engineering_firm
 		}
 	}
-	format = "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.engineering.7 # "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
+	lookups = "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_engineering> <corporate_empire_names_final>"
+	noun = "format.species"
 }

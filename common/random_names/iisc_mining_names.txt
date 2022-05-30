@@ -28,8 +28,9 @@ empire_name_format = {
 			has_civic = iisc_civic_mining_union
 		}
 	}
-	format = "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_mining>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.mining.1 # "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_mining>"
+	lookups = "<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_mining>"
+	noun = "format.species"
 }
 
 #ChronoDyne Networks Corporation
@@ -42,8 +43,9 @@ empire_name_format = {
 			has_civic = iisc_civic_mining_union
 		}
 	}
-	format = "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.mining.2 # "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
+	lookups = "<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
+	noun = "format.species"
 }
 
 #Blackstar Networks
@@ -56,8 +58,9 @@ empire_name_format = {
 			has_civic = iisc_civic_mining_union
 		}
 	}
-	format = "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_mining>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.mining.3 # "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_mining>"
+	lookups = "<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_mining>"
+	noun = "format.species"
 }
 
 #Blackstar Networks Corporation
@@ -70,8 +73,9 @@ empire_name_format = {
 			has_civic = iisc_civic_mining_union
 		}
 	}
-	format = "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.mining.4 # "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
+	lookups = "<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
+	noun = "format.species"
 }
 
 #Serendipity Nanotechnology
@@ -84,8 +88,9 @@ empire_name_format = {
 			has_civic = iisc_civic_mining_union
 		}
 	}
-	format = "<corporate_empire_names_standalone> <corporate_empire_names_field_mining>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.mining.5 # "<corporate_empire_names_standalone> <corporate_empire_names_field_mining>"
+	lookups = "<corporate_empire_names_standalone> <corporate_empire_names_field_mining>"
+	noun = "format.species"
 }
 
 #Serendipity Nanotechnology Corporation
@@ -98,8 +103,9 @@ empire_name_format = {
 			has_civic = iisc_civic_mining_union
 		}
 	}
-	format = "<corporate_empire_names_standalone> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.mining.6 # "<corporate_empire_names_standalone> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
+	lookups = "<corporate_empire_names_standalone> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
+	noun = "format.species"
 }
 
 #National Bank Corporation
@@ -112,6 +118,7 @@ empire_name_format = {
 			has_civic = iisc_civic_mining_union
 		}
 	}
-	format = "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
-	noun = "[This.GetSpeciesName]"
+	format = iisc_corp_name.mining.7 # "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
+	lookups = "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_mining> <corporate_empire_names_final>"
+	noun = "format.species"
 }

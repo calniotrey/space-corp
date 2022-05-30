@@ -39,15 +39,3 @@ empire_name_parts_list = {
 		"Group" = 5
 	}
 }
-
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 999
-# 			is_country_type = iisc_space_corporation
-# 		}
-# 	}
-# 	format = "<space_corps_core> <space_corps_suffix>"
-# 	noun = "[This.GetSpeciesName]"
-# }

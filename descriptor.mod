@@ -1,4 +1,4 @@
-version="1.1"
+version="1.2"
 tags={
 	"Economy"
 	"Gameplay"
@@ -7,7 +7,7 @@ tags={
 dependencies={
 	"SLEX"
 }
-name="Interstellar Incorporated: Space Corp [3.0]"
+name="Interstellar Incorporated: Space Corp [3.4]"
 picture="thumbnail.png"
-supported_version="3.0.*"
+supported_version="3.4.*"
 remote_file_id="2460049826"

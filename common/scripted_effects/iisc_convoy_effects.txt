@@ -15,15 +15,15 @@ iisc_create_convoy_fleet = {
 			}
 			set_fleet_stance = passive
 			create_ship = {
-				name = random
+				# name = random
 				random_existing_design = iisc_civilian_freighter
 			}
 			create_ship = {
-				name = random
+				# name = random
 				random_existing_design = iisc_civilian_tanker
 			}
 			create_ship = {
-				name = random
+				# name = random
 				random_existing_design = iisc_passenger_liner
 			}
 			# TODO make this spawn different ships

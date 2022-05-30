@@ -18,7 +18,6 @@ iisc_create_science_ship_fleet = {
 			}
 			iisc_set_science_ship_orders = yes
 			iisc_assign_random_scientist = yes
-			set_fleet_stance = evasive
 			fleet_event = {
 				id = iisc_science_ships.20
 				days = 1
@@ -88,6 +87,36 @@ iisc_set_science_ship_orders = {
 					}
 					owner = {
 						iisc_get_survey_reward = yes
+					}
+				}
+				if = {
+					limit = {
+						exists = leader
+					}
+					if = {
+						limit = {
+							owner = {
+								has_civic = iisc_civic_exploration_initiative
+							}
+						}
+						leader = {
+							add_experience = 100
+						}
+					}
+					else_if = {
+						limit = {
+							owner = {
+								has_civic = iisc_civic_research_consortium
+							}
+						}
+						leader = {
+							add_experience = 75
+						}
+					}
+					else = {
+						leader = {
+							add_experience = 50
+						}
 					}
 				}
 				remove_fleet_flag = iisc_science_ship_has_dest

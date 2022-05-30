@@ -132,6 +132,7 @@ iisc_space_corporation = {
 	resources = {
 		category = country_base
 		produces = {
+			unity = 1			# to prevent staying at 0
 			# energy = 10
 			# minerals = 0
 			# food = 0

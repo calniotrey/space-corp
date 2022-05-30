@@ -1,3 +1,36 @@
+Remove SLEX
+Fix error logs
+# priorize mining/science stations over other if budget higher
+remove mining station cap ?
+Nerf snowballing? Boost midgame powerup?
+Make a "help" interface (why no fleets, why low fleets, how much does it bring, how to get more corps, ...)
+Give sensors
+Add buy/sell stations
+Add lease fleets
+Fix convoy (no class name ?)
+Fix construction going into marauder ???
+Add a monthly event which sets aggressivity to  other countries that aren't in war?
+Make convoy depop if no path
+add new leader traits
+[*] Corps leaders gain passive xp (around 36 per year)
+Update loc
+
+To test:
+Fix convoys going into hostile capital ???
+Added a check for corps not having overlords when processing fleet AI, now it will just wait an iisc tick (30-60 days)
+Fixed corp science ships being in evasive stance instead of passive
+Fix corp names
+Make corps go into overlord war
+Leader gaining xp on surveying
+
+Done:
+Watch agreement contract changing
+Prevent builders choosing same destination
+Fix set_name convoy
+Remove inherent +100% station production
+Improve performance and code for taxes deposits
+Add loc iisc_agreement_preset
+
 TEST recruit scientists
 more custom diplomacy
 Check when overlord becomes vassal (make sure nothing breaks when referencing overlord)
@@ -12,7 +45,6 @@ add passive repair
 [19:16:49][trigger_impl.cpp:847]: Script Error: Invalid context switch[event_target:iisc_escort_target.solar_system], file:  file:  file: events/iisc_military_events.txt line: 13 line: 1 line: 1, Scope: 
 ancient_mining_expansion_barge
 
-add new leader traits
 
 use is_species intermediate for supply?
 use mining operations entity

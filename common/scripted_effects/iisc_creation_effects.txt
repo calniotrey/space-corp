@@ -44,7 +44,8 @@ iisc_create_corp = {
 			establish_communications_no_message = prev
 			set_subject_of = {
 				who = prev
-				subject_type = iisc_corp_vassal
+				preset = iisc_agreement_preset
+				# subject_type = iisc_corp_vassal
 			}
 			iisc_set_hq = yes
 			event_target:iisc_hq_planet = {
