@@ -4,7 +4,7 @@ Ever felt like the economy and space in Stellaris is far too bland and boring? D
 
 This initial release is meant to be a foundation for what’s to come. We are far from finished with what we want to do! Check out the Planned Features for more info. This mod can be considered a spiritual successor to Interstellar Incorporated: A Civilian Space Odyssey. If you were a fan of that mod, we decided to start from the ground up, because there were a lot of issues with performance and otherwise that plagued the original. We decided to reassess the mod and start with a slightly different take, but with a similar general idea!
 
-TL;DR: Performance friendly mod for 3.0.* with tons of new features planned
+TL;DR: Performance friendly mod for 3.4.* with tons of new features planned
 
 [h1]Features List[/h1]
 [list]
@@ -36,15 +36,16 @@ Not achievement compatible obviously.
 Should not require a new save game (but it is highly recommended).
 You can remove the mod during a game. Be sure to use the mod menu ingame to allow for a clean uninstall.
 You can open the mod menu using DMM (open the "main menu" by pressing when in game).
+Old (3.0-3.1) version [url=https://github.com/calniotrey/space-corp/releases/tag/v1.1.1]here on github[/url].
 
 [h1]Compatibility[/h1]
 Relatively good, minor localisation issues if other mods add planet types or ethics.
 Don't use mods removing all blockers on colonized planets during the game or mods that change your country type (patch needed).
-Fully localized in english, french, german and russian. For the other languages, this mod localisations will be displayed in english.
+Fully localized in english, french, german and russian (almost). For the other languages, this mod localisations will be displayed in english.
 
 [h1]Known bugs[/h1]
 [list]
-[*] Nothing!
+[*] A "Too many nested effects" in the error.log. Needs some time to track down
 [/list]
 
 [h1]Credits[/h1]
