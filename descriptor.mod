@@ -1,11 +1,8 @@
-version="1.2"
+version="1.2.1"
 tags={
 	"Economy"
 	"Gameplay"
 	"Diplomacy"
-}
-dependencies={
-	"SLEX"
 }
 name="Interstellar Incorporated: Space Corp [3.4]"
 picture="thumbnail.png"

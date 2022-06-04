@@ -1,4 +1,50 @@
 defined_text = {
+	name = GetCorporationType
+	text = {
+		trigger = {
+			has_civic = iisc_civic_engineering_firm
+		}
+		localization_key = "iisc_civic_engineering_firm"
+	}
+	text = {
+		trigger = {
+			has_civic = iisc_civic_exploration_initiative
+		}
+		localization_key = "iisc_civic_exploration_initiative"
+	}
+	text = {
+		trigger = {
+			has_civic = iisc_civic_financial_group
+		}
+		localization_key = "iisc_civic_financial_group"
+	}
+	text = {
+		trigger = {
+			has_civic = iisc_civic_logistics_agency
+		}
+		localization_key = "iisc_civic_logistics_agency"
+	}
+	text = {
+		trigger = {
+			has_civic = iisc_civic_mining_union
+		}
+		localization_key = "iisc_civic_mining_union"
+	}
+	text = {
+		trigger = {
+			has_civic = iisc_civic_research_consortium
+		}
+		localization_key = "iisc_civic_research_consortium"
+	}
+	text = {
+		trigger = {
+			has_civic = iisc_civic_security_force
+		}
+		localization_key = "iisc_civic_security_force"
+	}
+}
+
+defined_text = {
 	name = GetMoney
 	text = {
 		trigger = {

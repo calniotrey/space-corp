@@ -1,4 +1,24 @@
 namespace = iisc_diplomacy
+#
+# This = player country
+# iisc_corp_country = target country
+# hq and overlord ET set
+country_event = {
+	id = iisc_diplomacy.9
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				exists = event_target:iisc_corp_country
+			}
+			country_event = {
+				id = iisc_diplomacy.11
+			}
+		}
+	}
+}
+
 # custom diplomacy opened
 # This = target country (player)
 # From = source country
@@ -66,14 +86,10 @@ country_event = {
 		trigger = {
 			is_same_value = event_target:iisc_overlord
 		}
-		allow = {
-			custom_tooltip = {
-				fail_text = SLEX_not_installed
-				SLEX_not_installed = no
+		hidden_effect = {
+			country_event = {
+				id = iisc_diplomacy.20
 			}
-		}
-		country_event = {
-			id = iisc_diplomacy.20
 		}
 	}
 	option = {
@@ -100,18 +116,9 @@ country_event = {
 	option = {
 		name = iisc_diplomacy.20.hire_scientist
 		hidden_effect = {
-			export_resource_stockpile_to_variable = {
-				resource = energy
-				variable = iisc_energy_stock
+			country_event = {
+				id = iisc_diplomacy.21
 			}
-			event_target:iisc_corp_country = {
-				iisc_select_5_random_recruitable_leaders = {
-					CLASS = scientist
-				}
-			}
-		}
-		country_event = {
-			id = iisc_diplomacy.21
 		}
 	}
 	option = {
@@ -132,8 +139,30 @@ country_event = {
 
 country_event = {
 	id = iisc_diplomacy.21
-	title = iisc_diplomacy.21.name
-	desc = iisc_diplomacy.21.desc
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:iisc_corp_country
+	}
+	immediate = {
+		hidden_effect = {
+			event_target:iisc_corp_country = {
+				iisc_deselect_random_recruitable_leaders = yes
+				iisc_select_5_random_recruitable_leaders = {
+					CLASS = scientist
+				}
+			}
+			country_event = {
+				id = iisc_diplomacy.22
+			}
+		}
+	}
+}
+
+country_event = {
+	id = iisc_diplomacy.22
+	title = iisc_diplomacy.22.name
+	desc = iisc_diplomacy.22.desc
 	show_sound = event_conversation
 	diplomatic = yes
 	is_triggered_only = yes
@@ -145,7 +174,7 @@ country_event = {
 		exists = event_target:iisc_corp_country
 	}
 	option = {
-		name = iisc_diplomacy.21.recruit_leader_1
+		name = iisc_diplomacy.22.recruit_leader_1
 		trigger = {
 			exists = event_target:iisc_recruitable_leader_1
 			event_target:iisc_recruitable_leader_1 = {
@@ -157,12 +186,10 @@ country_event = {
 		}
 		allow = {
 			custom_tooltip_fail = {
-				text = iisc_diplomacy.21.not_enough_credits
-				event_target:iisc_recruitable_leader_1 = {
-					check_variable = {
-						which = iisc_recruit_price
-						value <= iisc_energy_stock
-					}
+				text = iisc_diplomacy.22.not_enough_credits
+				resource_stockpile_compare = {
+					resource = energy
+					value >= event_target:iisc_recruitable_leader_1.iisc_recruit_price
 				}
 			}
 		}
@@ -173,7 +200,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = iisc_diplomacy.21.recruit_leader_2
+		name = iisc_diplomacy.22.recruit_leader_2
 		trigger = {
 			exists = event_target:iisc_recruitable_leader_2
 			event_target:iisc_recruitable_leader_2 = {
@@ -185,12 +212,10 @@ country_event = {
 		}
 		allow = {
 			custom_tooltip_fail = {
-				text = iisc_diplomacy.21.not_enough_credits
-				event_target:iisc_recruitable_leader_2 = {
-					check_variable = {
-						which = iisc_recruit_price
-						value <= iisc_energy_stock
-					}
+				text = iisc_diplomacy.22.not_enough_credits
+				resource_stockpile_compare = {
+					resource = energy
+					value >= event_target:iisc_recruitable_leader_2.iisc_recruit_price
 				}
 			}
 		}
@@ -201,7 +226,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = iisc_diplomacy.21.recruit_leader_3
+		name = iisc_diplomacy.22.recruit_leader_3
 		trigger = {
 			exists = event_target:iisc_recruitable_leader_3
 			event_target:iisc_recruitable_leader_3 = {
@@ -213,12 +238,10 @@ country_event = {
 		}
 		allow = {
 			custom_tooltip_fail = {
-				text = iisc_diplomacy.21.not_enough_credits
-				event_target:iisc_recruitable_leader_3 = {
-					check_variable = {
-						which = iisc_recruit_price
-						value <= iisc_energy_stock
-					}
+				text = iisc_diplomacy.22.not_enough_credits
+				resource_stockpile_compare = {
+					resource = energy
+					value >= event_target:iisc_recruitable_leader_3.iisc_recruit_price
 				}
 			}
 		}
@@ -229,7 +252,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = iisc_diplomacy.21.recruit_leader_4
+		name = iisc_diplomacy.22.recruit_leader_4
 		trigger = {
 			exists = event_target:iisc_recruitable_leader_4
 			event_target:iisc_recruitable_leader_4 = {
@@ -241,12 +264,10 @@ country_event = {
 		}
 		allow = {
 			custom_tooltip_fail = {
-				text = iisc_diplomacy.21.not_enough_credits
-				event_target:iisc_recruitable_leader_4 = {
-					check_variable = {
-						which = iisc_recruit_price
-						value <= iisc_energy_stock
-					}
+				text = iisc_diplomacy.22.not_enough_credits
+				resource_stockpile_compare = {
+					resource = energy
+					value >= event_target:iisc_recruitable_leader_4.iisc_recruit_price
 				}
 			}
 		}
@@ -257,7 +278,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = iisc_diplomacy.21.recruit_leader_5
+		name = iisc_diplomacy.22.recruit_leader_5
 		trigger = {
 			exists = event_target:iisc_recruitable_leader_5
 			event_target:iisc_recruitable_leader_5 = {
@@ -269,12 +290,10 @@ country_event = {
 		}
 		allow = {
 			custom_tooltip_fail = {
-				text = iisc_diplomacy.21.not_enough_credits
-				event_target:iisc_recruitable_leader_5 = {
-					check_variable = {
-						which = iisc_recruit_price
-						value <= iisc_energy_stock
-					}
+				text = iisc_diplomacy.22.not_enough_credits
+				resource_stockpile_compare = {
+					resource = energy
+					value >= event_target:iisc_recruitable_leader_5.iisc_recruit_price
 				}
 			}
 		}
@@ -285,21 +304,11 @@ country_event = {
 		}
 	}
 	option = {
-		name = iisc_diplomacy.21.other_scientists
+		name = iisc_diplomacy.22.other_scientists
 		hidden_effect = {
-			iisc_deselect_random_recruitable_leaders = yes
-			export_resource_stockpile_to_variable = {
-				resource = energy
-				variable = iisc_energy_stock
+			country_event = {
+				id = iisc_diplomacy.21
 			}
-			event_target:iisc_corp_country = {
-				iisc_select_5_random_recruitable_leaders = {
-					CLASS = scientist
-				}
-			}
-		}
-		country_event = {
-			id = iisc_diplomacy.21
 		}
 	}
 	option = {
@@ -307,7 +316,6 @@ country_event = {
 		name = iisc_diplomacy.back
 		default_hide_option = yes
 		hidden_effect = {
-			iisc_deselect_random_recruitable_leaders = yes
 			country_event = {
 				id = iisc_diplomacy.20
 			}
@@ -317,7 +325,25 @@ country_event = {
 		# Quit
 		name = iisc_diplomacy.quit
 		hidden_effect = {
-			iisc_deselect_random_recruitable_leaders = yes
+			country_event = {
+				id = iisc_diplomacy.23
+			}
+		}
+	}
+}
+
+country_event = {
+	id = iisc_diplomacy.23
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:iisc_corp_country
+	}
+	immediate = {
+		hidden_effect = {
+			event_target:iisc_corp_country = {
+				iisc_deselect_random_recruitable_leaders = yes
+			}
 		}
 	}
 }

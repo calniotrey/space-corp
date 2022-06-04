@@ -15,15 +15,23 @@ add new leader traits
 [*] Corps leaders gain passive xp (around 36 per year)
 Update loc
 
+██╗░░██╗█████╗░█████╗░░████╗░██████╗██████╗█████╗░
+██║░░██║██╔═██╗██╔═██╗██╔═██╗╚═██╔═╝██╔═══╝██╔═██╗
+██║░░██║█████╔╝██║░██║██████║░░██║░░████╗░░██║░██║
+██║░░██║██╔══╝░██║░██║██╔═██║░░██║░░██╔═╝░░██║░██║
+╚█████╔╝██║░░░░█████╔╝██║░██║░░██║░░██████╗█████╔╝
+░╚════╝░╚═╝░░░░╚════╝░╚═╝░╚═╝░░╚═╝░░╚═════╝╚════╝░3.4.3
+Ask FirePrince
+
 To test:
 Fix convoys going into hostile capital ???
-Added a check for corps not having overlords when processing fleet AI, now it will just wait an iisc tick (30-60 days)
-Fixed corp science ships being in evasive stance instead of passive
-Fix corp names
-Make corps go into overlord war
-Leader gaining xp on surveying
 
 Done:
+Added a check for corps not having overlords when processing fleet AI, now it will just wait an iisc tick (30-60 days)
+Fix corp names
+Leader gaining xp on surveying
+Fixed corp science ships being in evasive stance instead of passive
+Make corps go into overlord war
 Watch agreement contract changing
 Prevent builders choosing same destination
 Fix set_name convoy

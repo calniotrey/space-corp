@@ -49,144 +49,29 @@ iisc_assign_random_scientist = {
 # this = leader
 # event_target:iisc_overlord is set
 iisc_set_recruit_price = {
-	switch = {
-		trigger = has_level
-		1 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 1
-			}
+	hidden_effect = {
+		# log = "--------------------------------"
+		# 100 * (level² + 1)
+		set_variable = {
+			which = iisc_recruit_price
+			value = trigger:has_level
 		}
-		2 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 2
-			}
+		# log = "[This.iisc_recruit_price]"
+		multiply_variable = {
+			which = iisc_recruit_price
+			value = iisc_recruit_price
 		}
-		3 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 3
-			}
+		# log = "[This.iisc_recruit_price]"
+		multiply_variable = {
+			which = iisc_recruit_price
+			value = 100
 		}
-		4 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 4
-			}
+		# log = "[This.iisc_recruit_price]"
+		change_variable = {
+			which = iisc_recruit_price
+			value = 100
 		}
-		5 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 5
-			}
-		}
-		6 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 6
-			}
-		}
-		7 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 7
-			}
-		}
-		8 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 8
-			}
-		}
-		9 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 9
-			}
-		}
-		10 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 10
-			}
-		}
-		11 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 11
-			}
-		}
-		12 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 12
-			}
-		}
-		13 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 13
-			}
-		}
-		14 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 14
-			}
-		}
-		15 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 15
-			}
-		}
-		16 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 16
-			}
-		}
-		17 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 17
-			}
-		}
-		18 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 18
-			}
-		}
-		19 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 19
-			}
-		}
-		20 = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = 20
-			}
-		}
-	}
-	multiply_variable = {
-		which = iisc_recruit_price
-		value = iisc_recruit_price
-	}
-	multiply_variable = {
-		which = iisc_recruit_price
-		value = 100
-	}
-	change_variable = {
-		which = iisc_recruit_price
-		value = 100
-	}
-	set_variable = {
-		which = iisc_energy_stock
-		value = event_target:iisc_overlord.iisc_energy_stock
+		# log = "[This.iisc_recruit_price]"
 	}
 }
 
@@ -194,9 +79,12 @@ iisc_set_recruit_price = {
 iisc_select_5_random_recruitable_leaders = {
 	random_owned_leader = {
 		limit = {
-			check_variable = {
-				which = iisc_recruit_price
-				value = 0
+			NOR = {
+				is_variable_set = iisc_recruit_price
+				check_variable = {
+					which = iisc_recruit_price
+					value > 0
+				}
 			}
 			leader_class = $CLASS$
 		}
@@ -205,9 +93,12 @@ iisc_select_5_random_recruitable_leaders = {
 	}
 	random_owned_leader = {
 		limit = {
-			check_variable = {
-				which = iisc_recruit_price
-				value = 0
+			NOR = {
+				is_variable_set = iisc_recruit_price
+				check_variable = {
+					which = iisc_recruit_price
+					value > 0
+				}
 			}
 			leader_class = $CLASS$
 		}
@@ -216,9 +107,12 @@ iisc_select_5_random_recruitable_leaders = {
 	}
 	random_owned_leader = {
 		limit = {
-			check_variable = {
-				which = iisc_recruit_price
-				value = 0
+			NOR = {
+				is_variable_set = iisc_recruit_price
+				check_variable = {
+					which = iisc_recruit_price
+					value > 0
+				}
 			}
 			leader_class = $CLASS$
 		}
@@ -227,9 +121,12 @@ iisc_select_5_random_recruitable_leaders = {
 	}
 	random_owned_leader = {
 		limit = {
-			check_variable = {
-				which = iisc_recruit_price
-				value = 0
+			NOR = {
+				is_variable_set = iisc_recruit_price
+				check_variable = {
+					which = iisc_recruit_price
+					value > 0
+				}
 			}
 			leader_class = $CLASS$
 		}
@@ -238,9 +135,12 @@ iisc_select_5_random_recruitable_leaders = {
 	}
 	random_owned_leader = {
 		limit = {
-			check_variable = {
-				which = iisc_recruit_price
-				value = 0
+			NOR = {
+				is_variable_set = iisc_recruit_price
+				check_variable = {
+					which = iisc_recruit_price
+					value > 0
+				}
 			}
 			leader_class = $CLASS$
 		}
@@ -253,42 +153,30 @@ iisc_select_5_random_recruitable_leaders = {
 iisc_deselect_random_recruitable_leaders = {
 	every_owned_leader = {
 		limit = {
-			check_variable = {
-				which = iisc_recruit_price
-				value > 0
+			OR = {
+				is_variable_set = iisc_recruit_price
+				check_variable = {
+					which = iisc_recruit_price
+					value > 0
+				}
 			}
 		}
-		set_variable = {
-			which = iisc_recruit_price
-			value = 0
-		}
+		clear_variable = iisc_recruit_price
 	}
 }
 
 # this = leader
 iisc_overlord_recruit_leader = {
 	owner = {
-		set_variable = {
-			which = iisc_recruit_price
-			value = prev.iisc_recruit_price
-		}
 		add_resource = {
 			energy = 1
-			mult = iisc_recruit_price
+			mult = prev.iisc_recruit_price
 		}
 		event_target:iisc_overlord = {
-			set_variable = {
-				which = iisc_recruit_price
-				value = prev.iisc_recruit_price
-			}
 			add_resource = {
 				energy = -1
-				mult = iisc_recruit_price
+				mult = prevprev.iisc_recruit_price
 			}
-		}
-		set_variable = {
-			which = iisc_recruit_price
-			value = 0
 		}
 		iisc_deselect_random_recruitable_leaders = yes
 	}
@@ -296,14 +184,7 @@ iisc_overlord_recruit_leader = {
 		limit = {
 			exists = fleet
 		}
-		fleet = {
-			prev = {
-				unassign_leader = this
-				set_owner = event_target:iisc_overlord
-			}
-		}
+		unassign_leader = this
 	}
-	else = {
-		set_owner = event_target:iisc_overlord
-	}
+	set_owner = event_target:iisc_overlord
 }

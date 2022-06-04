@@ -3,10 +3,14 @@
 [*] Increase max mining and research stations per corp from 10 each to 15 each, except for mining unions and research consortiums which have double of mining and research respectively.
 [*] Buff security forces by increasing corps fleet power to around 1 times the overlord instead of the usual 1/4
 [*] Improved builder AI by preventing builders having the same overlord to try to buy in the same system
+[*] Display corp type and HQ in their diplomacy event
 [*] Remove inherent +100% station production for corps
+[*] Cleaned error.log, you should not see anything from iisc in it
+[*] Dropped SLEX requirement
 1.2
 [*] Update to 3.4
 [*] Improved performance and code for taxes deposits
+[*] Fix science ships being in evasive fleet stance instead of passive
 1.1.3
 [*] Block corp ship spawn when solar system starbase is captured and when planet is occupied
 [*] Check and respawn deposits when needed (if they were removed by a mod/terraformation/...)

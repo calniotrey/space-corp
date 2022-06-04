@@ -84,6 +84,17 @@ iisc_handle_corp_connection_to_overlord = {
 			# subject_type = iisc_corp_vassal
 			preset = iisc_agreement_preset
 		}
+		random_agreement = {
+			limit = {
+				owner = {
+					is_same_value = event_target:iisc_hq_planet.owner
+				}
+				target = {
+					is_same_value = prevprev
+				}
+			}
+			add_loyalty = 200
+		}
 		event_target:iisc_hq_planet = {
 			iisc_reset_hq_deposit_authority = yes
 		}

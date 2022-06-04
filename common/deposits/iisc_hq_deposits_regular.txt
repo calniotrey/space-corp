@@ -337,7 +337,8 @@ d_iisc_mining_union_regular_3 = {
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
-		job_miner_add = 3
+		job_miner_add = 2
+		job_clerk_add = 1
 	}
 	drop_weight = {
 		weight = 0
@@ -594,6 +595,7 @@ d_iisc_security_force_regular_10 = {
 		job_enforcer_add = 1
 		job_clerk_add = 1
 		army_defense_health_mult = 0.25
+		job_soldier_stability_add = 1
 	}
 	drop_weight = {
 		weight = 0
@@ -737,6 +739,7 @@ d_iisc_logistics_agency_regular_10 = {
 		job_clerk_add = 3
 		job_executive_add = 2
 		species_empire_size_mult = -0.05
+		planet_pops_upkeep_mult = -0.05
 	}
 	drop_weight = {
 		weight = 0
@@ -900,7 +903,6 @@ d_iisc_exploration_initiative_regular_10 = {
 		job_artisan_add = 2
 		job_executive_add = 1
 		planet_jobs_produces_mult = 0.05
-		planet_sensor_range_add = 2
 	}
 	drop_weight = {
 		weight = 0

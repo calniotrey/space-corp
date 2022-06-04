@@ -330,7 +330,8 @@ d_iisc_mining_union_hive_3 = {
 	category = deposit_cat_rare
 	icon = d_mining_tunnels
 	planet_modifier = {
-		job_mining_drone_add = 3
+		job_mining_drone_add = 2
+		job_technician_drone_add = 1
 	}
 	drop_weight = {
 		weight = 0
@@ -585,6 +586,7 @@ d_iisc_security_force_hive_10 = {
 		job_technician_drone_add = 1
 		job_alloy_drone_add = 1
 		army_defense_health_mult = 0.25
+		job_soldier_stability_add = 1		# works for gestalt
 	}
 	drop_weight = {
 		weight = 0
@@ -722,6 +724,7 @@ d_iisc_logistics_agency_hive_10 = {
 		job_agri_drone_add = 3
 		job_brain_drone_add = 1
 		species_empire_size_mult = -0.05
+		planet_pops_upkeep_mult = -0.05
 	}
 	drop_weight = {
 		weight = 0

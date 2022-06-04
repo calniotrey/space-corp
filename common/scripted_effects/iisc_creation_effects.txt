@@ -47,6 +47,17 @@ iisc_create_corp = {
 				preset = iisc_agreement_preset
 				# subject_type = iisc_corp_vassal
 			}
+			random_agreement = {
+				limit = {
+					owner = {
+						is_same_value = prevprevprev
+					}
+					target = {
+						is_same_value = prevprev
+					}
+				}
+				add_loyalty = 200
+			}
 			iisc_set_hq = yes
 			event_target:iisc_hq_planet = {
 				if = {

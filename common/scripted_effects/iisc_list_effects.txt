@@ -1,0 +1,235 @@
+# SLEX-like list storing, up to 10 elements
+#
+# TODO optimize binary
+#
+# LIST
+# INDEX
+# TARGET = this
+IISC_store_list_event_var_index = {
+	if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 0
+			}
+		}
+		$TARGET|this$ = {
+			save_event_target_as = $LIST$_0
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 1
+			}
+		}
+		$TARGET|this$ = {
+			save_event_target_as = $LIST$_1
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 2
+			}
+		}
+		$TARGET|this$ = {
+			save_event_target_as = $LIST$_2
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 3
+			}
+		}
+		$TARGET|this$ = {
+			save_event_target_as = $LIST$_3
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 4
+			}
+		}
+		$TARGET|this$ = {
+			save_event_target_as = $LIST$_4
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 5
+			}
+		}
+		$TARGET|this$ = {
+			save_event_target_as = $LIST$_5
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 6
+			}
+		}
+		$TARGET|this$ = {
+			save_event_target_as = $LIST$_6
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 7
+			}
+		}
+		$TARGET|this$ = {
+			save_event_target_as = $LIST$_7
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 8
+			}
+		}
+		$TARGET|this$ = {
+			save_event_target_as = $LIST$_8
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 9
+			}
+		}
+		$TARGET|this$ = {
+			save_event_target_as = $LIST$_9
+		}
+	}
+}
+
+# LIST
+# INDEX
+# TARGET = event target name to use
+IISC_load_list_event_var_index = {
+	if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 0
+			}
+		}
+		event_target:$LIST$_0 = {
+			save_event_target_as = $TARGET$
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 1
+			}
+		}
+		event_target:$LIST$_1 = {
+			save_event_target_as = $TARGET$
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 2
+			}
+		}
+		event_target:$LIST$_2 = {
+			save_event_target_as = $TARGET$
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 3
+			}
+		}
+		event_target:$LIST$_3 = {
+			save_event_target_as = $TARGET$
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 4
+			}
+		}
+		event_target:$LIST$_4 = {
+			save_event_target_as = $TARGET$
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 5
+			}
+		}
+		event_target:$LIST$_5 = {
+			save_event_target_as = $TARGET$
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 6
+			}
+		}
+		event_target:$LIST$_6 = {
+			save_event_target_as = $TARGET$
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 7
+			}
+		}
+		event_target:$LIST$_7 = {
+			save_event_target_as = $TARGET$
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 8
+			}
+		}
+		event_target:$LIST$_8 = {
+			save_event_target_as = $TARGET$
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = $INDEX$
+				value = 9
+			}
+		}
+		event_target:$LIST$_9 = {
+			save_event_target_as = $TARGET$
+		}
+	}
+}

@@ -1,18 +1,5 @@
 namespace = iisc_registry
 #
-#only for debug, spawns a corp
-country_event = {
-	id = iisc_registry.1000
-	is_triggered_only = yes
-	hide_window = yes
-	immediate = {
-		iisc_create_corp = yes
-		last_created_country = {
-			set_name = random
-		}
-	}
-}
-
 #THIS = player/corporate overlord
 country_event = {
 	id = iisc_registry.0
@@ -35,23 +22,6 @@ country_event = {
 				limit = {
 					is_country_type = iisc_space_corporation
 					iisc_is_corp_connected = yes
-				}
-				ROOT = {
-					SLEX_store_list_event_var_index = {
-						LIST = iisc_registry_corp_list
-						INDEX = iisc_registry_length
-						TARGET = PREV
-					}
-				}
-				iisc_get_hq = yes
-				event_target:iisc_hq_planet = {
-					ROOT = {
-						SLEX_store_list_event_var_index = {
-							LIST = iisc_registry_hq_list
-							INDEX = iisc_registry_length
-							TARGET = PREV
-						}
-					}
 				}
 				ROOT = {
 					change_variable = {
@@ -98,68 +68,56 @@ country_event = {
 			which = iisc_index_bis
 			value = 0
 		}
-		while = {
-			limit = {
-				check_variable = {
-					which = iisc_index
-					value < iisc_registry_length
+		event_target:iisc_registry_owner = {
+			every_subject = {
+				limit = {
+					is_country_type = iisc_space_corporation
 				}
-				check_variable = {
-					which = iisc_index_bis
-					value < 5
+				if = {
+					limit = {
+						root = {
+							check_variable = {
+								which = iisc_index
+								value < iisc_registry_length
+							}
+							check_variable = {
+								which = iisc_index_bis
+								value < 5
+							}
+						}
+					}
+					iisc_get_hq = yes
+					log = "LOOP"
+					log = "[this.GetName]"
+					log = "[iisc_hq_planet.GetName]"
+					root = {
+						IISC_store_list_event_var_index = {
+							LIST = iisc_registry_corp
+							INDEX = iisc_index_bis
+							TARGET = prev
+						}
+						IISC_store_list_event_var_index = {
+							LIST = iisc_registry_hq
+							INDEX = iisc_index_bis
+							TARGET = event_target:iisc_hq_planet
+						}
+						change_variable = {
+							which = iisc_index_bis
+							value = 1
+						}
+					}
 				}
-			}
-			SLEX_load_list_event_var_index = {
-				LIST = iisc_registry_corp_list
-				INDEX = iisc_index
-				TARGET = iisc_registry_temp_target
-			}
-			SLEX_store_list_event_var_index = {
-				LIST = iisc_registry_corp
-				INDEX = iisc_index_bis
-				TARGET = event_target:iisc_registry_temp_target
-			}
-			SLEX_load_list_event_var_index = {
-				LIST = iisc_registry_hq_list
-				INDEX = iisc_index
-				TARGET = iisc_registry_temp_target
-			}
-			SLEX_store_list_event_var_index = {
-				LIST = iisc_registry_hq
-				INDEX = iisc_index_bis
-				TARGET = event_target:iisc_registry_temp_target
-			}
-			SLEX_set_list_variable_var_index = {
-				LIST = iisc_registry_corp_index
-				INDEX = iisc_index_bis
-				VALUE = 1
-			}
-			change_variable = {
-				which = iisc_index
-				value = 1
-			}
-			change_variable = {
-				which = iisc_index_bis
-				value = 1
+				root = {
+					change_variable = {
+						which = iisc_index
+						value = 1
+					}
+				}
 			}
 		}
-		while = {
-			limit = {
-				check_variable = {
-					which = iisc_index_bis
-					value < 5
-				}
-			}
-			SLEX_set_list_variable_var_index = {
-				LIST = iisc_registry_corp_index
-				INDEX = iisc_index_bis
-				VALUE = 0
-			}
-			change_variable = {
-				which = iisc_index_bis
-				value = 1
-			}
-		}
+		log = "DEBUG first element"
+		log = "[iisc_registry_corp_0.GetName]"
+		log = "[iisc_registry_hq_0.GetName]"
 	}
 	option = {
 		name = iisc_registry.1.foreign_list
@@ -236,8 +194,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_civic"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_0
-				value = 1
+				which = iisc_index_bis
+				value > 0
 			}
 		}
 		hidden_effect = {
@@ -248,7 +206,7 @@ country_event = {
 				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = iisc_diplomacy.11
+				id = iisc_diplomacy.9
 			}
 		}
 	}
@@ -257,8 +215,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_name"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_0
-				value = 1
+				which = iisc_index_bis
+				value > 0
 			}
 		}
 		hidden_effect = {
@@ -269,7 +227,7 @@ country_event = {
 				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = iisc_diplomacy.11
+				id = iisc_diplomacy.9
 			}
 		}
 	}
@@ -278,8 +236,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_hq"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_0
-				value = 1
+				which = iisc_index_bis
+				value > 0
 			}
 		}
 	}
@@ -289,8 +247,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_civic"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_1
-				value = 1
+				which = iisc_index_bis
+				value > 1
 			}
 		}
 		hidden_effect = {
@@ -301,7 +259,7 @@ country_event = {
 				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = iisc_diplomacy.11
+				id = iisc_diplomacy.9
 			}
 		}
 	}
@@ -310,8 +268,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_name"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_1
-				value = 1
+				which = iisc_index_bis
+				value > 1
 			}
 		}
 		hidden_effect = {
@@ -322,7 +280,7 @@ country_event = {
 				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = iisc_diplomacy.11
+				id = iisc_diplomacy.9
 			}
 		}
 	}
@@ -331,8 +289,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_hq"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_1
-				value = 1
+				which = iisc_index_bis
+				value > 1
 			}
 		}
 	}
@@ -342,8 +300,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_civic"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_2
-				value = 1
+				which = iisc_index_bis
+				value > 2
 			}
 		}
 		hidden_effect = {
@@ -354,7 +312,7 @@ country_event = {
 				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = iisc_diplomacy.11
+				id = iisc_diplomacy.9
 			}
 		}
 	}
@@ -363,8 +321,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_name"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_2
-				value = 1
+				which = iisc_index_bis
+				value > 2
 			}
 		}
 		hidden_effect = {
@@ -375,7 +333,7 @@ country_event = {
 				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = iisc_diplomacy.11
+				id = iisc_diplomacy.9
 			}
 		}
 	}
@@ -384,8 +342,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_hq"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_2
-				value = 1
+				which = iisc_index_bis
+				value > 2
 			}
 		}
 	}
@@ -395,8 +353,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_civic"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_3
-				value = 1
+				which = iisc_index_bis
+				value > 3
 			}
 		}
 		hidden_effect = {
@@ -407,7 +365,7 @@ country_event = {
 				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = iisc_diplomacy.11
+				id = iisc_diplomacy.9
 			}
 		}
 	}
@@ -416,8 +374,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_name"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_3
-				value = 1
+				which = iisc_index_bis
+				value > 3
 			}
 		}
 		hidden_effect = {
@@ -428,7 +386,7 @@ country_event = {
 				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = iisc_diplomacy.11
+				id = iisc_diplomacy.9
 			}
 		}
 	}
@@ -437,8 +395,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_hq"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_3
-				value = 1
+				which = iisc_index_bis
+				value > 3
 			}
 		}
 	}
@@ -448,8 +406,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_civic"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_4
-				value = 1
+				which = iisc_index_bis
+				value > 4
 			}
 		}
 		hidden_effect = {
@@ -460,7 +418,7 @@ country_event = {
 				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = iisc_diplomacy.11
+				id = iisc_diplomacy.9
 			}
 		}
 	}
@@ -469,8 +427,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_name"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_4
-				value = 1
+				which = iisc_index_bis
+				value > 4
 			}
 		}
 		hidden_effect = {
@@ -481,7 +439,7 @@ country_event = {
 				save_event_target_as = iisc_corp_country
 			}
 			country_event = {
-				id = iisc_diplomacy.11
+				id = iisc_diplomacy.9
 			}
 		}
 	}
@@ -490,8 +448,8 @@ country_event = {
 		custom_gui = "iisc_registry_corp_hq"
 		trigger = {
 			check_variable = {
-				which = iisc_registry_corp_index_4
-				value = 1
+				which = iisc_index_bis
+				value > 4
 			}
 		}
 	}
@@ -521,11 +479,11 @@ country_event = {
 			which = iisc_foreign_list_page
 			value = 0
 		}
-		SLEX_store_list_event_var_index = {
-			LIST = iisc_foreign_list
-			INDEX = iisc_foreign_list_length
-			TARGET = THIS
-		}
+		# SLEX_store_list_event_var_index = {
+		# 	LIST = iisc_foreign_list
+		# 	INDEX = iisc_foreign_list_length
+		# 	TARGET = THIS
+		# }
 		change_variable = {
 			which = iisc_foreign_list_length
 			value = 1
@@ -542,11 +500,11 @@ country_event = {
 				}
 			}
 			PREV = {
-				SLEX_store_list_event_var_index = {
-					LIST = iisc_foreign_list
-					INDEX = iisc_foreign_list_length
-					TARGET = PREV
-				}
+				# SLEX_store_list_event_var_index = {
+				# 	LIST = iisc_foreign_list
+				# 	INDEX = iisc_foreign_list_length
+				# 	TARGET = PREV
+				# }
 				change_variable = {
 					which = iisc_foreign_list_length
 					value = 1
@@ -586,65 +544,106 @@ country_event = {
 			which = iisc_index_bis
 			value = 0
 		}
-		while = {
+		every_country = {
 			limit = {
-				check_variable = {
+				OR = {
+					is_same_value = root
+					AND = {
+						iisc_can_have_space_corp = yes
+						has_communications = root
+						any_subject = {
+							is_country_type = iisc_space_corporation
+						}
+					}
+				}
+			}
+			prev = {
+				if = {
+					limit = {
+						check_variable = {
+							which = iisc_index
+							value < iisc_foreign_list_length
+						}
+						check_variable = {
+							which = iisc_index_bis
+							value < 10
+						}
+					}
+					IISC_store_list_event_var_index = {
+						LIST = iisc_registry_country
+						INDEX = iisc_index_bis
+						TARGET = prev
+					}
+					change_variable = {
+						which = iisc_index_bis
+						value = 1
+					}
+				}
+				change_variable = {
 					which = iisc_index
-					value < iisc_foreign_list_length
+					value = 1
 				}
-				check_variable = {
-					which = iisc_index_bis
-					value < 10
-				}
-			}
-			SLEX_load_list_event_var_index = {
-				LIST = iisc_foreign_list
-				INDEX = iisc_index
-				TARGET = iisc_registry_temp_target
-			}
-			SLEX_store_list_event_var_index = {
-				LIST = iisc_registry_country
-				INDEX = iisc_index_bis
-				TARGET = event_target:iisc_registry_temp_target
-			}
-			SLEX_set_list_variable_var_index = {
-				LIST = iisc_registry_country_index
-				INDEX = iisc_index_bis
-				VALUE = 1
-			}
-			change_variable = {
-				which = iisc_index
-				value = 1
-			}
-			change_variable = {
-				which = iisc_index_bis
-				value = 1
 			}
 		}
-		while = {
-			limit = {
-				check_variable = {
-					which = iisc_index_bis
-					value < 10
-				}
-			}
-			SLEX_set_list_variable_var_index = {
-				LIST = iisc_registry_country_index
-				INDEX = iisc_index_bis
-				VALUE = 0
-			}
-			change_variable = {
-				which = iisc_index_bis
-				value = 1
-			}
-		}
+		# while = {
+		# 	limit = {
+		# 		check_variable = {
+		# 			which = iisc_index
+		# 			value < iisc_foreign_list_length
+		# 		}
+		# 		check_variable = {
+		# 			which = iisc_index_bis
+		# 			value < 10
+		# 		}
+		# 	}
+		# 	SLEX_load_list_event_var_index = {
+		# 		LIST = iisc_foreign_list
+		# 		INDEX = iisc_index
+		# 		TARGET = iisc_registry_temp_target
+		# 	}
+		# 	SLEX_store_list_event_var_index = {
+		# 		LIST = iisc_registry_country
+		# 		INDEX = iisc_index_bis
+		# 		TARGET = event_target:iisc_registry_temp_target
+		# 	}
+		# 	SLEX_set_list_variable_var_index = {
+		# 		LIST = iisc_registry_country_index
+		# 		INDEX = iisc_index_bis
+		# 		VALUE = 1
+		# 	}
+		# 	change_variable = {
+		# 		which = iisc_index
+		# 		value = 1
+		# 	}
+		# 	change_variable = {
+		# 		which = iisc_index_bis
+		# 		value = 1
+		# 	}
+		# }
+		# while = {
+		# 	limit = {
+		# 		check_variable = {
+		# 			which = iisc_index_bis
+		# 			value < 10
+		# 		}
+		# 	}
+		# 	SLEX_set_list_variable_var_index = {
+		# 		LIST = iisc_registry_country_index
+		# 		INDEX = iisc_index_bis
+		# 		VALUE = 0
+		# 	}
+		# 	change_variable = {
+		# 		which = iisc_index_bis
+		# 		value = 1
+		# 	}
+		# }
 	}
 	option = {
 		name = iisc_registry.11.country_0
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_0
-				value = 1
+				which = iisc_index_bis
+				value > 0
 			}
 		}
 		hidden_effect = {
@@ -661,8 +660,8 @@ country_event = {
 		name = iisc_registry.11.country_1
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_1
-				value = 1
+				which = iisc_index_bis
+				value > 1
 			}
 		}
 		hidden_effect = {
@@ -679,8 +678,8 @@ country_event = {
 		name = iisc_registry.11.country_2
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_2
-				value = 1
+				which = iisc_index_bis
+				value > 2
 			}
 		}
 		hidden_effect = {
@@ -697,8 +696,8 @@ country_event = {
 		name = iisc_registry.11.country_3
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_3
-				value = 1
+				which = iisc_index_bis
+				value > 3
 			}
 		}
 		hidden_effect = {
@@ -715,8 +714,8 @@ country_event = {
 		name = iisc_registry.11.country_4
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_4
-				value = 1
+				which = iisc_index_bis
+				value > 4
 			}
 		}
 		hidden_effect = {
@@ -733,8 +732,8 @@ country_event = {
 		name = iisc_registry.11.country_5
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_5
-				value = 1
+				which = iisc_index_bis
+				value > 5
 			}
 		}
 		hidden_effect = {
@@ -751,8 +750,8 @@ country_event = {
 		name = iisc_registry.11.country_6
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_6
-				value = 1
+				which = iisc_index_bis
+				value > 6
 			}
 		}
 		hidden_effect = {
@@ -769,8 +768,8 @@ country_event = {
 		name = iisc_registry.11.country_7
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_7
-				value = 1
+				which = iisc_index_bis
+				value > 7
 			}
 		}
 		hidden_effect = {
@@ -787,8 +786,8 @@ country_event = {
 		name = iisc_registry.11.country_8
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_8
-				value = 1
+				which = iisc_index_bis
+				value > 8
 			}
 		}
 		hidden_effect = {
@@ -805,8 +804,8 @@ country_event = {
 		name = iisc_registry.11.country_9
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_9
-				value = 1
+				which = iisc_index_bis
+				value > 9
 			}
 		}
 		hidden_effect = {
@@ -823,8 +822,8 @@ country_event = {
 		name = iisc_registry.11.blank_1
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_1
-				value = 0
+				which = iisc_index_bis
+				value <= 1
 			}
 		}
 		allow = {
@@ -835,8 +834,8 @@ country_event = {
 		name = iisc_registry.11.blank_2
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_2
-				value = 0
+				which = iisc_index_bis
+				value <= 2
 			}
 		}
 		allow = {
@@ -847,8 +846,8 @@ country_event = {
 		name = iisc_registry.11.blank_3
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_3
-				value = 0
+				which = iisc_index_bis
+				value <= 3
 			}
 		}
 		allow = {
@@ -859,8 +858,8 @@ country_event = {
 		name = iisc_registry.11.blank_4
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_4
-				value = 0
+				which = iisc_index_bis
+				value <= 4
 			}
 		}
 		allow = {
@@ -871,8 +870,8 @@ country_event = {
 		name = iisc_registry.11.blank_5
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_5
-				value = 0
+				which = iisc_index_bis
+				value <= 5
 			}
 		}
 		allow = {
@@ -883,8 +882,8 @@ country_event = {
 		name = iisc_registry.11.blank_6
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_6
-				value = 0
+				which = iisc_index_bis
+				value <= 6
 			}
 		}
 		allow = {
@@ -895,8 +894,8 @@ country_event = {
 		name = iisc_registry.11.blank_7
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_7
-				value = 0
+				which = iisc_index_bis
+				value <= 7
 			}
 		}
 		allow = {
@@ -907,8 +906,8 @@ country_event = {
 		name = iisc_registry.11.blank_8
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_8
-				value = 0
+				which = iisc_index_bis
+				value <= 8
 			}
 		}
 		allow = {
@@ -919,8 +918,8 @@ country_event = {
 		name = iisc_registry.11.blank_9
 		trigger = {
 			check_variable = {
-				which = iisc_registry_country_index_9
-				value = 0
+				which = iisc_index_bis
+				value <= 9
 			}
 		}
 		allow = {
