@@ -28,6 +28,8 @@
  d_iisc_income_deposit: "Centre d'impôts"
  d_iisc_income_deposit_desc: "Des cohortes de comptables calculent chaque mois les impôts payés par les corporations établies sur cette planète."
  iisc_corporation_tax: "Taxes des Corporations"
+ iisc_convoy_name: "[iisc_convoy_old_dest.GetName] - [iisc_convoy_dest.GetName]"
+ iisc_agreement_preset: "Corporation"
  ##### Events #####
  iisc_pulse.18.title: "Une Nouvelle Corporation"
  iisc_pulse.18.desc: "C'est un grand jour pour notre économie ! De nombreuses entreprises de [iisc_hq_planet.GetName] se sont agglomérées en une seule corporation ! D'après notre registre, elle s'appelerait [iisc_last_created_corp.GetName]."
@@ -66,10 +68,10 @@
  iisc_technology.21032.desc: "Une de nos corporations a publié la technologie §Y$tech_mining_2$§!."
  iisc_technology.21033.desc: "Une de nos corporations a publié la technologie §Y$tech_mining_3$§!."
  ##### Diplomacy #####
- iisc_diplomacy.11.name: "[iisc_corp_country.GetName]"
+ iisc_diplomacy.11.name: "[iisc_corp_country.GetName] ([iisc_corp_country.GetCorporationType] sur [iisc_hq_planet.GetName])"
  iisc_diplomacy.11.desc: "Bienvenue ! Que pouvons nous faire pour vous ?"
  iisc_diplomacy.11.a: "Plus d'informations"
- iisc_diplomacy.11.a.response: "Nous sommes établi sur [iisc_hq_planet.GetName]. Notre solde est de [iisc_corp_country.GetMoney] crédits. Nous avons payé un total de [iisc_corp_country.GetTotalPayedForLicenses] crédits en licenses. Nous avons été taxé un total de [iisc_corp_country.GetTotalTaxed] crédits. Notre bénéfice net du mois précédent était de [iisc_corp_country.GetMoneyVariation] crédits."
+ iisc_diplomacy.11.a.response: "Nous sommes établi sur [iisc_hq_planet.GetName].\nNotre solde est de [iisc_corp_country.GetMoney] crédits.\nNous avons payé un total de [iisc_corp_country.GetTotalPaidForLicenses] crédits en licenses.\nNous avons été taxé un total de [iisc_corp_country.GetTotalTaxed] crédits.\nNotre bénéfice net du mois précédent était de [iisc_corp_country.GetMoneyVariation] crédits."
  iisc_diplomacy.11.b: "Montrez moi votre budget"
  iisc_diplomacy.11.b.response: "Notre solde est de [iisc_corp_country.GetMoney] crédits. Notre budget est actuellement divisé en :\n[iisc_corp_country.GetBudgetMilitary] crédits pour le militaire.\n[iisc_corp_country.GetBudgetConvoy] crédits pour des convois.\n[iisc_corp_country.GetBudgetSupply] crédits pour des lignes de ravitaillement.\n[iisc_corp_country.GetBudgetBuilder] crédits pour la construction de vaisseaux de construction.\n[iisc_corp_country.GetBudgetScienceShip] crédits pour la construction de vaisseaux scientifiques.\n[iisc_corp_country.GetBudgetMiningStation] crédits pour la construction de stations minières.\n[iisc_corp_country.GetBudgetResearchStation] crédits pour la construction de station de recherche.\n[iisc_corp_country.GetBudgetColonization] crédits pour le développement du quartier général."
  iisc_diplomacy.11.hire_leader: "Engager une personnalité"

@@ -28,6 +28,8 @@
  d_iisc_income_deposit: "Steuerzentrum"
  d_iisc_income_deposit_desc: "Armeen von Buchhaltern berechnen die Höhe der Steuern, die von den auf diesem Planeten ansässigen Konzernen gezahlt werden." # thanks Deepl
  iisc_corporation_tax: "Corporation Steuern"
+ iisc_convoy_name: "[iisc_convoy_old_dest.GetName] - [iisc_convoy_dest.GetName]"
+ iisc_agreement_preset: "Corporation"
  ##### Events #####
  iisc_pulse.18.title: "Ein neuer Konzern entsteht"
  iisc_pulse.18.desc: "Heute ist ein Großartiger Tag für unsere Wirtschaft. Mehrere kleine Unternehmen von [iisc_hq_planet.GetName] haben sich zusammengetan um ein Weltraum-Konzern zu bilden! Laut Unternehmensregister nennt sich der Konzern [iisc_last_created_corp.GetName]."
@@ -66,10 +68,10 @@
  iisc_technology.21032.desc: "Einer unserer Konzerne hat die Technologie §Y$tech_mining_2$§! erforscht."
  iisc_technology.21033.desc: "Einer unserer Konzerne hat die Technologie §Y$tech_mining_3$§! erforscht."
  ##### Diplomacy #####
- iisc_diplomacy.11.name: "[iisc_corp_country.GetName]"
+ iisc_diplomacy.11.name: "[iisc_corp_country.GetName] ([iisc_corp_country.GetCorporationType] auf [iisc_hq_planet.GetName])"
  iisc_diplomacy.11.desc: "Willkommen! Was können wir für Sie tun?"
  iisc_diplomacy.11.a: "Mehr Informationen"
- iisc_diplomacy.11.a.response: "Wir sind auf [iisc_hq_planet.GetName] stationiert. Momentan besitzen wir [iisc_corp_country.GetMoney] credits. Insgesamt haben wir [iisc_corp_country.GetTotalPaidForLicenses] credits für Lizenzen zahlen müssen, und insgesamt wurden wir auf [iisc_corp_country.GetTotalTaxed] credits besteuert. Unser Nettoeinkommen vom letzten Monat betrug [iisc_corp_country.GetMoneyVariation] credits."
+ iisc_diplomacy.11.a.response: "Wir sind auf [iisc_hq_planet.GetName] stationiert.\nMomentan besitzen wir [iisc_corp_country.GetMoney] credits.\nInsgesamt haben wir [iisc_corp_country.GetTotalPaidForLicenses] credits für Lizenzen zahlen müssen, und insgesamt wurden wir auf [iisc_corp_country.GetTotalTaxed] credits besteuert.\nUnser Nettoeinkommen vom letzten Monat betrug [iisc_corp_country.GetMoneyVariation] credits."
  iisc_diplomacy.11.b: "Zeigt mir euer Budget"
  iisc_diplomacy.11.b.response: "Insgesamt besitzen wir [iisc_corp_country.GetMoney] credits. Unser momentanes Budget:\n[iisc_corp_country.GetBudgetMilitary] credits für das Militär\n[iisc_corp_country.GetBudgetConvoy] credits für Konvois\n[iisc_corp_country.GetBudgetSupply] credits für Versorgungswege\n[iisc_corp_country.GetBudgetBuilder] credits für das Bauen von Konstruktionsschiffen\n[iisc_corp_country.GetBudgetScienceShip] credits für das Bauen von Forschungschiffen\n[iisc_corp_country.GetBudgetMiningStation] credits für das Bauen von Bergbaustationen\n[iisc_corp_country.GetBudgetResearchStation] credits für das Bauen von Forschungsstationen\n[iisc_corp_country.GetBudgetColonization] credits für das Kolonisieren von Planeten"
  iisc_diplomacy.11.hire_leader: "Einen Anfüher anheuern"
@@ -252,6 +254,17 @@
  iisc_civic_exploration_initiative_icon: "£corp_civic_icons|2£"
  iisc_civic_financial_group_icon: "£corp_civic_icons|3£"
  iisc_civic_unknown_icon: "£corp_civic_icons|8£"
+ # ethics text icons
+ iisc_registry_ethic_authoritarian: "£iisc_ethic_authoritarian£"
+ iisc_registry_ethic_egalitarian: "£iisc_ethic_egalitarian£"
+ iisc_registry_ethic_gestalt_consciousness: "£iisc_ethic_gestalt_consciousness£"
+ iisc_registry_ethic_materialist: "£iisc_ethic_materialist£"
+ iisc_registry_ethic_militarist: "£iisc_ethic_militarist£"
+ iisc_registry_ethic_pacifist: "£iisc_ethic_pacifist£"
+ iisc_registry_ethic_spiritualist: "£iisc_ethic_spiritualist£"
+ iisc_registry_ethic_xenophile: "£iisc_ethic_xenophile£"
+ iisc_registry_ethic_xenophobe: "£iisc_ethic_xenophobe£"
+ iisc_registry_ethic_unknown: "£corp_civic_icons|8£"
  # space corp government
  iisc_auth_corporate: "Konzern"
  iisc_auth_corporate_desc: "Ein Oligarchisches System welches von einem Verwaltungsrat oder Ähnlichem regiert wird. Konzerne sind Aktionären oder anderen Privaten Interessen verpflichtet."

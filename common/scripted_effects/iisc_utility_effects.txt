@@ -300,176 +300,178 @@ iisc_clear_registry_variables = {
 }
 
 iisc_actualize_modmenu_settings = {
-	if = {
-		limit = {
-			has_global_flag = iisc_corp_spawning_setting_changed
-		}
-		every_country = {
+	hidden_effect = {
+		if = {
 			limit = {
-				OR = {
-					AND = {
-						has_global_flag = iisc_corp_spawning_players
-						is_ai = yes
-					}
-					has_global_flag = iisc_corp_spawning_off
-				}
-				any_subject = {
-					is_country_type = iisc_space_corporation
-				}
+				has_global_flag = iisc_corp_spawning_setting_changed
 			}
-			every_subject = {
+			every_country = {
 				limit = {
-					is_country_type = iisc_space_corporation
-				}
-				iisc_destroy_corp = yes
-			}
-		}
-		remove_global_flag = iisc_corp_spawning_setting_changed
-	}
-	if = {
-		limit = {
-			has_global_flag = iisc_mining_stations_setting_changed
-		}
-		every_country = {
-			limit = {
-				OR = {
-					AND = {
-						has_global_flag = iisc_mining_stations_players
-						is_ai = yes
+					OR = {
+						AND = {
+							has_global_flag = iisc_corp_spawning_players
+							is_ai = yes
+						}
+						has_global_flag = iisc_corp_spawning_off
 					}
-					has_global_flag = iisc_mining_stations_off
+					any_subject = {
+						is_country_type = iisc_space_corporation
+					}
 				}
-				any_subject = {
-					is_country_type = iisc_space_corporation
-				}
-			}
-			every_subject = {
-				limit = {
-					is_country_type = iisc_space_corporation
-				}
-				every_owned_ship = {
+				every_subject = {
 					limit = {
-						is_ship_size = mining_station
+						is_country_type = iisc_space_corporation
 					}
-					delete_ship = THIS
+					iisc_destroy_corp = yes
 				}
 			}
+			remove_global_flag = iisc_corp_spawning_setting_changed
 		}
-		remove_global_flag = iisc_mining_stations_setting_changed
-	}
-	if = {
-		limit = {
-			has_global_flag = iisc_research_stations_setting_changed
-		}
-		every_country = {
+		if = {
 			limit = {
-				OR = {
-					AND = {
-						has_global_flag = iisc_research_stations_players
-						is_ai = yes
-					}
-					has_global_flag = iisc_research_stations_off
-				}
-				any_subject = {
-					is_country_type = iisc_space_corporation
-				}
+				has_global_flag = iisc_mining_stations_setting_changed
 			}
-			every_subject = {
+			every_country = {
 				limit = {
-					is_country_type = iisc_space_corporation
+					OR = {
+						AND = {
+							has_global_flag = iisc_mining_stations_players
+							is_ai = yes
+						}
+						has_global_flag = iisc_mining_stations_off
+					}
+					any_subject = {
+						is_country_type = iisc_space_corporation
+					}
 				}
-				every_owned_ship = {
+				every_subject = {
 					limit = {
-						is_ship_size = research_station
+						is_country_type = iisc_space_corporation
 					}
-					delete_ship = THIS
+					every_owned_ship = {
+						limit = {
+							is_ship_size = mining_station
+						}
+						delete_ship = THIS
+					}
 				}
 			}
+			remove_global_flag = iisc_mining_stations_setting_changed
 		}
-		remove_global_flag = iisc_research_stations_setting_changed
-	}
-	if = {
-		limit = {
-			has_global_flag = iisc_corp_surveying_setting_changed
-		}
-		every_country = {
+		if = {
 			limit = {
-				OR = {
-					AND = {
-						has_global_flag = iisc_corp_surveying_players
-						is_ai = yes
-					}
-					has_global_flag = iisc_corp_surveying_off
-				}
-				any_subject = {
-					is_country_type = iisc_space_corporation
-				}
+				has_global_flag = iisc_research_stations_setting_changed
 			}
-			every_subject = {
+			every_country = {
 				limit = {
-					is_country_type = iisc_space_corporation
-				}
-				# remove research ships? probably nothing required for this setting actually
-			}
-		}
-		remove_global_flag = iisc_corp_surveying_setting_changed
-	}
-	if = {
-		limit = {
-			has_global_flag = iisc_corp_convoys_setting_changed
-		}
-		every_country = {
-			limit = {
-				OR = {
-					AND = {
-						has_global_flag = iisc_corp_convoys_players
-						is_ai = yes
+					OR = {
+						AND = {
+							has_global_flag = iisc_research_stations_players
+							is_ai = yes
+						}
+						has_global_flag = iisc_research_stations_off
 					}
-					has_global_flag = iisc_corp_convoys_off
+					any_subject = {
+						is_country_type = iisc_space_corporation
+					}
 				}
-				any_subject = {
-					is_country_type = iisc_space_corporation
-				}
-			}
-			every_subject = {
-				limit = {
-					is_country_type = iisc_space_corporation
-				}
-				every_owned_fleet = {
+				every_subject = {
 					limit = {
-						has_fleet_flag = iisc_convoy
+						is_country_type = iisc_space_corporation
 					}
-					delete_fleet = THIS
+					every_owned_ship = {
+						limit = {
+							is_ship_size = research_station
+						}
+						delete_ship = THIS
+					}
 				}
 			}
+			remove_global_flag = iisc_research_stations_setting_changed
 		}
-		remove_global_flag = iisc_corp_convoys_setting_changed
-	}
-	if = {
-		limit = {
-			has_global_flag = iisc_hq_development_setting_changed
-		}
-		every_country = {
+		if = {
 			limit = {
-				OR = {
-					AND = {
-						has_global_flag = iisc_hq_development_players
-						is_ai = yes
-					}
-					has_global_flag = iisc_hq_development_off
-				}
-				any_subject = {
-					is_country_type = iisc_space_corporation
-				}
+				has_global_flag = iisc_corp_surveying_setting_changed
 			}
-			every_subject = {
-				limit = {
-					is_country_type = iisc_space_corporation
-				}
-				iisc_get_hq = yes
-				iisc_remove_hq_deposit_from_corp = yes
-			}
+			# every_country = {
+			# 	limit = {
+			# 		OR = {
+			# 			AND = {
+			# 				has_global_flag = iisc_corp_surveying_players
+			# 				is_ai = yes
+			# 			}
+			# 			has_global_flag = iisc_corp_surveying_off
+			# 		}
+			# 		any_subject = {
+			# 			is_country_type = iisc_space_corporation
+			# 		}
+			# 	}
+			# 	every_subject = {
+			# 		limit = {
+			# 			is_country_type = iisc_space_corporation
+			# 		}
+			# 		# remove research ships? probably nothing required for this setting actually
+			# 	}
+			# }
+			remove_global_flag = iisc_corp_surveying_setting_changed
 		}
-		remove_global_flag = iisc_hq_development_setting_changed
+		if = {
+			limit = {
+				has_global_flag = iisc_corp_convoys_setting_changed
+			}
+			every_country = {
+				limit = {
+					OR = {
+						AND = {
+							has_global_flag = iisc_corp_convoys_players
+							is_ai = yes
+						}
+						has_global_flag = iisc_corp_convoys_off
+					}
+					any_subject = {
+						is_country_type = iisc_space_corporation
+					}
+				}
+				every_subject = {
+					limit = {
+						is_country_type = iisc_space_corporation
+					}
+					every_owned_fleet = {
+						limit = {
+							has_fleet_flag = iisc_convoy
+						}
+						delete_fleet = THIS
+					}
+				}
+			}
+			remove_global_flag = iisc_corp_convoys_setting_changed
+		}
+		if = {
+			limit = {
+				has_global_flag = iisc_hq_development_setting_changed
+			}
+			every_country = {
+				limit = {
+					OR = {
+						AND = {
+							has_global_flag = iisc_hq_development_players
+							is_ai = yes
+						}
+						has_global_flag = iisc_hq_development_off
+					}
+					any_subject = {
+						is_country_type = iisc_space_corporation
+					}
+				}
+				every_subject = {
+					limit = {
+						is_country_type = iisc_space_corporation
+					}
+					iisc_get_hq = yes
+					iisc_remove_hq_deposit_from_corp = yes
+				}
+			}
+			remove_global_flag = iisc_hq_development_setting_changed
+		}
 	}
 }
