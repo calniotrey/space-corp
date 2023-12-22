@@ -59,7 +59,63 @@ iisc_create_corp = {
 				add_loyalty = 200
 			}
 			iisc_set_hq = yes
+			iisc_set_corp_type = yes
 			event_target:iisc_hq_planet = {
+				if = {
+					limit = {
+						NOT = {
+							is_variable_set = iisc_taxes_energy
+						}
+					}
+					set_variable = {
+						which = iisc_taxes_energy
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							is_variable_set = iisc_taxes_minerals
+						}
+					}
+					set_variable = {
+						which = iisc_taxes_minerals
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							is_variable_set = iisc_taxes_food
+						}
+					}
+					set_variable = {
+						which = iisc_taxes_food
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							is_variable_set = iisc_taxes_alloys
+						}
+					}
+					set_variable = {
+						which = iisc_taxes_alloys
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							is_variable_set = iisc_taxes_consumer_goods
+						}
+					}
+					set_variable = {
+						which = iisc_taxes_consumer_goods
+						value = 0
+					}
+				}
 				if = {
 					limit = {
 						NOT = {
@@ -71,6 +127,7 @@ iisc_create_corp = {
 			}
 		}
 	}
+	save_global_event_target_as = iisc_overlord_of_@last_created_country
 	last_created_country = {
 		clear_ethos = yes		# dunno if needed
 		event_target:iisc_original_pop = {

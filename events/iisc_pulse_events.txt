@@ -87,8 +87,15 @@ country_event = {
 					NOT = {
 						has_country_flag = iisc_corp_connected_@prev
 					}
+					# not intensive check to make sure we don't check for nothing
+					intel_level = {
+						level > none
+						system = event_target:iisc_hq_planet.solar_system
+					}
 					# performance intensive?
 					any_owned_fleet = {
+						# needed because military and science ships might be able to go there
+						is_ship_class = shipclass_constructor
 						can_access_system = event_target:iisc_hq_planet.solar_system
 					}
 				}
@@ -173,6 +180,8 @@ country_event = {
 		}
 	}
 	immediate = {
+		iisc_get_hq = yes
+		iisc_get_overlord = yes
 		iisc_handle_corp_connection_to_overlord = yes
 		export_trigger_value_to_variable = {
 			trigger = fleet_power
@@ -201,12 +210,14 @@ country_event = {
 			limit = {
 				iisc_should_reinforce_a_fleet = yes
 			}
+			# log = "iisc_should_reinforce_a_fleet"
 			random_owned_fleet = {
 				limit = {
 					# fleet_power > 0
 					is_ship_class = shipclass_military
 					fleet_power < 1000
 				}
+				# log = "[This.GetName]"
 				set_fleet_flag = iisc_fleet_needs_new_ships
 			}
 		}

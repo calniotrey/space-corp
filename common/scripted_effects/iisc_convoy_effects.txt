@@ -40,8 +40,12 @@ iisc_create_convoy_fleet = {
 				id = iisc_convoy.20				# set name
 				days = 1
 			}
-			iisc_set_convoy_orders = yes
+			save_event_target_as = iisc_convoy_fleet
+			# iisc_set_convoy_orders = yes
 		}
+	}
+	country_event = {
+		id = iisc_convoy.10		# set orders
 	}
 }
 

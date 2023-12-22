@@ -16,34 +16,119 @@ iisc_set_hq = {
 				}
 				set_planet_flag = iisc_hq
 				set_planet_flag = iisc_hq_of_@prevprev
+				change_variable = {
+					which = iisc_number_of_corps_on_this_planet
+					value = 1
+				}
 				save_event_target_as = iisc_hq_planet
+				save_global_event_target_as = iisc_hq_planet_of_@prevprev
 			}
 		}
 		set_country_flag = iisc_hq_set
 	}
 }
 
+# hq set
 # this = corp
-iisc_get_hq = {
-	overlord = {
-		random_owned_planet = {
-			limit = {
-				has_planet_flag = iisc_hq_of_@prevprev
-			}
-			save_event_target_as = $TARGET|iisc_hq_planet$
+iisc_set_corp_type = {
+	# in vanilla only 2 is needed
+	force_remove_civic = 1
+	force_remove_civic = 1
+	force_add_civic = iisc_civic_space_corp
+	# event_target:iisc_hq_planet = {
+	# export_trigger_value_to_variable = {
+	# 	trigger = planet_resource_compare
+	# 	parameters = {
+	# 		resource = physics_research
+	# 		type = produces
+	# 	}
+	# 	variable = iisc_temp_physics
+	# }
+	# export_trigger_value_to_variable = {
+	# 	trigger = planet_resource_compare
+	# 	parameters = {
+	# 		resource = society_research
+	# 		type = produces
+	# 	}
+	# 	variable = iisc_temp_society
+	# }
+	# export_trigger_value_to_variable = {
+	# 	trigger = planet_resource_compare
+	# 	parameters = {
+	# 		resource = engineering_research
+	# 		type = produces
+	# 	}
+	# 	variable = iisc_temp_engineering
+	# }
+	# export_trigger_value_to_variable = {
+	# 	trigger = planet_resource_compare
+	# 	parameters = {
+	# 		resource = engineering_research
+	# 		type = produces
+	# 	}
+	# 	variable = iisc_temp_engineering
+	# }
+	random_list = {
+		10 = {
+			# modifier = {
+			# 	factor = 2
+			# 	planet_resource_compare = {
+			# 		resource = <resource_name>
+			# 		value ><= <value>/variable>
+			# 		type = upkeep/produces/balance(default)
+			# 	}
+			# }
+			force_add_civic = iisc_civic_research_consortium
+		}
+		10 = {
+			force_add_civic = iisc_civic_engineering_firm
+		}
+		10 = {
+			force_add_civic = iisc_civic_mining_union
+		}
+		10 = {
+			force_add_civic = iisc_civic_security_force
+		}
+		10 = {
+			force_add_civic = iisc_civic_logistics_agency
+		}
+		10 = {
+			force_add_civic = iisc_civic_exploration_initiative
+		}
+		10 = {
+			force_add_civic = iisc_civic_financial_group
 		}
 	}
 }
 
 # this = corp
+iisc_get_hq = {
+	event_target:iisc_hq_planet_of_@this = {
+		save_event_target_as = $TARGET|iisc_hq_planet$
+	}
+	# overlord = {
+	# 	random_owned_planet = {
+	# 		limit = {
+	# 			has_planet_flag = iisc_hq_of_@prevprev
+	# 		}
+	# 		save_event_target_as = $TARGET|iisc_hq_planet$
+	# 	}
+	# }
+}
+
+# this = corp
 iisc_get_overlord = {
-	overlord = {
+	event_target:iisc_overlord_of_@this = {
 		save_event_target_as = iisc_overlord
 	}
+	# overlord = {
+	# 	save_event_target_as = iisc_overlord
+	# }
 }
 
 # this = corp
 # hq set and exists
+# overlord set (may not exist)
 iisc_handle_corp_connection_to_overlord = {
 	if = {
 		limit = {
@@ -54,9 +139,9 @@ iisc_handle_corp_connection_to_overlord = {
 				event_target:iisc_hq_planet.owner = {
 					iisc_can_have_space_corp = no
 				}
-				event_target:iisc_hq_planet.owner = {
-					is_subject = yes
-				}
+				# event_target:iisc_hq_planet.owner = {
+				# 	is_subject = yes
+				# }
 			}
 		}
 		iisc_destroy_corp = yes
@@ -230,7 +315,11 @@ iisc_destroy_corp = {
 			}
 			event_target:iisc_hq_planet = {
 				remove_planet_flag = iisc_hq_of_@prev
-				remove_planet_flag = iisc_hq
+				remove_planet_flag = iisc_hq				# TODO
+				subtract_variable = {
+					which = iisc_number_of_corps_on_this_planet
+					value = 1
+				}
 				remove_deposit = d_iisc_income_deposit
 				subtract_variable = {
 					which = iisc_taxes_energy

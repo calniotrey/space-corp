@@ -15,6 +15,7 @@
 @cost3 = 9
 @cost4 = 12
 @cost5 = 15
+@power_0 = 0
 @power_1 = -10
 @power_2 = -15
 @power_3 = -20
@@ -400,4 +401,183 @@ utility_component_template = {
 	ai_weight = {
 		weight = 10
 	}
+}
+
+#####################
+#       DRIVES      #
+#####################
+### HYPER DRIVES
+utility_component_template = {
+	key = "IISC_CONVOY_HYPER_DRIVE_1_CIVILIAN"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_1"
+	icon_frame = 1
+	ftl = yes
+	ship_modifier = {
+		ship_disengage_opportunities_add = 1
+	}
+	ai_weight = {
+		weight = 1
+	}
+	size_restriction = {
+		iisc_civilian_freighter
+		iisc_civilian_tanker
+		iisc_passenger_liner
+	}
+	prerequisites = {
+		"tech_hyper_drive_1"
+	}
+	component_set = "ftl_components"
+	upgrades_to = "IISC_CONVOY_HYPER_DRIVE_2_CIVILIAN"
+}
+
+utility_component_template = {
+	key = "IISC_CONVOY_HYPER_DRIVE_2_CIVILIAN"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_2"
+	icon_frame = 1
+	ftl = yes
+	ship_modifier = {
+		ship_disengage_opportunities_add = 1
+		ship_windup_mult = -0.25
+	}
+	ai_weight = {
+		weight = 2
+	}
+	size_restriction = {
+		iisc_civilian_freighter
+		iisc_civilian_tanker
+		iisc_passenger_liner
+	}
+	prerequisites = {
+		"tech_hyper_drive_2"
+	}
+	component_set = "ftl_components"
+	upgrades_to = "IISC_CONVOY_HYPER_DRIVE_3_CIVILIAN"
+}
+
+utility_component_template = {
+	key = "IISC_CONVOY_HYPER_DRIVE_3_CIVILIAN"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_3"
+	icon_frame = 1
+	ftl = yes
+	ship_modifier = {
+		ship_disengage_opportunities_add = 1
+		ship_windup_mult = -0.5
+	}
+	ai_weight = {
+		weight = 3
+	}
+	size_restriction = {
+		iisc_civilian_freighter
+		iisc_civilian_tanker
+		iisc_passenger_liner
+	}
+	prerequisites = {
+		"tech_hyper_drive_3"
+	}
+	component_set = "ftl_components"
+	upgrades_to = "IISC_CONVOY_JUMP_DRIVE_1"
+}
+
+### Jump drives
+utility_component_template = {
+	key = "IISC_CONVOY_SUBSPACE_DRIVE"
+	size = small
+	icon = "GFX_ship_part_subspace_drive"
+	icon_frame = 1
+	power = @power_0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost1
+		}
+	}
+	ftl = no
+	jumpdrive = yes
+	ship_modifier = {
+		ship_jumpdrive_cooldown_mult = -0.25
+		ship_ftl_jumpdrive_range_mult = -0.5
+	}
+	prerequisites = {
+		"tech_subspace_drive"
+	}
+	ai_weight = {
+		weight = 1
+	}
+	component_set = "ftl_components"
+	upgrades_to = "IISC_CONVOY_JUMP_DRIVE_1"
+	size_restriction = {
+		iisc_civilian_freighter
+		iisc_civilian_tanker
+		iisc_passenger_liner
+	}
+}
+
+utility_component_template = {
+	key = "IISC_CONVOY_JUMP_DRIVE_1"
+	size = small
+	icon = "GFX_ship_part_jump_drive_1"
+	icon_frame = 1
+	power = @power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost4
+		}
+	}
+	ftl = yes
+	jumpdrive = yes
+	ship_modifier = {
+		ship_disengage_opportunities_add = 1
+		ship_windup_mult = -0.7
+	}
+	ai_weight = {
+		weight = 4
+	}
+	size_restriction = {
+		iisc_civilian_freighter
+		iisc_civilian_tanker
+		iisc_passenger_liner
+	}
+	prerequisites = {
+		"tech_jump_drive_1"
+	}
+	component_set = "ftl_components"
+	upgrades_to = "IISC_CONVOY_PSI_JUMP_DRIVE_1"
+}
+
+### Jump drives
+utility_component_template = {
+	key = "IISC_CONVOY_PSI_JUMP_DRIVE_1"
+	size = small
+	icon = "GFX_ship_part_psi_jump_drive_1"
+	icon_frame = 1
+	power = @power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost4
+		}
+	}
+	ftl = yes
+	jumpdrive = yes
+	ship_modifier = {
+		ship_disengage_opportunities_add = 2
+		ship_windup_mult = -0.8
+		ship_ftl_jumpdrive_range_mult = 0.5
+	}
+	ai_weight = {
+		weight = 5
+	}
+	size_restriction = {
+		iisc_civilian_freighter
+		iisc_civilian_tanker
+		iisc_passenger_liner
+	}
+	prerequisites = {
+		"tech_psi_jump_drive_1"
+	}
+	component_set = "ftl_components"
 }

@@ -140,9 +140,9 @@ d_iisc_research_consortium_hive_10 = {
 		job_brain_drone_per_pop = 0.05
 		job_technician_drone_add = 2
 		job_gas_refiner_drone_add = 1
-		planet_jobs_physics_research_produces_mult = 0.1
-		planet_jobs_society_research_produces_mult = 0.1
-		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_jobs_physics_research_produces_mult = 0.2
+		planet_jobs_society_research_produces_mult = 0.2
+		planet_jobs_engineering_research_produces_mult = 0.2
 	}
 	drop_weight = {
 		weight = 0
@@ -294,7 +294,7 @@ d_iisc_engineering_firm_hive_10 = {
 		job_technician_drone_add = 1
 		job_chemist_drone_add = 1
 		job_brain_drone_add = 1
-		planet_jobs_alloys_produces_mult = 0.1
+		planet_jobs_alloys_produces_mult = 0.2
 	}
 	drop_weight = {
 		weight = 0
@@ -439,7 +439,7 @@ d_iisc_mining_union_hive_10 = {
 		job_agri_drone_add = 1
 		job_translucer_drone_add = 1
 		job_foundry_add = 1
-		planet_jobs_minerals_produces_mult = 0.1
+		planet_jobs_minerals_produces_mult = 0.2
 	}
 	drop_weight = {
 		weight = 0
@@ -884,7 +884,7 @@ d_iisc_exploration_initiative_hive_10 = {
 		job_agri_drone_add = 2
 		job_mining_drone_add = 1
 		job_patrol_drone_add = 1
-		planet_jobs_produces_mult = 0.05
+		planet_jobs_produces_mult = 0.06
 		planet_sensor_range_add = 2
 	}
 	drop_weight = {
@@ -1028,7 +1028,7 @@ d_iisc_financial_group_hive_10 = {
 		job_synapse_drone_add = 2
 		job_patrol_drone_add = 1
 		job_agri_drone_add = 1
-		planet_jobs_energy_produces_mult = 0.1
+		planet_jobs_energy_produces_mult = 0.2
 	}
 	drop_weight = {
 		weight = 0

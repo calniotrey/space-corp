@@ -12,22 +12,28 @@ iisc_should_create_military_fleet = {
 	}
 	OR = {
 		AND = {
-			has_civic = iisc_civic_security_force
-			check_variable_arithmetic = {
-				which = iisc_current_fleet_power
-				multiply = @iisc_overlord_fleet_power_multiple
-				value < overlord.trigger:fleet_power
-			}
-		}
-		AND = {
 			NOT = {
 				has_civic = iisc_civic_security_force
 			}
 			check_variable_arithmetic = {
 				which = iisc_current_fleet_power
-				multiply = @iisc_overlord_fleet_power_multiple_security_force
+				divide = @iisc_overlord_fleet_power_fraction
 				value < overlord.trigger:fleet_power
 			}
+		}
+		AND = {
+			has_civic = iisc_civic_security_force
+			check_variable_arithmetic = {
+				which = iisc_current_fleet_power
+				divide = @iisc_overlord_fleet_power_fraction_security_force
+				value < overlord.trigger:fleet_power
+			}
+		}
+	}
+	count_owned_fleet = {
+		count <= 20
+		limit = {
+			is_ship_class = shipclass_military
 		}
 	}
 	iisc_can_spawn_ships = yes
@@ -48,20 +54,69 @@ iisc_should_reinforce_a_fleet = {
 		which = iisc_budget_military
 		value >= @iisc_corp_corvette_cost
 	}
-	check_variable_arithmetic = {
-		which = iisc_current_fleet_power
-		multiply = @iisc_overlord_fleet_power_multiple
-		value < overlord.trigger:fleet_power
-	}
-	count_owned_fleet = {
-		count >= 5
-		limit = {
-			is_ship_class = shipclass_military
+	OR = {
+		AND = {
+			NOT = {
+				has_civic = iisc_civic_security_force
+			}
+			check_variable_arithmetic = {
+				which = iisc_current_fleet_power
+				divide = @iisc_overlord_fleet_power_fraction
+				value < overlord.trigger:fleet_power
+			}
+		}
+		AND = {
+			has_civic = iisc_civic_security_force
+			check_variable_arithmetic = {
+				which = iisc_current_fleet_power
+				divide = @iisc_overlord_fleet_power_fraction_security_force
+				value < overlord.trigger:fleet_power
+			}
 		}
 	}
-	any_owned_fleet = {
-		is_ship_class = shipclass_military
-		fleet_power < 1000
+	OR = {
+		AND = {
+			count_owned_fleet = {
+				count >= 5
+				limit = {
+					is_ship_class = shipclass_military
+				}
+			}
+			any_owned_fleet = {
+				is_ship_class = shipclass_military
+				fleet_power < 500
+			}
+		}
+		AND = {
+			count_owned_fleet = {
+				count >= 10
+				limit = {
+					is_ship_class = shipclass_military
+				}
+			}
+			any_owned_fleet = {
+				is_ship_class = shipclass_military
+				fleet_power < 1000
+			}
+		}
+		AND = {
+			count_owned_fleet = {
+				count >= 15
+				limit = {
+					is_ship_class = shipclass_military
+				}
+			}
+			any_owned_fleet = {
+				is_ship_class = shipclass_military
+				fleet_power < 2000
+			}
+		}
+		count_owned_fleet = {
+			count >= 20
+			limit = {
+				is_ship_class = shipclass_military
+			}
+		}
 	}
 	NOT = {
 		any_owned_fleet = {

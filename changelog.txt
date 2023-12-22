@@ -1,3 +1,16 @@
+1.3.0
+[*] Various small fixes for Stellaris 3.10.4
+[*] Change links between corps and overlord, preparing for multiple corps on a single hq
+[*] Fix the corps random name
+[*] Fix the corps civics by determining them by script rather than letting vanilla pick vanilla civics
+[*] Fix the hq deposit not initialising variables to prevent error.log spam (no gameplay issue)
+[*] Fix two different scripted effects going over the max depth (wasn't an issue before, so why now Stellaris?)
+[*] Give the corps civics bonuses (financial has energy production bonus, ...)
+[*] Fix convoy not moving by adding special hyperdrives
+[*] Fix the fleet power limit for corps
+[*] Rebuild the logic for corp fleet reinforcement: if 4 or less fleet, build more. If 9 or less, reinforce to 500fp, then build more. 14-, reinforce to 1k, then build more. 19- to 2k. 20+ reinforce always and never build more (the corp should already have 40k+ fp)
+[*] Buffed some corps level 10 hq. They now have 1 job per level, a bonus at level 5 and another one at 10 (similar in power to level 5). Additionnaly, 0.05 job per pop at level 10
+
 1.2.1
 [*] Corps science ships' leaders gain experience upon surveying
 [*] Increase max mining and research stations per corp from 10 each to 15 each, except for mining unions and research consortiums which have double of mining and research respectively.

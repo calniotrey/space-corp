@@ -4,7 +4,7 @@ Ever felt like the economy and space in Stellaris is far too bland and boring? D
 
 This initial release is meant to be a foundation for what’s to come. We are far from finished with what we want to do! Check out the Planned Features for more info. This mod can be considered a spiritual successor to Interstellar Incorporated: A Civilian Space Odyssey. If you were a fan of that mod, we decided to start from the ground up, because there were a lot of issues with performance and otherwise that plagued the original. We decided to reassess the mod and start with a slightly different take, but with a similar general idea!
 
-TL;DR: Performance friendly mod for 3.4.* with tons of new features planned
+TL;DR: Performance friendly mod for 3.10.* with tons of new features planned
 
 [h1]Features List[/h1]
 [list]
@@ -36,7 +36,7 @@ Not achievement compatible obviously.
 Should not require a new save game (but it is highly recommended).
 You can remove the mod during a game. Be sure to use the mod menu ingame to allow for a clean uninstall.
 You can open the mod menu using DMM (open the "main menu" by pressing when in game).
-Old (3.0-3.1) version [url=https://github.com/calniotrey/space-corp/releases/tag/v1.1.1]here on github[/url].
+Old (3.0-3.1) version [url=https://github.com/calniotrey/space-corp/releases/tag/v1.1.1]here on github[/url]. Other older versions are also on that github repo.
 
 [h1]Compatibility[/h1]
 Relatively good, minor localisation issues if other mods add planet types or ethics.
@@ -45,7 +45,8 @@ Fully localized in english, french, german and russian (almost). For the other l
 
 [h1]Known bugs[/h1]
 [list]
-[*] A "Too many nested effects" in the error.log. Needs some time to track down
+[*] a handful of logs in error.log, for example "Variable iisc_taxes_energy is not set for scoped astral_rift" > needs time to track down
+[*] science ships (and others maybe?) might wait a long time > needs time to find the cause
 [/list]
 
 [h1]Credits[/h1]
@@ -61,4 +62,3 @@ Do not copy any content from this mod without permission. This includes modpacki
 Translations are most welcome! Either contact us so we put it directly inside the mod (and your name in the credits), or publish a mod with only the localisation and we will add a link to it.
 
 [url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
-

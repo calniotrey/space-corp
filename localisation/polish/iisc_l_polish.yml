@@ -1,4 +1,9 @@
 ﻿l_polish:
+  iisc_AB: "$1$$2$"
+  iisc_AsB: "$1$ $2$"
+  iisc_ABsC: "$1$$2$ $3$"
+  iisc_AsBsC: "$1$ $2$ $3$"
+  iisc_ABsCsD: "$1$$2$ $3$ $4$"
   0: "0"
   1: "1"
   2: "2"

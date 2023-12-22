@@ -146,9 +146,9 @@ d_iisc_research_consortium_regular_10 = {
 		job_clerk_add = 2
 		job_head_researcher_add = 2
 		job_gas_refiner_add = 1
-		planet_jobs_physics_research_produces_mult = 0.1
-		planet_jobs_society_research_produces_mult = 0.1
-		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_jobs_physics_research_produces_mult = 0.2
+		planet_jobs_society_research_produces_mult = 0.2
+		planet_jobs_engineering_research_produces_mult = 0.2
 	}
 	drop_weight = {
 		weight = 0
@@ -301,7 +301,7 @@ d_iisc_engineering_firm_regular_10 = {
 		job_clerk_add = 1
 		job_chemist_add = 1
 		job_executive_add = 1
-		planet_jobs_alloys_produces_mult = 0.1
+		planet_jobs_alloys_produces_mult = 0.2
 	}
 	drop_weight = {
 		weight = 0
@@ -447,7 +447,7 @@ d_iisc_mining_union_regular_10 = {
 		job_translucer_add = 1
 		job_executive_add = 1
 		job_merchant_add = 1
-		planet_jobs_minerals_produces_mult = 0.1
+		planet_jobs_minerals_produces_mult = 0.2
 	}
 	drop_weight = {
 		weight = 0
@@ -902,7 +902,7 @@ d_iisc_exploration_initiative_regular_10 = {
 		job_foundry_add = 2
 		job_artisan_add = 2
 		job_executive_add = 1
-		planet_jobs_produces_mult = 0.05
+		planet_jobs_produces_mult = 0.06
 	}
 	drop_weight = {
 		weight = 0
@@ -1046,7 +1046,7 @@ d_iisc_financial_group_regular_10 = {
 		job_merchant_add = 3
 		job_executive_add = 2
 		job_preacher_add = 1
-		trade_value_mult = 0.15
+		trade_value_mult = 0.2
 	}
 	drop_weight = {
 		weight = 0

@@ -8,12 +8,18 @@ iisc_create_corp_military_fleet = {
 			set_name = random
 			set_fleet_stance = passive
 			iisc_build_military_ships = yes
-			iisc_set_military_fleet_orders = yes
+			# iisc_set_military_fleet_orders = yes
+			save_event_target_as = iisc_military_fleet
 			set_location = prev
 			fleet_event = {
 				id = iisc_military.20
 				days = 1
 			}
+		}
+	}
+	prev = {
+		country_event = {
+			id = iisc_military.10
 		}
 	}
 }

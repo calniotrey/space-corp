@@ -49,9 +49,12 @@ empire_name_format = {
 			has_civic = iisc_civic_research_consortium
 		}
 	}
-	format = iisc_corp_name.research.1	# "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_research>"
-	lookups = "<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_research>"
-	noun = "format.species"
+	noun = "{iisc_ABsC{<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_research>}}"
+	format = "{iisc_ABsC{<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_research>}}"
+	adjective = "{iisc_ABsC{<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_research>}}"
+	# format = iisc_corp_name.research.1	# "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_research>"
+	# lookups = "<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_research>"
+	# noun = "format.species"
 }
 
 #ChronoDyne Networks Corporation
@@ -64,9 +67,12 @@ empire_name_format = {
 			has_civic = iisc_civic_research_consortium
 		}
 	}
-	format = iisc_corp_name.research.2	# "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_research> <corporate_empire_names_final>"
-	lookups = "<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_research> <corporate_empire_names_final>"
-	noun = "format.species"
+	noun = "{iisc_ABsCsD{<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	format = "{iisc_ABsCsD{<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	adjective = "{iisc_ABsCsD{<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	# format = iisc_corp_name.research.2	# "<corporate_empire_names_prefix><corporate_empire_names_suffix> <corporate_empire_names_field_research> <corporate_empire_names_final>"
+	# lookups = "<corporate_empire_names_prefix> <corporate_empire_names_suffix> <corporate_empire_names_field_research> <corporate_empire_names_final>"
+	# noun = "format.species"
 }
 
 #Blackstar Networks
@@ -79,9 +85,12 @@ empire_name_format = {
 			has_civic = iisc_civic_research_consortium
 		}
 	}
-	format = iisc_corp_name.research.3	# "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_research>"
-	lookups = "<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_research>"
-	noun = "format.species"
+	noun = "{iisc_ABsC{<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_research>}}"
+	format = "{iisc_ABsC{<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_research>}}"
+	adjective = "{iisc_ABsC{<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_research>}}"
+	# format = iisc_corp_name.research.3	# "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_research>"
+	# lookups = "<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_research>"
+	# noun = "format.species"
 }
 
 #Blackstar Networks Corporation
@@ -94,9 +103,12 @@ empire_name_format = {
 			has_civic = iisc_civic_research_consortium
 		}
 	}
-	format = iisc_corp_name.research.4	# "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_research> <corporate_empire_names_final>"
-	lookups = "<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_research> <corporate_empire_names_final>"
-	noun = "format.species"
+	noun = "{iisc_ABsCsD{<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	format = "{iisc_ABsCsD{<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	adjective = "{iisc_ABsCsD{<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	# format = iisc_corp_name.research.4	# "<corporate_empire_names_adj><corporate_empire_names_noun> <corporate_empire_names_field_research> <corporate_empire_names_final>"
+	# lookups = "<corporate_empire_names_adj> <corporate_empire_names_noun> <corporate_empire_names_field_research> <corporate_empire_names_final>"
+	# noun = "format.species"
 }
 
 #Serendipity Nanotechnology
@@ -109,9 +121,12 @@ empire_name_format = {
 			has_civic = iisc_civic_research_consortium
 		}
 	}
-	format = iisc_corp_name.research.5	# "<corporate_empire_names_standalone> <corporate_empire_names_field_research>"
-	lookups = "<corporate_empire_names_standalone> <corporate_empire_names_field_research>"
-	noun = "format.species"
+	noun = "{iisc_AsB{<corporate_empire_names_standalone> <corporate_empire_names_field_research>}}"
+	format = "{iisc_AsB{<corporate_empire_names_standalone> <corporate_empire_names_field_research>}}"
+	adjective = "{iisc_AsB{<corporate_empire_names_standalone> <corporate_empire_names_field_research>}}"
+	# format = iisc_corp_name.research.5	# "<corporate_empire_names_standalone> <corporate_empire_names_field_research>"
+	# lookups = "<corporate_empire_names_standalone> <corporate_empire_names_field_research>"
+	# noun = "format.species"
 }
 
 #Serendipity Nanotechnology Corporation
@@ -124,9 +139,12 @@ empire_name_format = {
 			has_civic = iisc_civic_research_consortium
 		}
 	}
-	format = iisc_corp_name.research.6	# "<corporate_empire_names_standalone> <corporate_empire_names_field_research> <corporate_empire_names_final>"
-	lookups = "<corporate_empire_names_standalone> <corporate_empire_names_field_research> <corporate_empire_names_final>"
-	noun = "format.species"
+	noun = "{iisc_AsBsC{<corporate_empire_names_standalone> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	format = "{iisc_AsBsC{<corporate_empire_names_standalone> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	adjective = "{iisc_AsBsC{<corporate_empire_names_standalone> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	# format = iisc_corp_name.research.6	# "<corporate_empire_names_standalone> <corporate_empire_names_field_research> <corporate_empire_names_final>"
+	# lookups = "<corporate_empire_names_standalone> <corporate_empire_names_field_research> <corporate_empire_names_final>"
+	# noun = "format.species"
 }
 
 #National Bank Corporation
@@ -139,7 +157,10 @@ empire_name_format = {
 			has_civic = iisc_civic_research_consortium
 		}
 	}
-	format = iisc_corp_name.research.7	# "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_research> <corporate_empire_names_final>"
-	lookups = "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_research> <corporate_empire_names_final>"
-	noun = "format.species"
+	noun = "{iisc_AsBsC{<corporate_empire_names_standalone_adj> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	format = "{iisc_AsBsC{<corporate_empire_names_standalone_adj> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	adjective = "{iisc_AsBsC{<corporate_empire_names_standalone_adj> <corporate_empire_names_field_research> <corporate_empire_names_final>}}"
+	# format = iisc_corp_name.research.7	# "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_research> <corporate_empire_names_final>"
+	# lookups = "<corporate_empire_names_standalone_adj> <corporate_empire_names_field_research> <corporate_empire_names_final>"
+	# noun = "format.species"
 }

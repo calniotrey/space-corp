@@ -19,7 +19,13 @@ iisc_civic_research_consortium = {
 			}
 		}
 	}
+	modifier = {
+		all_technology_research_speed = 0.25
+	}
 	random_weight = {
+		base = 1000
+	}
+	ai_weight = {
 		base = 1000
 	}
 }
@@ -32,6 +38,9 @@ iisc_civic_engineering_firm = {
 		authority = {
 			value = iisc_auth_corporate
 		}
+	}
+	modifier = {
+		country_alloys_produces_mult = 0.25
 	}
 	possible = {
 		civics = {
@@ -46,6 +55,9 @@ iisc_civic_engineering_firm = {
 		}
 	}
 	random_weight = {
+		base = 1000
+	}
+	ai_weight = {
 		base = 1000
 	}
 }
@@ -74,6 +86,12 @@ iisc_civic_mining_union = {
 	random_weight = {
 		base = 1000
 	}
+	ai_weight = {
+		base = 1000
+	}
+	modifier = {
+		country_minerals_produces_mult = 0.25
+	}
 }
 
 iisc_civic_security_force = {
@@ -99,6 +117,12 @@ iisc_civic_security_force = {
 	}
 	random_weight = {
 		base = 1000
+	}
+	ai_weight = {
+		base = 1000
+	}
+	modifier = {
+		ships_upkeep_mult = -0.25
 	}
 }
 
@@ -126,6 +150,12 @@ iisc_civic_logistics_agency = {
 	random_weight = {
 		base = 1000
 	}
+	ai_weight = {
+		base = 1000
+	}
+	modifier = {
+		country_produces_mult = 0.1
+	}
 }
 
 iisc_civic_exploration_initiative = {
@@ -151,6 +181,12 @@ iisc_civic_exploration_initiative = {
 	}
 	random_weight = {
 		base = 1000
+	}
+	ai_weight = {
+		base = 1000
+	}
+	modifier = {
+		ships_upkeep_mult = -0.1
 	}
 }
 
@@ -178,6 +214,12 @@ iisc_civic_financial_group = {
 	random_weight = {
 		base = 1000
 	}
+	ai_weight = {
+		base = 1000
+	}
+	modifier = {
+		country_energy_produces_mult = 0.25
+	}
 }
 
 iisc_civic_space_corp = {
@@ -191,6 +233,9 @@ iisc_civic_space_corp = {
 	}
 	random_weight = {
 		base = 1000000
+	}
+	ai_weight = {
+		base = 1000
 	}
 }
 
