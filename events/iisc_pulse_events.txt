@@ -183,6 +183,7 @@ country_event = {
 		iisc_get_hq = yes
 		iisc_get_overlord = yes
 		iisc_handle_corp_connection_to_overlord = yes
+		iisc_copy_overlord_hostility = yes
 		export_trigger_value_to_variable = {
 			trigger = fleet_power
 			variable = iisc_current_fleet_power

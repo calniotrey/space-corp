@@ -190,6 +190,88 @@ iisc_handle_corp_connection_to_overlord = {
 }
 
 # this = corp
+# hq set and exists
+# overlord set (may not exist)
+iisc_copy_overlord_hostility = {
+	if = {
+		limit = {
+			exists = event_target:iisc_overlord
+		}
+		every_country = {
+			limit = {
+				NOR = {
+					is_same_value = prev
+					is_same_value = event_target:iisc_overlord
+				}
+			}
+			if = {
+				limit = {
+					event_target:iisc_overlord = {
+						is_hostile = prev
+					}
+				}
+				set_faction_hostility = {
+					set_hostile = yes
+					set_neutral = no
+					set_friendly = no
+					target = prev
+				}
+				prev = {
+					set_faction_hostility = {
+						set_hostile = yes
+						set_neutral = no
+						set_friendly = no
+						target = prev
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:iisc_overlord = {
+						is_neutral_to = prev
+					}
+				}
+				set_faction_hostility = {
+					set_hostile = no
+					set_neutral = yes
+					set_friendly = no
+					target = prev
+				}
+				prev = {
+					set_faction_hostility = {
+						set_hostile = no
+						set_neutral = yes
+						set_friendly = no
+						target = prev
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:iisc_overlord = {
+						is_friendly_to = prev
+					}
+				}
+				set_faction_hostility = {
+					set_hostile = no
+					set_neutral = no
+					set_friendly = yes
+					target = prev
+				}
+				prev = {
+					set_faction_hostility = {
+						set_hostile = no
+						set_neutral = no
+						set_friendly = yes
+						target = prev
+					}
+				}
+			}
+		}
+	}
+}
+
+# this = corp
 # overlord exists
 iisc_copy_techs_from_overlord_if_needed = {
 	if = {
